@@ -1,0 +1,12 @@
+.dropdowns {
+    :global {
+        .rdp-dropdown_year > span:first-child,
+        .rdp-dropdown_month > span:first-child {
+            display: none;
+        }
+
+        .rdp-dropdown_month {
+            margin-right: 15px;
+        }
+    }
+}

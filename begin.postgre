@@ -1,0 +1,40 @@
+// function to create_profile_for_new_users
+
+begin
+insert into public.profiles(id,email,first_name)
+values(
+    new.id, 
+    new.raw_user_meta_data ->> 'email',
+    new.raw_user_meta_data ->> 'full_name'
+    );
+return new;
+end;
+
+
+
+
+create trigger:  
+create trigger create_profile_for_new_users after insert on auth.users for each row execute function create_profile_for_new_users();
+
+delete trigger:  
+drop trigger if exists create_profile_for_new_users on auth.users;
+
+
+//////////////////////////////////////
+
+
+alter policy "Enable read access for all users"
+on "public"."profiles"
+to public
+using (
+  (( SELECT auth.uid() AS uid) = id)
+);
+
+alter policy "Enable update for users based on id"
+on "public"."profiles"
+to authenticated
+using (
+  (( SELECT auth.uid() AS uid) = id)
+with check (
+  (( SELECT auth.uid() AS uid) = id)
+);

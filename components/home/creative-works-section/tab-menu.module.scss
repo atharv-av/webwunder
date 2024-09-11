@@ -1,0 +1,16 @@
+.pill-select {
+    ol {
+        @apply p-4 py-3;
+
+        li {
+            cursor: pointer;
+            div.item {
+                @apply my-3 mx-5 font-bold p-4 lg:px-8;
+            }     
+        }
+    }
+}
+
+.selected {
+    @apply rounded-xl  text-primary-foreground bg-gradient-to-r from-indigo-900 to-primary;
+}

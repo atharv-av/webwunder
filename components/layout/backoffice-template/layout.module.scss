@@ -1,0 +1,31 @@
+.layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+      "header header"
+      "main main";
+    min-height: 100svh;
+
+    @media (min-width: 1024px) {
+        grid-template-areas: 
+        "menu-side header"
+        "menu-side main";
+     }
+}
+
+.menu-side {
+    grid-area: menu-side;
+    display: none;
+    @media (min-width: 1024px) {
+        display: block;
+    }
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}

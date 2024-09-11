@@ -1,0 +1,14 @@
+
+
+div.card {
+    background-color: white;
+    @apply rounded-xl p-8 flex flex-col justify-center items-start;
+    .icon {
+        @apply text-8xl mb-4 text-primary;
+    }
+    .title {
+        @apply text-3xl mb-3 font-bold;
+    }
+    .text {
+    }
+}

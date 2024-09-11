@@ -1,0 +1,96 @@
+{
+  user:
+    {
+      id: "17db868d-09da-469f-b47b-93a0870b3d5a",
+      aud: "authenticated",
+      role: "authenticated",
+      email: "yabuking84+webwunder1@gmail.com",
+      email_confirmed_at: "2024-08-19T09:46:47.990672Z",
+      phone: "",
+      confirmed_at: "2024-08-19T09:46:47.990672Z",
+      recovery_sent_at: "2024-08-19T17:11:54.765742Z",
+      last_sign_in_at: "2024-08-19T17:12:06.852430285Z",
+      app_metadata: { provider: "email", providers: ["email"] },
+      user_metadata:
+        {
+          email: "yabuking84+webwunder1@gmail.com",
+          email_verified: false,
+          phone_verified: false,
+          sub: "17db868d-09da-469f-b47b-93a0870b3d5a",
+        },
+      identities:
+        [
+          {
+            identity_id: "28b5b43e-df07-4cef-920f-14ff73d2093e",
+            id: "17db868d-09da-469f-b47b-93a0870b3d5a",
+            user_id: "17db868d-09da-469f-b47b-93a0870b3d5a",
+            identity_data:
+              {
+                email: "yabuking84+webwunder1@gmail.com",
+                email_verified: false,
+                phone_verified: false,
+                sub: "17db868d-09da-469f-b47b-93a0870b3d5a",
+              },
+            provider: "email",
+            last_sign_in_at: "2024-08-19T09:46:47.98083Z",
+            created_at: "2024-08-19T09:46:47.980896Z",
+            updated_at: "2024-08-19T09:46:47.980896Z",
+            email: "yabuking84+webwunder1@gmail.com",
+          },
+        ],
+      created_at: "2024-08-19T09:46:47.966734Z",
+      updated_at: "2024-08-19T17:12:06.857826Z",
+      is_anonymous: false,
+    },
+  session:
+    {
+      access_token: "eyJhbGciOiJIUzI1NiIsImtpZCI6ImR1cUlvUkUwb2FnWi9IbTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3Z6bGhwYnFhZ2tiZHFwYmZkeWljLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIxN2RiODY4ZC0wOWRhLTQ2OWYtYjQ3Yi05M2EwODcwYjNkNWEiLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzI0MDkxMTI2LCJpYXQiOjE3MjQwODc1MjYsImVtYWlsIjoieWFidWtpbmc4NCt3ZWJ3dW5kZXIxQGdtYWlsLmNvbSIsInBob25lIjoiIiwiYXBwX21ldGFkYXRhIjp7InByb3ZpZGVyIjoiZW1haWwiLCJwcm92aWRlcnMiOlsiZW1haWwiXX0sInVzZXJfbWV0YWRhdGEiOnsiZW1haWwiOiJ5YWJ1a2luZzg0K3dlYnd1bmRlcjFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwaG9uZV92ZXJpZmllZCI6ZmFsc2UsInN1YiI6IjE3ZGI4NjhkLTA5ZGEtNDY5Zi1iNDdiLTkzYTA4NzBiM2Q1YSJ9LCJyb2xlIjoiYXV0aGVudGljYXRlZCIsImFhbCI6ImFhbDEiLCJhbXIiOlt7Im1ldGhvZCI6Im90cCIsInRpbWVzdGFtcCI6MTcyNDA4NzUyNn1dLCJzZXNzaW9uX2lkIjoiZDMzZWQzOGMtMWMwNS00YzExLTk2N2QtMzkzNTVlMjljOTY0IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.DvWtiqdoaqEeROCRTlYBEUMxbQ0ZqGIoKWlvt875FYM",
+      token_type: "bearer",
+      expires_in: 3600,
+      expires_at: 1724091126,
+      refresh_token: "2PKobSS3E92XW0jncLYQHw",
+      user:
+        {
+          id: "17db868d-09da-469f-b47b-93a0870b3d5a",
+          aud: "authenticated",
+          role: "authenticated",
+          email: "yabuking84+webwunder1@gmail.com",
+          email_confirmed_at: "2024-08-19T09:46:47.990672Z",
+          phone: "",
+          confirmed_at: "2024-08-19T09:46:47.990672Z",
+          recovery_sent_at: "2024-08-19T17:11:54.765742Z",
+          last_sign_in_at: "2024-08-19T17:12:06.852430285Z",
+          app_metadata: { provider: "email", providers: ["email"] },
+          user_metadata:
+            {
+              email: "yabuking84+webwunder1@gmail.com",
+              email_verified: false,
+              phone_verified: false,
+              sub: "17db868d-09da-469f-b47b-93a0870b3d5a",
+            },
+          identities:
+            [
+              {
+                identity_id: "28b5b43e-df07-4cef-920f-14ff73d2093e",
+                id: "17db868d-09da-469f-b47b-93a0870b3d5a",
+                user_id: "17db868d-09da-469f-b47b-93a0870b3d5a",
+                identity_data:
+                  {
+                    email: "yabuking84+webwunder1@gmail.com",
+                    email_verified: false,
+                    phone_verified: false,
+                    sub: "17db868d-09da-469f-b47b-93a0870b3d5a",
+                  },
+                provider: "email",
+                last_sign_in_at: "2024-08-19T09:46:47.98083Z",
+                created_at: "2024-08-19T09:46:47.980896Z",
+                updated_at: "2024-08-19T09:46:47.980896Z",
+                email: "yabuking84+webwunder1@gmail.com",
+              },
+            ],
+          created_at: "2024-08-19T09:46:47.966734Z",
+          updated_at: "2024-08-19T17:12:06.857826Z",
+          is_anonymous: false,
+        },
+    },
+}
