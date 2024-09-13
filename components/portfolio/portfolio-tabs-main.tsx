@@ -77,7 +77,7 @@ const PortfolioMainContent = () => {
                     Leave the Competition Behind!
                 </p>
                 <p className="w-[65%] self-center text-center text-base font-normal text-gray-500">
-                    Join WebWunder's subscription web design service, built by
+                    Join WebWunder&apos;s subscription web design service, built by
                     entrepreneurs for entrepreneurs, and watch your business
                     soar.
                 </p>
