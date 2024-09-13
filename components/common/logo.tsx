@@ -12,7 +12,7 @@ export default function Logo({ className }: Props) {
     const locale = useLocale() as Locale
 
     const logo ={
-        src: '/webwunder-logo.png',
+        src: '/assets/webwunder-logo.png',
     }
 
 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { app } from '@/config'
 import Link from 'next/link'
 
-import Logo from '@/public/webwunder-logo.png'
+import Logo from '@/public/assets/webwunder-logo.png'
 import { paths } from '@/paths'
 
 const paymentMethods = [
