@@ -6,6 +6,7 @@
 // import { motion } from 'framer-motion'
 // import { Metadata } from 'next'
 
+import Footer from '@/components/layout/home-template-new/footer';
 import Header from '@/components/layout/home-template-new/header'
 import PortfolioCarousel from '@/components/portfolio/portfolio-carousel';
 import PortfolioLanding from '@/components/portfolio/portfolio-landing';
@@ -36,6 +37,7 @@ export default function PortfolioPage() {
         <PortfolioLanding />
         <PortfolioCarousel />
         <PortfolioMainContent />
+        <Footer />
       </div>
     );
 }

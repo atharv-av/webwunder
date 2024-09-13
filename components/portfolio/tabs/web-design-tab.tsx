@@ -3,7 +3,7 @@ import ContentCard from '../content-card'
 
 const tabItems = [
     {
-        width: 'lg:w-[35rem]',
+        width: 'lg:w-[35rem] w-full',
         img: '/images/portfolio/leapx.png',
         bgColor: '#6366f1',
         tags: [
@@ -14,44 +14,89 @@ const tabItems = [
             { tagName: 'SEO', tagColor: 'bg-[#f59e0b]' },
             { tagName: 'Social Media', tagColor: 'bg-[#f59e0b]' },
         ],
-        title: 'LeapX1 Website',
+        title: 'LeapX Website',
         project: '/projects/leapx',
+        bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+        bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem]',
-        img: '/images/portfolio/leapx.png',
-        bgColor: '#6366f1',
+        width: 'lg:w-[30rem] w-full',
+        img: '/images/portfolio/skylumina.png',
+        bgColor: '#FF6531',
         tags: [
             { tagName: 'Web Design', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Branding', tagColor: 'bg-[#3b82f6]' },
             { tagName: 'Graphic Design', tagColor: 'bg-[#10b981]' },
             { tagName: 'Web Development', tagColor: 'bg-[#f59e0b]' },
         ],
-        title: 'LeapX2 Website',
+        title: 'Skylumina Website',
         project: '/projects/leapx',
+        bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+        bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem]',
-        img: '/images/portfolio/leapx.png',
-        bgColor: '#6366f1',
+        width: 'lg:w-[30rem] w-full',
+        img: '/images/portfolio/praxiskattan.png',
+        bgColor: '#0ECECE',
         tags: [
             { tagName: 'Web Design', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Branding', tagColor: 'bg-[#3b82f6]' },
             { tagName: 'Graphic Design', tagColor: 'bg-[#10b981]' },
             { tagName: 'Web Development', tagColor: 'bg-[#f59e0b]' },
         ],
-        title: 'LeapX3 Website',
-        project: '/projects/leapx',
+        title: 'Praxis Kattan Website',
+        project: '/projects/praxiskattan',
+        bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+        bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem]',
-        img: '/images/portfolio/leapx.png',
-        bgColor: '#6366f1',
+        width: 'lg:w-[35rem] w-full',
+        img: '/images/portfolio/rentstate.png',
+        bgColor: '#04CA76',
         tags: [
             { tagName: 'Web Design', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Branding', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Graphic Design', tagColor: 'bg-[#10b981]' },
+            { tagName: 'Web Development', tagColor: 'bg-[#f59e0b]' },
+            { tagName: 'SEO', tagColor: 'bg-[#f59e0b]' },
+            { tagName: 'Social Media', tagColor: 'bg-[#f59e0b]' },
+        ],
+        title: 'Rentstate Website',
+        project: '/projects/leapx',
+        bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+        bgProps: 'bg-contain bg-center bg-no-repeat',
+    },
+    {
+        width: 'lg:w-[35rem] w-full',
+        img: '/images/portfolio/fitsync.png',
+        bgColor: '#D0F651',
+        tags: [
+            { tagName: 'Web Design', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Branding', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Graphic Design', tagColor: 'bg-[#10b981]' },
+            { tagName: 'Web Development', tagColor: 'bg-[#f59e0b]' },
+            { tagName: 'SEO', tagColor: 'bg-[#f59e0b]' },
+            { tagName: 'Social Media', tagColor: 'bg-[#f59e0b]' },
+        ],
+        title: 'Fitsync Website',
+        project: '/projects/leapx',
+        bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+        bgProps: 'bg-contain bg-center bg-no-repeat',
+    },
+    {
+        width: 'lg:w-[30rem] w-full',
+        img: '/images/portfolio/praxiskattan.png',
+        bgColor: '#1D59F4',
+        tags: [
+            { tagName: 'Web Design', tagColor: 'bg-[#3b82f6]' },
+            { tagName: 'Branding', tagColor: 'bg-[#3b82f6]' },
             { tagName: 'Graphic Design', tagColor: 'bg-[#10b981]' },
             { tagName: 'Web Development', tagColor: 'bg-[#f59e0b]' },
         ],
-        title: 'LeapX4 Website',
-        project: '/projects/leapx',
+        title: 'Fitflex Website',
+        project: '/projects/praxiskattan',
+        bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+        bgProps: 'bg-contain bg-center bg-no-repeat',
     },
 ]
 
@@ -67,6 +112,9 @@ const WebDesignTab = () => {
                     tags={item.tags}
                     title={item.title}
                     project={item.project}
+                    bgGradient={item.bgGradient}
+                    bgProps={item.bgProps}
+                    isBtnVisible={true}
                 />
             ))}
         </div>

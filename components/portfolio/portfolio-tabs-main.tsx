@@ -4,6 +4,12 @@ import React from 'react'
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import WebDesignTab from './tabs/web-design-tab'
+import BrandingTab from './tabs/branding-tab'
+import SocialMediaTab from './tabs/social-media-tab'
+import GraphicDesigningTab from './tabs/graphic-designing-tab'
+import { Badge } from '../ui/badge'
+import { Button } from '../ui/button'
+import { ArrowRight } from 'lucide-react'
 
 const PortfolioMainContent = () => {
     return (
@@ -24,7 +30,7 @@ const PortfolioMainContent = () => {
                 </p>
             </div>
             <Tabs defaultValue="webdesign" className="mx-auto">
-                <TabsList className="grid w-fit mx-auto h-fit grid-cols-4 rounded-full bg-[#191919] text-white">
+                <TabsList className="mx-auto grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
                     <TabsTrigger
                         className="rounded-full p-4 data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="webdesign"
@@ -53,16 +59,33 @@ const PortfolioMainContent = () => {
                 <TabsContent value="webdesign">
                     <WebDesignTab />
                 </TabsContent>
-                {/* <TabsContent value="branding">
-                <ContentCard />
-            </TabsContent>
-            <TabsContent value="socialmedia">
-                <ContentCard />
-            </TabsContent>
-            <TabsContent value="graphicdesigning">
-                <ContentCard />
-            </TabsContent> */}
+                <TabsContent value="branding">
+                    <BrandingTab />
+                </TabsContent>
+                <TabsContent value="socialmedia">
+                    <SocialMediaTab />
+                </TabsContent>
+                <TabsContent value="graphicdesigning">
+                    <GraphicDesigningTab />
+                </TabsContent>
             </Tabs>
+            <div className="item-center flex flex-col gap-4 mb-16 ">
+                <Badge className="w-fit self-center rounded-full bg-[#5D59E1] p-2">
+                    Get in Touch
+                </Badge>
+                <p className="text-center text-3xl font-bold text-white">
+                    Leave the Competition Behind!
+                </p>
+                <p className="w-[65%] self-center text-center text-base font-normal text-gray-500">
+                    Join WebWunder's subscription web design service, built by
+                    entrepreneurs for entrepreneurs, and watch your business
+                    soar.
+                </p>
+                <Button className="flex w-fit bg-white text-black items-center gap-7 self-center rounded-full px-6">
+                    <p>Book a call</p>
+                    <ArrowRight size={25} />
+                </Button>
+            </div>
         </div>
     )
 }

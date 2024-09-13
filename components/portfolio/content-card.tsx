@@ -13,10 +13,13 @@ interface TagProps {
 interface PortfolioProps {
     width: string
     img: string
-    bgColor: string
-    tags: TagProps[]
-    title: string
-    project: string
+    bgColor?: string
+    tags?: TagProps[]
+    title?: string
+    project?: string
+    bgGradient?: string
+    bgProps?: string
+    isBtnVisible: boolean
 }
 
 const ContentCard: React.FC<PortfolioProps> = ({
@@ -26,6 +29,9 @@ const ContentCard: React.FC<PortfolioProps> = ({
     tags,
     title,
     project,
+    bgGradient,
+    bgProps,
+    isBtnVisible,
 }) => {
     return (
         <Card
@@ -34,31 +40,40 @@ const ContentCard: React.FC<PortfolioProps> = ({
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
         >
-            <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/10 to-black" />
+            <div className={`absolute inset-0 z-10 ${bgGradient}`} />
             <div
-                className={`absolute inset-0 flex items-end bg-contain bg-center bg-no-repeat`}
+                className={`absolute inset-0 flex w-full items-end ${bgProps}`}
                 style={{ backgroundImage: `url(${img})` }}
             >
                 <div className="flex flex-col items-start gap-3 p-10">
                     <div className="z-10 flex gap-1">
-                        {tags.map((tag, index) => (
-                            <Badge
-                                key={index}
-                                className={`${tag.tagColor} p-2 text-[10px] text-black font-bold`}
-                            >
-                                {tag.tagName}
-                            </Badge>
-                        ))}
+                        {tags &&
+                            tags.map((tag, index) => (
+                                <Badge
+                                    key={index}
+                                    className={`${tag.tagColor} p-2 text-[10px] font-bold text-black`}
+                                >
+                                    {tag.tagName}
+                                </Badge>
+                            ))}
                     </div>
                     <p className="z-10 text-3xl font-bold text-white">
                         {title}
                     </p>
-                    <Link className="z-10 bg-[#24252A] rounded-full" href={project}>
-                        <Button className='bg-transparent flex flex-row gap-5'>
-                            <p className='text-white'>View Project</p>
-                            <ArrowRight size={35} className='text-black bg-white p-1 rounded-full' />
-                        </Button>
-                    </Link>
+                    {isBtnVisible && (
+                        <Link
+                            className="z-10 rounded-full bg-[#24252A]"
+                            href="#"
+                        >
+                            <Button className="flex flex-row gap-5 bg-transparent">
+                                <p className="text-white">View Project</p>
+                                <ArrowRight
+                                    size={35}
+                                    className="rounded-full bg-white p-1 text-black"
+                                />
+                            </Button>
+                        </Link>
+                    )}
                 </div>
             </div>
         </Card>
