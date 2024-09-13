@@ -84,7 +84,7 @@ export default function LoginPage() {
                 </div>
                 <div className="absolute bottom-10 z-10 space-y-4 p-6 text-white md:p-10">
                     <h1 className="text-2xl font-bold leading-tight md:text-4xl">
-                        With WebWunder, You'll Never Need Another Agency.
+                        With WebWunder, You&apos;ll Never Need Another Agency.
                     </h1>
                     <p className="text-white">
                         WebWunder offers a comprehensive, all-in-one solution
