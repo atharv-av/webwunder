@@ -13,6 +13,16 @@ import { useState } from 'react'
 import SpinnerSVG from '@/assets/icons/spinner.svg'
 import { useToast } from '@/components/ui/use-toast'
 
+import {
+    BsApple,
+    BsDiscord,
+    BsGithub,
+    BsGoogle,
+    BsMicrosoft,
+} from 'react-icons/bs'
+import { FaAmazon, FaFacebookF, FaXTwitter } from 'react-icons/fa6'
+import { RiFacebookFill } from 'react-icons/ri'
+
 type Provider =
     | 'google'
     | 'apple'
@@ -61,51 +71,57 @@ export default function Socials() {
 
     const SocialData = [
         {
+            icon: <BsGoogle className="rounded-md bg-[#29292F] p-3 text-5xl" />,
+            label: 'Sign in with Google',
+            provider: 'google',
+        },
+        {
+            icon: <BsApple className="rounded-md bg-[#29292F] p-3 text-5xl" />,
+            label: 'Sign in with Apple',
+            provider: 'apple',
+        },
+        {
             icon: (
-                <MicrosoftSVG className="rounded-xl bg-[#29292F] p-2 text-4xl" />
+                <BsMicrosoft className="rounded-md bg-[#29292F] p-3 text-5xl" />
             ),
             label: 'Sign in with Microsoft',
             provider: 'microsoft',
         },
         {
-            icon: (
-                <GoogleSVG className="rounded-xl bg-[#29292F] p-2 text-4xl" />
-            ),
-            label: 'Sign in with Google',
-            provider: 'google',
+            icon: <FaAmazon className="rounded-md bg-[#29292F] p-3 text-5xl" />,
+            label: 'Sign in with Amazon',
+            provider: 'amazon',
         },
         {
             icon: (
-                <DiscordSVG className="rounded-xl bg-[#29292F] p-2 text-4xl" />
-            ),
-            label: 'Sign in with Discord',
-            provider: 'discord',
-        },
-        {
-            icon: (
-                <FacebookSVG className="rounded-xl bg-[#29292F] p-2 text-4xl" />
+                <RiFacebookFill className="rounded-md bg-[#29292F] p-3 text-5xl" />
             ),
             label: 'Sign in with Facebook',
             provider: 'facebook',
         },
         {
             icon: (
-                <GithubSVG className="rounded-xl bg-[#29292F] p-2 text-4xl" />
-            ),
-            label: 'Sign in with GitHub',
-            provider: 'github',
-        },
-        {
-            icon: (
-                <TwitterSVG className="rounded-xl bg-[#29292F] p-2 text-4xl" />
+                <FaXTwitter className="rounded-md bg-[#29292F] p-3 text-5xl" />
             ),
             label: 'Sign in with Twitter',
             provider: 'twitter',
         },
+        {
+            icon: (
+                <BsDiscord className="rounded-md bg-[#29292F] p-3 text-5xl" />
+            ),
+            label: 'Sign in with Discord',
+            provider: 'discord',
+        },
+        {
+            icon: <BsGithub className="rounded-md bg-[#29292F] p-3 text-5xl" />,
+            label: 'Sign in with GitHub',
+            provider: 'github',
+        },
     ]
 
     return (
-        <div className="flex items-center justify-center gap-2 text-white">
+        <div className="md:flex grid grid-cols-4 items-center justify-center gap-2 text-white">
             {SocialData.map((data, i) => (
                 <button
                     key={i}
@@ -113,7 +129,7 @@ export default function Socials() {
                     onClick={() => handleSocialLogin(data.provider as Provider)}
                     className="mb-4 w-full border-black"
                 >
-                    <div className="me-2 flex w-10 justify-center">
+                    <div className="me-2 flex justify-center">
                         {data.icon}
                         {/* <SpinnerSVG
                             className={`ms-2 text-2xl ${loadingStates[data.provider as Provider] ? '' : 'hidden'}`}

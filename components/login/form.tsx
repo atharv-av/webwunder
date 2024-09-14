@@ -6,10 +6,29 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Socials from './form/social'
 
-const images = ['/assets/auth1.png', '/assets/auth2.png', '/assets/auth1.png']
+const slides = [
+    {
+        image: '/assets/auth1.png',
+        title: "With WebWunder, You'll Never Need Another Agency. Ever.",
+        description:
+            "With WebWunder, you'll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.",
+    },
+    {
+        image: '/assets/auth2.png',
+        title: 'Get Your Website in Three Easy Steps',
+        description:
+            "Hate meetings? Us too—that’s why we've minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.",
+    },
+    {
+        image: '/assets/auth1.png',
+        title: "With WebWunder, You'll Never Need Another Agency. Ever.",
+        description:
+            "With WebWunder, you'll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.",
+    },
+]
 
 export default function LoginPage() {
-    const [currentImage, setCurrentImage] = useState(0)
+    const [currentSlide, setCurrentSlide] = useState(0)
     const [sliding, setSliding] = useState(false)
     const [slideDirection, setSlideDirection] = useState('')
 
@@ -22,26 +41,26 @@ export default function LoginPage() {
         }
     }, [sliding])
 
-    const nextImage = () => {
+    const nextSlide = () => {
         if (sliding) return
         setSliding(true)
         setSlideDirection('left')
-        setCurrentImage((prev) => (prev + 1) % images.length)
+        setCurrentSlide((prev) => (prev + 1) % slides.length)
     }
 
-    const prevImage = () => {
+    const prevSlide = () => {
         if (sliding) return
         setSliding(true)
         setSlideDirection('right')
-        setCurrentImage((prev) => (prev - 1 + images.length) % images.length)
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
     }
 
     const getSlideClass = (index: number) => {
-        if (index === currentImage) {
+        if (index === currentSlide) {
             return 'translate-x-0'
         } else if (
             index ===
-            (currentImage - 1 + images.length) % images.length
+            (currentSlide - 1 + slides.length) % slides.length
         ) {
             return slideDirection === 'left'
                 ? '-translate-x-full'
@@ -56,15 +75,15 @@ export default function LoginPage() {
     return (
         <div className="flex h-screen flex-col overflow-y-hidden bg-gradient-to-t from-black to-[#2C003E] md:flex-row">
             {/* Left side with carousel */}
-            <div className="hidden items-center justify-center lg:relative lg:flex lg:w-1/2">
+            <div className="hidden items-center justify-center lg:relative lg:flex lg:w-[55%]">
                 <div className="relative h-full w-full overflow-hidden">
-                    {images.map((image, index) => (
+                    {slides.map((slide, index) => (
                         <div
                             key={index}
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
                             <Image
-                                src={image}
+                                src={slide.image}
                                 alt={`Slide ${index + 1}`}
                                 layout="fill"
                                 objectFit="cover"
@@ -82,29 +101,28 @@ export default function LoginPage() {
                         className="z-50"
                     />
                 </div>
-                <div className="absolute bottom-10 z-10 space-y-4 p-6 text-white md:p-10">
-                    <h1 className="text-2xl font-bold leading-tight md:text-4xl">
-                        With WebWunder, You&apos;ll Never Need Another Agency.
+                <div className="font-archivo absolute bottom-10 z-10 space-y-4 p-6 text-white md:p-10">
+                    <h1 className="text-2xl font-bold leading-tight transition-opacity duration-500 md:text-[42px]">
+                        {slides[currentSlide].title}
                     </h1>
-                    <p className="text-white">
-                        WebWunder offers a comprehensive, all-in-one solution
-                        for your digital presence...
+                    <p className="text-sm text-white/50 transition-opacity duration-500">
+                        {slides[currentSlide].description}
                     </p>
                 </div>
                 <div className="absolute bottom-4 left-4 z-20 flex space-x-2">
-                    <p className="text-white/40">{currentImage + 1}</p>
+                    <p className="text-white/40">{currentSlide + 1}</p>
                     <p className="text-white">of </p>
-                    <p className="text-white">{images.length}</p>
+                    <p className="text-white">{slides.length}</p>
                 </div>
                 <div className="absolute bottom-4 right-4 z-20 flex space-x-2">
                     <button
-                        onClick={prevImage}
+                        onClick={prevSlide}
                         className="rounded-full border border-white/40 bg-transparent p-2 text-white hover:bg-white/50"
                     >
                         <ArrowLeft size={20} />
                     </button>
                     <button
-                        onClick={nextImage}
+                        onClick={nextSlide}
                         className="rounded-full border border-white bg-transparent p-2 text-white hover:bg-white/50"
                     >
                         <ArrowRight size={20} />
@@ -113,9 +131,9 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form (full width on smaller screens) */}
-            <div className="flex w-full items-center justify-center lg:w-1/2 lg:py-80 py-10">
-                <div className="mx-10 w-full space-y-4 rounded-2xl md:mx-0 md:max-w-md">
-                    <div className="space-y-2 text-left">
+            <div className="flex w-full items-center justify-center py-10 lg:w-[45%] lg:py-80">
+                <div className="mx-10 w-full space-y-4 rounded-2xl md:mx-0 md:max-w-lg">
+                    <div className="font-archivo space-y-2 text-left">
                         <h2 className="text-3xl font-bold text-white">
                             Welcome back
                         </h2>
@@ -130,9 +148,9 @@ export default function LoginPage() {
                         </p>
                     </div>
 
-                    <form className="space-y-2">
+                    <form className="font-inter space-y-2">
                         <div>
-                            <label className="mb-1 block text-sm text-white">
+                            <label className="mb-1 block text-sm font-bold text-white">
                                 Email Address
                             </label>
                             <div className="relative h-12 rounded-lg bg-black">
@@ -144,7 +162,7 @@ export default function LoginPage() {
                             </div>
                         </div>
                         <div>
-                            <label className="mb-1 block text-sm text-white">
+                            <label className="mb-1 block text-sm font-bold text-white">
                                 Password
                             </label>
                             <div className="relative h-12 rounded-lg bg-black">
@@ -160,19 +178,19 @@ export default function LoginPage() {
                         </div>
                     </form>
 
-                    <button className="w-full rounded-full bg-[#5D59E1] py-2 font-semibold text-white transition duration-300 hover:bg-[#4a47d1]">
+                    <button className="font-archivo w-full rounded-full bg-[#5D59E1] py-2 font-normal text-white transition duration-300 hover:bg-[#4a47d1]">
                         Sign In
                     </button>
 
-                    <div className="mt-4 text-center text-sm text-white">
+                    <div className="font-archivo mt-4 text-center text-sm text-white">
                         or sign in with
                     </div>
                     <div className="flex items-center justify-center">
                         <Socials />
                     </div>
 
-                    <div className="flex flex-col gap-12">
-                        <div className="flex justify-center gap-5 text-sm text-white">
+                    <div className="font-inter flex flex-col gap-12">
+                        <div className="font-archivo flex justify-center gap-5 text-sm text-white">
                             <span className="cursor-pointer">
                                 Privacy Policy
                             </span>
@@ -181,7 +199,7 @@ export default function LoginPage() {
                             </span>
                             <span className="cursor-pointer">Imprints</span>
                         </div>
-                        <div className="flex flex-wrap items-center justify-center gap-8 text-sm text-white">
+                        <div className="font-archivo flex flex-wrap items-center justify-center gap-8 text-sm text-white">
                             <span className="cursor-pointer">Benefits</span>
                             <span className="cursor-pointer">Your Website</span>
                             <span className="cursor-pointer">Prices</span>

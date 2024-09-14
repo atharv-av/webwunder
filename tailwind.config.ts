@@ -21,8 +21,8 @@ const config = {
         },
 
         extend: {
-            screens:{
-                '3xl': '2560px'
+            screens: {
+                '3xl': '2560px',
             },
             textShadow: {
                 DEFAULT: ' 1px 0px 7px rgba(0,0,0,1)',
@@ -94,6 +94,11 @@ const config = {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'bounce-slow': 'bounce 3s infinite',
+            },
+            fontFamily: {
+                'archivo': ['var(--font-archivo)', 'sans-serif'],
+                'dm-sans': ['var(--font-dm-sans)', 'sans-serif'],
+                'inter': ['var(--font-inter)', 'sans-serif']
             },
         },
     },

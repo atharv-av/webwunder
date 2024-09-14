@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { DM_Sans } from 'next/font/google'
-import "./cookie-scripts.scss"
+import { Archivo, DM_Sans, Inter } from 'next/font/google'
+import './cookie-scripts.scss'
 import '@/assets/styles/scss/globals.scss'
 import { Locale, i18n } from '@/i18n.config'
 import { NextIntlClientProvider, useMessages, useTranslations } from 'next-intl'
@@ -11,7 +11,20 @@ interface Props {
     children: React.ReactNode
 }
 
-const dmSans = DM_Sans({ subsets: ['latin'] })
+const archivo = Archivo({
+    subsets: ['latin'],
+    variable: '--font-archivo',
+})
+
+const dmSans = DM_Sans({
+    subsets: ['latin'],
+    variable: '--font-dm-sans',
+})
+
+const inter = Inter({
+    subsets: ['latin'],
+    variable: '--font-inter',
+})
 
 export function generateStaticParams() {
     return i18n.locales.map((locale) => ({ locale }))
@@ -59,7 +72,6 @@ export default function RootLayout({
                     />
                     <link rel="manifest" href="/site.webmanifest" />
 
-
                     {/* SEO */}
                     <link rel="canonical" href={host} />
                     {/* <title>{t('site-title') + ' - ' + t('site-desc')}</title> */}
@@ -80,15 +92,13 @@ export default function RootLayout({
                     {/* SEO */}
                 </head>
                 <body
-                    className={`${dmSans.className} antialiased`}
+                    className={`${dmSans.variable} ${archivo.variable} ${inter.variable} antialiased`}
                     suppressHydrationWarning={true}
                 >
                     {children}
                     <div id="menu-section" />
                     <div id="modal-section" />
                     <Toaster />
-
-                
                 </body>
             </NextIntlClientProvider>
         </html>
