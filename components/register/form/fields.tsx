@@ -7,7 +7,7 @@
 // import Link from 'next/link'
 // import { paths } from '@/paths'
 // import { useToast } from '@/components/ui/use-toast'
-// import SpinnerSVG from '@/assets/icons/spinner.svg'
+// import SpinnerSVG from '@/assets/ico ns/spinner.svg'
 
 // import { RegisterFieldsSchema, RegisterFieldsType } from '@/schema/fields'
 // import { registerUser } from '@/services/registration/actions'
@@ -178,6 +178,21 @@ import Link from 'next/link'
 import Socials from './social'
 import { Checkbox } from '@/components/ui/checkbox'
 import { useRouter } from 'next/navigation'
+import { RegisterFieldsSchema, RegisterFieldsType } from '@/schema/fields'
+import { useToast } from '@/components/ui/use-toast'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { registerUser } from '@/services/registration/actions'
+import { paths } from '@/paths'
+import SpinnerSVG from '@/assets/icons/spinner.svg'
+
+const DefFormData: RegisterFieldsType = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    // confirmPassword: '',
+}
 
 const slides = [
     {
@@ -245,6 +260,48 @@ export default function LoginPage() {
         }
     }
 
+    const [terms, setTerms] = useState(false)
+    const router = useRouter()
+
+    const { toast } = useToast()
+    const { reset, handleSubmit, formState, register, getValues } =
+        useForm<RegisterFieldsType>({
+            defaultValues: {
+                ...DefFormData,
+            },
+            resolver: zodResolver(RegisterFieldsSchema),
+        })
+
+    const submit: SubmitHandler<RegisterFieldsType> = async (payload) => {
+        if (!terms) {
+            toast({
+                title: 'Terms and Conditions ',
+                description: `You must consent to your details being stored and processed to fulfill your request`,
+                variant: 'destructive',
+            })
+            return
+        }
+
+        try {
+            // submit here
+            await registerUser(payload)
+            toast({
+                title: 'Registration Successfull!',
+                description: `${getValues('firstName')} ${getValues('lastName')} successfully registered!`,
+            })
+            router.push(paths.pages.login.href)
+            reset()
+        } catch (error: any) {
+            toast({
+                title: 'Registration Failed!',
+                description:
+                    error?.message ??
+                    'Something went wrong, please try again...',
+                variant: 'destructive',
+            })
+        }
+    }
+
     return (
         <div className="flex h-screen flex-col overflow-y-hidden bg-gradient-to-t from-black to-[#2C003E] md:flex-row">
             {/* Left side with carousel */}
@@ -274,7 +331,7 @@ export default function LoginPage() {
                         className="z-50"
                     />
                 </div>
-                <div className="font-archivo absolute bottom-10 z-10 space-y-4 p-6 text-white md:p-10">
+                <div className="absolute bottom-10 z-10 space-y-4 p-6 font-archivo text-white md:p-10">
                     <h1 className="text-2xl font-bold leading-tight transition-opacity duration-500 md:text-[42px]">
                         {slides[currentSlide].title}
                     </h1>
@@ -306,7 +363,7 @@ export default function LoginPage() {
             {/* Right side with form */}
             <div className="mx-auto flex w-full items-center justify-center py-10 lg:w-[45%] lg:py-80">
                 <div className="mx-10 w-full space-y-4 rounded-2xl md:mx-0 md:max-w-lg">
-                    <div className="font-archivo space-y-2 text-left">
+                    <div className="space-y-2 text-left font-archivo">
                         <h2 className="text-3xl font-bold text-white">
                             Create an account
                         </h2>
@@ -321,7 +378,10 @@ export default function LoginPage() {
                         </p>
                     </div>
 
-                    <form className="font-inter space-y-2">
+                    <form
+                        onSubmit={handleSubmit(submit)}
+                        className="space-y-2 font-inter"
+                    >
                         <div>
                             <div className="mb-2 flex flex-row gap-3">
                                 <div className="w-1/2">
@@ -330,10 +390,17 @@ export default function LoginPage() {
                                     </label>
                                     <div className="relative h-12 rounded-lg bg-black">
                                         <input
+                                            {...register('firstName')}
                                             type="text"
                                             className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
                                             placeholder="Enter your first name"
                                         />
+                                        {/* <p className="ps-4 text-destructive">
+                                            {
+                                                formState.errors.firstName
+                                                    ?.message
+                                            }
+                                        </p> */}
                                     </div>
                                 </div>
                                 <div className="w-1/2">
@@ -342,22 +409,32 @@ export default function LoginPage() {
                                     </label>
                                     <div className="relative h-12 rounded-lg bg-black">
                                         <input
+                                            {...register('lastName')}
                                             type="text"
                                             className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
                                             placeholder="Enter your last name"
                                         />
+                                        {/* <p className="ps-4 text-destructive">
+                                            {formState.errors.lastName?.message}
+                                        </p> */}
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div>
                             <label className="mb-1 block text-sm font-bold text-white">
                                 Email Address
                             </label>
                             <div className="relative h-12 rounded-lg bg-black">
                                 <input
+                                    {...register('email')}
                                     type="email"
                                     className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
                                     placeholder="Enter your email"
                                 />
+                                {/* <p className="ps-4 text-destructive">
+                                    {formState.errors.email?.message}
+                                </p> */}
                             </div>
                         </div>
                         <div>
@@ -366,51 +443,72 @@ export default function LoginPage() {
                             </label>
                             <div className="relative h-12 rounded-lg bg-black">
                                 <input
+                                    {...register('password')}
                                     type="password"
                                     className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
                                     placeholder="Enter your password"
                                 />
+                                <p className="ps-4 text-destructive">
+                                    {formState.errors.password?.message}
+                                </p>
                             </div>
                         </div>
-                        <div className="flex items-center space-x-2">
-                            <Checkbox id="terms" />
+                        <div>
+                            <label className="mb-1 block text-sm font-bold text-white">
+                                Confirm Password
+                            </label>
+                            <div className="relative h-12 rounded-lg bg-black">
+                                <input
+                                    {...register('confirmPassword')}
+                                    type="password"
+                                    className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
+                                    placeholder="Confirm your password"
+                                />
+                                </div>
+                                <p className="ps-4 text-destructive">
+                                    {
+                                        formState.errors.confirmPassword
+                                            ?.message
+                                    }
+                                </p>
+                        </div>
+
+                        <div className="mt-2 flex items-center space-x-3">
+                            <Checkbox
+                                checked={terms}
+                                onCheckedChange={(e) =>
+                                    setTerms((e ?? false) as boolean)
+                                }
+                                id="terms"
+                            />
                             <label
                                 htmlFor="terms"
-                                className="font-dm-sans text-sm font-normal leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                className="text-sm text-white/70"
                             >
-                                I agree to the terms and conditions.
+                                I agree to the{' '}
+                                <span className="text-[#5D59E1]">
+                                    Terms of Service
+                                </span>{' '}
+                                and{' '}
+                                <span className="text-[#5D59E1]">
+                                    Privacy Policy
+                                </span>
                             </label>
                         </div>
+
+                        <button
+                            type="submit"
+                            className="w-full rounded-lg bg-[#5D59E1] py-2 px-4 text-white hover:bg-blue-700"
+                        >
+                            {formState.isSubmitting ? (
+                                <div className="">Signing Up...</div>
+                            ) : (
+                                'Create account'
+                            )}
+                        </button>
                     </form>
 
-                    <button className="font-archivo w-full rounded-full bg-[#5D59E1] py-2 font-normal text-white transition duration-300 hover:bg-[#4a47d1]">
-                        Sign Up
-                    </button>
-
-                    <div className="font-archivo mt-4 text-center text-sm text-white">
-                        or sign up with
-                    </div>
-                    <div className="flex items-center justify-center">
-                        <Socials />
-                    </div>
-                    <div className="font-inter flex flex-col gap-12">
-                        <div className="font-archivo flex justify-center gap-5 text-sm text-white">
-                            <span className="cursor-pointer">
-                                Privacy Policy
-                            </span>
-                            <span className="cursor-pointer">
-                                Terms & Conditions
-                            </span>
-                            <span className="cursor-pointer">Imprints</span>
-                        </div>
-                        <div className="font-archivo flex flex-wrap items-center justify-center gap-8 text-sm text-white">
-                            <span className="cursor-pointer">Benefits</span>
-                            <span className="cursor-pointer">Your Website</span>
-                            <span className="cursor-pointer">Prices</span>
-                            <span className="cursor-pointer">FAQs</span>
-                            <span className="cursor-pointer">Contact</span>
-                        </div>
-                    </div>
+                    <Socials />
                 </div>
             </div>
         </div>

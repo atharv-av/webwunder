@@ -11,7 +11,7 @@ export const RegisterFieldsSchema = z
         password: z.string().min(8, {
             message: 'Password must be at least 8 characters',
         }),
-        confirmPassword: z.string(),
+        confirmPassword: z.string().optional() ,
         email: z.string().email({
             message: 'Must be a valid email address',
         }),
