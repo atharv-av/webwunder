@@ -1,56 +1,140 @@
-import React from 'react';
-import Link from 'next/link';
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import Logo from '@/components/common/logo';
-import { paths } from '@/paths';
+'use client'
 
-const SidebarMenu = () => {
-  return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline" size="icon" className="lg:hidden">
-          <Menu className="h-[1.2rem] w-[1.2rem]" />
-          <span className="sr-only">Toggle menu</span>
-        </Button>
-      </SheetTrigger>
-      <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-black">
-        <SheetHeader>
-          <SheetTitle>
-            <Logo />
-          </SheetTitle>
-        </SheetHeader>
-        <div className="mt-8 flex flex-col h-full">
-          <nav className="flex-grow">
-            <ul className="space-y-4 px-4 font-extrabold">
-              {Object.entries(paths.menu.main).map(([key, value]) => (
-                <li key={value.href}>
-                  <Link href={value.href} className="block py-2">
-                    {value.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="flex items-center justify-center gap-4">
-            {process.env.NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' && (
-              <Button size={"sm"} variant="outline" asChild>
-                <Link href={paths.pages.signUp.href}>
-                  Sign up
-                </Link>
-              </Button>
-            )}
-            <Button size={"sm"} asChild>
-              <Link href={paths.pages.bookCall.href} target="_blank">
-                Book a call
-              </Link>
-            </Button>
-          </div>
+import Link from 'next/link'
+import { useAnimate } from 'framer-motion'
+import Logo from '@/components/common/logo'
+import Menu02SVG from '@/assets/icons/menu-02.svg'
+
+import XCloseSVG from '@/assets/icons/x-close.svg'
+import { useEffect, useState } from 'react'
+import { paths } from '@/paths'
+import { createPortal } from 'react-dom'
+import { Button } from '@/components/ui/button'
+
+function useAnimation(isShown: boolean, menuSection: HTMLElement | null) {
+    const [scope, animate] = useAnimate()
+
+    useEffect(() => {
+        const sequence: Parameters<typeof animate>[0] = isShown
+            ? [
+                  [
+                      'div.menu-backdrop',
+                      { transform: 'translateY(0)' },
+                      { duration: 0 },
+                  ],
+                  [
+                      'div.menu-list',
+                      { transform: 'translateY(0)' },
+                      { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.3 },
+                  ],
+                  // [
+                  //     "li",
+                  //     { transform: "scale(1)", opacity: 1, },
+                  //     { delay: stagger(0.05), },
+                  // ]
+              ]
+            : [
+                  // [
+                  //     "li",
+                  //     { transform: "scale(0.5)", opacity: 0, },
+                  //     { delay: stagger(0.05, { from: "last" }) }
+                  // ],
+                  [
+                      'div.menu-list',
+                      { transform: 'translateY(-110%)' },
+                      { at: '-0.1' },
+                  ],
+                  [
+                      'div.menu-backdrop',
+                      { transform: 'translateY(-110%)' },
+                      { duration: 0.01 },
+                  ],
+              ]
+
+        if (menuSection) animate(sequence)
+    }, [isShown, menuSection, animate])
+    return scope
+}
+
+export default function SidebarMenu() {
+    const [menuSection, setMenuSection] = useState<HTMLElement | null>(null)
+    const [isShown, setShown] = useState(false)
+
+    const scope = useAnimation(isShown, menuSection)
+
+    useEffect(() => {
+        setMenuSection(document.getElementById('menu-section'))
+    }, [])
+    return (
+        <div className="flex cursor-pointer p-0 pe-0 lg:hidden">
+            <div className="p-2" onClick={() => setShown(true)}>
+                <div className="rounded-lg border bg-darkbtn p-1">
+                    <Menu02SVG className="text-3xl text-darkbtn-foreground" />
+                </div>
+            </div>
+            {menuSection
+                ? createPortal(
+                      <div className="menu relative z-30">
+                          <div className="fixed top-0 w-full" ref={scope}>
+                              <div
+                                  onClick={() => setShown(false)}
+                                  className={`menu-backdrop absolute right-0 top-0 h-dvh w-screen -translate-y-[110%] bg-transparent opacity-0 ${isShown ? 'translate-x-full' : ''}`}
+                              ></div>
+                              <div
+                                  className={`menu-list absolute right-0 top-0 flex w-full -translate-y-[110%] flex-col overflow-y-auto bg-white p-2 shadow-xl`}
+                              >
+                                  <div className="mb-8 flex justify-between">
+                                      <Logo />
+                                      <XCloseSVG
+                                          onClick={() => setShown(false)}
+                                          className="m-2 cursor-pointer"
+                                      />
+                                  </div>
+                                  <ul className="space-y-4 px-4 font-extrabold">
+                                      {Object.entries(paths.menu.main).map(
+                                          ([key, value]) => (
+                                              <li
+                                                  key={value.href}
+                                                  onClick={() =>
+                                                      setShown(false)
+                                                  }
+                                              >
+                                                  <Link href={value.href}>
+                                                      {value.name}
+                                                  </Link>
+                                              </li>
+                                          ),
+                                      )}
+                                  </ul>
+                                  <div className="mx-4 mb-4 mt-12 grid grid-cols-2 gap-8">
+                                      {process.env
+                                          .NEXT_PUBLIC_DISABLE_SIGNUP  !== 'true' ? (
+                                          <Button
+                                              className="min-h-14 min-w-7 px-2"
+                                              variant={'dark'}
+                                          >
+                                              <Link
+                                                  href={paths.pages.signUp.href}
+                                              >
+                                                  Sign up
+                                              </Link>
+                                          </Button>
+                                      ) : null}
+                                      <Button className="min-h-14 min-w-7 bg-[#27DAB7]">
+                                          <Link
+                                              target="_blank"
+                                              href={paths.pages.bookCall.href}
+                                          >
+                                              Book a call
+                                          </Link>
+                                      </Button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>,
+                      menuSection,
+                  )
+                : null}
         </div>
-      </SheetContent>
-    </Sheet>
-  );
-};
-
-export default SidebarMenu;
+    )
+}

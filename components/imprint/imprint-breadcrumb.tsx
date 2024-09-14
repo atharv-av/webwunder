@@ -14,7 +14,7 @@ const ImprintBreadcrumb = () => {
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink
-                        className="text-white hover:font-semibold hover:text-white"
+                        className="font-dm-sans text-base font-normal text-white hover:font-semibold hover:text-white"
                         href="/"
                     >
                         Home
@@ -22,7 +22,7 @@ const ImprintBreadcrumb = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbPage className="text-[#5D59E1]">
+                    <BreadcrumbPage className="font-dm-sans text-base font-normal text-[#5D59E1]">
                         Imprint
                     </BreadcrumbPage>
                 </BreadcrumbItem>

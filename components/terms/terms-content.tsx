@@ -245,16 +245,16 @@ const TermsContent = () => {
             <div className="mx-auto max-w-4xl">
                 {termsData.map((term, index) => (
                     <div key={index} className="mb-12">
-                        <h1 className="mb-2 text-2xl font-bold">
+                        <h1 className="mb-2 font-archivo font-bold text-white text-[25px]">
                             {term.title}
                         </h1>
                         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                             {term.sections.map((section) => (
                                 <div key={section.id}>
-                                    <h2 className="mb-2 text-2xl font-semibold">
+                                    <h2 className="mb-2 font-dm-sans text-white font-bold text-base">
                                         {section.id} {section.title}
                                     </h2>
-                                    <p className="text-base text-gray-500">
+                                    <p className="text-base font-dm-sans text-white/50 font-normal">
                                         {section.content}
                                     </p>
                                 </div>

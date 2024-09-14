@@ -83,13 +83,15 @@ const PolicySection: React.FC<policyProps> = ({
     isContact = false,
 }) => (
     <div className="mb-6">
-        <h2 className="mb-2 text-lg font-semibold text-white">{title}</h2>
+        <h2 className="mb-2 font-archivo text-[25px] font-bold text-white">
+            {title}
+        </h2>
         {isContact && typeof content === 'object' ? (
-            <div className="text-base">
-                <p className="text-gray-500">{content.text}</p>
-                <p className="mt-2 text-gray-500">{content.company}</p>
-                <p className="text-gray-500">{content.address}</p>
-                <p className="text-gray-500">
+            <div className="font-archivo text-base text-white/50">
+                <p className="text-white/50">{content.text}</p>
+                <p className="mt-2 text-white/50">{content.company}</p>
+                <p className="text-white/50">{content.address}</p>
+                <p className="text-white/50">
                     Email:{' '}
                     <a
                         href={`mailto:${content.email}`}
@@ -100,17 +102,14 @@ const PolicySection: React.FC<policyProps> = ({
                 </p>
             </div>
         ) : (
-            <p className="text-sm text-gray-500">{content}</p>
+            <p className="font-archivo text-base text-white/50">{content}</p>
         )}
     </div>
 )
 
 const PrivacyPolicyContent = () => {
     return (
-        <div className="p-8 text-gray-300">
-            <h1 className="mb-6 text-2xl font-bold text-white">
-                Privacy Policy
-            </h1>
+        <div className="px-20 py-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {policySections.map((section, index) => (
                     <PolicySection

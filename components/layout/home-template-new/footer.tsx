@@ -50,10 +50,10 @@ const Footer = () => {
                                     alt="WebWunder Logo"
                                 />
                             </Link>
-                            <p className="text-base text-gray-500 lg:text-end">
+                            <p className="text-gray-500 lg:text-end text-white/50 text-[18px] font-normal font-dm-sans">
                                 Winning Websites. Unshakable Support.
                             </p>
-                            <p className="mt-5 text-end text-base font-semibold text-white">
+                            <p className="mt-5 text-end font-bold text-white text-[18px] font-dm-sans">
                                 We Accept:
                             </p>
                             <div className="mt-3 grid grid-cols-4 gap-5">
@@ -72,7 +72,7 @@ const Footer = () => {
                             <p className="text-[16px] text-gray-500 invisible">
                                 Follow us
                             </p>
-                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white text-[18px] font-normal font-dm-sans lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                 <a
                                     target="_blank"
                                     href="#"
@@ -92,10 +92,10 @@ const Footer = () => {
                         </div>
 
                         <div className="row-span-2 lg:min-w-max">
-                            <p className="text-[16px] text-gray-500">
-                                Follow 
+                            <p className="text-[16px] text-white/50 font-normal font-dm-sans">
+                                Follow Us
                             </p>
-                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white text-[18px] font-normal font-dm-sans lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                 <a
                                     target="_blank"
                                     href="#"
@@ -125,7 +125,7 @@ const Footer = () => {
                             <p className="text-[16px] text-gray-500 invisible">
                                 Follow us
                             </p>
-                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white text-[18px] font-normal font-dm-sans lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                 <a
                                     target="_blank"
                                     href={paths.pages.pricing.href}
@@ -144,10 +144,10 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-start-1 row-span-2 ps-4 lg:min-w-max lg:ps-0">
-                            <p className="text-[16px] text-gray-500">
+                            <p className="text-[16px] text-white/50 font-normal font-dm-sans">
                                 Quick Connect
                             </p>
-                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                            <div className="mt-3 flex flex-col gap-x-4 gap-y-3 text-white text-[18px] font-normal font-dm-sans lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                 <a href="#">Get Started</a>
                                 {/* <a href={paths.pages.howItWorks.href}>
                                     {paths.pages.howItWorks.name}
@@ -167,10 +167,10 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="col-start-2">
-                            <p className="text-[16px] text-gray-500">
+                            <p className="text-[16px] text-white/50 font-normal font-dm-sans">
                                 Get in touch
                             </p>
-                            <div className="mt-3 flex flex-col gap-x-6 gap-y-3 text-white lg:mt-3 lg:flex-col lg:gap-y-3">
+                            <div className="mt-3 flex flex-col gap-x-6 gap-y-3 text-white text-[18px] font-normal font-dm-sans lg:mt-3 lg:flex-col lg:gap-y-3">
                                 <Link
                                     target="_blank"
                                     href={`mailto:${app.email}`}
@@ -199,12 +199,12 @@ const Footer = () => {
                     </div>
                     <div className="mb-6 mt-12 w-full border-b opacity-60"></div>
                     <div className="flex flex-row items-center justify-between">
-                        <div className="flex flex-row items-center gap-4 text-gray-500">
+                        <div className="flex flex-row items-center gap-4 text-white font-normal text-[18px] font-dm-sans">
                             <Link href="/privacy-policy">Privacy Policy</Link>
                             <Link href="/terms">Term & Conditions</Link>
                             <Link href="imprint">Imprint</Link>
                         </div>
-                        <p className="text-gray-500">
+                        <p className="text-white/50 font-normal text-[18px] font-dm-san">
                             Copyright © 2024.{' '}
                             <span className="text-[#5D59E1]">WebWunder</span>.
                             All Rights Reserved.

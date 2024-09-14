@@ -11,10 +11,10 @@ import {
 const TermsBreadcrumb = () => {
     return (
         <Breadcrumb>
-            <BreadcrumbList className="translate-x-1/2 relative right-24">
+            <BreadcrumbList className="relative right-24 translate-x-1/2">
                 <BreadcrumbItem>
                     <BreadcrumbLink
-                        className="text-white hover:font-semibold hover:text-white"
+                        className="font-dm-sans text-base font-normal text-white hover:font-semibold hover:text-white"
                         href="/"
                     >
                         Home
@@ -22,7 +22,7 @@ const TermsBreadcrumb = () => {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbPage className="text-[#5D59E1]">
+                    <BreadcrumbPage className="font-dm-sans text-base font-normal text-[#5D59E1]">
                         Terms and Conditions
                     </BreadcrumbPage>
                 </BreadcrumbItem>

@@ -15,7 +15,7 @@ export default function Menu() {
                     >
                         <Link
                             scroll
-                            className="text-base text-white"
+                            className="text-sm font-inter text-white"
                             href={value.href}
                         >
                             {value.name}
@@ -30,7 +30,7 @@ export default function Menu() {
                     asChild
                 >
                     <Link href={paths.pages.login.href}>
-                        <div>Log In</div>
+                        <div className='font-inter text-sm'>Log In</div>
                         <CircleUserRound />
                     </Link>
                 </Button>
@@ -42,7 +42,7 @@ export default function Menu() {
                     asChild
                 >
                     <Link href={paths.pages.login.href}>
-                        <p>Sign Up</p>
+                        <p className='font-inter text-sm'>Sign Up</p>
                         <MoveUpRight className="text-gray-500" />
                     </Link>
                 </Button>
