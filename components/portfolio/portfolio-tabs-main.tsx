@@ -15,13 +15,13 @@ const PortfolioMainContent = () => {
     return (
         <div className="flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-4">
-                <p className="rounded-full bg-[#5D59E1] px-3 py-1 text-center text-base font-semibold text-white">
+                <p className="rounded-full bg-[#5D59E1] px-4 py-1 text-center font-archivo text-sm font-normal text-white">
                     Our Portfolio
                 </p>
-                <p className="text-center text-5xl font-semibold text-white">
+                <p className="text-center font-archivo text-[45px] font-bold text-white">
                     See How We Build Brands That Thrive
                 </p>
-                <p className="w-1/2 text-center text-sm font-light text-gray-500">
+                <p className="w-3/5 text-center font-archivo text-base font-normal text-white/50">
                     Browse our portfolio and see how we deliver high-performance
                     websites tailored to boost your business. Each project
                     demonstrates our commitment to blending design, technology,
@@ -32,25 +32,25 @@ const PortfolioMainContent = () => {
             <Tabs defaultValue="webdesign" className="mx-auto">
                 <TabsList className="mx-auto grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
                     <TabsTrigger
-                        className="rounded-full p-4 data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="webdesign"
                     >
                         Web Design
                     </TabsTrigger>
                     <TabsTrigger
-                        className="rounded-full p-4 data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="branding"
                     >
                         Branding
                     </TabsTrigger>
                     <TabsTrigger
-                        className="rounded-full p-4 data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="socialmedia"
                     >
                         Social Media
                     </TabsTrigger>
                     <TabsTrigger
-                        className="rounded-full p-4 data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="graphicdesigning"
                     >
                         Graphic Designing
@@ -69,21 +69,23 @@ const PortfolioMainContent = () => {
                     <GraphicDesigningTab />
                 </TabsContent>
             </Tabs>
-            <div className="item-center flex flex-col gap-4 mb-16 ">
-                <Badge className="w-fit self-center rounded-full bg-[#5D59E1] p-2">
+            <div className="item-center mb-16 flex flex-col gap-4">
+                <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Get in Touch
                 </Badge>
-                <p className="text-center text-3xl font-bold text-white">
+                <p className="text-center font-archivo text-[45px] font-bold text-white">
                     Leave the Competition Behind!
                 </p>
-                <p className="w-[65%] self-center text-center text-base font-normal text-gray-500">
-                    Join WebWunder&apos;s subscription web design service, built by
-                    entrepreneurs for entrepreneurs, and watch your business
+                <p className="w-[65%] self-center text-center font-archivo text-base font-normal text-white/50">
+                    Join WebWunder&apos;s subscription web design service, built
+                    by entrepreneurs for entrepreneurs, and watch your business
                     soar.
                 </p>
-                <Button className="flex w-fit bg-white text-black items-center gap-7 self-center rounded-full px-6">
-                    <p>Book a call</p>
-                    <ArrowRight size={25} />
+                <Button className="flex w-fit items-center justify-center gap-7 self-center rounded-full bg-white px-6 text-[#24252A]">
+                    <p className="font-archivo text-[15px] font-normal">
+                        Book a call
+                    </p>
+                    <ArrowRight size={20} />
                 </Button>
             </div>
         </div>

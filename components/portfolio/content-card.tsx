@@ -35,7 +35,7 @@ const ContentCard: React.FC<PortfolioProps> = ({
 }) => {
     return (
         <Card
-            className={`${width} relative h-[80vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg`}
+            className={`${width} my-8 lg:my-0 relative h-[80vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg`}
             style={{
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
@@ -51,13 +51,13 @@ const ContentCard: React.FC<PortfolioProps> = ({
                             tags.map((tag, index) => (
                                 <Badge
                                     key={index}
-                                    className={`${tag.tagColor} p-2 text-[10px] font-bold text-black`}
+                                    className={`${tag.tagColor} p-2 font-inter text-[10px] font-bold text-black`}
                                 >
                                     {tag.tagName}
                                 </Badge>
                             ))}
                     </div>
-                    <p className="z-10 text-3xl font-bold text-white">
+                    <p className="z-10 font-archivo text-[40px] font-bold text-white">
                         {title}
                     </p>
                     {isBtnVisible && (
@@ -66,7 +66,9 @@ const ContentCard: React.FC<PortfolioProps> = ({
                             href="#"
                         >
                             <Button className="flex flex-row gap-5 bg-transparent">
-                                <p className="text-white">View Project</p>
+                                <p className="font-archivo text-[15px] font-normal text-white">
+                                    View Project
+                                </p>
                                 <ArrowRight
                                     size={35}
                                     className="rounded-full bg-white p-1 text-black"

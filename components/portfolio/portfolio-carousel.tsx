@@ -21,7 +21,7 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, index }) => (
     <p 
-        className="text-lg w-fit font-semibold text-white px-4" 
+        className="text-[20px] w-fit font-bold font-archivo text-white px-4" 
         key={index}
     >
         {item}

@@ -3,27 +3,27 @@ import ContentCard from '../content-card'
 
 const tabItems = [
     {
-        width: 'lg:w-[30rem] w-full',
+        width: 'lg:w-[30rem] w-screen',
         img: '/images/portfolio/social-media/social1.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-full',
+        width: 'lg:w-[35rem] w-screen',
         img: '/images/portfolio/social-media/social2.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[65rem] w-full',
+        width: 'lg:w-[65rem] w-screen',
         img: '/images/portfolio/social-media/social3.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-full',
+        width: 'lg:w-[35rem] w-screen',
         img: '/images/portfolio/social-media/social4.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-full',
+        width: 'lg:w-[30rem] w-screen',
         img: '/images/portfolio/social-media/social5.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
