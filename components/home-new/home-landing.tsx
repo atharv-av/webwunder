@@ -4,6 +4,7 @@ import { Button } from '../ui/button'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Badge } from '../ui/badge'
 
 const HomeLanding = () => {
     return (
@@ -14,9 +15,9 @@ const HomeLanding = () => {
                     <Header />
                 </div>
                 <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-2 px-4 sm:bottom-32 sm:px-4 md:bottom-32 md:px-0 lg:bottom-48">
-                    <div className="rounded-full bg-[#5D59E1] px-5 py-2 font-archivo text-xs font-light text-white sm:text-sm">
+                    <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                         Rock-Solid Business Growth
-                    </div>
+                    </Badge>
                     <div>
                         <p className="text-center font-archivo text-3xl font-bold leading-tight text-white sm:text-4xl md:text-[42px]">
                             Winning Websites

@@ -14,21 +14,28 @@ const carouselItems: string[] = [
     'Brochure',
 ]
 
+interface CarouselProps {
+    bgColor: string
+    tiltAngle: string
+    carouselTextColor: string
+}
+
 interface CarouselItemProps {
     item: string
+    textColor: string
     index: number | string
 }
 
-const CarouselItem: React.FC<CarouselItemProps> = ({ item, index }) => (
+const CarouselItem: React.FC<CarouselItemProps> = ({ item, textColor, index }) => (
     <p
-        className="w-fit px-4 font-archivo text-[20px] font-bold text-[#171411]"
+        className={`w-fit px-4 font-archivo text-[20px] font-bold ${textColor}`}
         key={index}
     >
         {item}
     </p>
 )
 
-const FeaturesCarousel: React.FC = () => {
+const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carouselTextColor}) => {
     const [position, setPosition] = useState<number>(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
 
@@ -44,32 +51,33 @@ const FeaturesCarousel: React.FC = () => {
             })
         }
 
-        const intervalId = setInterval(animateCarousel, 16) // Faster interval
+        const intervalId = setInterval(animateCarousel, 16) // Faster interval - TODO fix carousel
 
         return () => clearInterval(intervalId)
     }, [])
 
     return (
         <div
-            className="relative bottom-8 z-10 h-16 bg-white"
-            style={{ transform: 'rotate(0.97deg)' }}
+            className="relative shadow-xl bottom-16 z-20 h-16 bg-transparent"
+            style={{ transform: `${tiltAngle}` }}
         >
             <div
                 ref={containerRef}
-                className="flex h-full w-fit flex-row items-center gap-20 whitespace-nowrap bg-[#CAFF00]"
+                className={`flex h-full w-fit flex-row items-center gap-20 whitespace-nowrap ${bgColor}`}
                 style={{
                     transform: `translateX(-${position}px)`,
                     transition: 'transform 0.03s linear',
                 }}
             >
                 {carouselItems.map((item, index) => (
-                    <CarouselItem key={index} item={item} index={index} />
+                    <CarouselItem key={index} item={item} index={index} textColor={carouselTextColor} />
                 ))}
                 {carouselItems.map((item, index) => (
                     <CarouselItem
                         key={`duplicate-${index}`}
                         item={item}
                         index={`duplicate-${index}`}
+                        textColor={carouselTextColor}
                     />
                 ))}
             </div>

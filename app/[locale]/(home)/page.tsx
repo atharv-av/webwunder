@@ -60,6 +60,9 @@ import BrandsCarousel from '@/components/home-new/brands-carousel'
 import FeaturesCarousel from '@/components/home-new/features-carousel'
 import HomeLanding from '@/components/home-new/home-landing'
 import WhyWebWunder from '@/components/home-new/why-webwunder'
+import AllInOne from '../../../components/home-new/all-in-one'
+import JoinUs from '@/components/home-new/join-us'
+import StayOnTop from '@/components/home-new/stay-on-top'
 
 export default function HomePage() {
     return (
@@ -67,7 +70,9 @@ export default function HomePage() {
             <HomeLanding />
             <BrandsCarousel />
             <WhyWebWunder />
-            <FeaturesCarousel />
+            <AllInOne />
+            <JoinUs />
+            <StayOnTop />
         </div>
     )
 }

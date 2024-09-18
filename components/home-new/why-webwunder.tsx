@@ -102,9 +102,18 @@ const WhyWebWunder = () => {
             </div>
 
             {/* Cards */}
-            <div className="flex flex-wrap justify-center lg:gap-4 gap-16">
+            <div
+                style={{
+                    backgroundImage:
+                        'url("/images/home/why-webwunder/why-webwunder-bg.png")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                }}
+                className="flex flex-wrap justify-center gap-16 lg:gap-4"
+            >
                 {/* First row - 2 items */}
-                <div className="flex w-full flex-wrap justify-center lg:gap-4 gap-16">
+                <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
                     {mainItems.slice(0, 2).map((item, index) => (
                         <MainCard
                             key={index}
@@ -117,7 +126,7 @@ const WhyWebWunder = () => {
                     ))}
                 </div>
                 {/* Second row - 3 items */}
-                <div className="flex w-full flex-wrap justify-center lg:gap-4 gap-16">
+                <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
                     {mainItems.slice(2).map((item, index) => (
                         <MainCard
                             key={index}

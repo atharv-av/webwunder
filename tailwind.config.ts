@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
 
 const config = {
     darkMode: ['class'],
@@ -78,6 +79,11 @@ const config = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             keyframes: {
+                scroll: {
+                    to: {
+                        transform: 'translate(calc(-50% - 0.5rem))',
+                    },
+                },
                 'accordion-down': {
                     from: { height: '0' },
                     to: { height: 'var(--radix-accordion-content-height)' },
@@ -91,18 +97,20 @@ const config = {
                 '4.5xl': ['40px', { lineHeight: '40px' }],
             },
             animation: {
+                scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'bounce-slow': 'bounce 3s infinite',
             },
             fontFamily: {
-                'archivo': ['var(--font-archivo)', 'sans-serif'],
+                archivo: ['var(--font-archivo)', 'sans-serif'],
                 'dm-sans': ['var(--font-dm-sans)', 'sans-serif'],
-                'inter': ['var(--font-inter)', 'sans-serif']
+                inter: ['var(--font-inter)', 'sans-serif'],
             },
         },
     },
     plugins: [
+        addVariablesForColors,
         require('tailwindcss-animate'),
         plugin(function ({ matchUtilities, theme }) {
             matchUtilities(
@@ -116,5 +124,16 @@ const config = {
         }),
     ],
 } satisfies Config
+
+function addVariablesForColors({ addBase, theme }: any) {
+    let allColors = flattenColorPalette(theme("colors"));
+    let newVars = Object.fromEntries(
+      Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+    );
+   
+    addBase({
+      ":root": newVars,
+    });
+  }
 
 export default config
