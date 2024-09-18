@@ -235,7 +235,7 @@ const JoinUs: React.FC = () => {
                             Get Your Website in <br /> Three Easy Steps
                         </p>
                         <p className="mb-5 mt-0 font-archivo text-base font-normal text-white/50">
-                            Hate meetings? Us too—that&apos;s why we've
+                            Hate meetings? Us too—that&apos;s why we&apos;ve
                             minimized them. In under an hour of your valuable
                             time, we help successful businesses become even more
                             successful. Here&apos;s how it works:
