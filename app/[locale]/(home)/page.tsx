@@ -63,6 +63,7 @@ import WhyWebWunder from '@/components/home-new/why-webwunder'
 import AllInOne from '../../../components/home-new/all-in-one'
 import JoinUs from '@/components/home-new/join-us'
 import StayOnTop from '@/components/home-new/stay-on-top'
+import PurchasePlans from '@/components/home-new/purchase-plans'
 
 export default function HomePage() {
     return (
@@ -73,6 +74,7 @@ export default function HomePage() {
             <AllInOne />
             <JoinUs />
             <StayOnTop />
+            <PurchasePlans />
         </div>
     )
 }
