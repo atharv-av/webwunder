@@ -109,7 +109,7 @@ const PurchasePlans: React.FC = () => {
         updateDisplayPlans()
     }, [currentIndex])
 
-    const handleNavClick = (index: number): void => {
+    const handleNavClick: any = (index: number): void => {
         setCurrentIndex(index)
     }
     return (
@@ -138,12 +138,12 @@ const PurchasePlans: React.FC = () => {
                     >
                         {displayPlans.map((plan, index) => (
                             <div
-                                key={index}
-                                className={`w-1/3 flex-shrink-0 px-2 flex items-center justify-center ${
-                                    index === 1
-                                        ? 'mt-[-30px]'
-                                        : ''
+                                className={`flex w-1/3 flex-shrink-0 items-center justify-center px-2 ${
+                                    index === 1 ? 'my-[-15px]' : 'my-auto'
                                 }`}
+                                style={{
+                                    height: index === 1 ? 'auto' : '1060px',
+                                }} // set a consistent height for other cards
                             >
                                 <div
                                     className={`h-full transform transition-all duration-300 ${
@@ -163,15 +163,15 @@ const PurchasePlans: React.FC = () => {
                 </div>
                 <div className="mt-8 flex justify-center space-x-2">
                     {plans.map((_, index) => (
-                        <Button
+                        <Button size="icon"
                             key={index}
-                            className={`h-1 w-16 rounded-full p-0 ${
+                            className={`h-2 w-20 mb-10 rounded-full p-0 cursor-pointer ${
                                 index === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'
                             }`}
                             onClick={() => handleNavClick(index)}
-                        />
+                        ></Button>
                     ))}
                 </div>
             </div>
