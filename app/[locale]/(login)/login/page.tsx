@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 }
 
 export default async function LoginPage() {
-    console.log('RENDERING LOGIN PAGE')
+    // console.log('RENDERING LOGIN PAGE')
     return (
         <div className="">
-            <LoginForm  />
+            <LoginForm />
         </div>
     )
 }

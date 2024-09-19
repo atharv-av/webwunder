@@ -200,7 +200,7 @@ const slides = [
     },
 ]
 
-export default function LoginPage() {
+export default function SignupPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [sliding, setSliding] = useState(false)
     const [slideDirection, setSlideDirection] = useState('')
@@ -246,131 +246,125 @@ export default function LoginPage() {
     }
 
     return (
-        <div className="flex h-screen flex-col overflow-y-hidden bg-gradient-to-t from-black to-[#2C003E] md:flex-row">
+        <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
             {/* Left side with carousel */}
-            <div className="hidden items-center justify-center lg:relative lg:flex lg:w-[55%]">
-                <div className="relative h-full w-full overflow-hidden">
+            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
+                <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
                             key={index}
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
-                            <Image
-                                src={slide.image}
-                                alt={`Slide ${index + 1}`}
-                                layout="fill"
-                                objectFit="cover"
-                                className="absolute z-0"
-                            />
+                            <div className="h-full w-full p-4">
+                                <Image
+                                    className="rounded-xl object-cover"
+                                    src={slide.image}
+                                    alt={`Slide ${index + 1}`}
+                                    width={1000} // Set specific width and height instead of layout fill
+                                    height={600}
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>
-                <div className="absolute inset-0 z-10 space-y-4 p-6 text-white md:p-10">
+                <div className="absolute left-4 top-4 z-10 hidden px-6 py-8 lg:block">
                     <Image
                         src={'/assets/webwunder-logo.png'}
                         alt="WebWunder Logo"
-                        width={300}
-                        height={120}
-                        className="z-50"
+                        width={342}
+                        height={60}
                     />
                 </div>
-                <div className="font-archivo absolute bottom-10 z-10 space-y-4 p-6 text-white md:p-10">
-                    <h1 className="text-2xl font-bold leading-tight transition-opacity duration-500 md:text-[42px]">
+                <div className="absolute inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 px-10 text-white">
+                    <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl">
                         {slides[currentSlide].title}
                     </h1>
-                    <p className="text-sm text-white/50 transition-opacity duration-500">
+                    <p className="text-sm text-white/70 lg:w-4/5">
                         {slides[currentSlide].description}
                     </p>
-                </div>
-                <div className="absolute bottom-4 left-4 z-20 flex space-x-2">
-                    <p className="text-white/40">{currentSlide + 1}</p>
-                    <p className="text-white">of </p>
-                    <p className="text-white">{slides.length}</p>
-                </div>
-                <div className="absolute bottom-4 right-4 z-20 flex space-x-2">
-                    <button
-                        onClick={prevSlide}
-                        className="rounded-full border border-white/40 bg-transparent p-2 text-white hover:bg-white/50"
-                    >
-                        <ArrowLeft size={20} />
-                    </button>
-                    <button
-                        onClick={nextSlide}
-                        className="rounded-full border border-white bg-transparent p-2 text-white hover:bg-white/50"
-                    >
-                        <ArrowRight size={20} />
-                    </button>
+                    <div className="flex items-center justify-between pt-2">
+                        <div className="flex space-x-2 text-sm">
+                            <span className="text-white/40">
+                                {currentSlide + 1}
+                            </span>
+                            <span className="text-white">of</span>
+                            <span className="text-white">{slides.length}</span>
+                        </div>
+                        <div className="flex space-x-2">
+                            <button
+                                onClick={prevSlide}
+                                className="rounded-full border border-white/40 bg-transparent p-2 text-white hover:bg-white/20"
+                            >
+                                <ArrowLeft size={16} />
+                            </button>
+                            <button
+                                onClick={nextSlide}
+                                className="rounded-full border border-white bg-transparent p-2 text-white hover:bg-white/20"
+                            >
+                                <ArrowRight size={16} />
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             {/* Right side with form */}
-            <div className="mx-auto flex w-full items-center justify-center py-10 lg:w-[45%] lg:py-80">
-                <div className="mx-10 w-full space-y-4 rounded-2xl md:mx-0 md:max-w-lg">
-                    <div className="font-archivo space-y-2 text-left">
-                        <h2 className="text-3xl font-bold text-white">
+            <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:py-0 lg:scale-90">
+                <div className="w-full max-w-md space-y-3">
+                    <div className="space-y-2 text-left">
+                        <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
                             Create an account
                         </h2>
-                        <p className="text-sm text-white">
+                        <p className="font-archivo text-base font-normal text-white">
                             Already have an account?{' '}
-                            <Link
-                                href="/login"
-                                className="cursor-pointer text-[#5D59E1]"
-                            >
+                            <Link href="/login" className="text-[#5D59E1]">
                                 Sign In
                             </Link>
                         </p>
                     </div>
 
-                    <form className="font-inter space-y-2">
-                        <div>
-                            <div className="mb-2 flex flex-row gap-3">
-                                <div className="w-1/2">
-                                    <label className="mb-1 block text-sm font-bold text-white">
-                                        First Name
-                                    </label>
-                                    <div className="relative h-12 rounded-lg bg-black">
-                                        <input
-                                            type="text"
-                                            className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
-                                            placeholder="Enter your first name"
-                                        />
-                                    </div>
-                                </div>
-                                <div className="w-1/2">
-                                    <label className="mb-1 block text-sm font-bold text-white">
-                                        Last Name
-                                    </label>
-                                    <div className="relative h-12 rounded-lg bg-black">
-                                        <input
-                                            type="text"
-                                            className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
-                                            placeholder="Enter your last name"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <label className="mb-1 block text-sm font-bold text-white">
-                                Email Address
-                            </label>
-                            <div className="relative h-12 rounded-lg bg-black">
+                    <form className="space-y-4">
+                        <div className="mb-4 flex flex-row gap-3">
+                            <div className="w-1/2">
+                                <label className="mb-1 block font-inter text-sm font-bold text-white">
+                                    First Name
+                                </label>
                                 <input
-                                    type="email"
-                                    className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
-                                    placeholder="Enter your email"
+                                    type="text"
+                                    className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                    placeholder="Enter your first name"
+                                />
+                            </div>
+                            <div className="w-1/2">
+                                <label className="mb-1 block font-inter text-sm font-bold text-white">
+                                    Last Name
+                                </label>
+                                <input
+                                    type="text"
+                                    className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                    placeholder="Enter your last name"
                                 />
                             </div>
                         </div>
                         <div>
-                            <label className="mb-1 block text-sm font-bold text-white">
+                            <label className="mb-1 block font-inter text-sm font-bold text-white">
+                                Email Address
+                            </label>
+                            <input
+                                type="email"
+                                className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+                        <div>
+                            <label className="mb-1 block font-inter text-sm font-bold text-white">
                                 Password
                             </label>
-                            <div className="relative h-12 rounded-lg bg-black">
-                                <input
-                                    type="password"
-                                    className="absolute inset-0 w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-base text-gray-400 shadow-inner"
-                                    placeholder="Enter your password"
-                                />
-                            </div>
+                            <input
+                                type="password"
+                                className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                placeholder="Enter your password"
+                            />
                         </div>
                         <div className="flex items-center space-x-2">
                             <Checkbox id="terms" />
@@ -383,32 +377,45 @@ export default function LoginPage() {
                         </div>
                     </form>
 
-                    <button className="font-archivo w-full rounded-full bg-[#5D59E1] py-2 font-normal text-white transition duration-300 hover:bg-[#4a47d1]">
+                    <button className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]">
                         Sign Up
                     </button>
 
-                    <div className="font-archivo mt-4 text-center text-sm text-white">
-                        or sign up with
-                    </div>
-                    <div className="flex items-center justify-center">
+                    <div className="text-center">
+                        <p className="mb-4 font-archivo text-base font-normal text-white">
+                            or sign up with
+                        </p>
                         <Socials />
                     </div>
-                    <div className="font-inter flex flex-col gap-12">
-                        <div className="font-archivo flex justify-center gap-5 text-sm text-white">
-                            <span className="cursor-pointer">
+
+                    <div className="space-y-4 text-center text-xs text-white/70">
+                        <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
+                            <a href="#" className="hover:text-white">
                                 Privacy Policy
-                            </span>
-                            <span className="cursor-pointer">
+                            </a>
+                            <a href="#" className="hover:text-white">
                                 Terms & Conditions
-                            </span>
-                            <span className="cursor-pointer">Imprints</span>
+                            </a>
+                            <a href="#" className="hover:text-white">
+                                Imprints
+                            </a>
                         </div>
-                        <div className="font-archivo flex flex-wrap items-center justify-center gap-8 text-sm text-white">
-                            <span className="cursor-pointer">Benefits</span>
-                            <span className="cursor-pointer">Your Website</span>
-                            <span className="cursor-pointer">Prices</span>
-                            <span className="cursor-pointer">FAQs</span>
-                            <span className="cursor-pointer">Contact</span>
+                        <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
+                            <a href="#" className="hover:text-white">
+                                Benefits
+                            </a>
+                            <a href="#" className="hover:text-white">
+                                Your Website
+                            </a>
+                            <a href="#" className="hover:text-white">
+                                Prices
+                            </a>
+                            <a href="#" className="hover:text-white">
+                                FAQs
+                            </a>
+                            <a href="#" className="hover:text-white">
+                                Contact
+                            </a>
                         </div>
                     </div>
                 </div>
