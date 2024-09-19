@@ -65,6 +65,7 @@ import JoinUs from '@/components/home-new/join-us'
 import StayOnTop from '@/components/home-new/stay-on-top'
 import PurchasePlans from '@/components/home-new/purchase-plans'
 import ContactUs from '@/components/home-new/contact-us'
+import OurPortfolio from '@/components/home-new/our-portfolio'
 
 export default function HomePage() {
     return (
@@ -77,6 +78,7 @@ export default function HomePage() {
             <StayOnTop />
             <PurchasePlans />
             <ContactUs />
+            <OurPortfolio />
         </div>
     )
 }

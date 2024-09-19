@@ -95,7 +95,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 const ContactUs = () => {
     return (
         <div className="flex flex-col items-center gap-4 bg-black">
-            <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
+            <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Contact Us
             </Badge>
             <p className="font-archivo text-[45px] font-bold text-white">
@@ -104,6 +104,7 @@ const ContactUs = () => {
             <div className="flex flex-col items-center justify-center gap-3 lg:flex-row">
                 {contactCards.map((card, index) => (
                     <ContactCard
+                        key={index}
                         bgColor={card.bgColor}
                         tag={card.tag}
                         title={card.title}
