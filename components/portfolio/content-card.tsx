@@ -35,7 +35,7 @@ const ContentCard: React.FC<PortfolioProps> = ({
 }) => {
     return (
         <Card
-            className={`${width} my-8 lg:my-0 relative h-[80vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg`}
+            className={`${width} my-8 lg:my-0 relative lg:h-[80vh] h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg`}
             style={{
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
@@ -46,7 +46,7 @@ const ContentCard: React.FC<PortfolioProps> = ({
                 style={{ backgroundImage: `url(${img})` }}
             >
                 <div className="flex flex-col items-start gap-3 p-10">
-                    <div className="z-10 flex gap-1">
+                    <div className="z-10 flex flex-wrap gap-1">
                         {tags &&
                             tags.map((tag, index) => (
                                 <Badge

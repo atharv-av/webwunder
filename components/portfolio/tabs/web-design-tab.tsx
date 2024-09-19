@@ -3,7 +3,7 @@ import ContentCard from '../content-card'
 
 const tabItems = [
     {
-        width: 'lg:w-[35rem] w-screen',
+        width: 'lg:w-[35rem] w-4/5',
         img: '/images/portfolio/leapx.png',
         bgColor: '#6366f1',
         tags: [
@@ -20,7 +20,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-screen',
+        width: 'lg:w-[30rem] w-4/5',
         img: '/images/portfolio/skylumina.png',
         bgColor: '#FF6531',
         tags: [
@@ -35,7 +35,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-screen',
+        width: 'lg:w-[30rem] w-4/5',
         img: '/images/portfolio/praxiskattan.png',
         bgColor: '#0ECECE',
         tags: [
@@ -50,7 +50,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-screen',
+        width: 'lg:w-[35rem] w-4/5',
         img: '/images/portfolio/rentstate.png',
         bgColor: '#04CA76',
         tags: [
@@ -67,7 +67,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-screen',
+        width: 'lg:w-[35rem] w-4/5',
         img: '/images/portfolio/fitsync.png',
         bgColor: '#D0F651',
         tags: [
@@ -84,7 +84,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-screen',
+        width: 'lg:w-[30rem] w-4/5',
         img: '/images/portfolio/praxiskattan.png',
         bgColor: '#1D59F4',
         tags: [

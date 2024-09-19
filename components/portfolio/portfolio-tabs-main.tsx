@@ -15,9 +15,9 @@ const PortfolioMainContent = () => {
     return (
         <div className="flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-4">
-                <p className="rounded-full bg-[#5D59E1] px-4 py-1 text-center font-archivo text-sm font-normal text-white">
+            <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Our Portfolio
-                </p>
+                </Badge>
                 <p className="text-center font-archivo text-[45px] font-bold text-white">
                     See How We Build Brands That Thrive
                 </p>
@@ -73,7 +73,7 @@ const PortfolioMainContent = () => {
                 <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Get in Touch
                 </Badge>
-                <p className="text-center font-archivo text-[45px] font-bold text-white">
+                <p className="text-center font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                     Leave the Competition Behind!
                 </p>
                 <p className="w-[65%] self-center text-center font-archivo text-base font-normal text-white/50">
@@ -81,7 +81,7 @@ const PortfolioMainContent = () => {
                     by entrepreneurs for entrepreneurs, and watch your business
                     soar.
                 </p>
-                <Button className="flex w-fit items-center justify-center gap-7 self-center rounded-full bg-white px-6 text-[#24252A]">
+                <Button size="base" className="flex w-fit items-center justify-center gap-7 self-center rounded-full bg-white px-6 text-[#24252A]">
                     <p className="font-archivo text-[15px] font-normal">
                         Book a call
                     </p>

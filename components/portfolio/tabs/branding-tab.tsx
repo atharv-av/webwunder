@@ -3,7 +3,7 @@ import ContentCard from '../content-card'
 
 const tabItems = [
     {
-        width: 'lg:w-[35rem] w-screen',
+        width: 'lg:w-[35rem] w-4/5',
         img: '/images/portfolio/branding/monina.png',
         bgColor: '#E92A79',
         tags: [
@@ -18,7 +18,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-screen',
+        width: 'lg:w-[30rem] w-4/5',
         img: '/images/portfolio/branding/skylumina.png',
         bgColor: '#5B57DB',
         tags: [
@@ -33,7 +33,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-screen',
+        width: 'lg:w-[30rem] w-4/5',
         img: '/images/portfolio/branding/t-vent.png',
         bgColor: '#4359F0',
         tags: [
@@ -48,7 +48,7 @@ const tabItems = [
         bgProps: 'bg-contain bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-screen',
+        width: 'lg:w-[35rem] w-4/5',
         img: '/images/portfolio/branding/praxis-kattan.png',
         bgColor: '#04C472',
         tags: [
