@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Socials from './form/social'
+import Header from '../layout/home-template-new/header'
 
 const slides = [
     {
@@ -74,6 +75,9 @@ export default function LoginPage() {
 
     return (
         <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
+            <div className="block md:hidden">
+                <Header />
+            </div>
             {/* Left side with carousel */}
             <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
                 <div className="absolute inset-0">
@@ -103,7 +107,7 @@ export default function LoginPage() {
                         height={60}
                     />
                 </div>
-                <div className="absolute px-10 inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 text-white">
+                <div className="absolute inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 px-10 text-white">
                     <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl">
                         {slides[currentSlide].title}
                     </h1>
@@ -137,7 +141,7 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:py-10 lg:scale-90">
+            <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:scale-90 lg:py-10">
                 <div className="w-full max-w-md space-y-2">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">

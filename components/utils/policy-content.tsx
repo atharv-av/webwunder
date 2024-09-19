@@ -16,13 +16,15 @@ const PolicyContent: React.FC<PolicyProps> = ({
     return (
         <div className="bg-gradient-to-br from-[#100013] via-0% to-[#000000] p-6">
             <div className="relative h-[75vh] overflow-hidden rounded-t-lg bg-black">
-                <div className="absolute inset-0 bg-[url('/images/main-hero-2.png')] bg-cover bg-center opacity-30"></div>
+                <div className="absolute inset-0 lg:bg-[url('/images/main-hero-2.png')] bg-[url('/images/main-hero-small.png')] bg-cover bg-center lg:opacity-30"></div>
                 <div className="relative z-10">
                     <Header />
                 </div>
                 <div className="relative z-10 flex h-full flex-col items-center justify-center">
-                    <div className="flex items-center justify-center flex-col mb-40 text-center">
-                        <p className="text-5xl font-archivo text-center font-bold text-white max-w-[38.1rem]">{title}</p>
+                    <div className="lg:mb-40 mb-80 flex  flex-col items-center justify-center text-center">
+                        <p className="max-w-[38.1rem] text-center font-archivo text-[25px] font-bold text-white">
+                            {title}
+                        </p>
                         {breadcrumb}
                     </div>
                 </div>
@@ -30,7 +32,9 @@ const PolicyContent: React.FC<PolicyProps> = ({
             <div className="rounded-b-lg bg-gradient-to-r from-[#858585]/40 via-[#858585]/20 to-[#858585]/60 text-white">
                 {content}
             </div>
-            <Footer />
+            <div className="mt-8">
+                <Footer />
+            </div>
         </div>
     )
 }
