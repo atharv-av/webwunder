@@ -30,7 +30,7 @@ const galleryImages = [
 const OurPortfolio = () => {
     return (
         <div className="flex flex-col items-center gap-4 bg-black">
-            <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
+            <Badge className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Our Portfolio
             </Badge>
             <p className="text-center font-archivo text-[45px] font-bold text-white">

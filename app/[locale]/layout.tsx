@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Archivo, DM_Sans, Inter } from 'next/font/google'
+import { Archivo, DM_Sans, Inter, Figtree } from 'next/font/google'
 import './cookie-scripts.scss'
 import '@/assets/styles/scss/globals.scss'
 import { Locale, i18n } from '@/i18n.config'
@@ -24,6 +24,11 @@ const dmSans = DM_Sans({
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
+})
+
+const figtree = Figtree({
+    subsets: ['latin'],
+    variable: '--font-figtree',
 })
 
 export function generateStaticParams() {

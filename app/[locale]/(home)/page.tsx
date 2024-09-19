@@ -66,6 +66,10 @@ import StayOnTop from '@/components/home-new/stay-on-top'
 import PurchasePlans from '@/components/home-new/purchase-plans'
 import ContactUs from '@/components/home-new/contact-us'
 import OurPortfolio from '@/components/home-new/our-portfolio'
+import Reviews from '@/components/home-new/reviews'
+import FAQs from '@/components/home-new/faqs'
+import GetInTouch from '@/components/home-new/get-in-touch'
+import Footer from '@/components/layout/home-template-new/footer'
 
 export default function HomePage() {
     return (
@@ -79,6 +83,10 @@ export default function HomePage() {
             <PurchasePlans />
             <ContactUs />
             <OurPortfolio />
+            <Reviews />
+            <FAQs />
+            <GetInTouch />
+            <Footer />
         </div>
     )
 }

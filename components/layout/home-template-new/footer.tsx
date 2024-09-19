@@ -38,7 +38,7 @@ const paymentMethods = [
 const Footer = () => {
     const locale = useLocale() as Locale
     return (
-        <footer className="mt-6 px-20">
+        <footer className="px-20 pb-8 bg-black">
             <FadeIn>
                 <div className="container px-5">
                     <div className="grid grid-flow-dense grid-cols-2 gap-y-8 lg:flex lg:flex-row-reverse lg:justify-between">
