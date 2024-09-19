@@ -163,15 +163,15 @@ const PurchasePlans: React.FC = () => {
                 </div>
                 <div className="mt-8 flex justify-center space-x-2">
                     {plans.map((_, index) => (
-                        <Button size="icon"
+                        <button
                             key={index}
-                            className={`h-2 w-20 mb-10 rounded-full p-0 cursor-pointer ${
+                            className={`h-2 w-20 mb-10 rounded-full cursor-pointer ${
                                 index === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'
                             }`}
                             onClick={() => handleNavClick(index)}
-                        ></Button>
+                        ></button>
                     ))}
                 </div>
             </div>

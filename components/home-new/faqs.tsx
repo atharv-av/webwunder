@@ -12,39 +12,39 @@ import {
 const faqData = [
     {
         question:
-            "What makes WebWunder's websites different, and why should I choose WebWunder?",
-        answer: "At WebWunder, we're entrepreneurs like you, so we understand the challenges you face. Our custom, template-free websites are designed to drive sales, reduce costs, and save you time. With continuous AI optimizations and hassle-free updates, you'll never need another agency. We handle the heavy lifting so you can focus on scaling your business with confidence.",
+            'What makes WebWunder’s websites different, and why should I choose WebWunder?',
+        answer: 'At WebWunder, we’re entrepreneurs like you, so we understand the challenges you face. Our custom, template-free websites are designed to drive sales, reduce costs, and save you time. With continuous AI optimizations and hassle-free updates, you’ll never need another agency. We handle the heavy lifting so you can focus on scaling your business with confidence.',
     },
     {
         question:
             'Why is your website model subscription-based? Why not a one-time payment?',
-        answer: '[Content for this answer would go here]',
+        answer: 'A one-time project doesn’t cut it for long-term success. As entrepreneurs, we know your business needs ongoing support. That’s why we offer a subscription model, ensuring your website continues to perform exceptionally well over time, with regular updates and optimizations that keep you ahead.',
     },
     {
         question:
             'What is the Unlimited Design Plan, and why did you introduce it?',
-        answer: '[Content for this answer would go here]',
+        answer: 'Our Unlimited Design Plan was created for entrepreneurs who need constant, high-quality design work without the hassle of ongoing negotiations. This plan offers unlimited design requests, fast delivery, and full design ownership—all for a flat monthly fee. It’s designed to meet your needs, when you need them, eliminating the back-and-forth with agencies.',
     },
     {
         question: 'What does a free design refresh after 36 months mean?',
-        answer: '[Content for this answer would go here]',
+        answer: 'Every 36 months, we refresh your website’s design at no extra cost, keeping it modern and aligned with your evolving business.',
     },
     {
         question: 'How fast will I receive my website?',
-        answer: '[Content for this answer would go here]',
+        answer: 'Your website will typically be live within 4 to 6 weeks, depending on its complexity. Your total time commitment? Less than an hour.',
     },
     {
-        question: 'What happens if I want to cancel my subscription?',
-        answer: '[Content for this answer would go here]',
+        question: 'What happens if I want to stop my subscription?',
+        answer: 'If you cancel, your website will go offline since it’s leased through us. However, you can take full ownership by paying an exit fee of €3,000, €6,000, or €9,000 depending on your plan. This gives you full control, but ongoing updates and support won’t be available.',
     },
     {
         question: 'Is my website optimized for search engines?',
-        answer: '[Content for this answer would go here]',
+        answer: 'We’re not an SEO company, but we ensure your site is fully optimized using advanced AI tools. Built by entrepreneurs for entrepreneurs, your WebWunder site is designed to perform better in every way—including search rankings. As your business grows, so will your online visibility. For specialized off-page SEO or a targeted ad campaign, we have partners who can help you take it further.',
     },
     {
         question:
-            "I don't have any content, branding, or even a clear vision for my website. Can WebWunder help with that?",
-        answer: '[Content for this answer would go here]',
+            'I don’t have any content, branding, or even a clear vision for my website. Can WebWunder help with that?',
+        answer: 'Absolutely! WebWunder takes care of everything—from website copy and branding to complete corporate identity creation. We’ll craft your content and design a unique, cohesive brand that aligns with your business goals. For legal texts, we recommend consulting a lawyer to ensure everything is fully compliant with your specific needs.',
     },
 ]
 

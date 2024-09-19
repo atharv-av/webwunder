@@ -16,7 +16,7 @@ const GetInTouch = () => {
                     backgroundRepeat: 'no-repeat',
                 }}
             ></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 gap-3 text-center">
                 <Badge className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
                     Get in Touch
                 </Badge>
