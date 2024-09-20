@@ -115,7 +115,7 @@ export const InfiniteMovingCards = ({
                             className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)] bg-[#191919] rounded-xl"
                         ></div>
                         <span className="font-figtree relative z-20 text-[22px] font-semibold leading-[1.6] text-white mb-1">
-                            "{item.content}"
+                            &quot;{item.content}&quot;
                         </span>
                         <div className="relative z-20 mt-6 flex flex-col items-start">
                             <span className="text-sm font-normal leading-[1.6] font-figtree text-white/50 mb-3">

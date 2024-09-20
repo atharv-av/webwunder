@@ -51,7 +51,7 @@ const faqData = [
 const FAQs = () => {
     return (
         <div className="flex items-center justify-center bg-black">
-            <div className="flex w-4/5 items-start justify-between bg-black">
+            <div className="flex lg:flex-row flex-col lg:w-4/5 items-start justify-between bg-black">
                 <div className="mt-20 flex flex-col items-start justify-start gap-4">
                     <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                         Frequently Asked Questions

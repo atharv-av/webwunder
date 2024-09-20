@@ -138,6 +138,7 @@ const PurchasePlans: React.FC = () => {
                     >
                         {displayPlans.map((plan, index) => (
                             <div
+                                key={index}
                                 className={`flex w-1/3 flex-shrink-0 items-center justify-center px-2 ${
                                     index === 1 ? 'my-[-15px]' : 'my-auto'
                                 }`}
@@ -165,7 +166,7 @@ const PurchasePlans: React.FC = () => {
                     {plans.map((_, index) => (
                         <button
                             key={index}
-                            className={`h-2 w-20 mb-10 rounded-full cursor-pointer ${
+                            className={`mb-10 h-2 w-20 cursor-pointer rounded-full ${
                                 index === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'

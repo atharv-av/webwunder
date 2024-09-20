@@ -24,7 +24,7 @@ const GetInTouch = () => {
                     Leave the Competition Behind!
                 </h2>
                 <p className="max-w-2xl font-archivo text-base font-normal text-white md:text-[16px]">
-                    Join WebWunder's subscription web design service, built by
+                    Join WebWunder&apos;s subscription web design service, built by
                     entrepreneurs for entrepreneurs, and watch your business
                     soar.
                 </p>

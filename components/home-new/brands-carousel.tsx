@@ -47,7 +47,7 @@ const BrandsCarousel: React.FC = () => {
 
     return (
         <div
-            className="relative bottom-8 z-10 h-16 bg-[#5D59E1]"
+            className="relative bottom-8 z-10 h-20 bg-[#5D59E1]"
             style={{ transform: 'rotate(-1.55deg)' }}
         >
             <div
