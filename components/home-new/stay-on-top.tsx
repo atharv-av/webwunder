@@ -9,7 +9,7 @@ import FeaturesCarousel from './features-carousel'
 
 const StayOnTop = () => {
     return (
-        <div className="flex flex-col items-center gap-6 bg-black py-10 lg:py-20">
+        <div className="flex flex-col items-center gap-6 bg-black py-10 lg:pt-20 lg:pb-10">
             <div className="flex flex-col items-center gap-4">
                 <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     Stay On Top
@@ -31,7 +31,7 @@ const StayOnTop = () => {
             </div>
             <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
                 <div className="flex flex-col lg:ml-24">
-                    <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-2">
+                    <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-2 lg:ml-24">
                         <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                             Endless Creativity
                         </Badge>

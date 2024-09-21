@@ -29,24 +29,24 @@ const galleryImages = [
 
 const OurPortfolio = () => {
     return (
-        <div className="flex flex-col items-center gap-4 bg-black">
+        <div className="flex flex-col items-center gap-4 bg-black lg:px-0 px-4">
             <Badge className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Our Portfolio
             </Badge>
-            <p className="text-center font-archivo text-[45px] font-bold text-white">
+            <p className="text-center font-archivo lg:text-[45px] text-[25px] lg:w-full w-2/3 leading-none font-bold text-white">
                 Websites, Logos, Creatives & More
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 lg:w-3/5">
                 {tags.map((tag, index) => (
                     <div
                         key={index}
-                        className={`${tag.bgColor} rounded-full px-2 py-1 font-inter text-sm font-normal text-[#020202]`}
+                        className={`${tag.bgColor} rounded-full px-2 py-1 font-inter text-sm font-semibold text-[#020202]`}
                     >
                         {tag.tagName}
                     </div>
                 ))}
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-5 lg:grid-cols-3">
+            <div className="mt-8 grid grid-cols-2 lg:gap-5 gap-7 lg:grid-cols-3">
                 {galleryImages.map((image, index) => (
                     <Image
                         key={index}
@@ -57,17 +57,18 @@ const OurPortfolio = () => {
                     />
                 ))}
             </div>
-            <div className="flex w-4/5 flex-col items-start gap-2">
-                <p className="font-archivo text-[26px] font-bold text-white">
+            <div className="flex lg:w-4/5 flex-col lg:items-start items-center gap-2">
+                <p className="font-archivo lg:text-[26px] text-lg font-bold text-white lg:text-start text-center">
                     Built for Entrepreneurs Like You
                 </p>
-                <div className="flex justify-between">
-                    <p className="w-3/4 font-archivo text-base font-normal text-white/50">
+                <div className="lg:flex lg:justify-between">
+                    <p className="lg:w-3/4 w-full lg:text-start text-center font-archivo lg:text-base text-sm font-normal text-white/50">
                         Explore our portfolio of websites designed to do more
                         than just look great—they&apos;re strategically crafted
                         to drive success and deliver outstanding performance,
                         all while respecting your valuable time.
                     </p>
+                    <div className="flex items-center justify-center lg:my-0 my-5">
                     <Button
                         size={'base'}
                         className="flex items-center justify-between bg-white gap-3"
@@ -77,6 +78,7 @@ const OurPortfolio = () => {
                         </p>
                         <ArrowRight size={15} className="text-[#24252A]" />
                     </Button>
+                    </div>
                 </div>
             </div>
         </div>

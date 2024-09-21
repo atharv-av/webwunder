@@ -30,27 +30,27 @@ const PortfolioMainContent = () => {
                 </p>
             </div>
             <Tabs defaultValue="webdesign" className="mx-auto">
-                <TabsList className="mx-auto grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
+                <TabsList className="mx-auto mt-5 mb-10 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="webdesign"
                     >
                         Web Design
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="branding"
                     >
                         Branding
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="socialmedia"
                     >
                         Social Media
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-light data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="graphicdesigning"
                     >
                         Graphic Designing

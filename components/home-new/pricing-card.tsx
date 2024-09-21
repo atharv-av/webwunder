@@ -5,7 +5,7 @@ import { Check } from 'lucide-react'
 import Image from 'next/image'
 import { Badge } from '../ui/badge'
 
-interface PricingCardProps {
+export interface PricingCardProps {
     icon: string
     iconBg: string
     title: string
@@ -31,7 +31,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
     isCenter = false,
 }) => {
     return (
-        <Card className={`flex flex-col rounded-3xl justify-between border-[#D9D9D9] bg-[#191919] text-white ${isCenter ? 'h-[1060px]' : 'h-full'}`}>
+        <Card
+            className={`flex flex-col justify-between rounded-3xl lg:border lg:border-[#D9D9D9] border-2 border-white bg-[#191919] text-white ${isCenter ? 'h-[1060px] lg:border-2 lg:border-white' : 'h-full'}`}
+        >
             <div className="flex flex-col">
                 <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between">
@@ -46,7 +48,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                                     height={25}
                                 />
                             </div>
-                            <p className="font-inter text-2xl font-semibold text-white">
+                            <p className="font-inter lg:text-2xl text-base font-semibold text-white">
                                 {title}
                             </p>
                         </div>
@@ -57,23 +59,23 @@ const PricingCard: React.FC<PricingCardProps> = ({
                         )}
                     </div>
                 </CardHeader>
-                <CardContent className="space-y-4 flex-grow">
+                <CardContent className="flex-grow space-y-4">
                     <div className="leading-none">
-                        <div className="font-inter text-[70px] font-semibold text-white">
+                        <div className="font-inter lg:text-[70px] text-[45px] font-semibold text-white">
                             €{price}
                             <span className="font-inter text-base font-normal text-white">
                                 /month
                             </span>
                         </div>
-                        <div className="font-inter text-xl font-semibold text-white">
+                        <div className="font-inter lg:text-xl text-lg font-semibold text-white">
                             €{setupFee} Setup Fee
                         </div>
                     </div>
-                    <p className="font-inter text-base font-normal text-white/50">
+                    <p className="font-inter lg:text-base text-sm font-normal text-white/50">
                         {description}
                     </p>
                     <div className="space-y-2">
-                        <p className="font-inter text-base font-bold text-white">
+                        <p className="font-inter lg:text-base text-sm font-bold text-white">
                             What You Get:
                         </p>
                         <div className="space-y-2">
@@ -88,7 +90,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                                             className="font-extrabold text-black"
                                         />
                                     </div>
-                                    <span className="font-inter text-base font-normal leading-none text-white/50">
+                                    <span className="font-inter lg:my-0 my-1 lg:text-base text-[13px] font-normal leading-none text-white/50">
                                         {feature}
                                     </span>
                                 </div>
@@ -107,7 +109,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                 </Button>
                 <Button
                     size={'md'}
-                    className="w-full rounded-full bg-transparent font-inter text-base font-normal text-white/50"
+                    className="w-full hover:text-white rounded-full bg-transparent font-inter text-base font-normal text-white/50"
                 >
                     Cancel Anytime
                 </Button>

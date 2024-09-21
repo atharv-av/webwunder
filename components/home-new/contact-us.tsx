@@ -98,10 +98,10 @@ const ContactUs = () => {
             <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Contact Us
             </Badge>
-            <p className="font-archivo text-[45px] font-bold text-white">
+            <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                 Let&apos;s Get Started!
             </p>
-            <div className="flex flex-col items-center justify-center gap-3 lg:flex-row">
+            <div className="flex flex-col items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
                 {contactCards.map((card, index) => (
                     <ContactCard
                         key={index}

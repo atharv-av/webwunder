@@ -51,18 +51,18 @@ const faqData = [
 const FAQs = () => {
     return (
         <div className="flex items-center justify-center bg-black">
-            <div className="flex lg:flex-row flex-col lg:w-4/5 items-start justify-between bg-black">
-                <div className="mt-20 flex flex-col items-start justify-start gap-4">
+            <div className="flex lg:flex-row flex-col lg:w-4/5 lg:items-start items-center justify-between bg-black">
+                <div className="lg:mt-20 mt-10 flex flex-col lg:items-start items-center justify-start gap-4">
                     <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                         Frequently Asked Questions
                     </Badge>
-                    <p className="font-archivo text-[45px] font-bold text-white">
+                    <p className="font-archivo leading-none lg:leading-normal lg:text-[45px] text-[25px] font-bold text-white">
                         Got Questions?
                     </p>
-                    <p className="font-archivo text-[26px] font-bold text-white">
+                    <p className="font-archivo leading-none lg:leading-normal lg:text-[26px] text-lg font-bold text-white">
                         Here are some quick answers.
                     </p>
-                    <p className="font-archivo text-base font-normal text-white">
+                    <p className="font-archivo leading-none lg:leading-normal lg:text-base text-sm font-normal text-white">
                         Need more? Just reach out!
                     </p>
                     <Button
@@ -78,7 +78,7 @@ const FAQs = () => {
                 <Accordion
                     type="single"
                     collapsible
-                    className="mt-20 w-3/5 space-y-2"
+                    className="mt-20 lg:w-3/5 w-screen space-y-2"
                 >
                     {faqData.map((faq, index) => (
                         <AccordionItem
@@ -86,10 +86,10 @@ const FAQs = () => {
                             value={`item-${index + 1}`}
                             className="overflow-hidden rounded-lg border border-transparent data-[state=open]:border-white/20"
                         >
-                            <AccordionTrigger className="px-4 py-2 text-left font-archivo text-xl font-bold text-white hover:no-underline">
+                            <AccordionTrigger className="px-4 py-2 text-left w-4/5 font-archivo lg:text-xl text-base font-bold text-white hover:no-underline">
                                 {faq.question}
                             </AccordionTrigger>
-                            <AccordionContent className="px-4 py-2 font-archivo text-sm font-normal text-white/50">
+                            <AccordionContent className="px-4 py-2 w-4/5 font-archivo text-sm font-normal text-white/50">
                                 {faq.answer}
                             </AccordionContent>
                         </AccordionItem>

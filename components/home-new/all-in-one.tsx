@@ -18,7 +18,7 @@ const AllInOne = () => {
                 />
                 <div className="absolute inset-0 flex min-h-screen bg-[url('/images/home/all-in-one/all-in-one-small-bg-main.png')] bg-cover bg-center lg:bg-[url('/images/home/all-in-one/all-in-one-bg.png')]"></div>
                 <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-5 px-4 sm:bottom-32 sm:px-4 md:bottom-32 md:px-0 lg:bottom-48 lg:gap-2">
-                    <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white hover:text-black sm:text-sm">
+                    <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                         All-in-one Agency
                     </Badge>
 

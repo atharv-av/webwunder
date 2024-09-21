@@ -73,7 +73,7 @@ const WhyWebWunder = () => {
         <div className="my-10 flex flex-col items-center justify-center gap-6 px-4">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
-                <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white hover:text-black">
+                <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
                     Designed to Dominate
                 </Badge>
                 <div className="flex flex-col items-center leading-none">

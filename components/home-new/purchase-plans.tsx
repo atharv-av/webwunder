@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Badge } from '../ui/badge'
-import PricingCard from './pricing-card'
+import PricingCard, { PricingCardProps } from './pricing-card'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -99,29 +99,51 @@ const plans: PlanProps[] = [
 const PurchasePlans: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
     const [displayPlans, setDisplayPlans] = useState<PlanProps[]>([])
+    const [isMobile, setIsMobile] = useState<boolean>(false)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024)
+        }
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     useEffect(() => {
         const updateDisplayPlans = () => {
-            const wrappedPlans = [...plans, ...plans, ...plans]
-            const startIndex = currentIndex + plans.length
-            setDisplayPlans(wrappedPlans.slice(startIndex - 1, startIndex + 2))
+            if (isMobile) {
+                setDisplayPlans([plans[currentIndex]])
+            } else {
+                // For large screens, show 3 plans at a time
+                const startIndex = currentIndex * 3
+                setDisplayPlans(plans.slice(startIndex, startIndex + 3))
+            }
         }
         updateDisplayPlans()
-    }, [currentIndex])
+    }, [currentIndex, isMobile])
 
-    const handleNavClick: any = (index: number): void => {
-        setCurrentIndex(index)
+    const handleNavClick = (index: number): void => {
+        // Adjust index for large screens to handle pagination
+        if (isMobile) {
+            setCurrentIndex(index)
+        } else {
+            const maxIndex = Math.floor(plans.length / 3)
+            const newIndex = index >= maxIndex ? 0 : index
+            setCurrentIndex(newIndex)
+        }
     }
+
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-10 bg-black">
-            <div className="flex flex-col items-center">
+            <div className="flex w-5/6 flex-col items-center">
                 <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     Market-Conquering Business Solutions
                 </Badge>
-                <p className="mt-4 font-archivo text-[45px] font-bold text-white">
+                <p className="mt-4 font-archivo text-[25px] font-bold text-white lg:text-[45px]">
                     No Contracts, Just Results
                 </p>
-                <p className="w-[59%] text-center font-archivo text-base font-normal text-white/50">
+                <p className="text-center font-archivo text-sm font-normal text-white/50 lg:w-[59%] lg:text-base">
                     Experience the power of a WebWunder website, perfectly
                     tailored to your business. Choose from three subscriptions
                     or our Unlimited Design Package. 100% flexible and cancel
@@ -130,43 +152,63 @@ const PurchasePlans: React.FC = () => {
                     need another agency – and neither will your current one!
                 </p>
             </div>
-            <div className="relative mt-20 w-full max-w-[1200px]">
+            <div className="relative w-full max-w-[1200px] lg:mt-8">
                 <div className="overflow-visible">
                     <div
-                        className="flex items-stretch justify-center"
-                        style={{ minHeight: '1060px' }}
+                        className={`flex items-stretch justify-center ${isMobile ? 'flex-col' : ''}`}
+                        style={{ minHeight: isMobile ? '750px' : '1060px' }}
                     >
                         {displayPlans.map((plan, index) => (
                             <div
                                 key={index}
-                                className={`flex w-1/3 flex-shrink-0 items-center justify-center px-2 ${
-                                    index === 1 ? 'my-[-15px]' : 'my-auto'
-                                }`}
+                                className={`${isMobile ? 'w-full' : 'w-1/3'} flex-shrink-0 px-2`}
                                 style={{
-                                    height: index === 1 ? 'auto' : '1060px',
-                                }} // set a consistent height for other cards
+                                    height: isMobile
+                                        ? '950px'
+                                        : index === 1
+                                          ? '1250px'
+                                          : '1100px',
+                                    display: 'flex',
+                                    alignItems: 'center', // Vertically centers the card content
+                                }}
                             >
                                 <div
-                                    className={`h-full transform transition-all duration-300 ${
-                                        index === 1
+                                    className={`h-full transform p-3 transition-all duration-300 lg:p-0 ${
+                                        !isMobile && index === 1
                                             ? 'scale-105 shadow-lg'
-                                            : 'scale-95 opacity-75'
+                                            : isMobile
+                                              ? ''
+                                              : 'scale-95 opacity-75'
                                     }`}
+                                    style={{
+                                        margin:
+                                            index === 1 && !isMobile
+                                                ? 'auto'
+                                                : '', // Center the larger card
+                                        paddingTop:
+                                            index === 1 && !isMobile
+                                                ? '25px'
+                                                : '', // Distribute top padding evenly
+                                        paddingBottom:
+                                            index === 1 && !isMobile
+                                                ? '25px'
+                                                : '', // Distribute bottom padding evenly
+                                    }}
                                 >
                                     <PricingCard
                                         {...plan}
-                                        isCenter={index === 1}
+                                        isCenter={!isMobile && index === 1}
                                     />
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="mt-8 flex justify-center space-x-2">
+                <div className="flex mt-8 lg:-mt-24 items-center justify-center space-x-4">
                     {plans.map((_, index) => (
                         <button
                             key={index}
-                            className={`mb-10 h-2 w-20 cursor-pointer rounded-full ${
+                            className={`h-1 w-12 cursor-pointer rounded-full lg:w-20 ${
                                 index === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'
