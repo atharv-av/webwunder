@@ -42,7 +42,7 @@ export default function Menu() {
                     asChild
                 >
                     <Link href={paths.pages.login.href}>
-                        <p className='font-inter text-sm'>Sign Up</p>
+                        <p className='font-inter text-sm text-black'>Sign Up</p>
                         <MoveUpRight className="text-gray-500" />
                     </Link>
                 </Button>

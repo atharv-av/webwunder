@@ -171,13 +171,13 @@ const JoinUs: React.FC = () => {
                 </div>
 
                 <div className="flex w-full flex-col items-center justify-start lg:w-11/12">
-                    <div className="flex overflow-hidden">
+                    <div className="flex">
                         {[0, 1, 2].map((offset) => {
                             const index = (currentIndex + offset) % items.length
                             return (
                                 <Card
                                     key={items[index].id}
-                                    className={`lg:h-11/12 w-full flex-shrink-0 rounded-xl shadow-lg lg:w-[42%] ${offset === 0 ? '' : 'hidden lg:block'} ${offset === 2 ? 'lg:opacity-50' : ''} mr-4 border-none bg-[#191919] transition-all duration-300 ease-in-out`}
+                                    className={`lg:h-11/12 w-full flex-shrink-0 rounded-xl shadow-lg lg:w-[42%] ${offset === 0 ? '' : 'hidden lg:block'} mr-4 border-none bg-[#191919] transition-all duration-300 ease-in-out`}
                                 >
                                     <CardHeader>
                                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#29292F] p-3">

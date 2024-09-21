@@ -23,7 +23,7 @@ const Footer = () => {
     const locale = useLocale() as Locale
 
     return (
-        <footer className="bg-black px-6 py-8 lg:px-20 lg:pb-8">
+        <footer className="bg-black px-2 py-6 lg:px-20 lg:pb-8">
             <FadeIn>
                 <div className="container mx-auto">
                     {/* Mobile Layout */}
@@ -35,10 +35,10 @@ const Footer = () => {
                                 alt="WebWunder Logo"
                             />
                         </Link>
-                        <p className="mb-6 text-center text-sm text-white/50">
+                        <p className="mb-6 text-center text-base text-white/50">
                             Winning Websites. Unshakable Support.
                         </p>
-                        <p className="mb-4 text-sm font-bold text-white">
+                        <p className="mb-4 text-base font-bold text-white">
                             We Accept:
                         </p>
                         <div className="mb-8 grid grid-cols-8 gap-4">
@@ -55,18 +55,18 @@ const Footer = () => {
 
                         <div className="mb-8 flex w-full flex-col gap-6">
                             <div>
-                                <p className="mb-3 text-center text-sm text-white/50">
+                                <p className="mb-3 text-center text-base text-white/50">
                                     Get in touch
                                 </p>
-                                <div className="flex flex-col items-center justify-center gap-2 text-sm text-white">
+                                <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
                                     <Link href={`mailto:${app.email}`}>
-                                        Write an Email
+                                        Write an Email |
                                     </Link>
                                     <Link href={paths.pages.getInTouch.href}>
-                                        Send a Message
+                                        Send a Message |
                                     </Link>
                                     <Link href={paths.pages.bookCall.href}>
-                                        Book a call
+                                        Book a call |
                                     </Link>
                                     <Link href="https://wa.me/+4915114039455">
                                         Chat on WhatsApp
@@ -74,48 +74,48 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div>
-                                <p className="mb-3 text-center text-sm text-white/50">
+                                <p className="mb-3 text-center text-base text-white/50">
                                     Quick connect
                                 </p>
-                                <div className="grid grid-cols-2 place-items-center gap-2 space-x-0 text-sm text-white">
-                                    <Link href="/signup">Sign up</Link>
-                                    <Link href="#">Pricing</Link>
-                                    <Link href="/login">Sign in</Link>
-                                    <Link href="#">
-                                        Portfolio
-                                    </Link>
+                                <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
+                                    <Link href="/signup">Sign up |</Link>
+                                    <Link href="#">Pricing |</Link>
+                                    <Link href="/login">Sign in |</Link>
+                                    <Link href="#">Portfolio |</Link>
                                     <Link href={paths.pages.service.href}>
-                                        Services
+                                        Services |
                                     </Link>
-                                    <Link href="#">FAQs</Link>
-                                    <Link href={paths.pages.benefits.href}>Benifits</Link>
+                                    <Link href="#">FAQs |</Link>
+                                    <Link href={paths.pages.benefits.href}>
+                                        Benifits
+                                    </Link>
                                 </div>
                             </div>
                             <div>
-                                <p className="mb-3 text-center text-sm text-white/50">
+                                <p className="mb-3 text-center text-base text-white/50">
                                     Follow Us
                                 </p>
-                                <div className="grid grid-cols-2 place-items-center items-center justify-center gap-2 text-sm text-white">
-                                    <a href="#">Instagram</a>
-                                    <a href="#">Dribble</a>
-                                    <a href="#">Twitter</a>
-                                    <a href="#">Behance</a>
-                                    <a href="#">Facebook</a>
-                                    <a href="#">Pinterest</a>
+                                <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
+                                    <a href="#">Instagram |</a>
+                                    <a href="#">Dribble |</a>
+                                    <a href="#">Twitter |</a>
+                                    <a href="#">Behance |</a>
+                                    <a href="#">Facebook |</a>
+                                    <a href="#">Pinterest |</a>
                                     <a href="#">YouTube</a>
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex w-full flex-col gap-4 text-center text-xs text-white">
-                            <div className="flex flex-col gap-2">
-                                <p className="text-center text-sm text-white/50">
-                                    Legal Pages
-                                </p>
+                            <p className="text-center text-base text-white/50">
+                                Legal Pages
+                            </p>
+                            <div className="flex flex-wrap items-center justify-center gap-1">
                                 <Link href="/privacy-policy">
-                                    Privacy Policy
+                                    Privacy Policy |
                                 </Link>
-                                <Link href="/terms">Terms & Conditions</Link>
+                                <Link href="/terms">Terms & Conditions |</Link>
                                 <Link href="/imprint">Imprint</Link>
                             </div>
                             <p className="text-white/50">

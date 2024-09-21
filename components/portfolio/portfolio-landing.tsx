@@ -5,7 +5,7 @@ import { Badge } from '../ui/badge'
 const PortfolioLanding = () => {
     return (
         <div className="bg-white p-4">
-            <div className="relative min-h-screen bg-[url('/images/portfolio/portfolio-landing-img.png')] bg-cover bg-center">
+            <div className="relative rounded-2xl min-h-screen bg-[url('/images/portfolio/portfolio-landing-img.png')] bg-cover bg-center">
                 <div className="relative z-10">
                     <Header />
                 </div>
@@ -13,10 +13,11 @@ const PortfolioLanding = () => {
                     <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                         Designed to Perform
                     </Badge>
-                    <p className="text-center font-archivo text-[38px] font-bold leading-none text-white md:text-[48px] lg:w-3/4 lg:text-[58px]">
-                        Innovative Web Solutions that Deliver Results
+                    <p className="text-center font-archivo text-[25px] font-bold leading-none text-white lg:w-5/6 lg:text-[47px]">
+                        Entrepreneurial Insight and Precision, Transforming
+                        Businesses into Success Stories
                     </p>
-                    <p className="w-full text-center font-archivo text-sm font-normal text-white md:w-3/4 md:text-base lg:w-[58%]">
+                    <p className="w-full text-center font-archivo text-sm lg:text-base font-normal text-white md:w-3/4 lg:w-[58%]">
                         Browse our portfolio and see how we deliver
                         high-performance websites tailored to boost your
                         business. Each project demonstrates our commitment to

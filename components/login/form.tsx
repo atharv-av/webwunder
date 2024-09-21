@@ -79,7 +79,7 @@ export default function LoginPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
+            <div className="relative h-[45vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -142,12 +142,12 @@ export default function LoginPage() {
 
             {/* Right side with form */}
             <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:scale-90 lg:py-10">
-                <div className="w-full max-w-md space-y-2">
-                    <div className="space-y-2 text-left">
-                        <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
+                <div className="w-full max-w-md lg:space-y-2 space-y-5">
+                    <div className="lg:space-y-2 space-y-3.5 text-left">
+                        <h2 className="font-archivo lg:text-[45px] text-[35px] font-bold leading-none text-white">
                             Welcome back
                         </h2>
-                        <p className="font-archivo text-base font-normal text-white">
+                        <p className="font-archivo lg:text-base text-sm font-normal text-white">
                             New to WebWunder?{' '}
                             <Link href="/signup" className="text-[#5D59E1]">
                                 Sign Up
@@ -162,7 +162,7 @@ export default function LoginPage() {
                             </label>
                             <input
                                 type="email"
-                                className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                className="w-full rounded-lg border focus:outline-none border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
                                 placeholder="Enter your email address"
                             />
                         </div>
@@ -172,7 +172,7 @@ export default function LoginPage() {
                             </label>
                             <input
                                 type="password"
-                                className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                className="w-full rounded-lg border border-white focus:outline-none  bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
                                 placeholder="Enter your password"
                             />
                         </div>

@@ -35,7 +35,7 @@ const ContentCard: React.FC<PortfolioProps> = ({
 }) => {
     return (
         <Card
-            className={`${width} my-8 lg:my-0 relative lg:h-[80vh] h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg`}
+            className={`${width} relative my-8 h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[80vh]`}
             style={{
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
@@ -51,30 +51,28 @@ const ContentCard: React.FC<PortfolioProps> = ({
                             tags.map((tag, index) => (
                                 <Badge
                                     key={index}
-                                    className={`${tag.tagColor} p-2 font-inter text-[10px] font-bold text-black`}
+                                    className={`${tag.tagColor} p-1 font-inter text-[10px] font-bold text-black lg:p-2`}
                                 >
                                     {tag.tagName}
                                 </Badge>
                             ))}
                     </div>
-                    <p className="z-10 font-archivo text-[40px] font-bold text-white">
+                    <p className="z-10 font-archivo text-[30px] font-bold leading-none text-white lg:text-[40px]">
                         {title}
                     </p>
                     {isBtnVisible && (
-                        <Link
-                            className="z-10 rounded-full bg-[#24252A]"
-                            href="#"
-                        >
-                            <Button className="flex flex-row gap-5 bg-transparent">
-                                <p className="font-archivo text-[15px] font-normal text-white">
-                                    View Project
-                                </p>
+                        <button className="z-20 flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                            <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                                View Project
+                            </p>
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
                                 <ArrowRight
-                                    size={35}
-                                    className="rounded-full bg-white p-1 text-black"
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
                                 />
-                            </Button>
-                        </Link>
+                            </div>
+                        </button>
                     )}
                 </div>
             </div>

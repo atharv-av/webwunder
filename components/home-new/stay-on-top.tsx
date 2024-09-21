@@ -29,7 +29,37 @@ const StayOnTop = () => {
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
+            <div className="flex relative flex-col items-center justify-between gap-12 lg:flex-row">
+            <div className="flex">
+                        <Image
+                            className="absolute sm:right-24 sm:top-9 lg:bottom-96 lg:left-80   "
+                            src="/images/home/stay-on-top/icon-3.png"
+                            alt="Unlimited Design"
+                            width={75.56}
+                            height={79.07}
+                        />
+                        <Image
+                            className="absolute left-36 lg:bottom-16 lg:left-[44rem]"
+                            src="/images/home/stay-on-top/icon-5.png"
+                            alt="Unlimited Design"
+                            width={45}
+                            height={30}
+                        />
+                        <Image
+                            className="absolute right-16 top-60 lg:left-20 lg:top-96"
+                            src="/images/home/stay-on-top/icon-1.png"
+                            alt="Unlimited Design"
+                            width={76}
+                            height={79}
+                        />
+                        <Image
+                            className="absolute right-20 top-60 self-end lg:bottom-16 lg:left-[42rem]"
+                            src="/images/home/stay-on-top/icon-4.png"
+                            alt="Unlimited Design"
+                            width={32.26}
+                            height={33.76}
+                        />
+                    </div>
                 <div className="flex flex-col lg:ml-24">
                     <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-2 lg:ml-24">
                         <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
@@ -77,36 +107,7 @@ const StayOnTop = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex">
-                        <Image
-                            // className="relative sm:right-24 sm:top-12 lg:bottom-32 lg:left-16"
-                            src="/images/home/stay-on-top/icon-3.png"
-                            alt="Unlimited Design"
-                            width={75.56}
-                            height={79.07}
-                        />
-                        <Image
-                            // className="relative left-36 lg:bottom-16 lg:left-[65rem]"
-                            src="/images/home/stay-on-top/icon-5.png"
-                            alt="Unlimited Design"
-                            width={45}
-                            height={30}
-                        />
-                        <Image
-                            // className="relative right-16 top-60 lg:right-20 lg:top-8"
-                            src="/images/home/stay-on-top/icon-1.png"
-                            alt="Unlimited Design"
-                            width={76}
-                            height={79}
-                        />
-                        <Image
-                            // className="relative right-20 top-16 self-end lg:left-16"
-                            src="/images/home/stay-on-top/icon-4.png"
-                            alt="Unlimited Design"
-                            width={32.26}
-                            height={33.76}
-                        />
-                    </div>
+                   
                 </div>
 
                 {/* Show the image on all screen sizes but apply specific height for smaller screens */}

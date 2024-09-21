@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useAnimate } from 'framer-motion'
 import Logo from '@/components/common/logo'
 import Menu02SVG from '@/assets/icons/menu-02.svg'
+import HamburgerMenu from "@/assets/icons/hamburger.svg"
 
 import XCloseSVG from '@/assets/icons/x-close.svg'
 import { useEffect, useState } from 'react'
@@ -67,9 +68,9 @@ export default function SidebarMenu() {
     }, [])
     return (
         <div className="flex cursor-pointer p-0 pe-0 lg:hidden">
-            <div className="p-2" onClick={() => setShown(true)}>
-                <div className="rounded-lg border bg-darkbtn p-1">
-                    <Menu02SVG className="text-3xl text-darkbtn-foreground" />
+            <div className="p-2 relative top-2 left-6" onClick={() => setShown(true)}>
+                <div className="m-auto p-1">
+                    <HamburgerMenu className="text-3xl text-darkbtn-foreground" />
                 </div>
             </div>
             {menuSection

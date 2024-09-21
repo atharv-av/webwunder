@@ -252,7 +252,7 @@ export default function SignupPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
+            <div className="relative h-[45vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -314,12 +314,12 @@ export default function SignupPage() {
 
             {/* Right side with form */}
             <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:scale-90 lg:py-0">
-                <div className="w-full max-w-md space-y-3">
-                    <div className="space-y-2 text-left">
-                        <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
+                <div className="w-full max-w-md lg:space-y-3 space-y-5">
+                    <div className="lg:space-y-2 space-y-3.5 text-left">
+                        <h2 className="lg:text-start text-center font-archivo lg:text-[45px] text-[35px] font-bold leading-none text-white">
                             Create an account
                         </h2>
-                        <p className="font-archivo text-base font-normal text-white">
+                        <p className="lg:text-start text-center font-archivo lg:text-base text-sm font-normal text-white">
                             Already have an account?{' '}
                             <Link href="/login" className="text-[#5D59E1]">
                                 Sign In
@@ -335,7 +335,7 @@ export default function SignupPage() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                    className="outline-none border border-white w-full rounded-lg bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
                                     placeholder="Enter your first name"
                                 />
                             </div>
@@ -345,7 +345,7 @@ export default function SignupPage() {
                                 </label>
                                 <input
                                     type="text"
-                                    className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                    className="outline-none border border-white w-full rounded-lg bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
                                     placeholder="Enter your last name"
                                 />
                             </div>

@@ -10,18 +10,19 @@ import GraphicDesigningTab from './tabs/graphic-designing-tab'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import { ArrowRight } from 'lucide-react'
+import Link from 'next/link'
 
 const PortfolioMainContent = () => {
     return (
         <div className="flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-4">
-            <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
+                <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Our Portfolio
                 </Badge>
-                <p className="text-center font-archivo text-[45px] font-bold text-white">
+                <p className="w-2/3 text-center font-archivo text-[25px] font-bold leading-none text-white lg:w-auto lg:text-[45px]">
                     See How We Build Brands That Thrive
                 </p>
-                <p className="w-3/5 text-center font-archivo text-base font-normal text-white/50">
+                <p className="w-11/12 text-center font-archivo text-[13px] font-normal text-white/50 lg:w-3/5 lg:text-base">
                     Browse our portfolio and see how we deliver high-performance
                     websites tailored to boost your business. Each project
                     demonstrates our commitment to blending design, technology,
@@ -30,27 +31,27 @@ const PortfolioMainContent = () => {
                 </p>
             </div>
             <Tabs defaultValue="webdesign" className="mx-auto">
-                <TabsList className="mx-auto mt-5 mb-10 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
+                <TabsList className="mx-auto mb-10 mt-5 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
                         value="webdesign"
                     >
                         Web Design
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
                         value="branding"
                     >
                         Branding
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
                         value="socialmedia"
                     >
                         Social Media
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
                         value="graphicdesigning"
                     >
                         Graphic Designing
@@ -73,20 +74,29 @@ const PortfolioMainContent = () => {
                 <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Get in Touch
                 </Badge>
-                <p className="text-center font-archivo lg:text-[45px] text-[25px] font-bold text-white">
+                <p className="text-center font-archivo text-[25px] font-bold text-white lg:text-[45px]">
                     Leave the Competition Behind!
                 </p>
-                <p className="w-[65%] self-center text-center font-archivo text-base font-normal text-white/50">
+                <p className="lg:w-[65%] lg:px-0 px-1 self-center text-center font-archivo text-sm font-normal text-white/50 lg:text-base">
                     Join WebWunder&apos;s subscription web design service, built
                     by entrepreneurs for entrepreneurs, and watch your business
                     soar.
                 </p>
-                <Button size="base" className="flex w-fit items-center justify-center gap-7 self-center rounded-full bg-white px-6 text-[#24252A]">
-                    <p className="font-archivo text-[15px] font-normal">
-                        Book a call
-                    </p>
-                    <ArrowRight size={20} />
-                </Button>
+                <button className="w-fit self-center rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                    <Link
+                        href="#"
+                        className="flex flex-row items-center justify-between gap-4"
+                    >
+                        <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                            Book a call
+                        </p>
+                        <ArrowRight
+                            size={18}
+                            fontWeight={100}
+                            className="text-[#24252A]"
+                        />
+                    </Link>
+                </button>
             </div>
         </div>
     )

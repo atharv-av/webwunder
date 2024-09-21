@@ -58,7 +58,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
     return (
         <div
-            className={`flex h-80 w-fit flex-col items-start justify-between ${bgColor} ${width} rounded-xl p-8`}
+            className={`flex lg:h-80 h-fit w-fit flex-col items-start justify-between ${bgColor} ${width} rounded-xl p-8`}
         >
             <div className="flex flex-col gap-2">
                 <div className="h-fit w-fit rounded-full border border-white bg-transparent px-2 py-1 font-archivo text-sm font-normal text-white">
@@ -73,7 +73,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
             </div>
             <Button
                 size={'sm'}
-                className="gap-2 rounded-full bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
+                className="gap-2 rounded-full lg:mt-0 mt-4 bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
                 asChild
             >
                 <Link href={buttonTarget} className="">
@@ -101,7 +101,7 @@ const ContactUs = () => {
             <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                 Let&apos;s Get Started!
             </p>
-            <div className="flex flex-col items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
+            <div className="flex flex-col items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-6">
                 {contactCards.map((card, index) => (
                     <ContactCard
                         key={index}
