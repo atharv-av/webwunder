@@ -28,7 +28,7 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, textColor, index }) => (
     <p
-        className={`w-fit px-4 font-archivo text-[20px] font-bold ${textColor}`}
+        className={`w-fit px-4 font-archivo lg:text-xl text-sm font-bold ${textColor}`}
         key={index}
     >
         {item}
@@ -58,12 +58,12 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carousel
 
     return (
         <div
-            className="relative shadow-xl bottom-16 z-20 h-16 bg-transparent"
+            className="relative shadow-xl bottom-16 z-20 lg:h-20 h-16 bg-transparent"
             style={{ transform: `${tiltAngle}` }}
         >
             <div
                 ref={containerRef}
-                className={`flex h-full w-fit flex-row items-center gap-20 whitespace-nowrap ${bgColor}`}
+                className={`flex h-full w-fit flex-row items-center lg:gap-20 gap-10 whitespace-nowrap ${bgColor}`}
                 style={{
                     transform: `translateX(-${position}px)`,
                     transition: 'transform 0.03s linear',

@@ -10,28 +10,29 @@ import FeaturesCarousel from './features-carousel'
 const AllInOne = () => {
     return (
         <div className="bg-white">
-            <div className="relative mt-28 min-h-screen pt-10">
+            <div className="relative mt-28 min-h-screen lg:pt-10">
                 <FeaturesCarousel
                     bgColor="bg-[#CAFF00]"
                     tiltAngle="rotate(0.97deg)"
                     carouselTextColor="text-[#171411]"
                 />
-                <div className="absolute inset-0 flex min-h-screen bg-[url('/images/home/all-in-one/all-in-one-bg.png')] bg-cover bg-center"></div>
-                <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-2 px-4 sm:bottom-32 sm:px-4 md:bottom-32 md:px-0 lg:bottom-48">
+                <div className="absolute inset-0 flex min-h-screen bg-[url('/images/home/all-in-one/all-in-one-small-bg-main.png')] bg-cover bg-center lg:bg-[url('/images/home/all-in-one/all-in-one-bg.png')]"></div>
+                <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-5 px-4 sm:bottom-32 sm:px-4 md:bottom-32 md:px-0 lg:bottom-48 lg:gap-2">
                     <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white hover:text-black sm:text-sm">
                         All-in-one Agency
                     </Badge>
 
-                    <p className="w-3/5 text-center font-archivo text-3xl font-bold leading-tight text-black sm:text-4xl md:text-[42px]">
-                        With WebWunder, You’ll Never Need Another Agency. Ever.
+                    <p className="w-4/5 text-center font-archivo text-[25px] font-bold leading-none text-[#24252A] lg:w-3/5 lg:text-[45px]">
+                        With WebWunder, You&apos;ll Never Need Another Agency.
+                        Ever.
                     </p>
 
-                    <p className="w-[70%] text-center font-archivo text-sm font-bold text-black/50 sm:text-base">
+                    <p className="text-center font-archivo text-sm font-normal text-black/50 lg:w-[65%] lg:text-base">
                         Our comprehensive, all-in-one solution that addresses
                         every facet of your digital presence, from website
-                        design to marketing strategies, ensuring you’ll never
-                        need to rely on another agency again. We handle it all,
-                        so you can focus on growing your business with
+                        design to marketing strategies, ensuring you&apos;ll
+                        never need to rely on another agency again. We handle it
+                        all, so you can focus on growing your business with
                         confidence.
                     </p>
 
@@ -64,13 +65,15 @@ const AllInOne = () => {
                             </Link>
                         </Button>
                     </div>
-                    {/* <Image
-                    src="/images/home/all-in-one/all-in-one-main-2.png"
-                    alt="ALl in one agency"
-                    width={1000}
-                    height={100}
-                /> */}
-                    {/* TODO - Add image here */}
+                    {/* <div className="hidden lg:block">
+                        <Image
+                            src="/images/home/all-in-one/all-in-one-bg-main-1.png"
+                            alt="All in one agency"
+                            width={500}
+                            height={100}
+                        />
+                    </div> */}
+                    {/* Todo - Add animation in images */}
                 </div>
             </div>
         </div>

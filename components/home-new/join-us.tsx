@@ -35,8 +35,8 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
                 <div className="h-full border-l-2 border-dashed border-white"></div>
             )}
         </div>
-        <div className="pb-8 flex flex-col gap-2">
-            <p className="font-archivo text-base font-bold text-[#9DFF50] leading-none">
+        <div className="flex flex-col gap-2 pb-8">
+            <p className="font-archivo text-base font-bold leading-none text-[#9DFF50]">
                 Step {number}
             </p>
             <h3 className="font-archivo text-[25px] font-bold text-white">
@@ -109,7 +109,7 @@ const JoinUs: React.FC = () => {
     }
 
     return (
-        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-gradient-to-tr from-black to-black/80 p-8 text-white">
+        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-gradient-to-tr from-black to-black/80 p-8 pt-16 text-white">
             <div className="flex w-full max-w-6xl flex-col lg:flex-row">
                 <div className="mb-8 flex w-full flex-col items-center justify-center lg:w-1/2 lg:items-start">
                     <Badge className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
@@ -120,34 +120,35 @@ const JoinUs: React.FC = () => {
                         <br />
                         Clear and Simple.
                     </h1>
-                    <div className="flex items-center justify-start gap-3 sm:gap-5">
-                        <Button
-                            size={'base'}
-                            className="flex flex-row items-center justify-center gap-2 rounded-full bg-[#24252A] px-4 py-3 sm:gap-4 sm:p-4"
-                        >
-                            <p className="font-archivo text-xs font-normal text-white sm:text-sm">
+                    <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-2">
+                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                            <p className="ml-3 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 Explore Plans
                             </p>
-                            <ArrowRight
-                                size={20}
-                                className="sm:size-27 rounded-full bg-white p-1 text-black"
-                            />
-                        </Button>
-                        <Button
-                            size={'sm'}
-                            className="gap-2 rounded-full bg-white p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
-                            asChild
-                        >
-                            <Link href="#">
-                                <p className="font-inter text-xs sm:text-sm">
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                                <ArrowRight
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
+                                />
+                            </div>
+                        </button>
+
+                        <button className="w-fit rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                            <Link
+                                href="#"
+                                className="flex flex-row items-center justify-between gap-4"
+                            >
+                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
                                     Book a call
                                 </p>
                                 <ArrowRight
-                                    size={16}
-                                    className="font-light text-black"
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
                                 />
                             </Link>
-                        </Button>
+                        </button>
                     </div>
                     <div className="mt-12 hidden items-center gap-4 lg:flex">
                         <Button
@@ -176,7 +177,7 @@ const JoinUs: React.FC = () => {
                             return (
                                 <Card
                                     key={items[index].id}
-                                    className={`h-11/12 w-[42%] flex-shrink-0 rounded-xl shadow-lg ${offset === 2 ? 'opacity-50' : ''} mr-4 border-none bg-[#191919] transition-all duration-300 ease-in-out`}
+                                    className={`lg:h-11/12 w-full flex-shrink-0 rounded-xl shadow-lg lg:w-[42%] ${offset === 0 ? '' : 'hidden lg:block'} ${offset === 2 ? 'lg:opacity-50' : ''} mr-4 border-none bg-[#191919] transition-all duration-300 ease-in-out`}
                                 >
                                     <CardHeader>
                                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#29292F] p-3">
@@ -208,7 +209,7 @@ const JoinUs: React.FC = () => {
                                 <button
                                     key={index}
                                     onClick={() => goToSlide(index)}
-                                    className={`h-1 w-16 rounded-full ${
+                                    className={`h-1 w-10 rounded-full md:w-16 ${
                                         index === currentIndex
                                             ? 'bg-[#5D59E1]'
                                             : 'bg-gray-600'
@@ -217,17 +218,69 @@ const JoinUs: React.FC = () => {
                             ))}
                         </div>
                     </div>
+                    <div className="my-8 flex items-center gap-4 lg:hidden">
+                        <Button
+                            size="icon"
+                            variant="ghost"
+                            className="rounded-full bg-[#5D59E1] text-white"
+                            onClick={prevSlide}
+                        >
+                            <ChevronLeft size={24} />
+                        </Button>
+                        <Button
+                            size="icon"
+                            variant="ghost"
+                            className="rounded-full bg-[#5D59E1] text-white"
+                            onClick={nextSlide}
+                        >
+                            <ChevronRight size={24} />
+                        </Button>
+                    </div>
                 </div>
             </div>
-            <div className="flex w-full max-w-6xl flex-col items-center justify-between gap-20 lg:flex-row">
+            <div className="mt-5 flex w-full flex-col items-center justify-between gap-20 lg:flex-row">
+                <div className="flex flex-col items-center gap-4 lg:hidden">
+                    <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
+                        Three Steps
+                    </Badge>
+                    <p className="text-center font-archivo text-[25px] font-bold leading-none text-white">
+                        Get Your Website in <br /> Three Easy Steps
+                    </p>
+                    <p className="mb-5 mt-0 text-center font-archivo text-sm font-normal text-white/50">
+                        Hate meetings? Us too—that&apos;s why we&apos;ve
+                        minimized them. In under an hour of your valuable time,
+                        we help successful businesses become even more
+                        successful. Here&apos;s how it works:
+                    </p>
+                    <div className="flex max-w-xl flex-col items-start rounded-lg">
+                        <TimelineStep
+                            number={1}
+                            title="Book A Call"
+                            description="A quick 15-minute chat to understand your needs and pick the perfect plan."
+                            timeCommitment="15 minutes."
+                        />
+                        <TimelineStep
+                            number={2}
+                            title="Design & Content"
+                            description="Share your content ideas, or let us help craft them. We'll handle everything and send it to you for final approval."
+                            timeCommitment="15 minutes."
+                        />
+                        <TimelineStep
+                            number={3}
+                            title="Launch Your Site"
+                            description="We turn your vision into reality and get your website live, ready to dominate the market."
+                            timeCommitment="15 minutes."
+                        />
+                    </div>
+                </div>
                 <Image
                     src="/images/home/join-us/three-steps-bg.png"
                     alt="Three steps"
-                    width={400}
+                    width={600}
                     height={100}
                 />
                 <div className="flex flex-col items-center justify-center lg:items-start">
-                    <div className="flex w-3/4 flex-col gap-4">
+                    <div className="hidden w-3/4 flex-col gap-4 lg:flex">
                         <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                             Three Steps
                         </Badge>

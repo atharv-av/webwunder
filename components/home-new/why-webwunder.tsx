@@ -1,6 +1,7 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
 import { Badge } from '../ui/badge'
-import { Button } from '../ui/button'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import MainCard from './card-main'
@@ -9,6 +10,7 @@ const mainItems = [
     {
         cardWidth: 'lg:w-[700px] w-full',
         image: '/images/home/why-webwunder/why-webwunder-1.png',
+        smallImage: "/images/home/why-webwunder/why-webwunder-1-small.png",
         imgWidth: 700,
         title: 'Boost Revenue with Strategic, Conversion-Optimized Solutions',
         description:
@@ -28,7 +30,7 @@ const mainItems = [
         imgWidth: 350,
         title: 'All-Inclusive Services for Design, SEO, and Continuous Optimization',
         description:
-            'From design to SEO, content creation, and AI-driven updates, we take care of everything—so you don’t have to.',
+            "From design to SEO, content creation, and AI-driven updates, we take care of everything—so you don't have to.",
     },
     {
         cardWidth: 'lg:w-[350px] w-full',
@@ -49,10 +51,28 @@ const mainItems = [
 ]
 
 const WhyWebWunder = () => {
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsSmallScreen(window.innerWidth < 1024)
+        }
+
+        checkScreenSize()
+        window.addEventListener('resize', checkScreenSize)
+
+        return () => window.removeEventListener('resize', checkScreenSize)
+    }, [])
+
+    const handleSlideChange = (index: number) => {
+        setCurrentSlide(index)
+    }
+
     return (
-        <div className="mb-10 flex flex-col items-center justify-center gap-6 px-4">
+        <div className="my-10 flex flex-col items-center justify-center gap-6 px-4">
             {/* Heading */}
-            <div className="flex flex-col items-center gap-3 text-center">
+            <div className="flex flex-col items-center gap-4 text-center">
                 <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white hover:text-black">
                     Designed to Dominate
                 </Badge>
@@ -70,34 +90,34 @@ const WhyWebWunder = () => {
                 </p>
 
                 {/* Buttons */}
-                <div className="flex items-center justify-center gap-3 sm:gap-5">
-                    <Button
-                        size={'base'}
-                        className="flex flex-row items-center justify-center gap-2 rounded-full bg-[#24252A] px-4 py-3 sm:gap-4 sm:p-4"
-                    >
-                        <p className="font-archivo text-xs font-normal text-white sm:text-sm">
+                <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
+                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                        <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                             Explore Plans
                         </p>
-                        <ArrowRight
-                            size={20}
-                            className="sm:size-27 rounded-full bg-white p-1 text-black"
-                        />
-                    </Button>
-                    <Button
-                        size={'sm'}
-                        className="gap-2 rounded-full bg-white p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
-                        asChild
-                    >
-                        <Link className="border bg-[#E9EAE9]" href="#">
-                            <p className="font-inter text-xs sm:text-sm">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                            <ArrowRight
+                                size={18}
+                                fontWeight={100}
+                                className="text-[#24252A]"
+                            />
+                        </div>
+                    </button>
+                    <button className="w-fit rounded-full border border-[#E9EAE9] bg-[#FAFAFA] px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                        <Link
+                            href="#"
+                            className="flex flex-row items-center justify-between gap-4"
+                        >
+                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
                                 Book a call
                             </p>
                             <ArrowRight
-                                size={16}
-                                className="font-light text-black"
+                                size={18}
+                                fontWeight={100}
+                                className="text-[#24252A]"
                             />
                         </Link>
-                    </Button>
+                    </button>
                 </div>
             </div>
 
@@ -110,34 +130,78 @@ const WhyWebWunder = () => {
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                 }}
-                className="flex flex-wrap justify-center gap-16 lg:gap-4"
+                className="w-full"
             >
-                {/* First row - 2 items */}
-                <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
-                    {mainItems.slice(0, 2).map((item, index) => (
-                        <MainCard
-                            key={index}
-                            cardWidth={item.cardWidth}
-                            image={item.image}
-                            imgWidth={item.imgWidth}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    ))}
-                </div>
-                {/* Second row - 3 items */}
-                <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
-                    {mainItems.slice(2).map((item, index) => (
-                        <MainCard
-                            key={index}
-                            cardWidth={item.cardWidth}
-                            image={item.image}
-                            imgWidth={item.imgWidth}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    ))}
-                </div>
+                {isSmallScreen ? (
+                    <div className="relative">
+                        <div className="overflow-hidden">
+                            <div
+                                className="flex transition-transform duration-300 ease-in-out"
+                                style={{
+                                    transform: `translateX(-${currentSlide * 100}%)`,
+                                }}
+                            >
+                                {mainItems.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="w-full flex-shrink-0"
+                                    >
+                                        <MainCard
+                                            cardWidth="w-full"
+                                            image={item.image}
+                                            smallImage={item.smallImage}
+                                            imgWidth={item.imgWidth}
+                                            title={item.title}
+                                            description={item.description}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="mt-10 flex items-center justify-center gap-2">
+                            {mainItems.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => handleSlideChange(index)}
+                                    className={`h-1 w-16 rounded-full transition-colors ${
+                                        currentSlide === index
+                                            ? 'bg-[#5D59E1]'
+                                            : 'bg-[#D9D9D9]'
+                                    }`}
+                                ></button>
+                            ))}
+                        </div>
+                    </div>
+                ) : (
+                    <div className="flex flex-wrap justify-center gap-16 lg:gap-4">
+                        {/* First row - 2 items */}
+                        <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
+                            {mainItems.slice(0, 2).map((item, index) => (
+                                <MainCard
+                                    key={index}
+                                    cardWidth={item.cardWidth}
+                                    image={item.image}
+                                    imgWidth={item.imgWidth}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            ))}
+                        </div>
+                        {/* Second row - 3 items */}
+                        <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
+                            {mainItems.slice(2).map((item, index) => (
+                                <MainCard
+                                    key={index}
+                                    cardWidth={item.cardWidth}
+                                    image={item.image}
+                                    imgWidth={item.imgWidth}
+                                    title={item.title}
+                                    description={item.description}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </div>
     )
