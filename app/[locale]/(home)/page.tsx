@@ -57,7 +57,6 @@
 // }
 
 import BrandsCarousel from '@/components/home-new/brands-carousel'
-import FeaturesCarousel from '@/components/home-new/features-carousel'
 import HomeLanding from '@/components/home-new/home-landing'
 import WhyWebWunder from '@/components/home-new/why-webwunder'
 import AllInOne from '../../../components/home-new/all-in-one'

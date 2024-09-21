@@ -12,8 +12,8 @@ export const InfiniteMovingCards = ({
   className,
 }: {
   items: {
-    imageSrc: string; // Change this to reflect image source
-    altText: string;   // Alt text for accessibility
+    imageSrc: string;
+    altText: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -91,15 +91,15 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700"
+            className="lg:w-[350px] max-w-full relative rounded-2xl border border-b-0 flex-shrink-0 border-slate-700"
             key={idx}
           >
             <Image
-              src={item.imageSrc} // Use image source here
-              alt={item.altText}   // Alt text for accessibility
-              width={350}          // Set width according to your design
-              height={288}         // Set height as needed
-              className="object-cover rounded-2xl" // Ensure image fits nicely
+              src={item.imageSrc}
+              alt={item.altText}
+              width={350}          
+              height={288}
+              className="object-cover rounded-2xl"
             />
           </li>
         ))}
