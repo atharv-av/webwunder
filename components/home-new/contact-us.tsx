@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import Link from 'next/link'
@@ -12,11 +13,15 @@ interface ContactCardProps {
     description: string
     buttonText: string
     buttonTarget: string
+    isHovered: boolean
+    onMouseEnter: () => void
+    onMouseLeave: () => void
 }
 
 const contactCards = [
     {
-        width: 'lg:w-1/3 w-full',
+        id: 1,
+        width: 'lg:w-1/4 w-full',
         bgColor: 'bg-[#FB421F]',
         tag: 'Call',
         title: 'Book a 15-Minute Call',
@@ -26,6 +31,7 @@ const contactCards = [
         buttonTarget: '#',
     },
     {
+        id: 2,
         width: 'lg:w-1/4 w-full',
         bgColor: 'bg-[#25D366]',
         tag: 'Chat',
@@ -36,6 +42,7 @@ const contactCards = [
         buttonTarget: '#',
     },
     {
+        id: 3,
         width: 'lg:w-[22%] w-full',
         bgColor: 'bg-[#4148FA]',
         tag: 'Email',
@@ -55,10 +62,17 @@ const ContactCard: React.FC<ContactCardProps> = ({
     description,
     buttonText,
     buttonTarget,
+    isHovered,
+    onMouseEnter,
+    onMouseLeave,
 }) => {
     return (
         <div
-            className={`flex h-80 w-fit flex-col items-start justify-between ${bgColor} ${width} rounded-xl p-8`}
+            className={`transition-all  duration-300 flex h-80 flex-col items-start justify-between ${
+                isHovered ? 'lg:w-1/2' : width
+            } ${bgColor} rounded-xl p-8`}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             <div className="flex flex-col gap-2">
                 <div className="h-fit w-fit rounded-full border border-white bg-transparent px-2 py-1 font-archivo text-sm font-normal text-white">
@@ -93,6 +107,8 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }
 
 const ContactUs = () => {
+    const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
     return (
         <div className="flex flex-col items-center gap-4 bg-black">
             <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
@@ -101,10 +117,10 @@ const ContactUs = () => {
             <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                 Let&apos;s Get Started!
             </p>
-            <div className="flex flex-col items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
-                {contactCards.map((card, index) => (
+            <div className="flex flex-col max-w-7xl mx-auto items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
+                {contactCards.map((card) => (
                     <ContactCard
-                        key={index}
+                        key={card.id}
                         bgColor={card.bgColor}
                         tag={card.tag}
                         title={card.title}
@@ -112,6 +128,9 @@ const ContactUs = () => {
                         width={card.width}
                         buttonTarget={card.buttonTarget}
                         buttonText={card.buttonText}
+                        isHovered={hoveredCard === card.id}
+                        onMouseEnter={() => setHoveredCard(card.id)}
+                        onMouseLeave={() => setHoveredCard(null)}
                     />
                 ))}
             </div>

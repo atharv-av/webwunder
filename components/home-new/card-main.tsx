@@ -20,7 +20,7 @@ const MainCard: React.FC<MainCardProps> = ({
     description,
 }) => {
     return (
-        <Card className={`rounded-xl ${cardWidth} h-auto`}>
+        <Card className={`rounded-xl ${cardWidth} h-full`}>
             <CardHeader className="p-0">
                 <div className="relative w-full">
                     {smallImage ? (

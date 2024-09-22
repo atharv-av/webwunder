@@ -1,10 +1,10 @@
 'use client'
-
 import React, { useState, useEffect } from 'react'
 import { Badge } from '../ui/badge'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import MainCard from './card-main'
+import { motion } from 'framer-motion'
 
 const mainItems = [
     {
@@ -49,6 +49,27 @@ const mainItems = [
             'Comprehensive support, covering everything from branding to social media, guarantees your business stands out and grows.',
     },
 ]
+
+// Container and Item Animations
+const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+        opacity: 1,
+        scale: 1,
+        transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.2,
+        },
+    },
+}
+
+const itemAnimation = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+        y: 0,
+        opacity: 1,
+    },
+}
 
 const WhyWebWunder = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -121,7 +142,7 @@ const WhyWebWunder = () => {
                 </div>
             </div>
 
-            {/* Cards */}
+            {/* Cards with Animation */}
             <div
                 style={{
                     backgroundImage:
@@ -142,9 +163,13 @@ const WhyWebWunder = () => {
                                 }}
                             >
                                 {mainItems.map((item, index) => (
-                                    <div
+                                    <motion.div
                                         key={index}
-                                        className="w-full flex-shrink-0"
+                                        className="w-full items flex-shrink-0"
+                                        variants={itemAnimation}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }} // Animation triggers only once
                                     >
                                         <MainCard
                                             cardWidth="w-full"
@@ -154,7 +179,7 @@ const WhyWebWunder = () => {
                                             title={item.title}
                                             description={item.description}
                                         />
-                                    </div>
+                                    </motion.div>
                                 ))}
                             </div>
                         </div>
@@ -173,34 +198,42 @@ const WhyWebWunder = () => {
                         </div>
                     </div>
                 ) : (
-                    <div className="flex flex-wrap justify-center gap-16 lg:gap-4">
+                    <motion.div
+                        className="flex flex-wrap justify-center gap-16 lg:gap-4"
+                        variants={container}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }} // Animation triggers only once
+                    >
                         {/* First row - 2 items */}
-                        <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
+                        <div className="flex w-full h-full flex-wrap justify-center gap-16 lg:gap-4">
                             {mainItems.slice(0, 2).map((item, index) => (
-                                <MainCard
-                                    key={index}
-                                    cardWidth={item.cardWidth}
-                                    image={item.image}
-                                    imgWidth={item.imgWidth}
-                                    title={item.title}
-                                    description={item.description}
-                                />
+                                <motion.div key={index} className="items" variants={itemAnimation}>
+                                    <MainCard
+                                        cardWidth={item.cardWidth}
+                                        image={item.image}
+                                        imgWidth={item.imgWidth}
+                                        title={item.title}
+                                        description={item.description}
+                                    />
+                                </motion.div>
                             ))}
                         </div>
                         {/* Second row - 3 items */}
                         <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
                             {mainItems.slice(2).map((item, index) => (
-                                <MainCard
-                                    key={index}
-                                    cardWidth={item.cardWidth}
-                                    image={item.image}
-                                    imgWidth={item.imgWidth}
-                                    title={item.title}
-                                    description={item.description}
-                                />
+                                <motion.div key={index} className="items" variants={itemAnimation}>
+                                    <MainCard
+                                        cardWidth={item.cardWidth}
+                                        image={item.image}
+                                        imgWidth={item.imgWidth}
+                                        title={item.title}
+                                        description={item.description}
+                                    />
+                                </motion.div>
                             ))}
                         </div>
-                    </div>
+                    </motion.div>
                 )}
             </div>
         </div>

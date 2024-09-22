@@ -47,10 +47,12 @@ const OurPortfolio = () => {
                 ))}
             </div>
             <div className="mt-8 grid grid-cols-2 lg:gap-5 gap-7 lg:grid-cols-3">
+               
                 {galleryImages.map((image, index) => (
                     <Image
                         key={index}
                         src={image}
+                        className=''
                         alt="Our Portfolio"
                         width={350}
                         height={350}

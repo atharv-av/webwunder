@@ -1,11 +1,41 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import Header from '../layout/home-template-new/header'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Badge } from '../ui/badge'
+import { gsap, ScrollTrigger } from 'gsap/all'
 
 const HomeLanding = () => {
+    useEffect(() => {
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger)
+    
+        // Get the heading element you want to animate
+        const heading = document.querySelector('.heading')
+    
+        // Check if heading is not null
+        if (heading) {
+          // Set up GSAP timeline for heading with scaling and blur effect
+          gsap.to(heading, {
+            scale: 3,
+            filter: "blur(7px)",
+            ease: 'none',
+            scrollTrigger: {
+              trigger: heading, // The element to track for scrolling
+              start: "top 25%",   // Start the animation when the top reaches 25% of the viewport
+              end: "top 0%",      // End the animation when the heading reaches 0%
+              scrub: 1,           // Smooth scrubbing during the scroll
+              pin: false,         // Prevent pinning
+              invalidateOnRefresh: true, // Recalculate on resize
+            },
+          })
+        }
+      }, [])
+
+    
+
     return (
         <div className="bg-white lg:p-5">
             <div className="relative min-h-screen overflow-hidden lg:rounded-t-lg">
@@ -18,7 +48,7 @@ const HomeLanding = () => {
                     <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                         Rock-Solid Business Growth
                     </Badge>
-                    <div>
+                    <div className='heading'>
                         <p className="text-center font-archivo text-[40px] font-bold leading-none text-white lg:text-[48px]">
                             Winning Websites
                         </p>
@@ -68,7 +98,8 @@ const HomeLanding = () => {
                         Hundreds of perfect projects delivered to hundreds of
                         thrilled customers.
                     </p>
-                    <div className="absolute top-[50rem] block w-screen md:top-[44rem] lg:hidden">
+
+                   <div className="absolute top-[50rem] block w-screen md:top-[44rem] lg:hidden">
                         <Image
                             // className="block lg:hidden"
                             src="/images/home/hero/hero-small-bg.png"
