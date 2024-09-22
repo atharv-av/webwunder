@@ -124,7 +124,7 @@ const JoinUs: React.FC = () => {
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
             <Slider/>
-            <div className="mt-5 flex w-full flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
+            <div className="mt-5 flex w-full px-4 flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                         Three Steps

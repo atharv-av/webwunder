@@ -31,7 +31,7 @@ const StayOnTop = () => {
             </div>
             <div className="flex flex-col relative lg:h-screen lg:px- items-center justify-between gap-12 lg:flex-row">
                 <div className="flex  flex-col lg:ml-24">
-                    <div className="flex flex-col p-4 gap-4 min-w-96">
+                    <div className="flex flex-col lg:items-start justify-center items-center p-4 gap-4 min-w-96">
                         <Badge data-aos="fade-up" className="bg-[#5D59E1] w-fit font-archivo text-sm font-normal">
                             Endless Creativity
                         </Badge>
@@ -77,29 +77,59 @@ const StayOnTop = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex ">
+                    <div className="flex lg:hidden">
                         <Image
-                            className="absolute top-12 left-48"
+                            className="absolute lg:top-12 lg:left-48 xl:top-12 xl:left-48 top-4 left-4"
                             src="/images/home/stay-on-top/icon-3.png"
                             alt="Unlimited Design"
                             width={75.56}
                             height={79.07}
                         />
                         <Image
-                            className="absolute left-12 bottom-44"
+                            className="absolute lg:left-12 lg:bottom-44 xl:left-12 xl:bottom-44 top-4 right-4"
                             src="/images/home/stay-on-top/icon-5.png"
                             alt="Unlimited Design"
                             width={50}
                             height={50}
                         />
                         <Image
-                            className="absolute right-12 top-12" src="/images/home/stay-on-top/icon-1.png"
+                            className="absolute xl:right-12 xl:top-12 left-8 top-96 lg:right-12 lg:top-12" src="/images/home/stay-on-top/icon-1.png"
                             alt="Unlimited Design"
                             width={76}
                             height={79}
                         />
                         <Image
-                            className="absolute left-[43%] xl:left-[48%] bottom-16 xl:bottom-44"
+                            className="absolute lg:left-[43%] xl:left-[48%] lg:bottom-16 right-12 bottom-80 xl:bottom-44"
+                            src="/images/home/stay-on-top/icon-4.png"
+                            alt="Unlimited Design"
+                            width={32.26}
+                            height={33.76}
+                        />
+                    </div>
+
+                    <div className="lg:flex hidden ">
+                        <Image
+                            className="absolute lg:top-12 lg:left-48 xl:top-12 xl:left-48"
+                            src="/images/home/stay-on-top/icon-3.png"
+                            alt="Unlimited Design"
+                            width={75.56}
+                            height={79.07}
+                        />
+                        <Image
+                            className="absolute lg:left-12 lg:bottom-44 xl:left-12 xl:bottom-44"
+                            src="/images/home/stay-on-top/icon-5.png"
+                            alt="Unlimited Design"
+                            width={50}
+                            height={50}
+                        />
+                        <Image
+                            className="absolute xl:right-12 xl:top-12 lg:right-12 lg:top-12" src="/images/home/stay-on-top/icon-1.png"
+                            alt="Unlimited Design"
+                            width={76}
+                            height={79}
+                        />
+                        <Image
+                            className="absolute lg:left-[43%] xl:left-[48%] lg:bottom-16 xl:bottom-44"
                             src="/images/home/stay-on-top/icon-4.png"
                             alt="Unlimited Design"
                             width={32.26}
