@@ -99,7 +99,7 @@ const StayOnTop = () => {
                             height={79}
                         />
                         <Image
-                            className="absolute left-[43%] xl:left-[38%] bottom-16"
+                            className="absolute left-[43%] xl:left-[48%] bottom-16 xl:bottom-44"
                             src="/images/home/stay-on-top/icon-4.png"
                             alt="Unlimited Design"
                             width={32.26}

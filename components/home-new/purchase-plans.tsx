@@ -3,8 +3,6 @@
 import React, { useEffect, useState } from 'react'
 import { Badge } from '../ui/badge'
 import PricingCard, { PricingCardProps } from './pricing-card'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 interface PlanProps {
     icon: string
@@ -22,8 +20,7 @@ const plans: PlanProps[] = [
         icon: '/images/home/purchase-plans/icon-1.png',
         iconBg: 'bg-[#FFDC26]',
         title: 'Start',
-        description:
-            'Designed for growing businesses that need advanced features and additional design support.',
+        description: 'Designed for growing businesses that need advanced features and additional design support.',
         price: 490,
         setupFee: 2000,
         features: [
@@ -39,8 +36,7 @@ const plans: PlanProps[] = [
         icon: '/images/home/purchase-plans/icon-3.png',
         iconBg: 'bg-[#27DAB7]',
         title: 'Scale',
-        description:
-            'Designed for growing businesses that need advanced features and additional design support.',
+        description: 'Designed for growing businesses that need advanced features and additional design support.',
         price: 690,
         setupFee: 2000,
         features: [
@@ -60,8 +56,7 @@ const plans: PlanProps[] = [
         icon: '/images/home/purchase-plans/icon-3.png',
         iconBg: 'bg-[#FB421F]',
         title: 'Pro',
-        description:
-            'Designed for growing businesses that need advanced features and additional design support.',
+        description: 'Designed for growing businesses that need advanced features and additional design support.',
         price: 990,
         setupFee: 2000,
         features: [
@@ -82,8 +77,7 @@ const plans: PlanProps[] = [
         icon: '/images/home/purchase-plans/icon-4.png',
         iconBg: 'bg-[#5D59E1]',
         title: 'Unlimited Design',
-        description:
-            'Designed for growing businesses that need advanced features and additional design support.',
+        description: 'Designed for growing businesses that need advanced features and additional design support.',
         price: 4990,
         setupFee: 2000,
         features: [
@@ -96,48 +90,118 @@ const plans: PlanProps[] = [
     },
 ]
 
-const PurchasePlans: React.FC = () => {
+/**
+ * Component for Mobile View
+ * Shows one card at a time
+ */
+const MobilePurchasePlans: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
-    const [displayPlans, setDisplayPlans] = useState<PlanProps[]>([])
-    const [isMobile, setIsMobile] = useState<boolean>(false)
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 1024)
-        }
-        handleResize()
-        window.addEventListener('resize', handleResize)
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
+    return (
+        <div className="lg:hidden  flex flex-col items-center">
+            <div className="relative w-full">
+                <div className="overflow-hidden">
+                    <div className="flex items-stretch justify-center transition-transform duration-500 ease-in-out">
+                        <div className="w-full px-4">
+                            <PricingCard {...plans[currentIndex]} />
+                        </div>
+                    </div>
+                </div>
+                <div className="flex mt-8 items-center justify-center space-x-4">
+                    {plans.map((_, index) => (
+                        <button
+                            key={index}
+                            className={`h-1 w-12 cursor-pointer rounded-full ${
+                                index === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
+                            }`}
+                            onClick={() => setCurrentIndex(index)}
+                        ></button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
 
-    useEffect(() => {
-        const updateDisplayPlans = () => {
-            if (isMobile) {
-                setDisplayPlans([plans[currentIndex]])
-            } else {
-                // For large screens, show 3 plans at a time
-                const startIndex = currentIndex * 3
-                setDisplayPlans(plans.slice(startIndex, startIndex + 3))
-            }
-        }
-        updateDisplayPlans()
-    }, [currentIndex, isMobile])
+/**
+ * Component for Desktop View
+ * Shows 3 cards at a time with center focus effect
+ */
+const DesktopPurchasePlans: React.FC = () => {
+    const [currentIndex, setCurrentIndex] = useState<number>(0)
 
     const handleNavClick = (index: number): void => {
-        // Adjust index for large screens to handle pagination
-        if (isMobile) {
-            setCurrentIndex(index)
-        } else {
-            const maxIndex = Math.floor(plans.length / 3)
-            const newIndex = index >= maxIndex ? 0 : index
-            setCurrentIndex(newIndex)
-        }
+        setCurrentIndex(index)
     }
 
+    // Get the visible cards based on the current index
+    const getVisiblePlans = () => {
+        const leftIndex = (currentIndex - 1 + plans.length) % plans.length
+        const rightIndex = (currentIndex + 1) % plans.length
+
+        return [plans[leftIndex], plans[currentIndex], plans[rightIndex]]
+    }
+
+    const visiblePlans = getVisiblePlans()
+
+    return (
+        <div className="hidden lg:flex flex-col items-center">
+            <div className="relative w-full max-w-[1400px]">
+                <div className="overflow-hidden">
+                    <div className="flex -space-x-6 items-stretch justify-center transition-transform duration-500 ease-in-out">
+                        {visiblePlans.map((plan, index) => {
+                            const isCenter = index === 1 // Center card
+                            return (
+                                <div
+                                    key={index}
+                                    className={`w-1/3 flex-shrink-0 px-2 transition-all duration-300 transform ${
+                                        isCenter ? 'scale-100 shadow-lg z-10' : 'scale-90 opacity-75 z-0'
+                                    }`}
+                                    style={{
+                                        height: '1100px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <div className="h-full p-3">
+                                        <PricingCard {...plan} isCenter={isCenter} />
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
+
+                {/* Tab Navigation */}
+                <div className="flex mt-8 items-center justify-center space-x-4">
+                    {plans.map((_, i) => (
+                        <button
+                            key={i}
+                            className={`h-1 w-12 cursor-pointer rounded-full ${
+                                i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
+                            }`}
+                            onClick={() => handleNavClick(i)}
+                        ></button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+
+
+
+/**
+ * Main Component
+ * Shows the appropriate component based on the screen size
+ */
+const PurchasePlans: React.FC = () => {
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-10 bg-black">
             <div className="flex w-5/6 flex-col items-center">
-                <Badge data-aos="fade-up" className="bg-[#5D59E1] font-archivo text-sm font-normal">
+                <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     Market-Conquering Business Solutions
                 </Badge>
                 <p className="mt-4 font-archivo text-[25px] font-bold text-white lg:text-[45px]">
@@ -148,76 +212,13 @@ const PurchasePlans: React.FC = () => {
                     tailored to your business. Choose from three subscriptions
                     or our Unlimited Design Package. 100% flexible and cancel
                     anytime. But be warned: You&apos;ll feel so comfortable,
-                    you&apos;ll never want to leave. After us, you won&apos;t
-                    need another agency – and neither will your current one!
+                    you&apos;ll never want to leave.
                 </p>
             </div>
-            <div className="relative w-full max-w-[1200px] lg:mt-8">
-                <div className="overflow-visible">
-                    <div
-                        className={`flex items-stretch justify-center ${isMobile ? 'flex-col' : ''}`}
-                        style={{ minHeight: isMobile ? '750px' : '1060px' }}
-                    >
-                        {displayPlans.map((plan, index) => (
-                            <div
-                                key={index}
-                                className={`${isMobile ? 'w-full' : 'w-1/3'} flex-shrink-0 px-2`}
-                                style={{
-                                    height: isMobile
-                                        ? '950px'
-                                        : index === 1
-                                          ? '1250px'
-                                          : '1100px',
-                                    display: 'flex',
-                                    alignItems: 'center', // Vertically centers the card content
-                                }}
-                            >
-                                <div
-                                    className={`h-full transform p-3 transition-all duration-300 lg:p-0 ${
-                                        !isMobile && index === 1
-                                            ? 'scale-105 shadow-lg'
-                                            : isMobile
-                                              ? ''
-                                              : 'scale-95 opacity-75'
-                                    }`}
-                                    style={{
-                                        margin:
-                                            index === 1 && !isMobile
-                                                ? 'auto'
-                                                : '', // Center the larger card
-                                        paddingTop:
-                                            index === 1 && !isMobile
-                                                ? '25px'
-                                                : '', // Distribute top padding evenly
-                                        paddingBottom:
-                                            index === 1 && !isMobile
-                                                ? '25px'
-                                                : '', // Distribute bottom padding evenly
-                                    }}
-                                >
-                                    <PricingCard
-                                        {...plan}
-                                        isCenter={!isMobile && index === 1}
-                                    />
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="flex mt-8 lg:-mt-24 items-center justify-center space-x-4">
-                    {plans.map((_, index) => (
-                        <button
-                            key={index}
-                            className={`h-1  w-12 cursor-pointer rounded-full lg:w-20 ${
-                                index === currentIndex
-                                    ? 'bg-[#5D59E1]'
-                                    : 'bg-white/20'
-                            }`}
-                            onClick={() => handleNavClick(index)}
-                        ></button>
-                    ))}
-                </div>
-            </div>
+            {/* Mobile Component */}
+            <MobilePurchasePlans />
+            {/* Desktop Component */}
+            <DesktopPurchasePlans />
         </div>
     )
 }

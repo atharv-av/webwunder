@@ -71,50 +71,50 @@ export default function Socials() {
 
     const SocialData = [
         {
-            icon: <BsGoogle className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />,
+            icon: <BsGoogle className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />,
             label: 'Sign in with Google',
             provider: 'google',
         },
         {
-            icon: <BsApple className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />,
+            icon: <BsApple className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />,
             label: 'Sign in with Apple',
             provider: 'apple',
         },
         {
             icon: (
-                <BsMicrosoft className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />
+                <BsMicrosoft className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />
             ),
             label: 'Sign in with Microsoft',
             provider: 'microsoft',
         },
         {
-            icon: <FaAmazon className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />,
+            icon: <FaAmazon className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />,
             label: 'Sign in with Amazon',
             provider: 'amazon',
         },
         {
             icon: (
-                <RiFacebookFill className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />
+                <RiFacebookFill className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />
             ),
             label: 'Sign in with Facebook',
             provider: 'facebook',
         },
         {
             icon: (
-                <FaXTwitter className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />
+                <FaXTwitter className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />
             ),
             label: 'Sign in with Twitter',
             provider: 'twitter',
         },
         {
             icon: (
-                <BsDiscord className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />
+                <BsDiscord className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-2 text-3xl" />
             ),
             label: 'Sign in with Discord',
             provider: 'discord',
         },
         {
-            icon: <BsGithub className="rounded-md bg-[#29292F] md:p-3 md:text-5xl p-2 text-4xl" />,
+            icon: <BsGithub className="rounded-md bg-[#29292F] md:p-3 md:text-5xl lg:p-2 lg:text-4xl p-1 text-2xl" />,
             label: 'Sign in with GitHub',
             provider: 'github',
         },
