@@ -1,8 +1,10 @@
-import React from 'react'
-import { Badge } from '../ui/badge'
-import Image from 'next/image'
-import { Button } from '../ui/button'
-import { ArrowRight } from 'lucide-react'
+"use client"
+import React, { useEffect, useRef, useState } from 'react';
+import { Badge } from '../ui/badge';
+import Image from 'next/image';
+import { Button } from '../ui/button';
+import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const tags = [
     { tagName: 'Web Design', bgColor: 'bg-[#5D59E1]' },
@@ -16,7 +18,7 @@ const tags = [
     { tagName: 'Brochures', bgColor: 'bg-[#2245FF]' },
     { tagName: 'Video Editing', bgColor: 'bg-[#00C8F4]' },
     { tagName: 'Motion Graphics', bgColor: 'bg-[#4F00F8]' },
-]
+];
 
 const galleryImages = [
     '/images/home/our-portfolio/our-portfolio-1.png',
@@ -25,12 +27,49 @@ const galleryImages = [
     '/images/home/our-portfolio/our-portfolio-4.png',
     '/images/home/our-portfolio/our-portfolio-5.png',
     '/images/home/our-portfolio/our-portfolio-6.png',
-]
+];
 
 const OurPortfolio = () => {
+    const [visibleImages, setVisibleImages] = useState<boolean[]>(Array(galleryImages.length).fill(false));
+    
+    const observer = useRef<IntersectionObserver | null>(null);
+
+    useEffect(() => {
+        observer.current = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const index = Number(entry.target.getAttribute('data-index'));
+                if (entry.isIntersecting) {
+                    // Mark this image as visible
+                    setVisibleImages(prev => {
+                        const newVisibleImages = [...prev];
+                        newVisibleImages[index] = true; 
+                        return newVisibleImages;
+                    });
+                } else {
+                    // Mark this image as not visible
+                    setVisibleImages(prev => {
+                        const newVisibleImages = [...prev];
+                        newVisibleImages[index] = false; 
+                        return newVisibleImages;
+                    });
+                }
+            });
+        });
+
+        // Observe each image
+        const imageElements = document.querySelectorAll('.gallery-image');
+        imageElements.forEach((image) => observer.current?.observe(image));
+
+        return () => {
+            if (observer.current) {
+                imageElements.forEach((image) => observer.current?.unobserve(image));
+            }
+        };
+    }, []);
+
     return (
         <div className="flex flex-col items-center gap-4 bg-black lg:px-0 px-4">
-            <Badge className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal">
+            <Badge data-aos="fade-up" className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Our Portfolio
             </Badge>
             <p className="text-center font-archivo lg:text-[45px] text-[25px] lg:w-full w-2/3 leading-none font-bold text-white">
@@ -47,16 +86,23 @@ const OurPortfolio = () => {
                 ))}
             </div>
             <div className="mt-8 grid grid-cols-2 lg:gap-5 gap-7 lg:grid-cols-3">
-               
                 {galleryImages.map((image, index) => (
-                    <Image
+                    <motion.div
                         key={index}
-                        src={image}
-                        className=''
-                        alt="Our Portfolio"
-                        width={350}
-                        height={350}
-                    />
+                        data-index={index} // Set a data attribute for indexing
+                        className="gallery-image"
+                        initial={{ opacity: 0, scale: 0.5 }} // Initial state
+                        animate={visibleImages[index] ? { opacity: 1, scale: 1, transition: { delay: index * 0.2 } } : { opacity: 0, scale: 0.5 }} // Animate based on visibility with stagger
+                        transition={{ duration: 0.5, delay:0.1 }}
+                    >
+                        <Image
+                            src={image}
+                            alt="Our Portfolio"
+                            width={350}
+                            height={350}
+                            className=""
+                        />
+                    </motion.div>
                 ))}
             </div>
             <div className="flex lg:w-4/5 flex-col lg:items-start items-center gap-2">
@@ -71,20 +117,20 @@ const OurPortfolio = () => {
                         all while respecting your valuable time.
                     </p>
                     <div className="flex items-center justify-center lg:my-0 my-5">
-                    <Button
-                        size={'base'}
-                        className="flex items-center justify-between bg-white gap-3"
-                    >
-                        <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                            See More Work
-                        </p>
-                        <ArrowRight size={15} className="text-[#24252A]" />
-                    </Button>
+                        <Button
+                            size={'base'}
+                            className="flex  hover:scale-95 transition-all  items-center justify-between bg-white gap-3"
+                        >
+                            <p className="font-archivo text-[15px] font-medium text-[#24252A]">
+                                See More Work
+                            </p>
+                            <ArrowRight size={15} className="text-[#24252A]" />
+                        </Button>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default OurPortfolio
+export default OurPortfolio;

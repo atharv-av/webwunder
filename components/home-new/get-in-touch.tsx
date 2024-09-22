@@ -17,7 +17,7 @@ const GetInTouch = () => {
                 }}
             ></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center p-4 gap-3 text-center">
-                <Badge className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
+                <Badge data-aos="fade-up"   data-aos-anchor-placement="bottom-bottom" className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
                     Get in Touch
                 </Badge>
                 <h2 className="mb-4 font-archivo font-bold text-white lg:text-[45px] text-[25px]">
@@ -29,7 +29,7 @@ const GetInTouch = () => {
                     soar.
                 </p>
                 <button
-                    className="flex w-fit px-2 py-1 lg:px-4 lg:py-2 rounded-full items-center justify-between gap-3 bg-white"
+                    className="flex  hover:scale-95 transition-all  w-fit px-2 py-1 lg:px-4 lg:py-2 rounded-full items-center justify-between gap-3 bg-white"
                 >
                     <p className="font-archivo text-[15px] font-medium text-[#24252A]">
                         Book a Call

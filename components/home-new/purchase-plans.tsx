@@ -137,7 +137,7 @@ const PurchasePlans: React.FC = () => {
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-10 bg-black">
             <div className="flex w-5/6 flex-col items-center">
-                <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
+                <Badge data-aos="fade-up" className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     Market-Conquering Business Solutions
                 </Badge>
                 <p className="mt-4 font-archivo text-[25px] font-bold text-white lg:text-[45px]">
@@ -208,7 +208,7 @@ const PurchasePlans: React.FC = () => {
                     {plans.map((_, index) => (
                         <button
                             key={index}
-                            className={`h-1 w-12 cursor-pointer rounded-full lg:w-20 ${
+                            className={`h-1  w-12 cursor-pointer rounded-full lg:w-20 ${
                                 index === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'

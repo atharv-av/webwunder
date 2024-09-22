@@ -28,7 +28,7 @@ const testimonials = [
 const Reviews = () => {
     return (
         <div className="flex flex-col items-center gap-4 bg-black lg:px-0 px-4">
-            <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal lg:mt-20">
+            <Badge data-aos="fade-up" className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal lg:mt-20">
                 Reviews
             </Badge>
             <p className="font-archivo text-[25px] font-bold text-white lg:text-[45px]">
@@ -54,7 +54,7 @@ const Reviews = () => {
                     <div className="flex items-center justify-center lg:my-0 my-5">
                         <Button
                             size={'base'}
-                            className="flex items-center justify-between gap-3 bg-[#FFDC26]"
+                            className="flex  hover:scale-95 transition-all  items-center justify-between gap-3 bg-[#FFDC26]"
                         >
                             <p className="font-archivo text-[15px] font-medium text-[#24252A]">
                                 Write a Review

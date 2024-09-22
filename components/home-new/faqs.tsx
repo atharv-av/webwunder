@@ -67,7 +67,7 @@ const FAQs = () => {
                     </p>
                     <Button
                         size={'base'}
-                        className="flex items-center justify-between gap-3 bg-white"
+                        className="flex  hover:scale-95 transition-all  items-center justify-between gap-3 bg-white"
                     >
                         <p className="font-archivo text-[15px] font-medium text-[#24252A]">
                             Book a Call

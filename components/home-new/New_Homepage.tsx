@@ -6,13 +6,38 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Badge } from '../ui/badge';
 import { gsap } from 'gsap'
-const HomeLanding = () => {
- 
+import AOS from "aos";
+import "aos/dist/aos.css"
 
 
-   
+const New_Homepage = () => {
 
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+      }, []);
 
+    useEffect(() => {
+        // Register GSAP plugins
+        gsap.registerPlugin();
+
+        // Get all heading elements you want to animate
+        const headings = document.querySelectorAll('.heading span');
+
+        // Set a timeout to delay the animation
+        const timeoutId = setTimeout(() => {
+            // Animate each letter into view
+            gsap.from(headings, {
+                y: 80, // Start 30px below
+
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            });
+        }, 300); // Delay of 300ms
+
+        return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
+    }, []);
     const splitText = (text) => {
         return text.split('').map((char, index) => (
             <span key={index} className="inline-block">{char}</span>
@@ -20,39 +45,41 @@ const HomeLanding = () => {
     };
 
     return (
-        <div className="bg-white lg:p-5">
-            <div className="relative min-h-screen overflow-hidden lg:rounded-t-lg">
-                <div className="absolute inset-0 flex bg-[url('/images/home/hero/hero-img-bg.png')] bg-cover bg-center bg-no-repeat lg:hidden"></div>
-                <div className="inset-0 hidden min-h-screen bg-cover bg-center bg-no-repeat lg:absolute lg:flex lg:bg-[url('/images/home/hero/hero-main-bg.png')]"></div>
+        <div className='min-h-screen h-full lg:p-5 bg-white'>
+            <div className='bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-t-xl'>
+
                 <div className="relative z-10">
                     <Header />
                 </div>
-                <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-6 px-4 sm:bottom-52 sm:px-4 md:bottom-32 md:px-0 lg:bottom-48 lg:gap-2">
-                    <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
+
+                <div className='flex justify-center flex-col items-center gap-4 max-w-6xl mx-auto pt-4'>
+                    <Badge data-aos="fade-up" className="rounded-full w-fit bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                         Rock-Solid Business Growth
                     </Badge>
                     <div className='heading'>
                         <p className="text-center font-archivo  overflow-hidden text-[40px] font-bold leading-none text-white lg:text-7xl">
                             {splitText("Winning")} {"  "}{splitText("Websites")}
                         </p>
-                        <p className="text-center font-archivo overflow-hidden text-[40px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
-                            {splitText("Unshakable")}    {"  "}    {splitText("Support")}
+                        <p className="text-center font-archivo overflow-hidden text-[35px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
+                            {splitText("Unshakable")}  {"  "}  {splitText("Support")}
                         </p>
                     </div>
                     <div>
-                        <p className="text-center font-archivo text-base font-bold text-white lg:text-lg">
+                        <p data-aos="fade-up" className="text-center font-archivo text-base font-bold text-white lg:text-lg">
                             Websites by Entrepreneurs for Entrepreneurs
                         </p>
-                        <p className="text-center font-archivo text-sm font-normal text-white lg:text-base">
+                        <p data-aos="fade-up" className="text-center font-archivo text-sm font-normal text-white lg:text-base">
                             Proven to Boost Sales and Cut Costs.
                         </p>
                     </div>
+
                     <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                        
+                        <button className="flex hover:scale-95 transition-all w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 Watch Video
                             </p>
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
                                 <ArrowRight
                                     size={18}
                                     fontWeight={100}
@@ -61,7 +88,7 @@ const HomeLanding = () => {
                             </div>
                         </button>
 
-                        <button className="w-fit rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                        <button className="flex w-fit  hover:scale-95 transition-all  flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2">
                             <Link
                                 href="#"
                                 className="flex flex-row items-center justify-between gap-4"
@@ -69,27 +96,33 @@ const HomeLanding = () => {
                                 <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
                                     Book a call
                                 </p>
+                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
                                 <ArrowRight
                                     size={18}
                                     fontWeight={100}
-                                    className="text-[#24252A]"
+                                    className="text-[#ffffff]"
                                 />
+                            </div>
                             </Link>
                         </button>
                     </div>
+
                     <p className="relative toptrigger text-center font-archivo text-base font-bold text-white sm:top-3 lg:text-xl mb-6">
                         Hundreds of perfect projects delivered to hundreds of
                         thrilled customers.
                     </p>
 
-                  
                 </div>
-                   
+                <Image data-aos="fade-up" data-aos-duration="3000"
+                    src="/images/home/hero/homebg.png"
+                    alt="Figma"
+                    className='w-screen'
+                    width={5000}
+                    height={5000}
+                />
             </div>
-            
         </div>
-        
     )
 }
 
-export default HomeLanding;
+export default New_Homepage

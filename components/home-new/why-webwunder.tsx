@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import MainCard from './card-main'
 import { motion } from 'framer-motion'
+import { gsap, ScrollTrigger } from 'gsap/all'
 
 const mainItems = [
     {
@@ -90,19 +91,110 @@ const WhyWebWunder = () => {
         setCurrentSlide(index)
     }
 
+
+    useEffect(() => {
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Select all words in the text
+        const words = document.querySelectorAll('.word');
+
+        // Create a timeline for scroll-triggered animations
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.animated-text', // The container for the text
+                start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
+                end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                scrub: 1, // Smooth scrubbing
+                // markers: true, // Enable markers for debugging (optional)
+            },
+        });
+
+        // Animate each word individually
+        words.forEach((word, index) => {
+            tl.to(word, {
+                color: '#24252A', // Change to black
+                duration: 1,
+                ease: 'none',
+                stagger: {
+                    amount: 0.5, // Delay between each word's animation
+                    from: "start", // Start from the first word
+                },
+            }, index * 0.2); // Stagger start time for each word
+        });
+    }, []);
+
+
+    useEffect(() => {
+        // Register GSAP plugins
+    
+        // Get all heading elements you want to animate
+        const upperdiv = document.querySelectorAll('.upperdiv');
+
+        // Set a timeout to delay the animation
+        const timeoutId = setTimeout(() => {
+            // Animate each letter into view
+            gsap.from(upperdiv, {
+                height: 0, // Start 30px below
+
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: upperdiv, // The container for the text
+                    start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    // markers: true, // Enable markers for debugging (optional)
+                },
+            });
+        }, 300); // Delay of 300ms
+
+        return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
+    }, []);
+    
+    useEffect(() => {
+        // Register GSAP plugins
+       
+
+        // Get all heading elements you want to animate
+        const lowerrdiv = document.querySelectorAll('.lowerrdiv');
+
+        // Set a timeout to delay the animation
+        const timeoutId = setTimeout(() => {
+            // Animate each letter into view
+            gsap.from(lowerrdiv, {
+                height: 0, // Start 30px below
+
+                duration: 1,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: ".trig", // The container for the text
+                    start: 'top 30%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom -50%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    // markers: true, // Enable markers for debugging (optional)
+                },
+            });
+        }, 300); // Delay of 300ms
+
+        return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
+    }, []);
+
+
     return (
         <div className="my-10 flex flex-col items-center justify-center gap-6 px-4">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
-                <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
+                <Badge data-aos="fade-up" className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
                     Designed to Dominate
                 </Badge>
-                <div className="flex flex-col items-center leading-none">
-                    <p className="font-archivo text-[32px] font-bold text-[#24252A] md:text-[45px]">
-                        Why WebWunder?
-                    </p>
-                    <p className="font-archivo text-[32px] font-bold text-[#24252A] md:text-[45px]">
-                        We Make it Clear.
+                <div className="flex flex-col items-center leading-none animated-text">
+                    {/* Split text into individual words */}
+                    <p className="font-archivo text-[32px] font-bold text-zinc-400 md:text-[45px]">
+                        <span className="word">Why</span> <span className="word">WebWunder?</span> <br />
+                        <span className="word">We</span> <span className="word">Make</span> <span className="word">it</span> <span className="word">Clear.</span>
                     </p>
                 </div>
                 <p className="font-archivo text-sm font-normal text-black/50 md:text-base">
@@ -112,7 +204,7 @@ const WhyWebWunder = () => {
 
                 {/* Buttons */}
                 <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                    <button className="flex  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                         <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                             Explore Plans
                         </p>
@@ -124,25 +216,27 @@ const WhyWebWunder = () => {
                             />
                         </div>
                     </button>
-                    <button className="w-fit rounded-full border border-[#E9EAE9] bg-[#FAFAFA] px-3 py-2 font-archivo text-sm font-medium lg:py-3">
-                        <Link
-                            href="#"
-                            className="flex flex-row items-center justify-between gap-4"
-                        >
-                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                Book a call
-                            </p>
-                            <ArrowRight
-                                size={18}
-                                fontWeight={100}
-                                className="text-[#24252A]"
-                            />
-                        </Link>
-                    </button>
+                    <button className="flex border  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2">
+                            <Link
+                                href="#"
+                                className="flex flex-row items-center justify-between gap-4"
+                            >
+                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                    Book a call
+                                </p>
+                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                                <ArrowRight
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#ffffff]"
+                                />
+                            </div>
+                            </Link>
+                        </button>
                 </div>
             </div>
 
-            {/* Cards with Animation */}
+
             <div
                 style={{
                     backgroundImage:
@@ -151,7 +245,7 @@ const WhyWebWunder = () => {
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                 }}
-                className="w-full"
+                className="w-full h-full lg:min-h-screen"
             >
                 {isSmallScreen ? (
                     <div className="relative">
@@ -163,13 +257,11 @@ const WhyWebWunder = () => {
                                 }}
                             >
                                 {mainItems.map((item, index) => (
-                                    <motion.div
+                                    <div
                                         key={index}
-                                        className="w-full items flex-shrink-0"
-                                        variants={itemAnimation}
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ once: true }} // Animation triggers only once
+                                        className="w-full items  flex-shrink-0"
+
+
                                     >
                                         <MainCard
                                             cardWidth="w-full"
@@ -179,7 +271,7 @@ const WhyWebWunder = () => {
                                             title={item.title}
                                             description={item.description}
                                         />
-                                    </motion.div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
@@ -188,27 +280,24 @@ const WhyWebWunder = () => {
                                 <button
                                     key={index}
                                     onClick={() => handleSlideChange(index)}
-                                    className={`h-1 w-16 rounded-full transition-colors ${
-                                        currentSlide === index
-                                            ? 'bg-[#5D59E1]'
-                                            : 'bg-[#D9D9D9]'
-                                    }`}
+                                    className={`h-1 w-16 rounded-full transition-colors ${currentSlide === index
+                                        ? 'bg-[#5D59E1]'
+                                        : 'bg-[#D9D9D9]'
+                                        }`}
                                 ></button>
                             ))}
                         </div>
                     </div>
                 ) : (
-                    <motion.div
+                    <div
                         className="flex flex-wrap justify-center gap-16 lg:gap-4"
-                        variants={container}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }} // Animation triggers only once
+
+
                     >
                         {/* First row - 2 items */}
                         <div className="flex w-full h-full flex-wrap justify-center gap-16 lg:gap-4">
                             {mainItems.slice(0, 2).map((item, index) => (
-                                <motion.div key={index} className="items" variants={itemAnimation}>
+                                <div key={index} className='upperdiv trig'>
                                     <MainCard
                                         cardWidth={item.cardWidth}
                                         image={item.image}
@@ -216,13 +305,13 @@ const WhyWebWunder = () => {
                                         title={item.title}
                                         description={item.description}
                                     />
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                         {/* Second row - 3 items */}
                         <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
                             {mainItems.slice(2).map((item, index) => (
-                                <motion.div key={index} className="items" variants={itemAnimation}>
+                                <div key={index} className='lowerrdiv rounded-xl'>
                                     <MainCard
                                         cardWidth={item.cardWidth}
                                         image={item.image}
@@ -230,10 +319,10 @@ const WhyWebWunder = () => {
                                         title={item.title}
                                         description={item.description}
                                     />
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
                 )}
             </div>
         </div>

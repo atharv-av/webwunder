@@ -42,6 +42,7 @@
         "@tanstack/react-table": "^8.20.1",
         "@types/mdx": "^2.0.13",
         "@uidotdev/usehooks": "^2.4.1",
+        "aos": "^2.3.4",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
         "date-fns": "^3.6.0",

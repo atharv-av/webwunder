@@ -11,7 +11,7 @@ const StayOnTop = () => {
     return (
         <div className="flex flex-col items-center gap-6 bg-black py-10 lg:pt-20 lg:pb-10">
             <div className="flex flex-col items-center gap-4">
-                <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
+                <Badge data-aos="fade-up" className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     Stay On Top
                 </Badge>
                 <p className="mb-4 w-5/6 text-center font-dm-sans text-[30px] font-bold leading-none text-white lg:text-[40px]">
@@ -32,7 +32,7 @@ const StayOnTop = () => {
             <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
                 <div className="flex flex-col lg:ml-24">
                     <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-2 lg:ml-24">
-                        <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
+                        <Badge data-aos="fade-up" className="bg-[#5D59E1] font-archivo text-sm font-normal">
                             Endless Creativity
                         </Badge>
                         <p className="font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px]">
@@ -47,7 +47,7 @@ const StayOnTop = () => {
                             Interested? Let&apos;s talk!
                         </p>
                         <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                            <button className="flex  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                                 <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                     See Plans
                                 </p>
@@ -60,7 +60,7 @@ const StayOnTop = () => {
                                 </div>
                             </button>
 
-                            <button className="w-fit rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                            <button className="w-fit  hover:scale-95 transition-all  rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
                                 <Link
                                     href="#"
                                     className="flex flex-row items-center justify-between gap-4"

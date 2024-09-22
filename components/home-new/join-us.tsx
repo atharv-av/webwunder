@@ -112,7 +112,7 @@ const JoinUs: React.FC = () => {
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-gradient-to-tr from-black to-black/80 p-8 pt-16 text-white">
             <div className="flex w-full max-w-6xl flex-col lg:flex-row">
                 <div className="mb-8 flex w-full flex-col items-center justify-center lg:w-1/2 lg:items-start">
-                    <Badge className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
+                    <Badge data-aos="fade-up" className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
                         Exceptional Values
                     </Badge>
                     <h1 className="mb-4 text-center font-archivo text-4xl font-bold lg:text-start">
@@ -121,7 +121,7 @@ const JoinUs: React.FC = () => {
                         Clear and Simple.
                     </h1>
                     <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-2">
-                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                        <button className="flex w-fit  hover:scale-95 transition-all  flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                             <p className="ml-3 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 Explore Plans
                             </p>
@@ -134,7 +134,7 @@ const JoinUs: React.FC = () => {
                             </div>
                         </button>
 
-                        <button className="w-fit rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                        <button className="w-fit  hover:scale-95 transition-all  rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
                             <Link
                                 href="#"
                                 className="flex flex-row items-center justify-between gap-4"
@@ -154,7 +154,7 @@ const JoinUs: React.FC = () => {
                         <Button
                             size="icon"
                             variant="ghost"
-                            className="rounded-full bg-[#5D59E1] text-white"
+                            className="rounded-full  hover:scale-95 transition-all  bg-[#5D59E1] text-white"
                             onClick={prevSlide}
                         >
                             <ChevronLeft size={24} />
@@ -162,7 +162,7 @@ const JoinUs: React.FC = () => {
                         <Button
                             size="icon"
                             variant="ghost"
-                            className="rounded-full bg-[#5D59E1] text-white"
+                            className="rounded-full  hover:scale-95 transition-all  bg-[#5D59E1] text-white"
                             onClick={nextSlide}
                         >
                             <ChevronRight size={24} />
@@ -222,7 +222,7 @@ const JoinUs: React.FC = () => {
                         <Button
                             size="icon"
                             variant="ghost"
-                            className="rounded-full bg-[#5D59E1] text-white"
+                            className="rounded-full  bg-[#5D59E1] text-white"
                             onClick={prevSlide}
                         >
                             <ChevronLeft size={24} />

@@ -111,7 +111,7 @@ const ContactUs = () => {
 
     return (
         <div className="flex flex-col items-center gap-4 bg-black">
-            <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
+            <Badge data-aos="fade-up" className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Contact Us
             </Badge>
             <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">

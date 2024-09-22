@@ -69,11 +69,13 @@ import Reviews from '@/components/home-new/reviews'
 import FAQs from '@/components/home-new/faqs'
 import GetInTouch from '@/components/home-new/get-in-touch'
 import Footer from '@/components/layout/home-template-new/footer'
+import New_Homepage from '@/components/home-new/New_Homepage'
 
 export default function HomePage() {
     return (
         <div className="overflow-hidden">
-            <HomeLanding />
+            {/* <HomeLanding /> */}
+         <New_Homepage/>
             <BrandsCarousel />
             <WhyWebWunder />
             <AllInOne />
