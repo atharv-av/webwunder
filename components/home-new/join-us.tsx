@@ -109,8 +109,8 @@ const JoinUs: React.FC = () => {
     }
 
     return (
-        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-gradient-to-tr from-black to-black/80 p-8 pt-16 text-white">
-            <div className="flex w-full max-w-6xl flex-col lg:flex-row">
+        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] p-8 pt-16 text-white">
+            <div className="flex w-full max-w-6xl flex-col lg:flex-row lg:pl-6">
                 <div className="mb-8 flex w-full flex-col items-center justify-center lg:w-1/2 lg:items-start">
                     <Badge className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
                         Exceptional Values
@@ -170,7 +170,13 @@ const JoinUs: React.FC = () => {
                     </div>
                 </div>
 
-                <div className="flex w-full flex-col items-center justify-start lg:w-11/12">
+                <div
+                    // style={{
+                    //     scrollbarWidth: 'none', // Firefox
+                    //     msOverflowStyle: 'none', // IE and Edge
+                    // }}
+                    className="flex w-full flex-col items-center justify-start lg:w-11/12"
+                >
                     <div className="flex">
                         {[0, 1, 2].map((offset) => {
                             const index = (currentIndex + offset) % items.length
@@ -279,13 +285,13 @@ const JoinUs: React.FC = () => {
                     width={600}
                     height={100}
                 />
-                <div className="flex flex-col items-center justify-center lg:items-start">
+                <div className="flex flex-col items-center justify-between lg:items-center">
                     <div className="hidden w-3/4 flex-col gap-4 lg:flex">
                         <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                             Three Steps
                         </Badge>
                         <p className="font-archivo text-[45px] font-bold leading-none text-white">
-                            Get Your Website in <br /> Three Easy Steps
+                            Get Your Website in Three Easy Steps
                         </p>
                         <p className="mb-5 mt-0 font-archivo text-base font-normal text-white/50">
                             Hate meetings? Us too—that&apos;s why we&apos;ve

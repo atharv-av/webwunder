@@ -2,10 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Badge } from '../ui/badge'
-import PricingCard, { PricingCardProps } from './pricing-card'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-
+import PricingCard from './pricing-card'
 interface PlanProps {
     icon: string
     iconBg: string
@@ -152,7 +149,7 @@ const PurchasePlans: React.FC = () => {
                     need another agency – and neither will your current one!
                 </p>
             </div>
-            <div className="relative w-full max-w-[1200px] lg:mt-8">
+            <div className="relative w-full xl:scale-90 2xl:scale-100 xl:max-w-[1500px] lg:max-w-[1200px]: lg:mt-8">
                 <div className="overflow-visible">
                     <div
                         className={`flex items-stretch justify-center ${isMobile ? 'flex-col' : ''}`}

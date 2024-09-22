@@ -29,7 +29,7 @@ const galleryImages = [
 
 const OurPortfolio = () => {
     return (
-        <div className="flex flex-col items-center gap-4 bg-black lg:px-0 px-4">
+        <div className="flex flex-col items-center gap-4 bg-black lg:px-0 px-8">
             <Badge className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Our Portfolio
             </Badge>
@@ -46,7 +46,7 @@ const OurPortfolio = () => {
                     </div>
                 ))}
             </div>
-            <div className="mt-8 grid grid-cols-2 lg:gap-5 gap-7 lg:grid-cols-3">
+            <div className="mt-8 grid grid-cols-2 gap-7 lg:grid-cols-3 lg:w-5/6 self-center">
                 {galleryImages.map((image, index) => (
                     <Image
                         key={index}
@@ -57,7 +57,7 @@ const OurPortfolio = () => {
                     />
                 ))}
             </div>
-            <div className="flex lg:w-4/5 flex-col lg:items-start items-center gap-2">
+            <div className="flex lg:w-4/5 lg:mt-4 self-center flex-col lg:items-start items-center lg:justify-between gap-2">
                 <p className="font-archivo lg:text-[26px] text-lg font-bold text-white lg:text-start text-center">
                     Built for Entrepreneurs Like You
                 </p>

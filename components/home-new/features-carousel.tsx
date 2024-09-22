@@ -46,7 +46,11 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carousel
         const animateCarousel = () => {
             setPosition((prevPosition) => {
                 const newPosition = prevPosition + 1
-                return newPosition >= totalWidth ? 0 : newPosition
+                if (newPosition >= totalWidth) {
+                    // Reset the position once it reaches the halfway point
+                    return 0
+                }
+                return newPosition
             })
         }
 
@@ -66,6 +70,7 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carousel
                 className={`flex h-full w-fit flex-row items-center lg:gap-20 gap-10 whitespace-nowrap ${bgColor}`}
                 style={{
                     transform: `translateX(-${position}px)`,
+                    transition: 'transform 0.03s linear', // Smooth transition
                 }}
             >
                 {carouselItems.map((item, index) => (

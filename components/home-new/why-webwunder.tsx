@@ -10,7 +10,7 @@ const mainItems = [
     {
         cardWidth: 'lg:w-[700px] w-full',
         image: '/images/home/why-webwunder/why-webwunder-1.png',
-        smallImage: "/images/home/why-webwunder/why-webwunder-1-small.png",
+        smallImage: '/images/home/why-webwunder/why-webwunder-1-small.png',
         imgWidth: 700,
         title: 'Boost Revenue with Strategic, Conversion-Optimized Solutions',
         description:
@@ -134,9 +134,15 @@ const WhyWebWunder = () => {
             >
                 {isSmallScreen ? (
                     <div className="relative">
-                        <div className="overflow-hidden">
+                        <div
+                            style={{
+                                scrollbarWidth: 'none', // Firefox
+                                msOverflowStyle: 'none', // IE and Edge
+                            }}
+                            className="overflow-scroll"
+                        >
                             <div
-                                className="flex transition-transform duration-300 ease-in-out"
+                                className="flex gap-x-4 transition-transform duration-300 ease-in-out"
                                 style={{
                                     transform: `translateX(-${currentSlide * 100}%)`,
                                 }}

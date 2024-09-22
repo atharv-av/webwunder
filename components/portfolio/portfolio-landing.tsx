@@ -4,12 +4,12 @@ import { Badge } from '../ui/badge'
 
 const PortfolioLanding = () => {
     return (
-        <div className="bg-white p-4">
-            <div className="relative rounded-2xl min-h-screen bg-[url('/images/portfolio/portfolio-landing-img.png')] bg-cover bg-center">
+        <div className="bg-white lg:p-4 ">
+            <div className="relative lg:rounded-2xl min-h-screen bg-[url('/images/portfolio/portfolioLanding.png')] lg:bg-[url('/images/portfolio/portfolio-landing-img.png')] bg-cover bg-no-repeat bg-center">
                 <div className="relative z-10">
                     <Header />
                 </div>
-                <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-3 px-4 md:bottom-32 md:px-0 lg:bottom-48">
+                <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-3 px-4 md:bottom-32 md:px-0 lg:bottom-48 xl:bottom-52">
                     <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                         Designed to Perform
                     </Badge>

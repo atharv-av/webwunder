@@ -15,6 +15,17 @@ const AllInOne = () => {
                     bgColor="bg-[#CAFF00]"
                     tiltAngle="rotate(0.97deg)"
                     carouselTextColor="text-[#171411]"
+                    // items={ [
+                    //     'Web Design',
+                    //     'Graphic Design',
+                    //     'Video Editing',
+                    //     'Motion Graphics',
+                    //     'Web Development',
+                    //     'Branding',
+                    //     'SEO',
+                    //     'Digital Marketing',
+                    //     'Brochure',
+                    // ]}
                 />
                 <div className="absolute inset-0 flex min-h-screen bg-[url('/images/home/all-in-one/all-in-one-small-bg-main.png')] bg-cover bg-center lg:bg-[url('/images/home/all-in-one/all-in-one-bg.png')]"></div>
                 <div className="relative bottom-48 flex h-screen flex-col items-center justify-center gap-5 px-4 sm:bottom-32 sm:px-4 md:bottom-32 md:px-0 lg:bottom-48 lg:gap-2">
@@ -36,38 +47,39 @@ const AllInOne = () => {
                         confidence.
                     </p>
 
-                    <div className="flex items-center justify-center gap-3 sm:gap-5">
-                        <Button
-                            size={'base'}
-                            className="flex flex-row items-center justify-center gap-2 rounded-full bg-[#24252A] px-4 py-3 sm:gap-4 sm:p-4"
-                        >
-                            <p className="font-archivo text-xs font-normal text-white sm:text-sm">
+                    <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
+                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                            <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 Explore Plans
                             </p>
-                            <ArrowRight
-                                size={20}
-                                className="sm:size-27 rounded-full bg-white p-1 text-black"
-                            />
-                        </Button>
-                        <Button
-                            size={'sm'}
-                            className="gap-2 rounded-full bg-white p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
-                            asChild
-                        >
-                            <Link href="#">
-                                <p className="font-inter text-xs sm:text-sm">
-                                    Book a call
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                                <ArrowRight
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
+                                />
+                            </div>
+                        </button>
+
+                        <button className="w-fit rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                            <Link
+                                href="#"
+                                className="flex flex-row items-center justify-between gap-4"
+                            >
+                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                    Get in Touch
                                 </p>
                                 <ArrowRight
-                                    size={16}
-                                    className="font-light text-black"
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
                                 />
                             </Link>
-                        </Button>
+                        </button>
                     </div>
                     {/* <div className="hidden lg:block">
                         <Image
-                            src="/images/home/all-in-one/all-in-one-bg-main-1.png"
+                            src="/images/home/all-in-one/all-in-one-agency-screen-main-1.png"
                             alt="All in one agency"
                             width={500}
                             height={100}

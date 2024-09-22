@@ -8,8 +8,8 @@ import { Badge } from '../ui/badge'
 const HomeLanding = () => {
     return (
         <div className="bg-white lg:p-5">
-            <div className="relative min-h-screen overflow-hidden lg:rounded-t-lg">
-                <div className="absolute inset-0 flex bg-[url('/images/home/hero/hero-img-bg.png')] rounded-2xl bg-cover bg-center bg-no-repeat lg:hidden"></div>
+            <div className="relative min-h-screen overflow-hidden lg:rounded-2xl">
+                <div className="absolute inset-0 flex bg-[url('/images/home/hero/hero-img-bg.png')] bg-cover bg-center bg-no-repeat lg:hidden"></div>
                 <div className="inset-0 hidden min-h-screen bg-cover bg-center bg-no-repeat lg:absolute lg:flex lg:bg-[url('/images/home/hero/hero-main-bg.png')]"></div>
                 <div className="relative z-10">
                     <Header />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Badge } from '../ui/badge'
 import Image from 'next/image'
 import { HeroCardsLeft, HeroCardsRight } from './hero-cards'
@@ -9,7 +9,7 @@ import FeaturesCarousel from './features-carousel'
 
 const StayOnTop = () => {
     return (
-        <div className="flex flex-col items-center gap-6 bg-black py-10 lg:pt-20 lg:pb-10">
+        <div className="flex flex-col items-center gap-6 bg-black py-10 lg:pb-10 lg:pt-20">
             <div className="flex flex-col items-center gap-4">
                 <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     Stay On Top
@@ -29,46 +29,46 @@ const StayOnTop = () => {
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="flex relative flex-col items-center justify-between gap-12 lg:flex-row">
-            <div className="flex">
-                        <Image
-                            className="absolute sm:right-24 sm:top-9 lg:bottom-96 lg:left-80   "
-                            src="/images/home/stay-on-top/icon-3.png"
-                            alt="Unlimited Design"
-                            width={75.56}
-                            height={79.07}
-                        />
-                        <Image
-                            className="absolute left-36 lg:bottom-16 lg:left-[44rem]"
-                            src="/images/home/stay-on-top/icon-5.png"
-                            alt="Unlimited Design"
-                            width={45}
-                            height={30}
-                        />
-                        <Image
-                            className="absolute right-16 top-60 lg:left-20 lg:top-96"
-                            src="/images/home/stay-on-top/icon-1.png"
-                            alt="Unlimited Design"
-                            width={76}
-                            height={79}
-                        />
-                        <Image
-                            className="absolute right-20 top-60 self-end lg:bottom-16 lg:left-[42rem]"
-                            src="/images/home/stay-on-top/icon-4.png"
-                            alt="Unlimited Design"
-                            width={32.26}
-                            height={33.76}
-                        />
-                    </div>
-                <div className="flex flex-col lg:ml-24">
-                    <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-2 lg:ml-24">
+            <div className="relative flex flex-col items-center justify-between gap-12 lg:flex-row">
+                <div className="flex">
+                    <Image
+                        className="absolute bottom-[38rem] right-80 lg:bottom-[35rem] lg:left-64 xl:top-5"
+                        src="/images/home/stay-on-top/icon-3.png"
+                        alt="Unlimited Design"
+                        width={75.56}
+                        height={79.07}
+                    />
+                    <Image
+                        className="xl: absolute left-[22rem] lg:bottom-[39rem] lg:left-[74rem]"
+                        src="/images/home/stay-on-top/icon-5.png"
+                        alt="Unlimited Design"
+                        width={45}
+                        height={30}
+                    />
+                    <Image
+                        className="absolute right-80 top-[26rem] lg:left-20 lg:top-[31rem] xl:left-20 xl:top-96"
+                        src="/images/home/stay-on-top/icon-1.png"
+                        alt="Unlimited Design"
+                        width={76}
+                        height={79}
+                    />
+                    <Image
+                        className="xl: absolute right-14 top-[22rem] self-end lg:bottom-20 lg:left-[32rem]"
+                        src="/images/home/stay-on-top/icon-4.png"
+                        alt="Unlimited Design"
+                        width={32.26}
+                        height={33.76}
+                    />
+                </div>
+                <div className="flex flex-col">
+                    <div className="flex flex-col items-center gap-4 lg:relative lg:left-28 lg:items-start lg:gap-2">
                         <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                             Endless Creativity
                         </Badge>
                         <p className="font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px]">
                             Unlimited Design
                         </p>
-                        <p className="w-11/12 text-center font-archivo text-[13px] font-normal text-white/50 lg:w-auto lg:text-start lg:text-base">
+                        <p className="w-11/12 text-center font-archivo text-[13px] font-normal text-white/50 lg:w-full lg:text-start lg:text-base">
                             We&apos;ve created the Unlimited Design Package for
                             businesses that just can&apos;t get enough of our
                             exceptional design work. With limited spots
@@ -107,17 +107,16 @@ const StayOnTop = () => {
                             </button>
                         </div>
                     </div>
-                   
                 </div>
 
-                {/* Show the image on all screen sizes but apply specific height for smaller screens */}
                 <Image
                     className="block w-full max-w-full lg:w-auto" // Ensure image responsiveness
                     src="/images/home/stay-on-top/unlimited-design-img.png"
                     alt="Unlimited Design"
-                    width={750}
+                    width={800}
                     height={500}
-                    priority // Ensures it's visible faster
+                    sizes="(min-width: 1023px) 800px, (min-width: 1439px) 1200px, 1200px"
+                    priority
                 />
             </div>
             <div className="w-full">

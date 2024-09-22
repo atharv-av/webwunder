@@ -16,7 +16,7 @@ interface ContactCardProps {
 
 const contactCards = [
     {
-        width: 'lg:w-1/3 w-full',
+        width: 'lg:w-[33%] w-full',
         bgColor: 'bg-[#FB421F]',
         tag: 'Call',
         title: 'Book a 15-Minute Call',
@@ -26,7 +26,7 @@ const contactCards = [
         buttonTarget: '#',
     },
     {
-        width: 'lg:w-1/4 w-full',
+        width: 'lg:w-[28%] w-full',
         bgColor: 'bg-[#25D366]',
         tag: 'Chat',
         title: 'Prefer to Chat First?',
@@ -36,7 +36,7 @@ const contactCards = [
         buttonTarget: '#',
     },
     {
-        width: 'lg:w-[22%] w-full',
+        width: 'lg:w-[25%] w-full',
         bgColor: 'bg-[#4148FA]',
         tag: 'Email',
         title: 'Get in Touch',
@@ -58,7 +58,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
     return (
         <div
-            className={`flex lg:h-80 h-fit w-fit flex-col items-start justify-between ${bgColor} ${width} rounded-xl p-8`}
+            className={`flex w-fit flex-col items-start justify-between lg:h-[300px] h-fit ${bgColor} ${width} rounded-xl p-8`}
         >
             <div className="flex flex-col gap-2">
                 <div className="h-fit w-fit rounded-full border border-white bg-transparent px-2 py-1 font-archivo text-sm font-normal text-white">
@@ -71,23 +71,18 @@ const ContactCard: React.FC<ContactCardProps> = ({
                     {description}
                 </p>
             </div>
-            <Button
-                size={'sm'}
-                className="gap-2 rounded-full lg:mt-0 mt-4 bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
-                asChild
-            >
-                <Link href={buttonTarget} className="">
-                    <p className="font-archivo text-[15px] font-normal text-white sm:text-sm">
-                        {buttonText}
-                    </p>
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white">
-                        <ArrowRight
-                            size={16}
-                            className="font-light text-black"
-                        />
-                    </div>
-                </Link>
-            </Button>
+            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 lg:mt-0 mt-8">
+                <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                   {buttonText}
+                </p>
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                    <ArrowRight
+                        size={18}
+                        fontWeight={100}
+                        className="text-[#24252A]"
+                    />
+                </div>
+            </button>
         </div>
     )
 }
@@ -98,10 +93,10 @@ const ContactUs = () => {
             <Badge className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Contact Us
             </Badge>
-            <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
+            <p className="font-archivo text-[25px] font-bold text-white lg:text-[45px]">
                 Let&apos;s Get Started!
             </p>
-            <div className="flex flex-col items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-6">
+            <div className="flex w-[95%] flex-col items-center justify-center gap-5 px-6 lg:flex-row lg:gap-3 lg:px-0">
                 {contactCards.map((card, index) => (
                     <ContactCard
                         key={index}
