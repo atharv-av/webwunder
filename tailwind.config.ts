@@ -23,6 +23,10 @@ const config = {
             screens: {
                 '3xl': '2560px',
             },
+            
+            
+        
+            
             textShadow: {
                 DEFAULT: ' 1px 0px 7px rgba(0,0,0,1)',
             },
@@ -77,6 +81,10 @@ const config = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(100%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                  },
                 scroll: {
                     to: {
                         transform: 'translate(calc(-50% - 0.5rem))',
@@ -108,6 +116,7 @@ const config = {
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'bounce-slow': 'bounce 3s infinite',
             },
+            marquee: 'marquee 10s linear infinite',
             fontFamily: {
                 archivo: ['var(--font-archivo)', 'sans-serif'],
                 'dm-sans': ['var(--font-dm-sans)', 'sans-serif'],

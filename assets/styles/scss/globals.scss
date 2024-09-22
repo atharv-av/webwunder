@@ -9,7 +9,18 @@
     width: 8px;
 }
 
-::-webkit-scrollbar:horizontal {
+
+
+  ::-webkit-scrollbar:horizontal {
+    display: none;
+  }
+  
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  
+::-webkit-scrollbar:vertical {
     height: 8px;
 }
 

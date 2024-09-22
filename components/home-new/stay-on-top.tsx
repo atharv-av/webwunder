@@ -29,16 +29,16 @@ const StayOnTop = () => {
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
-                <div className="flex flex-col lg:ml-24">
-                    <div className="flex flex-col items-center gap-4 lg:items-start lg:gap-2 lg:ml-24">
-                        <Badge data-aos="fade-up" className="bg-[#5D59E1] font-archivo text-sm font-normal">
+            <div className="flex flex-col relative lg:h-screen lg:px- items-center justify-between gap-12 lg:flex-row">
+                <div className="flex  flex-col lg:ml-24">
+                    <div className="flex flex-col p-4 gap-4 min-w-96">
+                        <Badge data-aos="fade-up" className="bg-[#5D59E1] w-fit font-archivo text-sm font-normal">
                             Endless Creativity
                         </Badge>
                         <p className="font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px]">
                             Unlimited Design
                         </p>
-                        <p className="w-11/12 text-center font-archivo text-[13px] font-normal text-white/50 lg:w-auto lg:text-start lg:text-base">
+                        <p className="w-11/12 font-archivo text-[13px] font-normal text-white/50 lg:w-auto text-left lg:text-start lg:text-base">
                             We&apos;ve created the Unlimited Design Package for
                             businesses that just can&apos;t get enough of our
                             exceptional design work. With limited spots
@@ -46,8 +46,8 @@ const StayOnTop = () => {
                             requests, fast delivery, and 100% design ownership.
                             Interested? Let&apos;s talk!
                         </p>
-                        <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                            <button className="flex  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                        <div className="my-4 flex items-center justify-start gap-2 lg:my-2 lg:gap-3">
+                            <button className="flex min-w-40 hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                                 <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                     See Plans
                                 </p>
@@ -60,7 +60,7 @@ const StayOnTop = () => {
                                 </div>
                             </button>
 
-                            <button className="w-fit  hover:scale-95 transition-all  rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
+                            <button className="w-fit min-w-40 hover:scale-95 transition-all  rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium lg:py-3">
                                 <Link
                                     href="#"
                                     className="flex flex-row items-center justify-between gap-4"
@@ -77,30 +77,29 @@ const StayOnTop = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex">
+                    <div className="flex ">
                         <Image
-                            // className="relative sm:right-24 sm:top-12 lg:bottom-32 lg:left-16"
+                            className="absolute top-12 left-48"
                             src="/images/home/stay-on-top/icon-3.png"
                             alt="Unlimited Design"
                             width={75.56}
                             height={79.07}
                         />
                         <Image
-                            // className="relative left-36 lg:bottom-16 lg:left-[65rem]"
+                            className="absolute left-12 bottom-44"
                             src="/images/home/stay-on-top/icon-5.png"
                             alt="Unlimited Design"
-                            width={45}
-                            height={30}
+                            width={50}
+                            height={50}
                         />
                         <Image
-                            // className="relative right-16 top-60 lg:right-20 lg:top-8"
-                            src="/images/home/stay-on-top/icon-1.png"
+                            className="absolute right-12 top-12" src="/images/home/stay-on-top/icon-1.png"
                             alt="Unlimited Design"
                             width={76}
                             height={79}
                         />
                         <Image
-                            // className="relative right-20 top-16 self-end lg:left-16"
+                            className="absolute left-[43%] xl:left-[38%] bottom-16"
                             src="/images/home/stay-on-top/icon-4.png"
                             alt="Unlimited Design"
                             width={32.26}
@@ -114,8 +113,8 @@ const StayOnTop = () => {
                     className="block w-full max-w-full lg:w-auto" // Ensure image responsiveness
                     src="/images/home/stay-on-top/unlimited-design-img.png"
                     alt="Unlimited Design"
-                    width={750}
-                    height={500}
+                    width={800}
+                    height={1000}
                     priority // Ensures it's visible faster
                 />
             </div>

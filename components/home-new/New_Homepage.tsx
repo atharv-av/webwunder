@@ -15,7 +15,7 @@ const New_Homepage = () => {
     useEffect(() => {
         AOS.init();
         AOS.refresh();
-      }, []);
+    }, []);
 
     useEffect(() => {
         // Register GSAP plugins
@@ -38,14 +38,14 @@ const New_Homepage = () => {
 
         return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
     }, []);
-    const splitText = (text) => {
+    const splitText = (text: string) => {
         return text.split('').map((char, index) => (
             <span key={index} className="inline-block">{char}</span>
         ));
     };
 
     return (
-        <div className='min-h-screen h-full lg:p-5 bg-white'>
+        <div className='lg:min-h-screen h-full lg:p-5 bg-white'>
             <div className='bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-t-xl'>
 
                 <div className="relative z-10">
@@ -74,7 +74,7 @@ const New_Homepage = () => {
                     </div>
 
                     <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                        
+
                         <button className="flex hover:scale-95 transition-all w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 Watch Video
@@ -97,12 +97,12 @@ const New_Homepage = () => {
                                     Book a call
                                 </p>
                                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
-                                <ArrowRight
-                                    size={18}
-                                    fontWeight={100}
-                                    className="text-[#ffffff]"
-                                />
-                            </div>
+                                    <ArrowRight
+                                        size={18}
+                                        fontWeight={100}
+                                        className="text-[#ffffff]"
+                                    />
+                                </div>
                             </Link>
                         </button>
                     </div>
@@ -116,7 +116,14 @@ const New_Homepage = () => {
                 <Image data-aos="fade-up" data-aos-duration="3000"
                     src="/images/home/hero/homebg.png"
                     alt="Figma"
-                    className='w-screen'
+                    className='w-screen hidden md:flex'
+                    width={5000}
+                    height={5000}
+                />
+                <Image data-aos="fade-up" data-aos-duration="3000"
+                    src="/images/homebg2.png"
+                    alt="Figma"
+                    className='w-screen flex mt-6 md:hidden'
                     width={5000}
                     height={5000}
                 />

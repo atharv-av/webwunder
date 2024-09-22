@@ -68,7 +68,7 @@ const OurPortfolio = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center gap-4 bg-black lg:px-0 px-4">
+        <div className="flex flex-col  items-center gap-4 bg-black lg:px-0 px-4">
             <Badge data-aos="fade-up" className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal">
                 Our Portfolio
             </Badge>
@@ -105,11 +105,11 @@ const OurPortfolio = () => {
                     </motion.div>
                 ))}
             </div>
-            <div className="flex lg:w-4/5 flex-col lg:items-start items-center gap-2">
-                <p className="font-archivo lg:text-[26px] text-lg font-bold text-white lg:text-start text-center">
+            <div className="flex lg:max-w-6xl xl:max-w-6xl px-8 flex-col lg:items-start  items-center gap-2">
+                <p className="font-archivo lg:text-[26px] text-lg font-bold text-white lg:text-start  text-center">
                     Built for Entrepreneurs Like You
                 </p>
-                <div className="lg:flex lg:justify-between">
+                <div className="lg:flex  mx-auto lg:justify-between">
                     <p className="lg:w-3/4 w-full lg:text-start text-center font-archivo lg:text-base text-sm font-normal text-white/50">
                         Explore our portfolio of websites designed to do more
                         than just look great—they&apos;re strategically crafted

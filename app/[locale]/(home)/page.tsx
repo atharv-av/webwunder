@@ -57,7 +57,6 @@
 // }
 
 import BrandsCarousel from '@/components/home-new/brands-carousel'
-import HomeLanding from '@/components/home-new/home-landing'
 import WhyWebWunder from '@/components/home-new/why-webwunder'
 import AllInOne from '../../../components/home-new/all-in-one'
 import JoinUs from '@/components/home-new/join-us'
@@ -70,14 +69,21 @@ import FAQs from '@/components/home-new/faqs'
 import GetInTouch from '@/components/home-new/get-in-touch'
 import Footer from '@/components/layout/home-template-new/footer'
 import New_Homepage from '@/components/home-new/New_Homepage'
+import Why_mobCrousel from '@/components/home-new/why_mobCrousel'
+
 
 export default function HomePage() {
     return (
         <div className="overflow-hidden">
             {/* <HomeLanding /> */}
-         <New_Homepage/>
+            <New_Homepage />
             <BrandsCarousel />
-            <WhyWebWunder />
+            <div className='lg:flex hidden'>
+                <WhyWebWunder />
+            </div>
+            <div className='lg:hidden flex'>
+                <Why_mobCrousel />
+            </div>
             <AllInOne />
             <JoinUs />
             <StayOnTop />

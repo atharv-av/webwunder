@@ -26,7 +26,7 @@ export default function Menu() {
             {process.env.NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' ? (
                 <Button
                     size={'sm'}
-                    className="hidden text-base font-medium gap-3 rounded-full bg-white/20 p-5 text-white hover:text-black lg:flex"
+                    className="hidden text-base font-medium gap-3 rounded-full bg-white/20 p-5 hover:text-white text-white lg:flex"
                     asChild
                 >
                     <Link href={paths.pages.login.href}>

@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState, useRef } from 'react'
+import Marquee from 'react-fast-marquee'
 
 const carouselItems: string[] = [
     'Web Design',
@@ -26,7 +27,7 @@ interface CarouselItemProps {
 }
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, textColor }) => (
-    <p className={`w-fit px-4 font-archivo lg:text-xl text-sm font-bold ${textColor}`}>
+    <p className={`w-fit mx-3 px-4 font-archivo lg:text-xl text-sm font-bold ${textColor}`}>
         {item}
     </p>
 )
@@ -61,11 +62,26 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carousel
             style={{ transform: `${tiltAngle}` }}
             ref={containerRef}
         >
-            <div
+
+<div className={`flex h-full w-full items-center justify-center  ${bgColor}`}>
+                <Marquee className="w-full" speed={50} gradient={false}>
+                    <div className="flex flex-row items-center justify-center gap-x-12">
+                        {carouselItems.map((item, index) => (
+                            <CarouselItem key={index} item={item}  textColor={carouselTextColor} />
+                        ))}
+                        {/* Duplicating the content to avoid gaps */}
+                        {carouselItems.map((item, index) => (
+                            <CarouselItem key={`duplicate-${index}`} item={item}  textColor={carouselTextColor}/>
+                        ))}
+                    </div>
+                </Marquee>
+            </div>
+
+            {/* <div
                 ref={contentRef}
-                className={`flex h-full w-fit flex-row items-center lg:gap-20 gap-10 whitespace-nowrap ${bgColor}`}
+                className={flex h-full w-fit flex-row items-center lg:gap-20 gap-10 whitespace-nowrap ${bgColor}}
                 style={{
-                    transform: `translateX(-${position}px)`,
+                    transform: translateX(-${position}px),
                 }}
             >
                 {carouselItems.map((item, index) => (
@@ -73,12 +89,12 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carousel
                 ))}
                 {carouselItems.map((item, index) => (
                     <CarouselItem
-                        key={`duplicate-${index}`}
+                        key={duplicate-${index}}
                         item={item}
                         textColor={carouselTextColor}
                     />
                 ))}
-            </div>
+            </div> */}
         </div>
     )
 }

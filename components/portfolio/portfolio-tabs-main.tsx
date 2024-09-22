@@ -15,13 +15,13 @@ const PortfolioMainContent = () => {
     return (
         <div className="flex flex-col items-center gap-4">
             <div className="flex flex-col items-center gap-4">
-            <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
+                <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Our Portfolio
                 </Badge>
-                <p className="text-center font-archivo text-[45px] font-bold text-white">
+                <p className="text-center px-16 leading-none font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                     See How We Build Brands That Thrive
                 </p>
-                <p className="w-3/5 text-center font-archivo text-base font-normal text-white/50">
+                <p className="lg:w-3/5 px-8 text-center font-archivo lg:text-base text-sm font-normal text-white/50">
                     Browse our portfolio and see how we deliver high-performance
                     websites tailored to boost your business. Each project
                     demonstrates our commitment to blending design, technology,
@@ -30,30 +30,32 @@ const PortfolioMainContent = () => {
                 </p>
             </div>
             <Tabs defaultValue="webdesign" className="mx-auto">
-                <TabsList className="mx-auto mt-5 mb-10 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
+                <TabsList className="lg:mx-auto mt-5 mb-10 mx-2 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white">
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full lg:p-4 px-3 lg:text-sm text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="webdesign"
                     >
                         Web Design
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full lg:p-4 px-3 lg:text-sm text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="branding"
                     >
                         Branding
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full lg:p-4 px-3 lg:text-sm text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="socialmedia"
                     >
                         Social Media
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full p-4 text-sm font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
+                        className="font-poppins rounded-full lg:p-4 px-3 lg:text-sm text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white"
                         value="graphicdesigning"
                     >
-                        Graphic Designing
+                        <p className='px-5 text-white'>Graphic Designing
+                        </p>
+
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="webdesign">

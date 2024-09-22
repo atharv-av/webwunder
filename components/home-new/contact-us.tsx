@@ -21,7 +21,7 @@ interface ContactCardProps {
 const contactCards = [
     {
         id: 1,
-        width: 'lg:w-1/4 w-full',
+        width: 'lg:w-[40%] w-full',
         bgColor: 'bg-[#FB421F]',
         tag: 'Call',
         title: 'Book a 15-Minute Call',
@@ -117,7 +117,7 @@ const ContactUs = () => {
             <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                 Let&apos;s Get Started!
             </p>
-            <div className="flex flex-col max-w-7xl mx-auto items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
+            <div className="flex flex-col max-w-[80%] mx-auto items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
                 {contactCards.map((card) => (
                     <ContactCard
                         key={card.id}
