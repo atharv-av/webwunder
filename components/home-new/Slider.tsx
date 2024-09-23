@@ -77,7 +77,7 @@ const JoinUsSection: React.FC = () => {
             content: "Need changes? Email us from any device, and we'll handle the rest. Our streamlined process makes updates seamless and stress-free."
         },{
             id: 2,
-            icon: '/images/home/join-us/join-us-icon-2.png',
+            icon: '/images/home/join-us/join-us-icon-1.png',
             title: 'Excellence In Custom Web Design',
             content: 'Get a custom, powerhouse website with minimal effort—no templates, ensuring 100% unique designs and functionality.',
         },
