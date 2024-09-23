@@ -13,7 +13,7 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
     <div className="keen-slider__slide">
-        <div className="flex h-56 w-80 rounded-xl flex-col justify-between bg-[#191919] p-6">
+        <div className="h-fit min-h-56 p-4 rounded-xl flex flex-col justify-between overflow-hidden w-80  bg-[#191919] ">
             <div>
                 <Image src={icon} alt={title} width={25} height={25} />
                 <h3 className="mt-2 text-lg font-bold text-white">{title}</h3>
@@ -22,7 +22,6 @@ const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
         </div>
     </div>
 );
-
 const JoinUsSection: React.FC = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slidesPerView, setSlidesPerView] = useState(1); // Default to 1 slide
@@ -30,8 +29,9 @@ const JoinUsSection: React.FC = () => {
     const updateSlidesPerView = () => {
         if (window.innerWidth < 640) { // Tailwind's 'sm' breakpoint
             setSlidesPerView(1);
-        } else {
-            setSlidesPerView(2.3); // Show 2.5 slides
+        } 
+        else {
+            setSlidesPerView(2.5); // Show 2.5 slides
         }
     };
 
@@ -120,7 +120,7 @@ const JoinUsSection: React.FC = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="lg:col-span-2 flex flex-col items-center overflow-hidden">
+                    <div className="lg:col-span-2 md:col-span-1 flex flex-col items-center overflow-hidden">
                         <div ref={sliderRef} className="keen-slider">
                             {[...items].map((testimonial) => (
                                 <Testimonial key={testimonial.id} {...testimonial} />

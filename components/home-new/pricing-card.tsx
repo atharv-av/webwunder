@@ -31,31 +31,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
     onSignUp,
     isCenter = false,
 }) => {
-    const cardRef = useRef<HTMLDivElement | null>(null); // Reference for the card
 
-    useEffect(() => {
-        // Register GSAP plugins
-        gsap.registerPlugin();
 
-        const elements = cardRef.current?.children; // Get all child elements of the card
-
-        if (elements) {
-            // Set initial state for animation
-            gsap.set(elements, { opacity: 0, y: -30 });
-
-            // Animate each element into view with stagger
-            gsap.to(elements, {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-                stagger: 0.4, // Stagger animation by 0.1 seconds for each element
-                ease: 'power2.out',
-            });
-        }
-    }, []);
+   
 
     return (
-        <Card ref={cardRef} className={`flex flex-col justify-between rounded-3xl lg:border lg:border-[#D9D9D9] border-2 border-white bg-[#191919] text-white ${isCenter ? 'h-[1060px] lg:border-2 lg:border-white' : 'h-full'}`}>
+        <Card  className={`flex flex-col min-h-[800px] justify-between rounded-3xl lg:border lg:border-[#D9D9D9] border-2 border-white bg-[#191919] text-white ${isCenter ? 'h-[1060px] lg:border-2 lg:border-white' : 'h-full'}`}>
             <div className="flex flex-col">
                 <CardHeader className="space-y-4">
                     <div className="flex items-start justify-between">

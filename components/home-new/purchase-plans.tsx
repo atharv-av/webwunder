@@ -3,6 +3,10 @@
 import React, { useEffect, useState } from 'react'
 import { Badge } from '../ui/badge'
 import PricingCard, { PricingCardProps } from './pricing-card'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 
 interface PlanProps {
     icon: string
@@ -96,29 +100,36 @@ const plans: PlanProps[] = [
  */
 const MobilePurchasePlans: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        beforeChange: (current: number, next: number) => setCurrentIndex(next),
+    }
 
     return (
-        <div className="lg:hidden  flex flex-col items-center">
-            <div className="relative w-full">
-                <div className="overflow-hidden">
-                    <div className="flex items-stretch justify-center transition-transform duration-500 ease-in-out">
-                        <div className="w-full px-4">
-                            <PricingCard {...plans[currentIndex]} />
-                        </div>
+        <div className="lg:hidden w-full">
+            <Slider {...settings}>
+                {plans.map((plan, index) => (
+                    <div key={index} className="px-4">
+                        <PricingCard {...plan} isCenter={index === currentIndex} />
                     </div>
-                </div>
-                <div className="flex mt-8 items-center justify-center space-x-4">
-                    {plans.map((_, index) => (
+                ))}
+            </Slider>
+            <div className="flex mt-8 items-center justify-center space-x-4">
+                    {plans.map((_, i) => (
                         <button
-                            key={index}
+                            key={i}
                             className={`h-1 w-12 cursor-pointer rounded-full ${
-                                index === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
+                                i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
                             }`}
-                            onClick={() => setCurrentIndex(index)}
+                          
                         ></button>
                     ))}
                 </div>
-            </div>
         </div>
     )
 }
@@ -130,65 +141,54 @@ const MobilePurchasePlans: React.FC = () => {
 const DesktopPurchasePlans: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState<number>(0)
 
-    const handleNavClick = (index: number): void => {
-        setCurrentIndex(index)
+    const settings = {
+        centerMode: true,
+        centerPadding: '0px',
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: false,
+        beforeChange: (current: number, next: number) => setCurrentIndex(next),
+        
     }
-
-    // Get the visible cards based on the current index
-    const getVisiblePlans = () => {
-        const leftIndex = (currentIndex - 1 + plans.length) % plans.length
-        const rightIndex = (currentIndex + 1) % plans.length
-
-        return [plans[leftIndex], plans[currentIndex], plans[rightIndex]]
-    }
-
-    const visiblePlans = getVisiblePlans()
 
     return (
-        <div className="hidden lg:flex flex-col items-center">
-            <div className="relative w-full max-w-[1400px]">
-                <div className="overflow-hidden">
-                    <div className="flex -space-x-6 items-stretch justify-center transition-transform duration-500 ease-in-out">
-                        {visiblePlans.map((plan, index) => {
-                            const isCenter = index === 1 // Center card
-                            return (
-                                <div
-                                    key={index}
-                                    className={`w-1/3 flex-shrink-0 px-2 transition-all duration-300 transform ${
-                                        isCenter ? 'scale-100 shadow-lg z-10' : 'scale-90 opacity-75 z-0'
-                                    }`}
-                                    style={{
-                                        height: '1100px',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    <div className="h-full p-3">
-                                        <PricingCard {...plan} isCenter={isCenter} />
-                                    </div>
-                                </div>
-                            )
-                        })}
+        <div className="hidden lg:block w-full max-w-[1400px]">
+            <Slider {...settings}>
+                {plans.map((plan, index) => (
+                    <div
+                        key={index}
+                        className="px-2"
+                        style={{
+                            height: '1100px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <div className="h-full p-3">
+                            <PricingCard {...plan} isCenter={index === currentIndex} />
+                        </div>
                     </div>
-                </div>
-
-                {/* Tab Navigation */}
-                <div className="flex mt-8 items-center justify-center space-x-4">
+                ))}
+            </Slider>
+            <div className="flex mt-8 items-center justify-center space-x-4">
                     {plans.map((_, i) => (
                         <button
                             key={i}
                             className={`h-1 w-12 cursor-pointer rounded-full ${
                                 i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
                             }`}
-                            onClick={() => handleNavClick(i)}
+                          
                         ></button>
                     ))}
                 </div>
-            </div>
         </div>
     )
 }
+
 
 
 
