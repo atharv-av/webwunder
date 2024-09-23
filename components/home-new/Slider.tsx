@@ -147,7 +147,7 @@ const JoinUsSection: React.FC = () => {
                             {[...Array(items.length)].map((_, idx) => (
                                 <div
                                     key={idx}
-                                    className={`h-1 w-16 rounded-full ${idx === currentSlide ? 'bg-[#5D59E1]' : 'bg-zinc-400'}`}
+                                    className={`h-1 w-16 mx-2 rounded-full ${idx === currentSlide ? 'bg-[#5D59E1]' : 'bg-zinc-400'}`}
                                 />
                             ))}
                         </div>
