@@ -13,12 +13,15 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
     <div className="keen-slider__slide">
-        <div className="h-fit min-h-56 p-4 rounded-xl flex flex-col justify-between overflow-hidden w-80  bg-[#191919] ">
+        <div className='p-2'>
+
+        <div className="h-fit min-h-56 p-4 rounded-xl flex flex-col justify-between overflow-hidden w-full  bg-[#191919] ">
             <div>
                 <Image src={icon} alt={title} width={25} height={25} />
                 <h3 className="mt-2 text-lg font-bold text-white">{title}</h3>
                 <p className="mt-2 text-sm text-white/70">{content}</p>
             </div>
+        </div>
         </div>
     </div>
 );
@@ -28,12 +31,19 @@ const JoinUsSection: React.FC = () => {
 
     const updateSlidesPerView = () => {
         if (window.innerWidth < 640) { // Tailwind's 'sm' breakpoint
-            setSlidesPerView(1);
+            setSlidesPerView(1); // 1 slide for small screens
+        } 
+        else if (window.innerWidth < 1024) { // Tailwind's 'lg' breakpoint
+            setSlidesPerView(2); // 2 slides for medium/large screens
+        } 
+        else if (window.innerWidth < 1440) { // Tailwind's 'xl' breakpoint
+            setSlidesPerView(3); // 3 slides for large screens
         } 
         else {
-            setSlidesPerView(2.5); // Show 2.5 slides
+            setSlidesPerView(3); // 4 slides for extra-large screens and above
         }
     };
+    
 
     useEffect(() => {
         updateSlidesPerView();
@@ -66,7 +76,7 @@ const JoinUsSection: React.FC = () => {
         },
         {
             id: 2,
-            icon: '/images/home/join-us/join-us-icon-2.png',
+            icon: '/images/home/join-us/join-us-icon-6.png',
             title: 'Excellence In Custom Web Design',
             content: 'Get a custom, powerhouse website with minimal effort—no templates, ensuring 100% unique designs and functionality.',
         },
@@ -76,16 +86,22 @@ const JoinUsSection: React.FC = () => {
             title: 'Effortless Updates, Anytime, Anywhere',
             content: "Need changes? Email us from any device, and we'll handle the rest. Our streamlined process makes updates seamless and stress-free."
         },{
-            id: 2,
-            icon: '/images/home/join-us/join-us-icon-1.png',
-            title: 'Excellence In Custom Web Design',
-            content: 'Get a custom, powerhouse website with minimal effort—no templates, ensuring 100% unique designs and functionality.',
+            id: 4,
+            icon: '/images/home/join-us/join-us-icon-4.png',
+            title: 'Built by Entrepreneurs, for Entrepreneurs',
+            content: 'We understand the hustle. With WebWunder, get a powerhouse website in under an hour. We’ve perfected the process—100+ projects perfected.',
         },
         {
-            id: 3,
-            icon: '/images/home/join-us/join-us-icon-3.png',
-            title: 'Effortless Updates, Anytime, Anywhere',
-            content: "Need changes? Email us from any device, and we'll handle the rest. Our streamlined process makes updates seamless and stress-free."
+            id: 5,
+            icon: '/images/home/join-us/join-us-icon-1.png',
+            title: 'Free Updates and Design Refreshes',
+            content: "Stay ahead with continuous updates, a free design refresh every 36 months, and transform your existing site with WebWunder."
+        },
+        {
+            id: 6,
+            icon: '/images/home/join-us/join-us-icon-6.png',
+            title: 'Results-Driven Web Designs',
+            content: "Our websites are designed to perform, attract, and convert, driving real growth."
         }
     ];
 
