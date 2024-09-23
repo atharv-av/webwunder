@@ -155,14 +155,15 @@ const DesktopPurchasePlans: React.FC = () => {
     }
 
     return (
-        <div className="hidden lg:block w-full max-w-[1400px]">
+        <>
+        <div className="hidden lg:block h-full w-full px-16 max-w-[1400px]">
             <Slider {...settings}>
                 {plans.map((plan, index) => (
                     <div
                         key={index}
-                        className="px-2"
+                        className="px-2 pt-12 h-full"
                         style={{
-                            height: '1100px',
+                          
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -186,6 +187,8 @@ const DesktopPurchasePlans: React.FC = () => {
                     ))}
                 </div>
         </div>
+           
+                </>
     )
 }
 
