@@ -26,12 +26,14 @@ export const InfiniteMovingCards = ({
     useEffect(() => {
         addAnimation()
     }, [])
+
     const [start, setStart] = useState(false)
 
     function addAnimation() {
         if (containerRef.current && scrollerRef.current) {
             const scrollerContent = Array.from(scrollerRef.current.children)
 
+            // Duplicate the entire list to create the infinite scrolling effect
             scrollerContent.forEach((item) => {
                 const duplicatedItem = item.cloneNode(true)
                 if (scrollerRef.current) {
@@ -47,38 +49,31 @@ export const InfiniteMovingCards = ({
 
     const getDirection = () => {
         if (containerRef.current) {
-            if (direction === 'left') {
-                containerRef.current.style.setProperty(
-                    '--animation-direction',
-                    'forwards',
-                )
-            } else {
-                containerRef.current.style.setProperty(
-                    '--animation-direction',
-                    'reverse',
-                )
-            }
+            const animationDirection = direction === 'left' ? 'normal' : 'reverse'
+            containerRef.current.style.setProperty(
+                '--animation-direction',
+                animationDirection,
+            )
         }
     }
 
     const getSpeed = () => {
         if (containerRef.current) {
-            if (speed === 'fast') {
-                containerRef.current.style.setProperty(
-                    '--animation-duration',
-                    '20s',
-                )
-            } else if (speed === 'normal') {
-                containerRef.current.style.setProperty(
-                    '--animation-duration',
-                    '40s',
-                )
-            } else {
-                containerRef.current.style.setProperty(
-                    '--animation-duration',
-                    '80s',
-                )
+            let duration
+            switch (speed) {
+                case 'fast':
+                    duration = '40s'
+                    break
+                case 'normal':
+                    duration = '60s'
+                    break
+                case 'slow':
+                    duration = '80s'
+                    break
+                default:
+                    duration = '20s'
             }
+            containerRef.current.style.setProperty('--animation-duration', duration)
         }
     }
 
@@ -112,7 +107,39 @@ export const InfiniteMovingCards = ({
                         />
                     </li>
                 ))}
+                {/* Duplicate the list for infinite scrolling */}
+                {items.map((item, idx) => (
+                    <li
+                        className="relative max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 lg:w-[350px]"
+                        key={`duplicate-${idx}`}
+                    >
+                        <Image
+                            src={item.imageSrc}
+                            alt={item.altText}
+                            width={350}
+                            height={288}
+                            className="rounded-2xl object-cover"
+                        />
+                    </li>
+                ))}
             </ul>
+
+            {/* CSS for Infinite Scroll Animation */}
+            <style jsx>{`
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(calc(-100% / 2)); /* Adjust based on the duplicated list */
+                    }
+                }
+
+                .animate-scroll {
+                    animation: scroll var(--animation-duration) linear infinite;
+                    animation-direction: var(--animation-direction);
+                }
+            `}</style>
         </div>
     )
 }
