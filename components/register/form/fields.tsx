@@ -193,12 +193,6 @@ const slides = [
         description:
             "Hate meetings? Us too—that’s why we've minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.",
     },
-    {
-        image: '/assets/auth1.png',
-        title: "With WebWunder, You'll Never Need Another Agency. Ever.",
-        description:
-            "With WebWunder, you'll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.",
-    },
 ]
 
 export default function SignupPage() {
@@ -260,6 +254,7 @@ export default function SignupPage() {
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
                             <div className="h-full w-full p-4">
+                                
                                 <Image
                                     className="rounded-xl object-cover"
                                     src={slide.image}
@@ -267,11 +262,13 @@ export default function SignupPage() {
                                     width={1000} // Set specific width and height instead of layout fill
                                     height={600}
                                 />
+
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="absolute left-4 top-4 z-10 hidden px-6 py-8 lg:block">
+                <div className="absolute cursor-pointer left-4 top-4 z-10 hidden px-6 py-8 lg:block">
+                    <Link href={'/'}></Link>
                     <Image
                         src={'/assets/webwunder-logo.png'}
                         alt="WebWunder Logo"

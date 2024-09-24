@@ -19,13 +19,7 @@ const slides = [
         title: 'Get Your Website in Three Easy Steps',
         description:
             "Hate meetings? Us too—that's why we've minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.",
-    },
-    {
-        image: '/assets/auth1.png',
-        title: "With WebWunder, You'll Never Need Another Agency. Ever.",
-        description:
-            "With WebWunder, you'll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.",
-    },
+    }
 ]
 
 export default function LoginPage() {
@@ -88,24 +82,28 @@ export default function LoginPage() {
                         >
                             {/* Wrap the Image in a div with padding */}
                             <div className="h-full w-full p-4">
-                                <Image
-                                    className="rounded-2xl object-cover"
-                                    src={slide.image}
-                                    alt={`Slide ${index + 1}`}
-                                    width={1000} // Set specific width and height instead of layout fill
-                                    height={600}
-                                />
+                                <Link href="/">
+                                    <Image
+                                        className="rounded-2xl object-cover"
+                                        src={slide.image}
+                                        alt={`Slide ${index + 1}`}
+                                        width={1000} // Set specific width and height instead of layout fill
+                                        height={600}
+                                    />
+                                </Link>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div className="absolute left-4 top-4 z-10 hidden px-6 py-8 lg:block">
-                    <Image
-                        src={'/assets/webwunder-logo.png'}
-                        alt="WebWunder Logo"
-                        width={342}
-                        height={60}
-                    />
+                <div className="absolute left-4 top-4 z-10 hidden cursor-pointer px-6 py-8 lg:block">
+                    <Link href={'/'}>
+                        <Image
+                            src={'/assets/webwunder-logo.png'}
+                            alt="WebWunder Logo"
+                            width={342}
+                            height={60}
+                        />
+                    </Link>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 px-10 text-white">
                     <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl">
@@ -162,7 +160,7 @@ export default function LoginPage() {
                             </label>
                             <input
                                 type="email"
-                                className="w-full rounded-lg border focus:outline-none  border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                                 placeholder="Enter your email address"
                             />
                         </div>
@@ -172,7 +170,7 @@ export default function LoginPage() {
                             </label>
                             <input
                                 type="password"
-                                className="w-full rounded-lg border focus:outline-none  border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                                 placeholder="Enter your password"
                             />
                         </div>
