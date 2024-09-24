@@ -13,7 +13,7 @@ import SpinnerSVG from '@/assets/icons/spinner.svg'
 const DefFormData: RegisterFieldsType = {
     firstName: '',
     lastName: '',
-    email: '',
+    email: '',  
     password: '',
 }
 
