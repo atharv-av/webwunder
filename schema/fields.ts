@@ -11,15 +11,15 @@ export const RegisterFieldsSchema = z
         password: z.string().min(8, {
             message: 'Password must be at least 8 characters',
         }),
-        confirmPassword: z.string(),
+        // confirmPassword: z.string(),
         email: z.string().email({
             message: 'Must be a valid email address',
         }),
     })
-    .refine((data) => data.password === data.confirmPassword, {
-        message: "Passwords don't match",
-        path: ['confirmPassword'], // path of error
-    })
+    // .refine((data) => data.password === data.confirmPassword, {
+    //     message: "Passwords don't match",
+    //     path: ['confirmPassword'], // path of error
+    // })
 export type RegisterFieldsType = z.infer<typeof RegisterFieldsSchema>
 export type FlattenedRegisterFieldsErrors = z.inferFlattenedErrors<
     typeof RegisterFieldsSchema

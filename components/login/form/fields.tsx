@@ -1,12 +1,8 @@
+
 'use client'
 
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { cn, waits } from '@/lib/utils'
-import Link from 'next/link'
 import { paths } from '@/paths'
 import { useToast } from '@/components/ui/use-toast'
-import SpinnerSVG from '@/assets/icons/spinner.svg'
 import { createClient } from '@/lib/supabase/client'
 
 import {
@@ -19,14 +15,13 @@ import { type SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { app } from '@/config'
 
 const DefFormData: LoginFieldsType = {
     email: '',
     password: '',
 }
 
-export default function Fields(props: Props) {
+export const LoginForm = () => {
     const supabase = createClient()
     const { toast } = useToast()
     const router = useRouter()
@@ -102,7 +97,7 @@ export default function Fields(props: Props) {
                 console.error(error)
                 throw error
             }
-            
+
             toast({
                 title: 'Forgot Password Email Sent',
                 description: `Please check your email.`,
@@ -120,59 +115,50 @@ export default function Fields(props: Props) {
     }
 
     return (
-        <form
-            onSubmit={handleSubmit(submit)}
-            className={cn('flex flex-col gap-2', props.className)}
-        >
-            <Input
-                {...register('email')}
-                className="rounded-xl px-7 py-7 placeholder:text-[#909AB6] lg:rounded-2xl lg:px-8"
-                name="email"
-                type="email"
-                placeholder="Email Address"
-            />
-            <p className="ps-4 text-destructive">
-                {formState.errors.email?.message}
-            </p>
-            <Input
-                {...register('password')}
-                className="rounded-xl px-7 py-7 placeholder:text-[#909AB6] lg:rounded-2xl lg:px-8"
-                name="password"
-                type="password"
-                placeholder="Password"
-            />
-            <p className="ps-4 text-destructive">
-                {formState.errors.password?.message}
-            </p>
-
-            <div
-                className="flex cursor-pointer justify-end"
-                onClick={sendResetPassword}
-            >
-                <p className={`text-end ${isResetting ? 'opacity-60' : ''} `}>
-                    Forgot password?
-                </p>
-                <SpinnerSVG
-                    className={`ms-2 text-2xl ${isResetting ? '' : 'hidden'} `}
+        <form onSubmit={handleSubmit(submit)} className="space-y-4">
+            <div>
+                <label className="mb-1 block font-inter text-sm font-bold text-white">
+                    Email Address
+                </label>
+                <input
+                    {...register('email')}
+                    type="email"
+                    className="w-full rounded-lg border  border-white bg-[#908AA0]/50 active:bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    placeholder="Enter your email address"
                 />
+                <p className="ps-4 text-destructive">
+                    {formState.errors.email?.message}
+                </p>
             </div>
-
-            <Button
+            <div>
+                <label className="mb-1 block font-inter text-sm font-bold text-white">
+                    Password
+                </label>
+                <input
+                    {...register('password')}
+                    type="password"
+                    className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    placeholder="Enter your password"
+                />
+                <p className="ps-4 text-destructive">
+                    {formState.errors.password?.message}
+                </p>
+            </div>
+            <div className="">
+                <div
+                    onClick={sendResetPassword}
+                    className="cursor-pointer font-archivo text-base font-semibold text-[#5D59E1]"
+                >
+                    Forgot Password?
+                </div>
+            </div>
+            <button
                 disabled={formState.isSubmitting || isRedirecting}
                 type="submit"
-                className="my-4 mt-2 w-full"
+                className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]"
             >
-                Login
-                <SpinnerSVG
-                    className={`ms-2 text-2xl ${formState.isSubmitting || isRedirecting ? '' : 'hidden'} `}
-                />
-            </Button>
-
-            <p
-                className={`mt-2 ps-4 text-center text-destructive ${formState.errors.root?.message ? '' : 'hidden'}`}
-            >
-                {formState.errors.root?.message}
-            </p>
+                Sign In
+            </button>
         </form>
     )
 }

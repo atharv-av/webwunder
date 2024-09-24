@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Socials from './form/social'
 import Header from '../layout/home-template-new/header'
+import { LoginForm } from './form/fields'
 
 const slides = [
     {
@@ -19,7 +20,7 @@ const slides = [
         title: 'Get Your Website in Three Easy Steps',
         description:
             "Hate meetings? Us too—that's why we've minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.",
-    }
+    },
 ]
 
 export default function LoginPage() {
@@ -153,39 +154,7 @@ export default function LoginPage() {
                         </p>
                     </div>
 
-                    <form className="space-y-4">
-                        <div>
-                            <label className="mb-1 block font-inter text-sm font-bold text-white">
-                                Email Address
-                            </label>
-                            <input
-                                type="email"
-                                className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                                placeholder="Enter your email address"
-                            />
-                        </div>
-                        <div>
-                            <label className="mb-1 block font-inter text-sm font-bold text-white">
-                                Password
-                            </label>
-                            <input
-                                type="password"
-                                className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                                placeholder="Enter your password"
-                            />
-                        </div>
-                        <div className="">
-                            <a
-                                href="#"
-                                className="font-archivo text-base font-semibold text-[#5D59E1]"
-                            >
-                                Forgot Password?
-                            </a>
-                        </div>
-                        <button className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]">
-                            Sign In
-                        </button>
-                    </form>
+                    <LoginForm />
 
                     <div className="text-center">
                         <p className="mb-4 font-archivo text-base font-normal text-white">
