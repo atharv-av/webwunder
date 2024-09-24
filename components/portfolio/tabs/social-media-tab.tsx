@@ -3,27 +3,27 @@ import ContentCard from '../content-card'
 
 const tabItems = [
     {
-        width: 'lg:w-[30rem] w-4/5',
+        width: 'lg:w-[30rem] xl:w-[35rem] w-4/5',
         img: '/images/portfolio/social-media/social1.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-4/5',
+        width: 'lg:w-[35rem] xl:w-[40rem] w-4/5',
         img: '/images/portfolio/social-media/social2.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[65rem] w-4/5',
+        width: 'lg:w-[65rem] xl:w-[76rem] w-4/5',
         img: '/images/portfolio/social-media/social3.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[35rem] w-4/5',
+        width: 'lg:w-[35rem] xl:w-[40rem] w-4/5',
         img: '/images/portfolio/social-media/social4.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
     {
-        width: 'lg:w-[30rem] w-4/5',
+        width: 'lg:w-[30rem] xl:w-[35rem] w-4/5',
         img: '/images/portfolio/social-media/social5.png',
         bgProps: 'bg-cover bg-center bg-no-repeat',
     },
@@ -31,7 +31,7 @@ const tabItems = [
 
 const SocialMediaTab = () => {
     return (
-        <div className="flex flex-wrap items-center justify-center gap-4">
+        <div className="flex flex-wrap xl:max-w-[78rem] items-center justify-center gap-4">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}

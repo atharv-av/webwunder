@@ -68,7 +68,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
     return (
         <div
-            className={`transition-all  duration-300 flex h-80 flex-col items-start justify-between ${
+            className={`transition-all  duration-300 flex lg:h-80 h-fit flex-col items-start justify-between ${
                 isHovered ? 'lg:w-1/2' : width
             } ${bgColor} rounded-xl p-8`}
             onMouseEnter={onMouseEnter}
@@ -87,7 +87,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
             </div>
             <Button
                 size={'sm'}
-                className="gap-2 rounded-full bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
+                className="gap-2 mt-8 rounded-full bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
                 asChild
             >
                 <Link href={buttonTarget} className="">
@@ -117,7 +117,7 @@ const ContactUs = () => {
             <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
                 Let&apos;s Get Started!
             </p>
-            <div className="flex flex-col max-w-[80%] mx-auto items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
+            <div className="flex flex-col lg:w-[89%] xl:max-w-[1230px] w-full mx-auto items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
                 {contactCards.map((card) => (
                     <ContactCard
                         key={card.id}

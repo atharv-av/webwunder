@@ -62,7 +62,7 @@ const FAQs = () => {
                     <p className="font-archivo leading-none lg:leading-normal lg:text-[26px] text-lg font-bold text-white">
                         Here are some quick answers.
                     </p>
-                    <p className="font-archivo leading-none lg:leading-normal lg:text-base text-sm font-normal text-white">
+                    <p className="font-archivo leading-none lg:leading-normal lg:text-base text-sm font-normal text-gray-300">
                         Need more? Just reach out!
                     </p>
                     <Button
@@ -84,12 +84,12 @@ const FAQs = () => {
                         <AccordionItem
                             key={`item-${index + 1}`}
                             value={`item-${index + 1}`}
-                            className="overflow-hidden rounded-lg border border-transparent data-[state=open]:border-white/20"
+                            className="overflow-hidden  border mx-1 border-gray-200  rounded-lg border-transparent data-[state=open]:border-white/20"
                         >
                             <AccordionTrigger className="px-4 py-2 text-left w-4/5 font-archivo lg:text-xl text-base font-bold text-white hover:no-underline">
-                                {faq.question}
+                                {faq.question}  
                             </AccordionTrigger>
-                            <AccordionContent className="px-4 py-2 w-4/5 font-archivo text-sm font-normal text-white/50">
+                            <AccordionContent className="px-4  py-2  flex justify-center  mx-2 w-full items-center rounded-lg font-archivo text-sm font-normal text-white/50">
                                 {faq.answer}
                             </AccordionContent>
                         </AccordionItem>

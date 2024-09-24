@@ -117,8 +117,8 @@ export const languageData = {
   },
   joinUsSection: {
     de: {
-      title: "Herausragender Mehrwert",
-      subtitle: "Kommen Sie zu uns! Wir erklären Ihnen, weshalb.",
+      title: "Kommen Sie zu uns! ",
+      subtitle: "Wir erklären Ihnen, weshalb.",
       explorePlans: "Abonnements",
       bookCall: "Kostenloses Erstgespräch",
       tabs: [
@@ -173,8 +173,8 @@ export const languageData = {
       }
     },
     en: {
-      title: "Exceptional Values",
-      subtitle: "Join Us! Why?",
+      title: "Join Us! Why?",
+      subtitle: "Clear and Simple",
       explorePlans: "Explore Plans",
       bookCall: "Book a Call",
       tabs: [

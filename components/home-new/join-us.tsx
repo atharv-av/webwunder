@@ -56,42 +56,79 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
 
 const JoinUs: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    const detectUserLanguage = async () => {
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
+      useEffect(() => {
+        detectUserLanguage();
+      }, []);
+
     const [items] = useState<CarouselItem[]>([
         {
             id: 1,
             icon: '/images/home/join-us/join-us-icon-1.png',
-            title: 'No More Negotiations, No Surprises',
+            title: languageData?.joinUsSection?.[changeLanguage]?.tabs[0].title,
             content:
-                'We keep it simple—what you see in your plan is what you pay. No hidden fees, no upsells, just consistent, top-tier service. Cancel anytime.',
+                languageData?.joinUsSection?.[changeLanguage]?.tabs[0]
+                    .description,
         },
         {
             id: 2,
-            icon: '/images/home/join-us/join-us-icon-3.png',
-            title: 'Excellence in Custom Web Design',
+            icon: '/images/home/join-us/join-us-icon-6.png',
+            title: languageData?.joinUsSection?.[changeLanguage]?.tabs[1].title,
             content:
-                'Get a custom, powerhouse website with minimal effort—no templates, ensuring 100% unique designs and functionality.',
+                languageData?.joinUsSection?.[changeLanguage]?.tabs[1]
+                    .description,
         },
         {
             id: 3,
-            icon: '/images/home/join-us/join-us-icon-1.png',
-            title: 'Effortless Updates Anytime, Anywhere',
+            icon: '/images/home/join-us/join-us-icon-3.png',
+            title: languageData?.joinUsSection?.[changeLanguage]?.tabs[2].title,
             content:
-                'Need changes? Email us from any device, and we’ll handle the rest. Our streamlined process makes updates seamless and stress-free.',
+                languageData?.joinUsSection?.[changeLanguage]?.tabs[2]
+                    .description,
         },
         {
             id: 4,
-            icon: '/images/home/join-us/join-us-icon-3.png',
-            title: '24/7 Support and Maintenance',
+            icon: '/images/home/join-us/join-us-icon-4.png',
+            title: languageData?.joinUsSection?.[changeLanguage]?.tabs[3].title,
             content:
-                'Our dedicated support team is always ready to assist you with any issues or questions.',
+                languageData?.joinUsSection?.[changeLanguage]?.tabs[3]
+                    .description,
         },
         {
             id: 5,
             icon: '/images/home/join-us/join-us-icon-1.png',
-            title: 'Effortless Updates Anytime, Anywhere',
+            title: languageData?.joinUsSection?.[changeLanguage]?.tabs[4].title,
             content:
-                'Need changes? Email us from any device, and we’ll handle the rest. Our streamlined process makes updates seamless and stress-free.',
+                languageData?.joinUsSection?.[changeLanguage]?.tabs[4]
+                    .description,
         },
+        {
+            id: 6,
+            icon: '/images/home/join-us/join-us-icon-6.png',
+            title: languageData?.joinUsSection?.[changeLanguage]?.tabs[5].title,
+            content:
+                languageData?.joinUsSection?.[changeLanguage]?.tabs[5]
+                    .description,
+        },
+    
     ])
 
     const carouselRef = useRef<HTMLDivElement>(null)
@@ -121,34 +158,13 @@ const JoinUs: React.FC = () => {
         }
         setCurrentIndex(index)
     }
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
 
     
-    const detectUserLanguage = async () => {
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
     
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
-        }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
             <Slider/>
-            <div className="mt-5 flex w-full px-4 flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
+            <div className="mt-5 flex w-full pl-20 flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                     {/* {languageData?.joinUsSection?.[changeLanguage]?.} */}
@@ -187,7 +203,7 @@ const JoinUs: React.FC = () => {
                 <Image
                     src="/images/home/join-us/three-steps-bg.png"
                     alt="Three steps"
-                    width={1000}
+                    width={1200}
                     height={1000}
                 />
                 <div className="flex flex-col items-center justify-between lg:items-center">

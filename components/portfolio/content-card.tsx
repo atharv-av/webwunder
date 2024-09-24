@@ -35,12 +35,12 @@ const ContentCard: React.FC<PortfolioProps> = ({
 }) => {
     return (
         <Card
-            className={`${width} relative my-8 h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[80vh]`}
+            className={`${width}  relative my-8 h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[80vh]`}
             style={{
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
         >
-            <div className={`absolute inset-0 z-10 ${bgGradient}`} />
+            <div className={`absolute  inset-0 z-10 ${bgGradient}`} />
             <div
                 className={`absolute inset-0 flex w-full items-end ${bgProps}`}
                 style={{ backgroundImage: `url(${img})` }}
