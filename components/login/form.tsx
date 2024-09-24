@@ -79,7 +79,7 @@ export default function LoginPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[55%]">
+            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -89,7 +89,7 @@ export default function LoginPage() {
                             {/* Wrap the Image in a div with padding */}
                             <div className="h-full w-full p-4">
                                 <Image
-                                    className="rounded-xl object-cover"
+                                    className="rounded-2xl object-cover"
                                     src={slide.image}
                                     alt={`Slide ${index + 1}`}
                                     width={1000} // Set specific width and height instead of layout fill
@@ -142,7 +142,7 @@ export default function LoginPage() {
 
             {/* Right side with form */}
             <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:scale-90 lg:py-10">
-                <div className="w-full max-w-md space-y-2">
+                <div className="w-full max-w-lg space-y-2">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
                             Welcome back
@@ -162,7 +162,7 @@ export default function LoginPage() {
                             </label>
                             <input
                                 type="email"
-                                className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                className="w-full rounded-lg border focus:outline-none  border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
                                 placeholder="Enter your email address"
                             />
                         </div>
@@ -172,7 +172,7 @@ export default function LoginPage() {
                             </label>
                             <input
                                 type="password"
-                                className="w-full rounded-lg border border-gray-700 bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
+                                className="w-full rounded-lg border focus:outline-none  border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400"
                                 placeholder="Enter your password"
                             />
                         </div>

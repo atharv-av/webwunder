@@ -105,6 +105,7 @@ const AllInOne = () => {
                     </div>
                     <div className=" mt-8 translate-y-8">
                         <Image
+                        className=''
                             src="/images/home/all-in-one/allInOne.png"
                             alt="All in one agency"
                             width={5000}

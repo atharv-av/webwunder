@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../layout/home-template-new/header';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
@@ -8,15 +8,37 @@ import { Badge } from '../ui/badge';
 import { gsap } from 'gsap'
 import AOS from "aos";
 import "aos/dist/aos.css"
-
+import {languageData} from '@/langauge'
+import axios from 'axios';
 
 const New_Homepage = () => {
-
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    
+    const detectUserLanguage = async () => {
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
     useEffect(() => {
         AOS.init();
         AOS.refresh();
     }, []);
-
+    useEffect(() => {
+        detectUserLanguage();
+      }, []);
     useEffect(() => {
         // Register GSAP plugins
         gsap.registerPlugin();
@@ -54,9 +76,11 @@ const New_Homepage = () => {
 
                 <div className='flex justify-center flex-col items-center gap-4 max-w-6xl mx-auto pt-4'>
                     <Badge data-aos="fade-up" className="rounded-full w-fit bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
-                        Rock-Solid Business Growth
+                        
+                    <h1>{languageData?.heroSection?.[changeLanguage]?.headline}</h1>
+                    Rock-Solid Business Growth
                     </Badge>
-                    <div className='heading'>
+      1              <div className='heading'>
                         <p className="text-center font-archivo  overflow-hidden text-[40px] font-bold leading-none text-white lg:text-7xl">
                             {splitText("Winning")} {"  "}{splitText("Websites")}
                         </p>

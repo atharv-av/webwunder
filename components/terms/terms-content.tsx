@@ -248,7 +248,7 @@ const TermsContent = () => {
                         <h1 className="mb-2 font-archivo font-bold text-white text-[25px]">
                             {term.title}
                         </h1>
-                        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+                        <div className="grid grid-cols-1 gap-5 lg:gap-14 md:grid-cols-2">
                             {term.sections.map((section) => (
                                 <div key={section.id}>
                                     <h2 className="mb-2 font-dm-sans text-white font-bold text-base">
