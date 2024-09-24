@@ -77,20 +77,25 @@ const New_Homepage = () => {
                 <div className='flex justify-center flex-col items-center gap-4 max-w-6xl mx-auto pt-4'>
                     <Badge data-aos="fade-up" className="rounded-full w-fit bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                         
-                    <h1>{languageData?.heroSection?.[changeLanguage]?.headline}</h1>
-                    Rock-Solid Business Growth
+                   
+                    {/* Rock-Solid Business Growth */}
+                    {languageData?.heroSection?.[changeLanguage]?.badge}
                     </Badge>
       1              <div className='heading'>
                         <p className="text-center font-archivo  overflow-hidden text-[40px] font-bold leading-none text-white lg:text-7xl">
-                            {splitText("Winning")} {"  "}{splitText("Websites")}
+                        {languageData?.heroSection?.[changeLanguage]?.headline}
+                            {/* {splitText("Winning")} {"  "}{splitText("Websites")} */}
                         </p>
                         <p className="text-center font-archivo overflow-hidden text-[35px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
-                            {splitText("Unshakable")}  {"  "}  {splitText("Support")}
+                        {languageData?.heroSection?.[changeLanguage]?.subHeadline}
+                            {/* {splitText("Unshakable")}  {"  "}  {splitText("Support")} */}
                         </p>
                     </div>
                     <div>
                         <p data-aos="fade-up" className="text-center font-archivo text-base font-bold text-white lg:text-lg">
-                            Websites by Entrepreneurs for Entrepreneurs
+                            {/* Websites by Entrepreneurs for Entrepreneurs */}
+                            {languageData?.heroSection?.[changeLanguage]?.description}
+                            
                         </p>
                         <p data-aos="fade-up" className="text-center font-archivo text-sm font-normal text-white lg:text-base">
                             Proven to Boost Sales and Cut Costs.
@@ -101,7 +106,7 @@ const New_Homepage = () => {
 
                         <button className="flex hover:scale-95 transition-all w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                                Watch Video
+                            {languageData?.heroSection?.[changeLanguage]?.watchVideo}
                             </p>
                             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
                                 <ArrowRight
@@ -118,7 +123,8 @@ const New_Homepage = () => {
                                 className="flex flex-row items-center justify-between gap-4"
                             >
                                 <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                    Book a call
+                                    {/* Book a call */}
+                                    {languageData?.heroSection?.[changeLanguage]?.bookCall}
                                 </p>
                                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
                                     <ArrowRight
@@ -132,8 +138,9 @@ const New_Homepage = () => {
                     </div>
 
                     <p className="relative toptrigger text-center font-archivo text-base font-bold text-white sm:top-3 lg:text-xl mb-6">
-                        Hundreds of perfect projects delivered to hundreds of
-                        thrilled customers.
+                        {/* Hundreds of perfect projects delivered to hundreds of
+                        thrilled customers. */}
+                        {languageData?.heroSection?.[changeLanguage]?.projectsInfo}
                     </p>
 
                 </div>

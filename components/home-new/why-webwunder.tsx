@@ -6,50 +6,10 @@ import Link from 'next/link'
 import MainCard from './card-main'
 import { motion } from 'framer-motion'
 import { gsap, ScrollTrigger } from 'gsap/all'
+import {languageData} from '@/langauge'
+import axios from 'axios';
 
-const mainItems = [
-    {
-        cardWidth: 'lg:w-[700px] w-full',
-        image: '/images/home/why-webwunder/why-webwunder-1.png',
-        smallImage: "/images/home/why-webwunder/why-webwunder-1-small.png",
-        imgWidth: 700,
-        title: 'Boost Revenue with Strategic, Conversion-Optimized Solutions',
-        description:
-            'Turn visitors into loyal customers with designs that drive lasting success.',
-    },
-    {
-        cardWidth: 'lg:w-[350px] w-full',
-        image: '/images/home/why-webwunder/why-webwunder-2.png',
-        imgWidth: 350,
-        title: 'Purpose-Driven Design',
-        description:
-            'Our strategic designs empower your brand to command premium pricing and boost profitability.',
-    },
-    {
-        cardWidth: 'lg:w-[350px] w-full',
-        image: '/images/home/why-webwunder/why-webwunder-3.png',
-        imgWidth: 350,
-        title: 'All-Inclusive Services for Design, SEO, and Continuous Optimization',
-        description:
-            "From design to SEO, content creation, and AI-driven updates, we take care of everything—so you don't have to.",
-    },
-    {
-        cardWidth: 'lg:w-[350px] w-full',
-        image: '/images/home/why-webwunder/why-webwunder-4.png',
-        imgWidth: 350,
-        title: 'Cost-Effective Solution That Streamlines Lead Generation',
-        description:
-            'Streamline your customer journey, attract qualified leads, and save valuable time with efficient communication.',
-    },
-    {
-        cardWidth: 'lg:w-[350px] w-fit',
-        image: '/images/home/why-webwunder/why-webwunder-5.png',
-        imgWidth: 350,
-        title: 'Tailored Marketing Support to Enhance Brand Visibility and Growth',
-        description:
-            'Comprehensive support, covering everything from branding to social media, guarantees your business stands out and grows.',
-    },
-]
+
 
 // Container and Item Animations
 const container = {
@@ -182,31 +142,101 @@ const WhyWebWunder = () => {
         return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
     }, []);
 
-
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    const mainItems = [
+        {
+            cardWidth: 'lg:w-[700px] w-full',
+            image: '/images/home/why-webwunder/why-webwunder-1.png',
+            smallImage: "/images/home/why-webwunder/why-webwunder-1-small.png",
+            imgWidth: 700,
+            title:languageData?.additionalSection?.[changeLanguage]?.tabs[0].title,
+            description:languageData?.additionalSection?.[changeLanguage]?.tabs[0].description,
+        },
+        {
+            cardWidth: 'lg:w-[350px] w-full',
+            image: '/images/home/why-webwunder/why-webwunder-2.png',
+            imgWidth: 350,
+            title:languageData?.additionalSection?.[changeLanguage]?.tabs[1].title,
+            description:languageData?.additionalSection?.[changeLanguage]?.tabs[1].description,
+        },
+        {
+            cardWidth: 'lg:w-[350px] w-full',
+            image: '/images/home/why-webwunder/why-webwunder-3.png',
+            imgWidth: 350,
+            title:languageData?.additionalSection?.[changeLanguage]?.tabs[2].title,
+            description:languageData?.additionalSection?.[changeLanguage]?.tabs[2].description,
+        },
+        {
+            cardWidth: 'lg:w-[350px] w-full',
+            image: '/images/home/why-webwunder/why-webwunder-4.png',
+            imgWidth: 350,
+            title:languageData?.additionalSection?.[changeLanguage]?.tabs[3].title,
+            description:languageData?.additionalSection?.[changeLanguage]?.tabs[3].description,
+        },
+        {
+            cardWidth: 'lg:w-[350px] w-fit',
+            image: '/images/home/why-webwunder/why-webwunder-5.png',
+            imgWidth: 350,
+            title:languageData?.additionalSection?.[changeLanguage]?.tabs[4].title,
+            description:languageData?.additionalSection?.[changeLanguage]?.tabs[4].description,
+        },
+    ]
+    const detectUserLanguage = async () => {
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
+      useEffect(() => {
+        detectUserLanguage();
+      }, []);
     return (
         <div className="my-10 flex flex-col items-center justify-center gap-6 px-4">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
                 <Badge data-aos="fade-up" className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
-                    Designed to Dominate
+                {languageData?.additionalSection?.[changeLanguage]?.designedToDominate}
                 </Badge>
                 <div className="flex flex-col items-center leading-none animated-text">
                     {/* Split text into individual words */}
                     <p className="font-archivo text-[32px] font-bold text-zinc-400 md:text-[45px]">
-                        <span className="word">Why</span> <span className="word">WebWunder?</span> <br />
-                        <span className="word">We</span> <span className="word">Make</span> <span className="word">it</span> <span className="word">Clear.</span>
+                        <span className="word">
+                            {/* Why WebWunder? */}
+                        {languageData?.additionalSection?.[changeLanguage]?.whyWebWunder}
+
+                            </span> <br />
+                        <span className="word">
+                            {/* We Make it Clear. */}
+                            {languageData?.additionalSection?.[changeLanguage]?.weMakeItClear}
+
+                            </span>
                     </p>
                 </div>
                 <p className="font-archivo text-sm font-normal text-black/50 md:text-base">
-                    Your business deserves more than just a website—it deserves
-                    a game-changer.
+                    {/* Your business deserves more than just a website—it deserves
+                    a game-changer. */}
+                    {languageData?.additionalSection?.[changeLanguage]?.businessDeservesMore}
+
                 </p>
 
                 {/* Buttons */}
                 <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
                     <button className="flex  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                         <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                            Explore Plans
+                        {languageData?.additionalSection?.[changeLanguage]?.explorePlans}
+
                         </p>
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
                             <ArrowRight

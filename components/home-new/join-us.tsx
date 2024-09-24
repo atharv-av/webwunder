@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useCallback, useRef } from 'react'
+import React, { useState, useCallback, useRef, useEffect } from 'react'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
@@ -8,7 +8,8 @@ import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
 import Slider from './Slider'
-
+import {languageData} from '@/langauge'
+import axios from 'axios';
 interface CarouselItem {
     id: number
     icon: string
@@ -120,14 +121,38 @@ const JoinUs: React.FC = () => {
         }
         setCurrentIndex(index)
     }
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
 
+    
+    const detectUserLanguage = async () => {
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
+      useEffect(() => {
+        detectUserLanguage();
+      }, []);
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
             <Slider/>
             <div className="mt-5 flex w-full px-4 flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
-                        Three Steps
+                    {/* {languageData?.joinUsSection?.[changeLanguage]?.} */}
+
                     </Badge>
                     <p className="text-center font-archivo text-[25px] font-bold leading-none text-white">
                         Get Your Website in <br /> Three Easy Steps
