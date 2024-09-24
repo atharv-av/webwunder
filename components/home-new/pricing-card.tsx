@@ -38,7 +38,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
     return (
         <Card
   className={`flex flex-col justify-between cursor-grab lg:w-[500px] lg:scale-75 rounded-3xl lg:border lg:border-[#D9D9D9] border-2 border-white bg-[#191919] text-white transition-all duration-300 ${
-    isCenter ? 'h-[1060px] lg:scale-95 xl:scale-90 lg:border-2 lg:border-white' : 'h-[970px]'
+    isCenter ? 'lg:h-[1060px] lg:scale-95 xl:scale-90 lg:border-2 lg:border-white' : 'lg:h-[970px]'
   }`}
 >
   <div className="flex flex-col">

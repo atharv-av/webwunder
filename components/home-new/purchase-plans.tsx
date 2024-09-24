@@ -161,7 +161,7 @@ const DesktopPurchasePlans: React.FC = () => {
                 {plans.map((plan, index) => (
                     <div
                         key={index}
-                        className="px-2 pt-12 h-full"
+                        className="px-2  pt-12 h-full"
                         style={{
                           
                             display: 'flex',
