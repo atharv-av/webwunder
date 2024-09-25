@@ -7,7 +7,7 @@ const GetInTouch = () => {
     return (
         <div className="relative h-[400px] bg-black">
             <div
-                className="absolute inset-0 border border-red-200"
+                className="absolute inset-0"
                 style={{
                     backgroundImage:
                         "url('/images/home/get-in-touch/get-in-touch-bg.png')",
