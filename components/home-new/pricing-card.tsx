@@ -60,10 +60,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
           }, []);
     return (
         <Card
-            className={`flex cursor-grab flex-col justify-between rounded-3xl border-2 border-white bg-[#191919] text-white transition-all duration-300 lg:w-[470px] xl:w-[600px] lg:scale-[85%] lg:border lg:border-[#D9D9D9] ${
+            className={`flex cursor-grab flex-col justify-between rounded-3xl border-2 border-white bg-[#191919] text-white transition-all duration-300 lg:w-[500px] xl:w-[600px] lg:scale-[85%] lg:border lg:border-[#D9D9D9] ${
                 isCenter
-                    ? 'lg:h-[1060px] lg:scale-125 lg:border-2 lg:border-white xl:scale-90'
-                    : 'lg:h-[1050px]'
+                    ? 'lg:h-[1000px] lg:scale-125 lg:border-6  lg:border-white xl:scale-90'
+                    : 'lg:h-[900px]'
             }`}
         >
             <div className="flex flex-col">
@@ -114,7 +114,11 @@ const PricingCard: React.FC<PricingCardProps> = ({
                             {languageData?.paymentsCard?.[changeLanguage]?.whatYouGet}
 
                         </p>
-                        <div className="space-y-2">
+                        <div className={`space-y-2  ${
+                isCenter
+                    ? 'flex flex-col gap-3 leading-2'
+                    : ''
+            }`}>
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
