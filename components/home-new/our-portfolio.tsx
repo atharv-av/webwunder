@@ -96,11 +96,12 @@ const OurPortfolio = () => {
                         transition={{ duration: 0.5, delay:0.1 }}
                     >
                         <Image
+                            
                             src={image}
                             alt="Our Portfolio"
                             width={350}
                             height={350}
-                            className=""
+                            className="rounded-3xl"
                         />
                     </motion.div>
                 ))}

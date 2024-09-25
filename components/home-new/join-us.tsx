@@ -164,7 +164,7 @@ const JoinUs: React.FC = () => {
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
             <Slider/>
-            <div className="mt-5 flex w-full pl-20 flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
+            <div className="mt-5 flex w-full lg:pl-20 px-4  flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                     {/* {languageData?.joinUsSection?.[changeLanguage]?.} */}
@@ -206,8 +206,8 @@ const JoinUs: React.FC = () => {
                     width={1200}
                     height={1000}
                 />
-                <div className="flex flex-col items-center justify-between lg:items-center">
-                    <div className="hidden w-3/4 flex-col gap-4 lg:flex">
+                <div className="flex flex-col items-center lg:justify-between lg:items-center">
+                    <div className="hidden lg:w-3/4 flex-col items-center gap-4 lg:flex">
                         <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                             Three Steps
                         </Badge>
