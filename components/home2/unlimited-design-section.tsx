@@ -3,15 +3,40 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { paths } from '@/paths'
 import Image from 'next/image'
-
+import {languageData} from '@/langauge'
 import UnlimitedDesign from '@/public/images/home/unlimited-design/unlimited-design.png'
 import { cn } from '@/lib/utils'
 import BoxPink from '@/public/images/home/unlimited-design/box-pink.png'
 import PyramidBlue from '@/public/images/home/unlimited-design/pyramid-blue.png'
 import SnakeViolet from '@/public/images/home/unlimited-design/snake-violet.png'
 import { useHomeContext } from '@/providers/home'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
-export default function UnlimitedSection(props: Props) {
+export default function UnlimitedSection(props: Props) {  
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    const detectUserLanguage = async () => {
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
+      useEffect(() => {
+        detectUserLanguage();
+      }, []);
+
     const homeCtx = useHomeContext()
     return (
         <section className={cn('w-full', props.className)}>
@@ -38,6 +63,8 @@ export default function UnlimitedSection(props: Props) {
                     <div className="mb-12 px-4 text-center xl:mb-0 xl:basis-7/12 xl:gap-8 xl:ps-6 xl:text-start">
                         <div className="flex flex-col justify-center gap-4 xl:max-w-[600px]">
                             <h2 className="text-4xl font-bold xl:text-6xl">
+                                                    {/* {languageData?.joinUsSection?.[changeLanguage]?.} */}
+
                                 Unlimited{' '}
                                 <span className="text-primary">Pack</span>{' '}
                             </h2>

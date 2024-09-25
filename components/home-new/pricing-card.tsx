@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Check } from 'lucide-react'
 import Image from 'next/image'
 import { Badge } from '../ui/badge'
 import { gsap } from 'gsap'
+
+import {languageData} from '@/langauge'
+import axios from 'axios';
 
 export interface PricingCardProps {
     icon: string
@@ -30,7 +33,31 @@ const PricingCard: React.FC<PricingCardProps> = ({
     ctaText,
     onSignUp,
     isCenter = false,
-}) => {
+}) =>
+     {
+
+        const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+        const detectUserLanguage = async () => {
+            try {
+              const response = await axios.get('https://ipapi.co/json/');
+              const countryCode = response.data.country_code;
+        
+              const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+        
+              if (germanSpeakingCountries.includes(countryCode)) {
+                setChangeLanguage('de');
+              } else {
+                setChangeLanguage('en');
+              }
+            } catch (error) {
+              console.error('Error fetching user location:', error);
+              // Default to English if there's an error
+              setChangeLanguage('en');
+            }
+          };
+          useEffect(() => {
+            detectUserLanguage();
+          }, []);
     return (
         <Card
             className={`flex cursor-grab flex-col justify-between rounded-3xl border-2 border-white bg-[#191919] text-white transition-all duration-300 lg:w-[470px] xl:w-[600px] lg:scale-[85%] lg:border lg:border-[#D9D9D9] ${
@@ -70,11 +97,12 @@ const PricingCard: React.FC<PricingCardProps> = ({
                         <div className="font-inter text-[45px] font-semibold text-white lg:text-[70px]">
                             €{price}
                             <span className="font-inter text-base font-normal text-white">
-                                /month
+                                / {languageData?.paymentsCard?.[changeLanguage]?.priceTag}
                             </span>
                         </div>
                         <div className="font-inter text-lg font-semibold text-white lg:text-xl">
-                            €{setupFee} Setup Fee
+                            €{setupFee}                                 / {languageData?.paymentsCard?.[changeLanguage]?.setupFeetag}
+
                         </div>
                     </div>
                     <p className="font-inter text-sm font-normal text-white/50 lg:text-base">
@@ -82,7 +110,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     </p>
                     <div className="space-y-2">
                         <p className="font-inter text-sm font-bold text-white lg:text-base">
-                            What You Get:
+                            {/* What You Get: */}
+                            {languageData?.paymentsCard?.[changeLanguage]?.whatYouGet}
+
                         </p>
                         <div className="space-y-2">
                             {features.map((feature, index) => (
@@ -110,10 +140,14 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     className="w-full rounded-full bg-[#5D59E1] py-4 font-inter text-base font-semibold text-white transition-all duration-200 hover:scale-95"
                     onClick={onSignUp}
                 >
-                    Sign Me Up!
+                    {/* Sign Me Up! */}
+                    {languageData?.paymentsCard?.[changeLanguage]?.signMeUp}
+
                 </button>
                 <button className="w-full rounded-full border border-black bg-transparent py-4 font-inter text-base font-normal text-white transition-all hover:scale-95 hover:border hover:border-blue-500">
-                    Cancel Anytime
+                    {/* Cancel Anytime */}
+                     {languageData?.paymentsCard?.[changeLanguage]?.cancelAnytime   }
+
                 </button>
             </CardFooter>
         </Card>
