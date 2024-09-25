@@ -150,7 +150,7 @@ const JoinUsSection: React.FC = () => {
                         <h2 className="mb-4 text-4xl font-bold">
                         {languageData?.joinUsSection?.[changeLanguage]?.title}
                             <br />
-                            {languageData?.joinUsSection?.[changeLanguage]?.subtitle}
+                            {languageData?.joinUsSection?.[changeLanguage]?.description}
                             </h2>
                         <div className="my-4 flex items-start justify-start gap-2 lg:my-2 lg:gap-3">
                             <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">

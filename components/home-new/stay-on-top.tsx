@@ -12,22 +12,24 @@ import axios from 'axios'
 const StayOnTop = () => {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
     const detectUserLanguage = async () => {
-        try {
-            const response = await axios.get('https://ipapi.co/json/')
-            const countryCode = response.data.country_code
+        setChangeLanguage('en');
 
-            const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
+        // try {
+        //     const response = await axios.get('https://ipapi.co/json/')
+        //     const countryCode = response.data.country_code
 
-            if (germanSpeakingCountries.includes(countryCode)) {
-                setChangeLanguage('de')
-            } else {
-                setChangeLanguage('en')
-            }
-        } catch (error) {
-            console.error('Error fetching user location:', error)
-            // Default to English if there's an error
-            setChangeLanguage('en')
-        }
+        //     const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
+
+        //     if (germanSpeakingCountries.includes(countryCode)) {
+        //         setChangeLanguage('de')
+        //     } else {
+        //         setChangeLanguage('en')
+        //     }
+        // } catch (error) {
+        //     console.error('Error fetching user location:', error)
+        //     // Default to English if there's an error
+        //     setChangeLanguage('en')
+        // }
     }
     useEffect(() => {
         detectUserLanguage()

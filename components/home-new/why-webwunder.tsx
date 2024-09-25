@@ -182,22 +182,24 @@ const WhyWebWunder = () => {
         },
     ]
     const detectUserLanguage = async () => {
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
+        setChangeLanguage('en');
+
+        // try {
+        //   const response = await axios.get('https://ipapi.co/json/');
+        //   const countryCode = response.data.country_code;
     
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+        //   const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
     
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
-        }
+        //   if (germanSpeakingCountries.includes(countryCode)) {
+        //     setChangeLanguage('de');
+        //   } else {
+        //     setChangeLanguage('en');
+        //   }
+        // } catch (error) {
+        //   console.error('Error fetching user location:', error);
+        //   // Default to English if there's an error
+        //   setChangeLanguage('en');
+        // }
       };
       useEffect(() => {
         detectUserLanguage();

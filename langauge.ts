@@ -212,7 +212,7 @@ export const languageData = {
         en: {
             title: 'Join Us! Why?',
             cta : "Exceptional Values",
-            subtitle: 'Clear and Simple',
+            description: 'Clear and Simple',
             explorePlans: 'Explore Plans',
             bookCall: 'Book a Call',
             tabs: [
