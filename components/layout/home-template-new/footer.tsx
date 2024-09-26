@@ -24,7 +24,7 @@ const Footer = () => {
     const locale = useLocale() as Locale
 
     return (
-        <footer className="bg-black px-2 py-6 lg:px-20 lg:pb-8">
+        <footer className="bg-[#020202] px-2 py-6 lg:px-20 lg:pb-8">
             <FadeIn>
                 <div className="container mx-auto">
                     {/* Mobile Layout */}

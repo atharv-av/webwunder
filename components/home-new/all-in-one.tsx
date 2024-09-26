@@ -10,31 +10,20 @@ import FeaturesCarousel from './features-carousel'
 import { gsap, ScrollTrigger } from 'gsap/all'
 import {languageData} from '@/langauge'
 import axios from 'axios';
+import LangLayout from '@/app/[locale]/langLayout'
+
 const AllInOne = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
 
-    const detectUserLanguage = async () => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-    
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
         }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
+    }, [])
 
     useEffect(() => {
         // Register ScrollTrigger plugin
@@ -69,6 +58,7 @@ const AllInOne = () => {
     }, []);
 
     return (
+        
         <div className="bg-gradient-to-b from-[#e8e8e6] to-[#4c4a4b]">
             <div className="lg:min-h-[60vh] ">
                 <FeaturesCarousel
@@ -144,6 +134,7 @@ const AllInOne = () => {
                 </div>
             </div>
         </div>
+        
     )
 }
 

@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { gsap, ScrollTrigger } from 'gsap/all'
 import {languageData} from '@/langauge'
 import axios from 'axios';
+import LangLayout from '@/app/[locale]/langLayout'
 
 
 
@@ -181,29 +182,17 @@ const WhyWebWunder = () => {
             description:languageData?.additionalSection?.[changeLanguage]?.tabs[4].description,
         },
     ]
-    const detectUserLanguage = async () => {
 
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-    
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
         }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
+    }, [])
     return (
+        
         <div className="my-10 flex flex-col items-center justify-center gap-6 px-4">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
@@ -357,6 +346,7 @@ const WhyWebWunder = () => {
                 )}
             </div>
         </div>
+
     )
 }
 

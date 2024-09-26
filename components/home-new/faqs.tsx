@@ -14,30 +14,16 @@ import axios from 'axios';
 
 
 const FAQs = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-    const detectUserLanguage = async () => {
-
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-    
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
         }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
+    }, [])
       const faqData = languageData?.faqPage?.[changeLanguage]?.questions   
     //    [
     //     {

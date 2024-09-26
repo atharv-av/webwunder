@@ -14,8 +14,9 @@ import { loginUser } from '@/services/login/actions'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
-
+import { useEffect, useState } from 'react'
+import { languageData } from '@/langauge'
+import axios from 'axios'
 const DefFormData: LoginFieldsType = {
     email: '',
     password: '',
@@ -113,18 +114,28 @@ export const LoginForm = () => {
             })
         }
     }
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
     return (
         <form onSubmit={handleSubmit(submit)} className="space-y-4  w-auto  ">
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
-                    Email Address
+                { languageData?.loginPage?.[changeLanguage]?.emailLabel}{' '}
+
                 </label>
                 <input
                     {...register('email')}
                     type="email"
                     className="w-full rounded-lg border  border-white bg-transparent active:bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                    placeholder="Enter your email address"
+                    placeholder=   { languageData?.loginPage?.[changeLanguage]?.emailPlaceholder}
                 />
                 <p className="ps-4 text-destructive">
                     {formState.errors.email?.message}
@@ -132,13 +143,14 @@ export const LoginForm = () => {
             </div>
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
-                    Password
+                { languageData?.loginPage?.[changeLanguage]?.passwordLabel}{' '}
+
                 </label>
                 <input
                     {...register('password')}
                     type="password"
                     className="w-full rounded-lg border border-white  bg-transparent px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                    placeholder="Enter your password"
+                    placeholder=                { languageData?.loginPage?.[changeLanguage]?.passwordPlaceholder}
                 />
                 <p className="ps-4 text-destructive">
                     {formState.errors.password?.message}
@@ -148,8 +160,7 @@ export const LoginForm = () => {
                 <div
                     onClick={sendResetPassword}
                     className="cursor-pointer font-archivo text-base font-semibold text-[#5D59E1]"
-                >
-                    Forgot Password?
+                > { languageData?.loginPage?.[changeLanguage]?.forgotPassword}
                 </div>
             </div>
             <button
@@ -157,7 +168,7 @@ export const LoginForm = () => {
                 type="submit"
                 className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]"
             >
-                Sign In
+                 { languageData?.loginPage?.[changeLanguage]?.loginButton}
             </button>
         </form>
     )

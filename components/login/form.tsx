@@ -7,21 +7,9 @@ import Link from 'next/link'
 import Socials from './form/social'
 import Header from '../layout/home-template-new/header'
 import { LoginForm } from './form/fields'
+import { languageData } from '@/langauge'
+import axios from 'axios'
 
-const slides = [
-    {
-        image: '/assets/auth1.png',
-        title: "With WebWunder, You'll Never Need Another Agency. Ever.",
-        description:
-            "With WebWunder, you'll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.",
-    },
-    {
-        image: '/assets/auth2.png',
-        title: 'Get Your Website in Three Easy Steps',
-        description:
-            "Hate meetings? Us too—that's why we've minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.",
-    },
-]
 
 export default function LoginPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -91,6 +79,29 @@ export default function LoginPage() {
                 : '-translate-x-full'
         }
     }
+
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
+    const slides = [
+        {
+            image: '/assets/auth1.png',
+            title: languageData?.loginPage?.[changeLanguage]?.title,
+            description:
+            languageData?.loginPage?.[changeLanguage]?.description,        },
+        {
+            image: '/assets/auth2.png',
+            title: languageData?.loginPage?.[changeLanguage]?.title2,
+            description:
+            languageData?.loginPage?.[changeLanguage]?.description2   },
+    ]
 
     return (
         <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
@@ -163,16 +174,17 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div className={`m-auto flex flex-col ${scale} items-center justify-center px-6 py-8`}>
+            <div className={`m-auto  flex flex-col ${scale} items-center justify-center px-6 py-8`}>
                 <div className="w-full max-w-lg space-y-2">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
-                            Welcome back
+                            { languageData?.loginPage?.[changeLanguage]?.welcomeBack }
                         </h2>
                         <p className="font-archivo text-base font-normal text-white">
-                            New to WebWunder?{' '}
+                            { languageData?.loginPage?.[changeLanguage]?.newTo}{' '}
                             <Link href="/signup" className="text-[#5D59E1]">
-                                Sign Up
+                            { languageData?.loginPage?.[changeLanguage]?.signUp}{' '}
+
                             </Link>
                         </p>
                     </div>
@@ -181,7 +193,7 @@ export default function LoginPage() {
 
                     <div className="text-center">
                         <p className="mb-4 font-archivo text-base font-normal text-white">
-                            or sign in with
+                        { languageData?.loginPage?.[changeLanguage]?.orSignInwith}{' '}
                         </p>
                         <Socials />
                     </div>
@@ -189,33 +201,43 @@ export default function LoginPage() {
                     <div className="space-y-4 text-center text-xs text-white/70">
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a href="/privacy-policy" className="hover:text-white">
-                                Privacy Policy
+                            { languageData?.loginPage?.[changeLanguage]?.privacyPolicy}{' '}
+
                             </a>
                             <a href="/terms" className="hover:text-white">
-                                Terms & Conditions
+                                {/* Terms & Conditions */}
+                            { languageData?.loginPage?.[changeLanguage]?.termsConditions}{' '}
+
                             </a>
                             <a href="/imprint" className="hover:text-white">
-                                Imprint
+                            { languageData?.loginPage?.[changeLanguage]?.imprint}{' '}
+
                             </a>
                         </div>
                         <div className="flex flex-wrap justify-center gap-4 font-inter text-sm font-normal text-white">
                             <a href="#" className="hover:text-white">
-                                Benefits
+                            { languageData?.loginPage?.[changeLanguage]?.navLinks[0]}{' '}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                Your Website
+                            { languageData?.loginPage?.[changeLanguage]?.navLinks[1]}{' '}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                Prices
+                            { languageData?.loginPage?.[changeLanguage]?.navLinks[2]}{' '}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                Portfolio
+                            { languageData?.loginPage?.[changeLanguage]?.navLinks[3]}{' '}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                FAQs
+                            { languageData?.loginPage?.[changeLanguage]?.navLinks[4]}{' '}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                Contact
+                            { languageData?.loginPage?.[changeLanguage]?.navLinks[5]}{' '}
+
                             </a>
                         </div>
                     </div>

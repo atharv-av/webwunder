@@ -9,7 +9,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
 import Slider from './Slider'
 import { languageData } from '@/langauge'
-import axios from 'axios'
+
+   
 interface CarouselItem {
     id: number
     icon: string
@@ -31,29 +32,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
     timeCommitment,
 }) => 
 {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
-    const detectUserLanguage = async () => {
-
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
-        }
-    }
-    useEffect(() => {
-        detectUserLanguage()
-    }, [])
+  
     return(
     <div className="flex">
         <div className="mr-4 flex flex-col items-center">
@@ -81,28 +60,15 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
 
 const JoinUs: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
-    const detectUserLanguage = async () => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
-        }
-    }
     useEffect(() => {
-        detectUserLanguage()
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
     }, [])
 
     const [items] = useState<CarouselItem[]>([
@@ -227,6 +193,7 @@ const JoinUs: React.FC = () => {
     }, [])
 
     return (
+        
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
             <Slider />
             <div className="mt-5 flex w-full scale-90 flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:gap-20 lg:pl-20">
@@ -311,6 +278,7 @@ const JoinUs: React.FC = () => {
                 </div>
             </div>
         </div>
+
     )
 }
 

@@ -4,16 +4,19 @@ import { RegisterFieldsSchema, RegisterFieldsType } from '@/schema/fields'
 import { registerUser } from '@/services/registration/actions'
 import { type SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { paths } from '@/paths'
 import { useToast } from '@/components/ui/use-toast'
 import SpinnerSVG from '@/assets/icons/spinner.svg'
 
+import { languageData } from '@/langauge'
+import axios from 'axios'
+
 const DefFormData: RegisterFieldsType = {
     firstName: '',
     lastName: '',
-    email: '',  
+    email: '',
     password: '',
 }
 
@@ -59,53 +62,74 @@ export const SignupForm = () => {
             })
         }
     }
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
     return (
-      <form onSubmit={handleSubmit(submit)} className="space-y-4">
+        <form onSubmit={handleSubmit(submit)} className="space-y-4">
             <div className="mb-4 flex flex-row gap-3 xl:gap-6 2xl:gap-8">
                 <div className="w-1/2">
                     <label className="mb-1 block font-inter text-sm font-bold text-white">
-                        First Name
+                        {languageData?.signupPage?.[changeLanguage]?.firstName}
                     </label>
                     <input
                         {...register('firstName')}
                         type="text"
                         className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                        placeholder="Enter your first name"
+                        placeholder={
+                            languageData?.signupPage?.[changeLanguage]
+                                ?.firstNamePlaceholder
+                        }
                     />
                 </div>
                 <div className="w-1/2">
                     <label className="mb-1 block font-inter text-sm font-bold text-white">
-                        Last Name
+                        {languageData?.signupPage?.[changeLanguage]?.lastName}
                     </label>
                     <input
                         {...register('lastName')}
                         type="text"
                         className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                        placeholder="Enter your last name"
+                        placeholder={
+                            languageData?.signupPage?.[changeLanguage]
+                                ?.lastNamePlaceholder
+                        }
                     />
                 </div>
             </div>
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
-                    Email Address
+                    {languageData?.signupPage?.[changeLanguage]?.emailLabel}
                 </label>
                 <input
                     {...register('email')}
                     type="email"
                     className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                    placeholder="Enter your email"
+                    placeholder={
+                        languageData?.signupPage?.[changeLanguage]
+                            ?.emailPlaceholder
+                    }
                 />
             </div>
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
-                    Password
+                    {languageData?.signupPage?.[changeLanguage]?.passwordLabel}
                 </label>
                 <input
                     {...register('password')}
                     type="password"
                     className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                    placeholder="Enter your password"
+                    placeholder={
+                        languageData?.signupPage?.[changeLanguage]
+                            ?.passwordPlaceholder
+                    }
                 />
             </div>
             <div className="flex items-center space-x-2">
@@ -119,7 +143,7 @@ export const SignupForm = () => {
                     htmlFor="terms"
                     className="font-dm-sans text-sm font-normal leading-none text-white peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
-                    I agree to the terms and conditions.
+                    {languageData?.signupPage?.[changeLanguage]?.agreeTerms}
                 </label>
             </div>
             <button
@@ -127,8 +151,9 @@ export const SignupForm = () => {
                 type="submit"
                 className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]"
             >
-                <div className="flex justify-center items-center">
-                    Sign Up
+                <div className="flex items-center justify-center">
+                    {languageData?.signupPage?.[changeLanguage]?.signUpButton}
+
                     <SpinnerSVG
                         className={`ms-2 text-2xl ${formState.isSubmitting ? '' : 'hidden'}`}
                     />

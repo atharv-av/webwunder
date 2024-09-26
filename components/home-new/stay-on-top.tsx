@@ -9,31 +9,20 @@ import Link from 'next/link'
 import FeaturesCarousel from './features-carousel'
 import { languageData } from '@/langauge'
 import axios from 'axios'
+import LangLayout from '@/app/[locale]/langLayout'
 const StayOnTop = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
-    const detectUserLanguage = async () => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        try {
-            const response = await axios.get('https://ipapi.co/json/')
-            const countryCode = response.data.country_code
-
-            const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
-
-            if (germanSpeakingCountries.includes(countryCode)) {
-                setChangeLanguage('de')
-            } else {
-                setChangeLanguage('en')
-            }
-        } catch (error) {
-            console.error('Error fetching user location:', error)
-            // Default to English if there's an error
-            setChangeLanguage('en')
-        }
-    }
     useEffect(() => {
-        detectUserLanguage()
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
     }, [])
     return (
+
         <div className="flex flex-col items-center gap-6 bg-black py-10 lg:pb-10 lg:pt-20">
             <div className="flex flex-col items-center gap-4">
                 <Badge
@@ -220,7 +209,9 @@ const StayOnTop = () => {
                 />
             </div>
         </div>
+
     )
+
 }
 
 export default StayOnTop

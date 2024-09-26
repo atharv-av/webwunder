@@ -704,4 +704,360 @@ export const languageData = {
             contactCall: 'Book a Call',
         },
     },
+    loginPage: {
+        de: {
+            title: 'Mit WebWunder brauchen Sie nie wieder eine andere Agentur.',
+            description:
+                'Unsere umfassende All-in-one-Lösung deckt alle Aspekte Ihrer digitalen Präsenz ab – vom Webdesign bis hin zu Marketingstrategien. So müssen Sie nie wieder auf eine andere Agentur zurückgreifen. Wir kümmern uns um alles, damit Sie sich voll und ganz auf das Wachstum Ihres Unternehmens konzentrieren können.',
+            title2 : 'Ihre Website in drei einfachen Schritten',
+            description2 : 'Keine Lust auf endlose Meetings? Wir auch nicht—deshalb haben wir sie auf ein Minimum reduziert. In weniger als einer Stunde Ihrer wertvollen Zeit machen wir erfolgreiche Unternehmen noch erfolgreicher.',
+            welcomeBack: 'Willkommen zurück',
+            newTo: 'Neu bei WebWunder?',
+            signUp: 'Anmelden',
+            emailLabel: 'E-Mail-Adresse',
+            emailPlaceholder: 'Geben Sie Ihre E-Mail-Adresse ein',
+            passwordLabel: 'Passwort',
+            passwordPlaceholder: 'Geben Sie Ihr Passwort ein',
+            forgotPassword: 'Passwort vergessen',
+            loginButton: 'Einloggen',
+            orSignInwith : 'oder Einloggen mit',
+            privacyPolicy: 'Datenschutzbestimmungen',
+            termsConditions: 'Allgemeine Geschäftsbedingungen',
+            imprint: 'Impressum',
+            navLinks: ['Vorteile', 'Ihre Website', 'Preise', 'Portfolio', 'FAQs', 'Kontakt'],
+        },
+        en: {
+            title: 'With WebWunder, You’ll Never Need Another Agency. Ever.',
+            description:
+                'With WebWunder, you’ll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you’ll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.',
+            title2 : 'Get Your Website in Three Easy Steps',
+            description2 : `Hate meetings? Us too—that’s why we've minimized them. In under an hour of your valuable time, we elp successful businesses become even more successful.`,
+            welcomeBack: 'Welcome Back',
+            newTo: 'New to WebWunder?',
+            signUp: 'Sign Up',
+            emailLabel: 'Email Address',
+            emailPlaceholder: 'Enter your email address',
+            orSignInwith : 'or sign in with',
+
+            passwordLabel: 'Password',
+            passwordPlaceholder: 'Enter your password',
+            forgotPassword: 'Forgot password?',
+            loginButton: 'Sign In',
+            privacyPolicy: 'Privacy Policy',
+            termsConditions: 'Terms & Conditions',
+            imprint: 'Imprint',
+            navLinks: ['Benefits', 'Your Website', 'Prices', 'Portfolio', 'FAQs', 'Contact'],
+        },
+    },
+    signupPage: {
+        de: {
+            title: 'Ihre Website in drei einfachen Schritten',
+            description:
+                'Keine Lust auf endlose Meetings? Wir auch nicht—deshalb haben wir sie auf ein Minimum reduziert. In weniger als einer Stunde Ihrer wertvollen Zeit machen wir erfolgreiche Unternehmen noch erfolgreicher.',
+            createAccount: 'Neues Konto erstellen',
+            alreadyHaveAccount: 'Haben Sie bereits ein Konto?',
+            signIn: 'Einloggen',
+            firstName: 'Vorname',
+            lastName: 'Nachname',
+            firstNamePlaceholder: 'Geben Sie Ihren Vornamen ein',
+            lastNamePlaceholder: 'Geben Sie Ihren Nachnamen ein',
+            emailLabel: 'E-Mail-Adresse',
+            emailPlaceholder: 'Geben Sie Ihre E-Mail-Adresse ein',
+            passwordLabel: 'Passwort',
+            passwordPlaceholder: 'Geben Sie Ihr Passwort ein',
+            agreeTerms: 'Ich akzeptiere die Allgemeinen Geschäftsbedingungen.',
+            orSignUpwith : 'oder Anmelden mit',
+            signUpButton: 'Anmelden',
+            privacyPolicy: 'Datenschutzbestimmungen',
+            termsConditions: 'Allgemeine Geschäftsbedingungen',
+            imprint: 'Impressum',
+            navLinks: ['Vorteile', 'Ihre Website', 'Preise', 'Portfolio', 'FAQs', 'Kontakt'],
+        },
+        en: {
+            title: 'Get Your Website in Three Easy Steps',
+            description:
+                'Hate meetings? Us too—that’s why we&apos;ve minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.',
+            createAccount: 'Create an account',
+            alreadyHaveAccount: 'Already have an account?',
+            signIn: 'Sign In',
+            firstName: 'First Name',
+            lastName: 'Last Name',
+            firstNamePlaceholder: 'Enter your first name',
+            lastNamePlaceholder: 'Enter your last name',
+            emailLabel: 'Email Address',
+            emailPlaceholder: 'Enter your email address',
+            passwordLabel: 'Password',
+            passwordPlaceholder: 'Enter your password',
+            agreeTerms: 'I agree to the terms and conditions.',
+            orSignUpwith : 'or sign up with',
+            signUpButton: 'Sign Up',
+            privacyPolicy: 'Privacy Policy',
+            termsConditions: 'Terms & Conditions',
+            imprint: 'Imprint',
+            navLinks: ['Benefits', 'Your Website', 'Prices', 'Portfolio', 'FAQs', 'Contact'],
+        },
+    },
+    portfolioPage: {
+        de: {
+            title: 'Auf Leistung ausgelegt',
+            subtitle: 'Unternehmerisches Gespür und Präzision, die Unternehmen in Erfolgsgeschichten verwandeln',
+            description:
+                'Konzepte, Marken, Web, Social Media und mehr. Entdecken Sie, wie wir etablierten Unternehmen und Startups gleichermaßen geholfen haben, die perfekte Balance zwischen mutiger Kreativität und strategischem Marketing zu finden, indem wir Websites entworfen haben, die ihre Angebote aufwerten und in allen Bereichen überzeugende Ergebnisse liefern.',
+            portfolioHeading: 'Unser Portfolio',
+            portfolioSubHeading : 'Erfahren Sie, wie wir erfolgreiche Marken aufbauen', 
+            portfolioDescription:
+                'Stöbern Sie in unserem Portfolio und erfahren Sie, wie wir leistungsstarke Websites bereitstellen, die darauf zugeschnitten sind, Ihr Geschäft anzukurbeln. Jedes Projekt zeigt unser Engagement für die Kombination von Design, Technologie und Strategie, um Online-Plattformen zu schaffen, die wirklich herausragen und erfolgreich sind. Bereit für Ihre Transformation?',
+            tabs: [
+                {
+                    name: 'Web Design',
+                    projects: [
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development', 'SEO', 'Social Media'],
+                            title: 'Skylumina Website',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'LeapX Website',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'Rentstate Website',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development', 'SEO', 'Social Media'],
+                            title: 'Praxis Kattan Website',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'Fitflex Website',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'Fitflex Website',
+                            cta: 'Projekt ansehen',
+                        },
+                    ],
+                },
+                {
+                    name: 'Branding',
+                    projects: [
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'Monina Branding',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'Skylumina Branding',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'T-Vent Branding',
+                            cta: 'Projekt ansehen',
+                        },
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'Praxis Kattan Branding',
+                            cta: 'Projekt ansehen',
+                        },
+                    ],
+                },
+            ],
+            getInTouchSection: {
+                title: 'Kommen Sie zu uns!',
+                subtitle: 'Lassen Sie die Konkurrenz hinter sich!',
+                description:
+                    'Wählen Sie Ihre Website, entwickelt von Unternehmern für Unternehmer, und sehen Sie, wie Ihr Geschäft durch die Decke geht.',
+                cta: 'Kostenloses Erstgespräch',
+            },
+        },
+        en: {
+            title: 'Designed to Perform',
+            subtitle: 'Entrepreneurial Insight and Precision, Transforming Businesses into Success Stories',
+            description:
+                'Concepts, brands, web, social, and more. Discover how we’ve helped established businesses and startups alike find the perfect balance between bold creativity and strategic marketing, crafting websites that elevate their offerings and deliver winning results in every aspect.',
+            portfolioHeading: 'Our Portfolio',
+            portfolioSubHeading:'See How We Build Brands That Thrive',
+            portfolioDescription:
+                'Browse our portfolio and see how we deliver high-performance websites tailored to boost your business. Each project demonstrates our commitment to blending design, technology, and strategy to create online platforms that truly stand out and succeed. Ready for your transformation?',
+            tabs: [
+                {
+                    name: 'Web Design',
+                    projects: [
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development', 'SEO', 'Social Media'],
+                            title: 'Skylumina Website',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'LeapX Website',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'Rentstate Website',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development', 'SEO', 'Social Media'],
+                            title: 'Praxis Kattan Website',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'Fitflex Website',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Web Design', 'Branding', 'Graphic Design', 'Web Development'],
+                            title: 'Fitflex Website',
+                            cta: 'Projekt ansehen',
+                        },
+                    ],
+                },
+                {
+                    name: 'Branding',
+                    projects: [
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'Monina Branding',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'Skylumina Branding',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'T-Vent Branding',
+                            cta: 'View Project',
+                        },
+                        {
+                            tags: ['Branding', 'Graphic Design', 'Slide Decks', 'Brochures'],
+                            title: 'Praxis Kattan Branding',
+                            cta: 'View Project',
+                        },
+                    ],
+                },
+            ],
+            getInTouchSection: {
+                title: 'Get in Touch',
+                subtitle: 'Leave the Competition Behind!',
+                description:
+                    'Join WebWunder\'s subscription web design service, built by entrepreneurs for entrepreneurs, and watch your business soar.',
+                cta: 'Book a Call',
+            },
+        },
+    },
+    imprintPage: {
+        en: {
+            title: 'Skylumina GmbH',
+            address: 'Horster Park 43, 4731 Raeren, Belgium',
+            companyNumber: 'Company Number: 0800882676',
+            managingDirector: 'Managing Director: Johannes Eidens (M.A.)',
+            contactInfo: {
+                title: 'Contact Information',
+                email: 'info@webwunder.de',
+            },
+            dataProtectionOfficer: {
+                title: 'Data Protection Officer',
+                name: 'Ryan Matthew Quines',
+                email: 'datenschutz@webwunder.de',
+            },
+            servicesProvided: {
+                title: 'Services Provided by WebWunder.de',
+                description:
+                    'Webwunder.de is a project of Skylumina GmbH, offering subscription-based website design, development, and maintenance services. All our subscriptions are cancellable on a monthly basis. However, the websites remain the property of Webwunder.de and are leased, not owned. If you choose to cancel your subscription and wish to continue using the website, it must be purchased from us.',
+            },
+            disputeResolution: {
+                title: 'Dispute Resolution and Consumer Rights',
+                description:
+                    'Skylumina GmbH does not participate in dispute resolution procedures before a consumer arbitration board.',
+            },
+            liabilityForContent: {
+                title: 'Liability for Content',
+                description:
+                    'Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the sites is always responsible for the content of the linked sites.',
+            },
+            liabilityForLinks: {
+                title: 'Liability for Links',
+                description:
+                    'Our offer contains links to external websites of third parties, on whose contents we have no influence. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the sites is always responsible for the content of the linked sites.',
+            },
+        },
+        de: {
+            title: 'Skylumina GmbH',
+            address: 'Horster Park 43, 4731 Raeren, Belgien',
+            companyNumber: 'Unternehmensnummer: 0800882676',
+            managingDirector: 'Geschäftsführer: Johannes Eidens (M.A.)',
+            contactInfo: {
+                title: 'Kontaktinformationen',
+                email: 'info@webwunder.de',
+            },
+            dataProtectionOfficer: {
+                title: 'Datenschutzbeauftragter',
+                name: 'Ryan Matthew Quines',
+                email: 'datenschutz@webwunder.de',
+            },
+            servicesProvided: {
+                title: 'Von WebWunder.de bereitgestellte Dienstleistungen',
+                description:
+                    'Webwunder.de ist ein Projekt der Skylumina GmbH und bietet abonnementsbasierte Dienstleistungen für Webdesign, -entwicklung und -wartung an. Unsere Abonnements sind alle monatlich kündbar. Die Websites bleiben jedoch im Eigentum von Webwunder.de und werden nur geleast. Wenn Sie Ihr Abonnement kündigen und die Website weiterhin nutzen möchten, muss die Website von uns erworben werden.',
+            },
+            disputeResolution: {
+                title: 'Streitbeilegung und Verbraucherrechte',
+                description:
+                    'Die Skylumina GmbH nimmt nicht an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teil.',
+            },
+            liabilityForContent: {
+                title: 'Haftung für Inhalte',
+                description:
+                    'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese externen Inhalte auch keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.',
+            },
+            liabilityForLinks: {
+                title: 'Haftung für Links',
+                description:
+                    'Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese externen Inhalte auch keine Haftung übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.',
+            },
+        },
+    },
+    policySections : {
+        en: [
+            { title: '1. Introduction', content: "Skylumina GmbH ('we', 'us', 'our') is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share your personal information when you use our website, WebWunder.de." },
+            { title: '2. Data Controller', content: 'Skylumina GmbH is the data controller responsible for your personal data. Our Data Protection Officer is Ryan Matthew Quines, who can be contacted at datenschutz@webwunder.de.' },
+            { title: '3. Data Collection', content: 'We collect personal information that you provide to us directly, such as your name, email address, and payment details. We also collect data automatically through cookies and similar technologies, including your IP address, browser type, and browsing behavior.' },
+            { title: '4. Use of Personal Data', content: 'We use your personal data to provide and improve our services, process payments, and communicate with you. We may also use your information for marketing purposes, including retargeting ads and email campaigns.' },
+            { title: '5. Cookies and Tracking Technologies', content: 'We use cookies and other tracking technologies to enhance your experience on our website. Cookies allow us to recognize your device and store information about your preferences. You can control cookies through your browser settings.' },
+            { title: '6. Data Sharing', content: 'We do not share your personal data with third parties, except as necessary to process your payments, provide services, or comply with legal obligations.' },
+            { title: '7. Data Security', content: 'We take data security seriously and implement appropriate measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.' },
+            { title: '8. Your Rights', content: 'You have the right to access, correct, delete, and restrict the processing of your personal data. You can also withdraw your consent to data processing at any time. To exercise these rights, please contact us at datenschutz@webwunder.de.' },
+            { title: '9. Retention of Data', content: 'We retain your personal data only as long as necessary to fulfill the purposes for which it was collected or as required by law.' },
+            { title: '10. Changes to this Privacy Policy', content: 'We may update this Privacy Policy from time to time. We will notify you of any significant changes by posting the new policy on our website.' },
+            { title: '11. Independence and Data Usage', content: 'This website is not affiliated with Facebook Inc. and is not endorsed by Facebook. We use Google remarketing pixels/cookies to target visitors with relevant messages and information.' },
+            { title: '12. Contact Information', content: { text: 'If you have any questions or concerns about this Privacy Policy, please contact us at:', company: 'Skylumina GmbH', address: 'Horster Park 43, 4731 Raeren, Belgium', email: 'datenschutz@webwunder.de' }, isContact: true }
+        ],
+        de: [
+            { title: '1. Einführung', content: "Die Skylumina GmbH ('wir', 'uns', 'unser') verpflichtet sich, Ihre Privatsphäre zu schützen. Diese Datenschutzerklärung erklärt, wie wir Ihre persönlichen Daten erfassen, verwenden und teilen, wenn Sie unsere Website WebWunder.de nutzen." },
+            { title: '2. Datenverantwortlicher', content: 'Die Skylumina GmbH ist der für Ihre personenbezogenen Daten verantwortliche Datenverantwortliche. Unser Datenschutzbeauftragter ist Ryan Matthew Quines, der unter datenschutz@webwunder.de kontaktiert werden kann.' },
+            { title: '3. Datenerfassung', content: 'Wir erfassen persönliche Informationen, die Sie uns direkt zur Verfügung stellen, wie Ihren Namen, Ihre E-Mail-Adresse und Zahlungsdetails. Darüber hinaus erfassen wir automatisch Daten über Cookies und ähnliche Technologien, einschließlich Ihrer IP-Adresse, des Browsertyps und Ihres Surfverhaltens.' },
+            { title: '4. Nutzung personenbezogener Daten', content: 'Wir verwenden Ihre personenbezogenen Daten, um unsere Dienstleistungen bereitzustellen und zu verbessern, Zahlungen zu verarbeiten und mit Ihnen zu kommunizieren. Außerdem können wir Ihre Informationen für Marketingzwecke verwenden, einschließlich Retargeting-Anzeigen und E-Mail-Kampagnen.' },
+            { title: '5. Cookies und Tracking-Technologien', content: 'Wir verwenden Cookies und andere Tracking-Technologien, um Ihre Erfahrung auf unserer Website zu verbessern. Cookies ermöglichen es uns, Ihr Gerät zu erkennen und Informationen über Ihre Präferenzen zu speichern. Sie können Cookies über Ihre Browsereinstellungen steuern.' },
+            { title: '6. Datenweitergabe', content: 'Wir geben Ihre personenbezogenen Daten nicht an Dritte weiter, außer wenn dies zur Verarbeitung Ihrer Zahlungen oder zur Erfüllung gesetzlicher Verpflichtungen erforderlich ist.' },
+            { title: '7. Datensicherheit', content: 'Wir nehmen den Schutz Ihrer Daten ernst und setzen geeignete Maßnahmen ein, um Ihre persönlichen Informationen vor unbefugtem Zugriff, Offenlegung, Änderung oder Zerstörung zu schützen.' },
+            { title: '8. Ihre Rechte', content: 'Sie haben das Recht, auf Ihre personenbezogenen Daten zuzugreifen, diese zu korrigieren, zu löschen und die Verarbeitung einzuschränken. Sie können auch Ihre Einwilligung zur Datenverarbeitung jederzeit widerrufen. Um diese Rechte auszuüben, kontaktieren Sie uns bitte unter datenschutz@webwunder.de.' },
+            { title: '9. Aufbewahrung der Daten', content: 'Wir bewahren Ihre personenbezogenen Daten nur so lange auf, wie es notwendig ist, um die Zwecke zu erfüllen, für die sie erfasst wurden, oder wie es gesetzlich vorgeschrieben ist.' },
+            { title: '10. Änderungen dieser Datenschutzerklärung', content: 'Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir werden Sie über wesentliche Änderungen informieren, indem wir die neue Richtlinie auf unserer Website veröffentlichen.' },
+            { title: '11. Unabhängigkeit und Datennutzung', content: 'Diese Website ist nicht mit Facebook Inc. verbunden und wird nicht von Facebook unterstützt. Wir verwenden Google-Remarketing-Pixel/Cookies, um Besucher mit relevanten Nachrichten und Informationen anzusprechen.' },
+            { title: '12. Kontaktinformationen', content: { text: 'Wenn Sie Fragen oder Bedenken bezüglich dieser Datenschutzerklärung haben, kontaktieren Sie uns bitte unter:', company: 'Skylumina GmbH', address: 'Horster Park 43, 4731 Raeren, Belgien', email: 'datenschutz@webwunder.de' }, isContact: true }
+        ]
+    }
+    
 }

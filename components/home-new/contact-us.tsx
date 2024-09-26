@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { languageData } from '@/langauge'
 import axios from 'axios'
+import LangLayout from '@/app/[locale]/langLayout'
 interface ContactCardProps {
     width: string
     bgColor: string
@@ -34,6 +35,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
    
    
     return (
+        
         <div
             className={`flex h-fit flex-col items-start justify-between transition-all duration-300 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
@@ -70,32 +72,20 @@ const ContactCard: React.FC<ContactCardProps> = ({
                 </Link>
             </Button>
         </div>
+        
     )
 }
 
 const ContactUs = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-    const detectUserLanguage = async () => {
-        try {
-            const response = await axios.get('https://ipapi.co/json/')
-            const countryCode = response.data.country_code
-
-            const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
-
-            if (germanSpeakingCountries.includes(countryCode)) {
-                setChangeLanguage('de')
-            } else {
-                setChangeLanguage('en')
-            }
-        } catch (error) {
-            console.error('Error fetching user location:', error)
-            // Default to English if there's an error
-            setChangeLanguage('en')
-        }
-    }
     useEffect(() => {
-        detectUserLanguage()
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
     }, [])
     const contactCards = [
         {
@@ -135,6 +125,7 @@ const ContactUs = () => {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
     return (
+        
         <div className="flex flex-col items-center gap-4 bg-black">
             <Badge
                 data-aos="fade-up"
@@ -163,6 +154,7 @@ const ContactUs = () => {
                 ))}
             </div>
         </div>
+
     )
 }
 

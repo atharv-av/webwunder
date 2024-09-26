@@ -8,7 +8,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { languageData } from '@/langauge'
 import axios from 'axios'
-
 interface PlanProps {
     icon: string
     iconBg: string
@@ -25,29 +24,15 @@ interface PlanProps {
  * Shows one card at a time
  */
 const MobilePurchasePlans: React.FC = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
-    const detectUserLanguage = async () => {
-        setChangeLanguage('en');
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        // try {
-        //     const response = await axios.get('https://ipapi.co/json/')
-        //     const countryCode = response.data.country_code
-
-        //     const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
-
-        //     if (germanSpeakingCountries.includes(countryCode)) {
-        //         setChangeLanguage('de')
-        //     } else {
-        //         setChangeLanguage('en')
-        //     }
-        // } catch (error) {
-        //     console.error('Error fetching user location:', error)
-        //     // Default to English if there's an error
-        //     setChangeLanguage('en')
-        // }
-    }
     useEffect(() => {
-        detectUserLanguage()
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
     }, [])
 
     const [currentIndex, setCurrentIndex] = useState<number>(0)
@@ -161,29 +146,15 @@ const DesktopPurchasePlans: React.FC = () => {
         arrows: false,
         beforeChange: (current: number, next: number) => setCurrentIndex(next),
     }
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
-    const detectUserLanguage = async () => {
- 
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        try {
-            const response = await axios.get('https://ipapi.co/json/')
-            const countryCode = response.data.country_code
-
-            const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
-
-            if (germanSpeakingCountries.includes(countryCode)) {
-                setChangeLanguage('de')
-            } else {
-                setChangeLanguage('en')
-            }
-        } catch (error) {
-            console.error('Error fetching user location:', error)
-            // Default to English if there's an error
-            setChangeLanguage('en')
-        }
-    }
     useEffect(() => {
-        detectUserLanguage()
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
     }, [])
 
     const plans: PlanProps[] = [
@@ -244,6 +215,7 @@ const DesktopPurchasePlans: React.FC = () => {
 
     return (
         <>
+        
                 <div className="hidden h-full w-full overflow-hidden lg:block mr-10">
                 <Slider {...settings}>
                     {plans.map((plan, index) => (
@@ -278,6 +250,7 @@ const DesktopPurchasePlans: React.FC = () => {
                     ))}
                 </div>
             </div>
+        
         </>
     )
 }
@@ -287,32 +260,19 @@ const DesktopPurchasePlans: React.FC = () => {
  * Shows the appropriate component based on the screen size
  */
 const PurchasePlans: React.FC = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
-    const detectUserLanguage = async () => {
-        setChangeLanguage('en');
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        // try {
-        //     const response = await axios.get('https://ipapi.co/json/')
-        //     const countryCode = response.data.country_code
-
-        //     const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
-
-        //     if (germanSpeakingCountries.includes(countryCode)) {
-        //         setChangeLanguage('de')
-        //     } else {
-        //         setChangeLanguage('en')
-        //     }
-        // } catch (error) {
-        //     console.error('Error fetching user location:', error)
-        //     // Default to English if there's an error
-        //     setChangeLanguage('en')
-        // }
-    }
     useEffect(() => {
-        detectUserLanguage()
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
     }, [])
 
     return (
+        
         <div className="flex h-fit flex-col items-center justify-center gap-10 bg-black">
             <div className="flex w-5/6 flex-col items-center">
                 <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
@@ -337,6 +297,7 @@ const PurchasePlans: React.FC = () => {
             {/* Desktop Component */}
             <DesktopPurchasePlans />
         </div>
+        
     )
 }
 

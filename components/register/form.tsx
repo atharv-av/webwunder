@@ -10,20 +10,9 @@ import { useRouter } from 'next/navigation'
 import Header from '@/components/layout/home-template-new/header'
 import { SignupForm } from './form/fields'
 
-const slides = [
-    {
-        image: '/assets/auth1.png',
-        title: "With WebWunder, You'll Never Need Another Agency. Ever.",
-        description:
-            "With WebWunder, you'll find a comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.",
-    },
-    {
-        image: '/assets/auth2.png',
-        title: 'Get Your Website in Three Easy Steps',
-        description:
-            "Hate meetings? Us too—that’s why we've minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.",
-    },
-]
+import { languageData } from '@/langauge'
+import axios from 'axios'
+
 
 export default function SignupPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -94,6 +83,30 @@ export default function SignupPage() {
         }
     }
 
+
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
+    
+const slides = [
+    {
+        image: '/assets/auth1.png',
+        title: languageData?.loginPage?.[changeLanguage]?.title,
+        description:
+        languageData?.loginPage?.[changeLanguage]?.description,        },
+    {
+        image: '/assets/auth2.png',
+        title: languageData?.loginPage?.[changeLanguage]?.title2,
+        description:
+        languageData?.loginPage?.[changeLanguage]?.description2   },
+]
     return (
         <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
             <div className="block md:hidden">
@@ -169,12 +182,12 @@ export default function SignupPage() {
                 <div className="w-full max-w-lg space-y-3">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
-                            Create an account
+                        { languageData?.signupPage?.[changeLanguage]?.createAccount}
                         </h2>
                         <p className="font-archivo text-base font-normal text-white">
-                            Already have an account?{' '}
+                        { languageData?.signupPage?.[changeLanguage]?.alreadyHaveAccount}
                             <Link href="/login" className="text-[#5D59E1]">
-                                Sign In
+                            { languageData?.signupPage?.[changeLanguage]?.signIn}
                             </Link>
                         </p>
                     </div>
@@ -183,7 +196,8 @@ export default function SignupPage() {
 
                     <div className="text-center">
                         <p className="mb-4 font-archivo text-base font-normal text-white">
-                            or sign up with
+                        { languageData?.signupPage?.[changeLanguage]?.orSignUpwith}
+
                         </p>
                         <Socials />
                     </div>
@@ -191,30 +205,34 @@ export default function SignupPage() {
                     <div className="space-y-4 text-center text-xs text-white/70">
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a href="/privacy-policy" className="hover:text-white">
-                                Privacy Policy
+                            { languageData?.signupPage?.[changeLanguage]?.privacyPolicy}
                             </a>
                             <a href="/terms" className="hover:text-white">
-                                Terms & Conditions
+                            { languageData?.signupPage?.[changeLanguage]?.termsConditions}
                             </a>
                             <a href="/imprint" className="hover:text-white">
-                                Imprints
+                            { languageData?.signupPage?.[changeLanguage]?.imprint}
                             </a>
                         </div>
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a href="#" className="hover:text-white">
-                                Benefits
+                            { languageData?.signupPage?.[changeLanguage]?.navLinks[0]}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                Your Website
+                            { languageData?.signupPage?.[changeLanguage]?.navLinks[1]}
                             </a>
                             <a href="#" className="hover:text-white">
-                                Prices
+                            { languageData?.signupPage?.[changeLanguage]?.navLinks[2]}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                FAQs
+                            { languageData?.signupPage?.[changeLanguage]?.navLinks[3]}
+
                             </a>
                             <a href="#" className="hover:text-white">
-                                Contact
+                            { languageData?.signupPage?.[changeLanguage]?.navLinks[4]}
+
                             </a>
                         </div>
                     </div>
