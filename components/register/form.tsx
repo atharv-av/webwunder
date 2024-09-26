@@ -190,13 +190,13 @@ export default function SignupPage() {
 
                     <div className="space-y-4 text-center text-xs text-white/70">
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
-                            <a href="#" className="hover:text-white">
+                            <a href="/privacy-policy" className="hover:text-white">
                                 Privacy Policy
                             </a>
-                            <a href="#" className="hover:text-white">
+                            <a href="/terms" className="hover:text-white">
                                 Terms & Conditions
                             </a>
-                            <a href="#" className="hover:text-white">
+                            <a href="/imprint" className="hover:text-white">
                                 Imprints
                             </a>
                         </div>

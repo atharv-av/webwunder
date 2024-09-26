@@ -244,7 +244,7 @@ const DesktopPurchasePlans: React.FC = () => {
 
     return (
         <>
-            <div className="hidden h-full w-full overflow-hidden lg:block">
+                <div className="hidden h-full w-full overflow-hidden lg:block mr-10">
                 <Slider {...settings}>
                     {plans.map((plan, index) => (
                         <div
@@ -256,7 +256,7 @@ const DesktopPurchasePlans: React.FC = () => {
                                 justifyContent: 'center',
                             }}
                         >
-                            <div className="flex h-full w-[107%] items-center justify-center p-1">
+                            <div className="flex h-full w-[107%]  items-center justify-center p-1">
                                 <PricingCard
                                     {...plan}
                                     isCenter={index === currentIndex}

@@ -25,8 +25,8 @@ const PolicyContent: React.FC<PolicyProps> = ({
                 </div>
                 <div className="relative z-10 flex h-full flex-col items-center justify-center">
                     <div className="lg:mb-40 mb-80 flex  flex-col items-center justify-center text-center">
-                        <p className="max-w-[38.1rem] text-center font-archivo text-[25px] font-bold text-white">
-                            {title}
+                        <p className="max-w-[38.1rem] text-center font-archivo text-[25px] xl:text[80px] font-bold text-white">
+                            {title} 
                         </p>
                         {breadcrumb}
                     </div>
