@@ -6,7 +6,7 @@ import Image from 'next/image'
 const PortfolioLanding = () => {
     return (
         <div className="bg-white lg:p-4">
-            <div className='bg-gradient-to-br lg:p-0 from-[#393939] via-[#545455] to-[#323232] lg:rounded-t-xl'>
+            <div className='bg-gradient-to-br lg:p-0 from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl'>
 
                 <div className="relative z-10">
                     <Header />

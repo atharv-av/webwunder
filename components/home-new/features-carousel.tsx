@@ -27,12 +27,18 @@ interface CarouselItemProps {
 }
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, textColor }) => (
-    <p className={`w-fit mx-3 px-4 font-archivo lg:text-xl text-sm font-bold ${textColor}`}>
+    <p
+        className={`mx-3 w-fit px-4 font-archivo text-sm font-bold lg:text-xl ${textColor}`}
+    >
         {item}
     </p>
 )
 
-const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carouselTextColor}) => {
+const FeaturesCarousel: React.FC<CarouselProps> = ({
+    bgColor,
+    tiltAngle,
+    carouselTextColor,
+}) => {
     const [position, setPosition] = useState<number>(0)
     const containerRef = useRef<HTMLDivElement | null>(null)
     const contentRef = useRef<HTMLDivElement | null>(null)
@@ -58,20 +64,29 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({bgColor, tiltAngle, carousel
 
     return (
         <div
-            className="relative shadow-xl bottom-16 z-20 lg:h-20 h-16 overflow-hidden"
+            className="relative bottom-16 z-20 mt-20 h-16 overflow-hidden shadow-xl lg:h-20"
             style={{ transform: `${tiltAngle}` }}
             ref={containerRef}
         >
-
-<div className={`flex h-full w-full items-center justify-center  ${bgColor}`}>
+            <div
+                className={`flex h-full w-full items-center justify-center ${bgColor}`}
+            >
                 <Marquee className="w-full" speed={50} gradient={false}>
                     <div className="flex flex-row items-center justify-center gap-x-12">
                         {carouselItems.map((item, index) => (
-                            <CarouselItem key={index} item={item}  textColor={carouselTextColor} />
+                            <CarouselItem
+                                key={index}
+                                item={item}
+                                textColor={carouselTextColor}
+                            />
                         ))}
                         {/* Duplicating the content to avoid gaps */}
                         {carouselItems.map((item, index) => (
-                            <CarouselItem key={`duplicate-${index}`} item={item}  textColor={carouselTextColor}/>
+                            <CarouselItem
+                                key={`duplicate-${index}`}
+                                item={item}
+                                textColor={carouselTextColor}
+                            />
                         ))}
                     </div>
                 </Marquee>

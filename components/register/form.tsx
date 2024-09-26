@@ -29,6 +29,30 @@ export default function SignupPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [sliding, setSliding] = useState(false)
     const [slideDirection, setSlideDirection] = useState('')
+    const [scale, setScale] = useState('')
+
+    useEffect(() => {
+        const handleResize = () => {
+            const windowWidth = window.innerWidth
+
+            // Define breakpoints at intervals of 100px
+            if (windowWidth >= 1536) {
+                setScale('scale-95') // For 1536px and above
+            } else if (windowWidth >= 1280) {
+                setScale('scale-100') // For 1400px to 1535px
+            } else if (windowWidth >= 1024) {
+                setScale('scale-90') // For 1300px to 1399px
+            } else {
+                setScale('scale-95') // Default or fallback width
+            }
+        }
+
+        // Call the function on mount and when window is resized
+        window.addEventListener('resize', handleResize)
+        handleResize() // Call it once to set the initial width
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     useEffect(() => {
         if (sliding) {
@@ -96,13 +120,14 @@ export default function SignupPage() {
                     ))}
                 </div>
                 <div className="absolute left-4 top-4 z-10 hidden cursor-pointer px-6 py-8 lg:block">
-                    <Link href={'/'}></Link>
-                    <Image
-                        src={'/assets/webwunder-logo.png'}
-                        alt="WebWunder Logo"
-                        width={342}
-                        height={60}
-                    />
+                    <Link href={'/'}>
+                        <Image
+                            src={'/assets/webwunder-logo.png'}
+                            alt="WebWunder Logo"
+                            width={342}
+                            height={60}
+                        />
+                    </Link>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 px-10 text-white">
                     <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl">
@@ -138,7 +163,9 @@ export default function SignupPage() {
             </div>
 
             {/* Right side with form */}
-            <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:scale-90 lg:py-0">
+            <div
+                className={`flex w-full flex-col ${scale} items-center justify-center px-6 py-8 lg:w-[45%] lg:py-0`}
+            >
                 <div className="w-full max-w-lg space-y-3">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">

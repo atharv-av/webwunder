@@ -27,6 +27,30 @@ export default function LoginPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [sliding, setSliding] = useState(false)
     const [slideDirection, setSlideDirection] = useState('')
+    const [scale, setScale] = useState('')
+
+    useEffect(() => {
+        const handleResize = () => {
+            const windowWidth = window.innerWidth
+
+            // Define breakpoints at intervals of 100px
+            if (windowWidth >= 1536) {
+                setScale("scale-110") // For 1536px and above
+            } else if (windowWidth >= 1280) {
+                setScale("scale-105") // For 1400px to 1535px
+            } else if (windowWidth >= 1024) {
+                setScale("scale-95") // For 1300px to 1399px
+            } else {
+                setScale("scale-95") // Default or fallback width
+            }
+        }
+
+        // Call the function on mount and when window is resized
+        window.addEventListener('resize', handleResize)
+        handleResize() // Call it once to set the initial width
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     useEffect(() => {
         if (sliding) {
@@ -88,8 +112,7 @@ export default function LoginPage() {
                                         className="rounded-2xl object-cover"
                                         src={slide.image}
                                         alt={`Slide ${index + 1}`}
-                                        width={1000} // Set specific width and height instead of layout fill
-                                        height={600}
+                                        fill
                                     />
                                 </Link>
                             </div>
@@ -107,10 +130,10 @@ export default function LoginPage() {
                     </Link>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 px-10 text-white">
-                    <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl">
+                    <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl xl:text-2xl">
                         {slides[currentSlide].title}
                     </h1>
-                    <p className="text-sm text-white/70 lg:w-4/5">
+                    <p className="text-sm text-white/70 lg:w-4/5 xl:text-base">
                         {slides[currentSlide].description}
                     </p>
                     <div className="flex items-center justify-between pt-2">
@@ -140,7 +163,7 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div className="flex w-full flex-col items-center justify-center px-6 py-8 lg:w-[45%] lg:scale-90 lg:py-10">
+            <div className={`m-auto flex flex-col ${scale} items-center justify-center px-6 py-8`}>
                 <div className="w-full max-w-lg space-y-2">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">

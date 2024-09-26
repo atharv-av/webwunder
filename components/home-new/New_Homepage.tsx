@@ -70,7 +70,7 @@ const New_Homepage = () => {
 
     return (
         <div className='lg:min-h-screen h-full lg:p-5 bg-white'>
-            <div className='bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-t-xl'>
+            <div className='bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl'>
 
                 <div className="relative z-10">
                     <Header />

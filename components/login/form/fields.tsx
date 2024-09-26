@@ -115,7 +115,7 @@ export const LoginForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="space-y-4">
+        <form onSubmit={handleSubmit(submit)} className="space-y-4  w-auto  ">
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
                     Email Address
@@ -123,7 +123,7 @@ export const LoginForm = () => {
                 <input
                     {...register('email')}
                     type="email"
-                    className="w-full rounded-lg border  border-white bg-[#908AA0]/50 active:bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    className="w-full rounded-lg border  border-white bg-transparent active:bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                     placeholder="Enter your email address"
                 />
                 <p className="ps-4 text-destructive">
@@ -137,7 +137,7 @@ export const LoginForm = () => {
                 <input
                     {...register('password')}
                     type="password"
-                    className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    className="w-full rounded-lg border border-white  bg-transparent px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                     placeholder="Enter your password"
                 />
                 <p className="ps-4 text-destructive">

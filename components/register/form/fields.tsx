@@ -61,8 +61,8 @@ export const SignupForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="space-y-4">
-            <div className="mb-4 flex flex-row gap-3">
+      <form onSubmit={handleSubmit(submit)} className="space-y-4">
+            <div className="mb-4 flex flex-row gap-3 xl:gap-6 2xl:gap-8">
                 <div className="w-1/2">
                     <label className="mb-1 block font-inter text-sm font-bold text-white">
                         First Name
@@ -128,12 +128,11 @@ export const SignupForm = () => {
                 className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]"
             >
                 <div className="flex justify-center items-center">
-
-                Sign Up
-                <SpinnerSVG
-                    className={`ms-2 text-2xl ${formState.isSubmitting ? '' : 'hidden'} `}
+                    Sign Up
+                    <SpinnerSVG
+                        className={`ms-2 text-2xl ${formState.isSubmitting ? '' : 'hidden'}`}
                     />
-                    </div>
+                </div>
             </button>
         </form>
     )

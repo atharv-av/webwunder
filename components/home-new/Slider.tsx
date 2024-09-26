@@ -14,11 +14,13 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
     <div className="keen-slider__slide">
-        <div className="p-2">
-            <div className="flex h-fit min-h-56 w-full flex-col justify-between overflow-hidden rounded-xl bg-[#191919] p-4">
-                <div>
-                    <Image src={icon} alt={title} width={25} height={25} />
-                    <h3 className="mt-2 text-lg font-bold text-white">
+        <div className="p-4">
+            <div className="flex h-[280px] min-h-56 w-fit flex-col justify-between overflow-hidden rounded-2xl bg-[#191919] p-4 lg:px-5">
+                <div className="flex flex-col gap-4 px-2">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#29292F]">
+                        <Image src={icon} alt={title} width={25} height={25} />
+                    </div>
+                    <h3 className="mt-2 text-xl font-bold leading-none text-white">
                         {title}
                     </h3>
                     <p className="mt-2 text-sm text-white/70">{content}</p>
@@ -145,17 +147,27 @@ const JoinUsSection: React.FC = () => {
     return (
         <section className="bg-black py-12 text-white lg:pl-32">
             <div className="mx-auto px-4 sm:px-6 lg:px-0">
-                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-3">
-                    <div className="lg:col-span-1">
-                        <h2 className="mb-4 text-4xl font-bold">
-                        {languageData?.joinUsSection?.[changeLanguage]?.title}
+                <div className="grid grid-cols-1 items-center lg:grid-cols-3">
+                    <div className="lg:col-span-1 flex justify-center flex-col items-center lg:items-start lg:pl-20">
+                        <h2 className="mb-4 text-center lg:text-start text-4xl font-bold">
+                            {
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.title
+                            }
                             <br />
-                            {languageData?.joinUsSection?.[changeLanguage]?.description}
-                            </h2>
-                        <div className="my-4 flex items-start justify-start gap-2 lg:my-2 lg:gap-3">
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                            {
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.description
+                            }
+                        </h2>
+                        <div className="my-1  flex items-start justify-start gap-2 lg:my-2 lg:gap-3">
+                            <button className="flex w-fit flex-row items-center justify-between gap-2 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                                 <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                                {languageData?.joinUsSection?.[changeLanguage]?.explorePlans}
+                                    {
+                                        languageData?.joinUsSection?.[
+                                            changeLanguage
+                                        ]?.explorePlans
+                                    }
                                 </p>
                                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
                                     <ArrowRight
@@ -171,7 +183,11 @@ const JoinUsSection: React.FC = () => {
                                     className="flex flex-row items-center justify-between gap-4"
                                 >
                                     <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                    {languageData?.joinUsSection?.[changeLanguage]?.bookCall}
+                                        {
+                                            languageData?.joinUsSection?.[
+                                                changeLanguage
+                                            ]?.bookCall
+                                        }
                                     </p>
                                     <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
                                         <ArrowRight
@@ -183,7 +199,7 @@ const JoinUsSection: React.FC = () => {
                                 </Link>
                             </button>
                         </div>
-                        <div className="mt-12 flex space-x-4">
+                        <div className="mt-6 lg:flex self-start hidden space-x-4">
                             <button
                                 className="rounded-full bg-[#8080f2] p-3"
                                 onClick={() => instanceRef.current?.prev()}
@@ -220,6 +236,20 @@ const JoinUsSection: React.FC = () => {
                             ))}
                         </div>
                     </div>
+                    <div className="mt-6 flex lg:hidden space-x-4 justify-center">
+                            <button
+                                className="rounded-full bg-[#8080f2] p-3"
+                                onClick={() => instanceRef.current?.prev()}
+                            >
+                                <ArrowRight className="rotate-180" size={24} />
+                            </button>
+                            <button
+                                className="rounded-full bg-[#8080f2] p-3"
+                                onClick={() => instanceRef.current?.next()}
+                            >
+                                <ArrowRight size={24} />
+                            </button>
+                        </div>
                 </div>
             </div>
         </section>

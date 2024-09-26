@@ -40,7 +40,8 @@ export const InfiniteMovingCards = ({
 
     const setDirection = () => {
         if (containerRef.current) {
-            const animationDirection = direction === 'left' ? 'normal' : 'reverse'
+            const animationDirection =
+                direction === 'left' ? 'normal' : 'reverse'
             containerRef.current.style.setProperty(
                 '--animation-direction',
                 animationDirection,
@@ -64,7 +65,10 @@ export const InfiniteMovingCards = ({
                 default:
                     duration = '20s'
             }
-            containerRef.current.style.setProperty('--animation-duration', duration)
+            containerRef.current.style.setProperty(
+                '--animation-duration',
+                duration,
+            )
         }
     }
 
@@ -72,14 +76,17 @@ export const InfiniteMovingCards = ({
         <div
             ref={containerRef}
             className={cn(
-                'scroller relative z-20 max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]',
+                'scroller relative z-20 lg:max-w-[1525px] xl:w-[2000px] overflow-hidden',
+                '[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]', // Default for lg
+                'xl:[mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]', // Reduced gradient for xl
+                '2xl:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]', // Further reduced gradient for 2xl
                 className,
             )}
         >
             <ul
                 ref={scrollerRef}
                 className={cn(
-                    'flex w-max flex-nowrap gap-4 py-4 animate-scroll',
+                    'flex w-max animate-scroll flex-nowrap gap-4 py-4',
                     start && 'start-animation',
                     pauseOnHover && 'hover:[animation-play-state:paused]',
                 )}

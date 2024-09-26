@@ -46,7 +46,7 @@ const StayOnTop = () => {
                             ?.badge
                     }
                 </Badge>
-                <p className="mb-4 w-5/6 text-center font-dm-sans text-[30px] font-bold leading-none text-white lg:text-[40px]">
+                <p className="mb-4 w-5/6 lg:w-[86%] xl:w-[66%] text-center font-dm-sans text-[30px] font-bold  leading-none text-white lg:text-[40px]">
                     {/* “WebWunder pushes Figma to its limits, delivering unique
                     designs that keep you ahead—stress-free.” */}
                     {
@@ -65,7 +65,7 @@ const StayOnTop = () => {
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="relative flex flex-col items-center justify-between gap-12 lg:mt-24 lg:h-screen lg:flex-row">
+            <div className="relative flex flex-col items-center justify-between gap-12 lg:mt-14 xl:mt-0 2xl:mt-20 lg:flex-row">
                 <div className="flex flex-col lg:ml-24">
                     <div className="flex max-w-[575px] flex-col items-center justify-center gap-4 p-4 lg:items-start">
                         <Badge
@@ -213,7 +213,7 @@ const StayOnTop = () => {
                     />
                 </div>
             </div>
-            <div className="w-full">
+            <div className="w-full relative bottom-12">
                 <FeaturesCarousel
                     bgColor="bg-[#FB421F]"
                     tiltAngle="rotate(-0.97deg)"

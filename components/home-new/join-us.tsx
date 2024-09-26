@@ -8,8 +8,8 @@ import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
 import Slider from './Slider'
-import {languageData} from '@/langauge'
-import axios from 'axios';
+import { languageData } from '@/langauge'
+import axios from 'axios'
 interface CarouselItem {
     id: number
     icon: string
@@ -56,16 +56,16 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
 
 const JoinUs: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
     const detectUserLanguage = async () => {
-        setChangeLanguage('en');
+        setChangeLanguage('en')
 
         // try {
         //   const response = await axios.get('https://ipapi.co/json/');
         //   const countryCode = response.data.country_code;
-    
+
         //   const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
+
         //   if (germanSpeakingCountries.includes(countryCode)) {
         //     setChangeLanguage('de');
         //   } else {
@@ -76,10 +76,10 @@ const JoinUs: React.FC = () => {
         //   // Default to English if there's an error
         //   setChangeLanguage('en');
         // }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
+    }
+    useEffect(() => {
+        detectUserLanguage()
+    }, [])
 
     const [items] = useState<CarouselItem[]>([
         {
@@ -130,14 +130,16 @@ const JoinUs: React.FC = () => {
                 languageData?.joinUsSection?.[changeLanguage]?.tabs[5]
                     .description,
         },
-    
     ])
 
     const carouselRef = useRef<HTMLDivElement>(null)
 
     const nextSlide = useCallback(() => {
         if (carouselRef.current) {
-            carouselRef.current.scrollBy({ left: carouselRef.current.offsetWidth, behavior: 'smooth' })
+            carouselRef.current.scrollBy({
+                left: carouselRef.current.offsetWidth,
+                behavior: 'smooth',
+            })
         }
         setCurrentIndex((prevIndex) =>
             prevIndex === items.length - 1 ? 0 : prevIndex + 1,
@@ -146,7 +148,10 @@ const JoinUs: React.FC = () => {
 
     const prevSlide = useCallback(() => {
         if (carouselRef.current) {
-            carouselRef.current.scrollBy({ left: -carouselRef.current.offsetWidth, behavior: 'smooth' })
+            carouselRef.current.scrollBy({
+                left: -carouselRef.current.offsetWidth,
+                behavior: 'smooth',
+            })
         }
         setCurrentIndex((prevIndex) =>
             prevIndex === 0 ? items.length - 1 : prevIndex - 1,
@@ -156,26 +161,61 @@ const JoinUs: React.FC = () => {
     const goToSlide = (index: number) => {
         if (carouselRef.current) {
             const scrollPosition = index * carouselRef.current.offsetWidth
-            carouselRef.current.scrollTo({ left: scrollPosition, behavior: 'smooth' })
+            carouselRef.current.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth',
+            })
         }
         setCurrentIndex(index)
     }
 
-    
-    
+    const [imageWidth, setImageWidth] = useState(900)
+
+    useEffect(() => {
+        const handleResize = () => {
+            const windowWidth = window.innerWidth
+
+            // Define breakpoints at intervals of 100px
+            if (windowWidth >= 1536) {
+                setImageWidth(windowWidth * 0.4) // For 1536px and above
+            } else if (windowWidth >= 1400) {
+                setImageWidth(windowWidth * 0.65) // For 1400px to 1535px
+            } else if (windowWidth >= 1300) {
+                setImageWidth(windowWidth * 1) // For 1300px to 1399px
+            } else if (windowWidth >= 1200) {
+                setImageWidth(windowWidth * 1.2) // For 1200px to 1299px
+            } else if (windowWidth >= 1100) {
+                setImageWidth(windowWidth * 1.3) // For 1100px to 1199px
+            } else if (windowWidth >= 1024) {
+                setImageWidth(windowWidth * 1.4) // For 1024px to 1099px
+            } else if (windowWidth >= 900) {
+                setImageWidth(windowWidth * 0.5) // For 900px to 1023px
+            } else {
+                setImageWidth(900) // Default or fallback width
+            }
+        }
+
+        // Call the function on mount and when window is resized
+        window.addEventListener('resize', handleResize)
+        handleResize() // Call it once to set the initial width
+
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
-            <Slider/>
-            <div className="mt-5 flex w-full lg:pl-20 px-4  flex-col items-center justify-between lg:gap-20 gap-8 lg:flex-row">
+            <Slider />
+            <div className="mt-5 flex w-full scale-90 flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:gap-20 lg:pl-20">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
-                    {/* {languageData?.joinUsSection?.[changeLanguage]?.} */}
-
+                        {/* {languageData?.joinUsSection?.[changeLanguage]?.}
+                         */}
+                        Join us
                     </Badge>
                     <p className="text-center font-archivo text-[25px] font-bold leading-none text-white">
                         Get Your Website in <br /> Three Easy Steps
                     </p>
-                    <p className="mb-5 mt-0 text-center font-archivo text-sm font-normal text-white/50">
+                    <p className="mb-5 mt-0 w-1/2 text-center font-archivo text-sm font-normal text-white/50">
                         Hate meetings? Us too—that&apos;s why we&apos;ve
                         minimized them. In under an hour of your valuable time,
                         we help successful businesses become even more
@@ -202,15 +242,17 @@ const JoinUs: React.FC = () => {
                         />
                     </div>
                 </div>
+
                 <Image
                     src="/images/home/join-us/three-steps-bg.png"
                     alt="Three steps"
-                    width={1200}
-                    height={1000}
+                    height={800}
+                    width={imageWidth}
                 />
-                <div className="flex flex-col items-center lg:justify-between lg:items-center">
-                    <div className="hidden lg:w-3/4 flex-col items-center gap-4 lg:flex">
-                        <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
+
+                <div className="flex flex-col items-center lg:items-center lg:justify-between">
+                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-3/4">
+                        <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
                             Three Steps
                         </Badge>
                         <p className="font-archivo text-[45px] font-bold leading-none text-white">
@@ -250,15 +292,15 @@ const JoinUs: React.FC = () => {
 }
 
 {
-    <style jsx>{`
+    ;<style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
-          display: none;
+            display: none;
         }
         .scrollbar-hide {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
         }
-      `}</style>
+    `}</style>
 }
 
 export default JoinUs

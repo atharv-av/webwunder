@@ -18,10 +18,10 @@ const PortfolioMainContent = () => {
                 <Badge className="w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     Our Portfolio
                 </Badge>
-                <p className="text-center px-16 leading-none font-archivo lg:text-[45px] text-[25px] font-bold text-white">
+                <p className="text-center px-16 leading-none font-archivo lg:text-[45px] xl:text-[50px] text-[25px] font-bold text-white">
                     See How We Build Brands That Thrive
                 </p>
-                <p className="lg:w-3/5 px-8 text-center font-archivo lg:text-base text-sm font-normal text-white/50">
+                <p className="lg:w-3/5 px-8 text-center font-archivo lg:text-base xl:text-lg text-sm font-normal text-white/50">
                     Browse our portfolio and see how we deliver high-performance
                     websites tailored to boost your business. Each project
                     demonstrates our commitment to blending design, technology,

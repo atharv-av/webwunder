@@ -45,25 +45,28 @@ const AllInOne = () => {
 
     return (
         <div className="bg-gradient-to-b from-[#e8e8e6] to-[#4c4a4b]">
-            <div className="lg:min-h-screen lg:pt-10">
+            <div className="lg:min-h-[60vh] ">
                 <FeaturesCarousel
                     bgColor="bg-[#CAFF00]"
                     tiltAngle="rotate(0.97deg)"
                     carouselTextColor="text-[#171411]"
                 />
            
-                <div className=" max-w-6xl mx-auto flex flex-col justify-center items-center pt-12 gap-4">
-                    <Badge data-aos="fade-up" className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
+                <div className=" max-w-6xl mx-auto flex flex-col justify-center items-center  gap-4">
+                    <div className='lg:translate-y-20'>
+                    <Badge data-aos="fade-up" className=" rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
+
                         All-in-one Agency
                     </Badge>
-                    <div className='animated-text2 flex flex-col items-center leading-none'>
+                    </div>
+                    <div className='lg:translate-y-20 animated-text2 flex flex-col items-center leading-none'>
 
                         <p className="w-4/5 text-center font-archivo text-[25px] font-bold leading-none lg:text-zinc-400 text-zinc-800 lg:w-3/5 lg:text-[45px] animated-text-1">
                         <span className="word2">With</span>   <span className="word2">WebWunder,</span> <span className="word2">You&apos;ll</span> <span className="word2">Never</span> <span className="word2">Need</span> <span className="word2">Another</span> <span className="word2">Agency.</span> <span className="word2">Ever.</span>
                         </p>
                     </div>
 
-                    <p className="text-center font-archivo text-sm font-normal text-black px-4 lg:w-[65%] lg:text-base">
+                    <p className="lg:translate-y-20 text-center font-archivo text-sm font-normal text-black px-4 lg:w-[65%] lg:text-base">
                         Our comprehensive, all-in-one solution that addresses
                         every facet of your digital presence, from website
                         design to marketing strategies, ensuring you&apos;ll
@@ -72,7 +75,7 @@ const AllInOne = () => {
                         confidence.
                     </p>
 
-                    <div className="flex items-center justify-center gap-3 sm:gap-5">
+                    <div className=" lg:translate-y-20 flex items-center  justify-center gap-3 sm:gap-5">
                         <button className="flex  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 Explore Plans
@@ -103,10 +106,10 @@ const AllInOne = () => {
                             </Link>
                         </button>
                     </div>
-                    <div className=" mt-8 translate-y-8">
+                    <div className="lg:translate-y-[132px] ">
                         <Image
                         className=''
-                            src="/images/home/all-in-one/allInOne.png"
+                            src="/images/rock-group-image.png"
                             alt="All in one agency"
                             width={5000}
                             height={5000}
