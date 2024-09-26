@@ -171,7 +171,7 @@ const JoinUs: React.FC = () => {
             } else if (windowWidth >= 1400) {
                 setImageWidth(windowWidth * 0.65) // For 1400px to 1535px
             } else if (windowWidth >= 1300) {
-                setImageWidth(windowWidth * 1) // For 1300px to 1399px
+                setImageWidth(windowWidth * 0.8) // For 1300px to 1399px
             } else if (windowWidth >= 1200) {
                 setImageWidth(windowWidth * 1.2) // For 1200px to 1299px
             } else if (windowWidth >= 1100) {
@@ -196,7 +196,7 @@ const JoinUs: React.FC = () => {
         
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
             <Slider />
-            <div className="mt-5 flex w-full scale-90 flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:gap-20 lg:pl-20">
+            <div className="mt-5 flex w-full scale-90 flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:gap-20 2xl:pl-20">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                         {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
@@ -242,7 +242,7 @@ const JoinUs: React.FC = () => {
                 />
 
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
-                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-3/4">
+                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-11/12">
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
                         {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
                         </Badge>

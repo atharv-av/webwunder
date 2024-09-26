@@ -98,7 +98,7 @@ const BrandingTab = () => {
         },
     ]
     return (
-        <div className="flex xl:max-w-[78rem] flex-wrap items-center justify-center gap-4">
+        <div className="flex xl:max-w-[78rem] lg:scale-[85%] 2xl:scale-100 scale-100 lg:mt-12 2xl:mt-10 flex-wrap items-center justify-center gap-4">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}

@@ -282,7 +282,7 @@ const WebDesignTab = () => {
         },
     ]
     return (
-        <div className="flex flex-wrap items-center justify-center gap-4 px-4 xl:max-w-[78rem]">
+        <div className="flex lg:scale-[85%] 2xl:scale-100 scale-100 flex-wrap items-center justify-center gap-4 px-4 xl:max-w-[78rem]">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}
@@ -302,3 +302,4 @@ const WebDesignTab = () => {
 }
 
 export default WebDesignTab
+ 

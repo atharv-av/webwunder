@@ -103,7 +103,7 @@ const StayOnTop = () => {
                                 </div>
                             </button>
 
-                            <button className="w-fit min-w-40 rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium transition-all hover:scale-95 lg:py-3">
+                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
                                 <Link
                                     href="#"
                                     className="flex flex-row items-center justify-between gap-4"
@@ -111,15 +111,18 @@ const StayOnTop = () => {
                                     <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
                                         {/* Book a call */}
                                         {
-                        languageData?.unlimitedDesign?.[changeLanguage]
-                            ?.bookCall
-                    }
+                                            languageData?.heroSection?.[
+                                                changeLanguage
+                                            ]?.bookCall
+                                        }
                                     </p>
-                                    <ArrowRight
-                                        size={18}
-                                        fontWeight={100}
-                                        className="text-[#24252A]"
-                                    />
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                                        <ArrowRight
+                                            size={18}
+                                            fontWeight={100}
+                                            className="text-[#ffffff]"
+                                        />
+                                    </div>
                                 </Link>
                             </button>
                         </div>

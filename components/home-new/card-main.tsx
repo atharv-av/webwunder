@@ -25,7 +25,7 @@ const MainCard: React.FC<MainCardProps> = ({
 
 
     return (
-        <div className={`overflow-hidden rounded-xl ${cardWidth} h-full`}>
+        <div className={`overflow-hidden rounded-2xl ${cardWidth} h-full`}>
             <Card className="h-[430px]">
                 <CardHeader className="p-0">
                     <div className="relative w-full h-full">

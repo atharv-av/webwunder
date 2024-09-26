@@ -26,9 +26,9 @@ export default function SignupPage() {
 
             // Define breakpoints at intervals of 100px
             if (windowWidth >= 1536) {
-                setScale('scale-95') // For 1536px and above
+                setScale('scale-[117%]') // For 1536px and above
             } else if (windowWidth >= 1280) {
-                setScale('scale-100') // For 1400px to 1535px
+                setScale('scale-90') // For 1400px to 1535px
             } else if (windowWidth >= 1024) {
                 setScale('scale-90') // For 1300px to 1399px
             } else {
@@ -108,7 +108,7 @@ const slides = [
         languageData?.loginPage?.[changeLanguage]?.description2   },
 ]
     return (
-        <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
+        <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-tr from-[#1E0E0B] via-[#1E0821] to-[#200923] lg:flex-row">
             <div className="block md:hidden">
                 <Header />
             </div>
@@ -120,9 +120,9 @@ const slides = [
                             key={index}
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
-                            <div className="h-full w-full p-4">
+                            <div className="h-full w-full rounded-2xl">
                                 <Image
-                                    className="rounded-xl object-cover"
+                                    className="rounded-2xl py-6 pl-6"
                                     src={slide.image}
                                     alt={`Slide ${index + 1}`}
                                     width={1000} // Set specific width and height instead of layout fill
@@ -177,8 +177,9 @@ const slides = [
 
             {/* Right side with form */}
             <div
-                className={`flex w-full flex-col ${scale} items-center justify-center px-6 py-8 lg:w-[45%] lg:py-0`}
+                className={`flex relative w-full flex-col ${scale} items-center justify-center px-6 py-8 lg:w-[45%] lg:py-0`}
             >
+                <div className="absolute opacity-30 scale-[250%] rounded-full h-screen w-2/3 inset-0 bg-[url('/images/auth-form-bg.png')] bg-contain bg-no-repeat bg-center"></div>
                 <div className="w-full max-w-lg space-y-3">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">

@@ -22,7 +22,6 @@ const PortfolioLanding = () => {
                 <div className="relative z-10">
                     <Header />
                 </div>
-haihaos
                 <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 p-4 pt-4">
                     <Badge
                         data-aos="fade-up"

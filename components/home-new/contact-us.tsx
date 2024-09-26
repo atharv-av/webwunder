@@ -39,7 +39,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
         <div
             className={`flex h-fit flex-col items-start justify-between transition-all duration-300 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
-            } ${bgColor} rounded-xl p-8`}
+            } ${bgColor} rounded-2xl p-8`}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
@@ -136,7 +136,7 @@ const ContactUs = () => {
             <p className="font-archivo text-[25px] font-bold text-white lg:text-[45px]">
                 {languageData?.contactUs?.[changeLanguage]?.title}
             </p>
-            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1230px]">
+            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1535px]">
                 {contactCards.map((card) => (
                     <ContactCard
                         key={card.id}

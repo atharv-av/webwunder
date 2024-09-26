@@ -123,7 +123,7 @@ export const InfiniteMovingCards = ({
                         <blockquote>
                             <div
                                 aria-hidden="true"
-                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%+_4px)] w-[calc(100%+_4px)] rounded-xl bg-[#191919]"
+                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%+_4px)] w-[calc(100%+_4px)] rounded-2xl bg-[#191919]"
                             ></div>
                             <span className="relative z-20 mb-1 font-figtree text-[22px] font-semibold leading-[1.6] text-white">
                                 &quot;{item.content}&quot;
@@ -170,7 +170,7 @@ export const InfiniteMovingCards = ({
                         <blockquote>
                             <div
                                 aria-hidden="true"
-                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%+_4px)] w-[calc(100%+_4px)] rounded-xl bg-[#191919]"
+                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%+_4px)] w-[calc(100%+_4px)] rounded-2xl bg-[#191919]"
                             ></div>
                             <span className="relative z-20 mb-1 font-figtree text-[22px] font-semibold leading-[1.6] text-white">
                                 &quot;{item.content}&quot;

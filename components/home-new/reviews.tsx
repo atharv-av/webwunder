@@ -59,7 +59,7 @@ const Reviews = () => {
                     speed="slow"
                 />
             </div>
-            <div className="flex flex-col items-center gap-2 lg:w-4/5 lg:items-start">
+            <div className="flex flex-col items-center gap-2 lg:w-4/5 2xl:w-3/4 lg:items-start">
                 <p className="font-archivo text-lg font-bold text-white lg:text-[26px]">
                     {languageData?.ourClient?.[changeLanguage]?.reviewPrompt}
                 </p>

@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/accordion'
 import {languageData} from '@/langauge'
 import axios from 'axios';
+import Link from 'next/link'
 
 
 const FAQs = () => {
@@ -65,7 +66,7 @@ const FAQs = () => {
     // ]
     return (
         <div className="flex items-center justify-center bg-black">
-            <div className="flex lg:flex-row flex-col lg:w-4/5 lg:items-start items-center justify-between bg-black">
+            <div className="flex lg:flex-row flex-col lg:w-4/5 2xl:w-3/4 lg:items-start items-center justify-between bg-black">
                 <div className="lg:mt-20 mt-10 flex flex-col lg:items-start items-center justify-start gap-4">
                     <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                         {/* Frequently Asked Questions */}
@@ -81,16 +82,28 @@ const FAQs = () => {
                     <p className="font-archivo leading-none lg:leading-normal lg:text-base text-sm font-normal text-gray-300">
                     {languageData?.faqPage?.[changeLanguage]?.description2}
                     </p>
-                    <Button
-                        size={'base'}
-                        className="flex  hover:scale-95 transition-all  items-center justify-between gap-3 bg-white"
-                    >
-                        <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                        {languageData?.faqPage?.[changeLanguage]?.bookCall}
-
-                        </p>
-                        <ArrowRight size={15} className="text-[#24252A]" />
-                    </Button>
+                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
+                                <Link
+                                    href="#"
+                                    className="flex flex-row items-center justify-between gap-4"
+                                >
+                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                        {/* Book a call */}
+                                        {
+                                            languageData?.heroSection?.[
+                                                changeLanguage
+                                            ]?.bookCall
+                                        }
+                                    </p>
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                                        <ArrowRight
+                                            size={18}
+                                            fontWeight={100}
+                                            className="text-[#ffffff]"
+                                        />
+                                    </div>
+                                </Link>
+                            </button>
                 </div>
                 <Accordion
                     type="single"

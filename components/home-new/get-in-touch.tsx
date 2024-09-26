@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '../ui/button'
 import { ArrowRight } from 'lucide-react'
 import { languageData } from '@/langauge'
+import Link from 'next/link'
 const GetInTouch = () => {
        const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
@@ -44,12 +45,28 @@ const GetInTouch = () => {
                             ?.contactDescription
                     }
                 </p>
-                <button className="flex w-fit items-center justify-between gap-3 rounded-full bg-white px-2 py-1 transition-all hover:scale-95 lg:px-4 lg:py-2">
-                    <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                        {languageData?.faqPage?.[changeLanguage]?.bookCall}
-                    </p>
-                    <ArrowRight size={15} className="text-[#24252A]" />
-                </button>
+                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
+                                <Link
+                                    href="#"
+                                    className="flex flex-row items-center justify-between gap-4"
+                                >
+                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                        {/* Book a call */}
+                                        {
+                                            languageData?.heroSection?.[
+                                                changeLanguage
+                                            ]?.bookCall
+                                        }
+                                    </p>
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                                        <ArrowRight
+                                            size={18}
+                                            fontWeight={100}
+                                            className="text-[#ffffff]"
+                                        />
+                                    </div>
+                                </Link>
+                            </button>
             </div>
         </div>
     )

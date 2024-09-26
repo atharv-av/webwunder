@@ -50,7 +50,7 @@ const PortfolioCarousel: React.FC = () => {
     }, []);
 
     return (
-        <div className="relative bottom-8 z-10 bg-white h-16" style={{ transform: 'rotate(-1.55deg)' }}>
+        <div className="relative bottom-8 z-10 bg-white h-20" style={{ transform: 'rotate(-1.55deg)' }}>
             <div 
                 ref={containerRef}
                 className="flex h-full w-fit flex-row items-center gap-20 bg-[#5D59E1] whitespace-nowrap"

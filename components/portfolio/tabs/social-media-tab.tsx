@@ -31,7 +31,7 @@ const tabItems = [
 
 const SocialMediaTab = () => {
     return (
-        <div className="flex flex-wrap xl:max-w-[78rem] items-center justify-center gap-4">
+        <div className="flex flex-wrap lg:scale-[85%] 2xl:scale-100 scale-100 xl:max-w-[78rem] items-center justify-center gap-4">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}

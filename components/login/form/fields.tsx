@@ -125,7 +125,7 @@ export const LoginForm = () => {
         }
     }, [])
     return (
-        <form onSubmit={handleSubmit(submit)} className="space-y-4  w-auto  ">
+        <form onSubmit={handleSubmit(submit)} className="space-y-4 w-auto  ">
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
                 { languageData?.loginPage?.[changeLanguage]?.emailLabel}{' '}

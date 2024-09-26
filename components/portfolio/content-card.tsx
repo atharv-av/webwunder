@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -33,9 +33,29 @@ const ContentCard: React.FC<PortfolioProps> = ({
     bgProps,
     isBtnVisible,
 }) => {
+    const [cardHeight, setCardHeight] = useState('')
+    useEffect(() => {
+        const handleResize = () => {
+            const windowWidth = window.innerWidth
+           if(windowWidth >= 1536) {
+            setCardHeight("h-[60vh]")
+           } else if(windowWidth >= 1280) {
+            setCardHeight("h-[80vh]")
+           } else if(windowWidth >= 1024){
+            setCardHeight("h-[80vh]")
+           } else {
+            setCardHeight("h-[70vh]")
+           }
+        }
+        window.addEventListener('resize', handleResize)
+        handleResize() // Call it once to set the initial width
+
+        return () => window.removeEventListener('resize', handleResize)
+    })
     return (
+        
         <Card
-            className={`${width}  relative my-8 h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[80vh]`}
+            className={`${width} relative my-8 overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 ${cardHeight}`}
             style={{
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
