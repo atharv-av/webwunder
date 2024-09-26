@@ -14,7 +14,7 @@ const WebDesignTab = () => {
                 setChangeLanguage(storedLang) // Set state from localStorage after component mounts
             }
         }
-    }, [])
+    }, [])  
     const tabItems = [
         {
             width: 'lg:w-[35rem] xl:w-[40rem] w-full',

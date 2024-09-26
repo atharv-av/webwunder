@@ -1,10 +1,12 @@
+'use client'
+import React, {useState, useEffect} from 'react'
 import FadeIn from '@/components/transitions/fade-in'
 import { useLocale } from 'next-intl'
 import { Locale } from '@/i18n.config'
 import Image from 'next/image'
 import { app } from '@/config'
 import Link from 'next/link'
-
+import { languageData } from '@/langauge'
 import Logo from '@/public/assets/webwunder-logo.png'
 import { paths } from '@/paths'
 
@@ -21,10 +23,20 @@ const paymentMethods = [
 
 
 const Footer = () => {
-    const locale = useLocale() as Locale
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
+
+    const changeData = languageData?.footerSections?.[changeLanguage]
     return (
-        <footer className="bg-[#020202] px-2 py-6 lg:px-20 lg:pb-8">
+        <footer className="bg-black px-2 py-6 lg:px-20 lg:pb-8">
             <FadeIn>
                 <div className="container mx-auto">
                     {/* Mobile Layout */}
@@ -37,10 +49,14 @@ const Footer = () => {
                             />
                         </Link>
                         <p className="mb-6 text-center text-base text-white/50">
-                            Winning Websites. Unshakable Support.
+                            {/* Winning Websites. Unshakable Support. */}
+                            {changeData?.winningSupport}
+
+                            
                         </p>
                         <p className="mb-4 text-base font-bold text-white">
-                            We Accept:
+                        {changeData?.weAccept}
+
                         </p>
                         <div className="mb-8 grid grid-cols-8 place-items-center gap-4">
                             {paymentMethods.map((item, index) => (
@@ -56,234 +72,226 @@ const Footer = () => {
                         <div className="mb-8 flex w-full flex-col gap-6">
                             <div>
                                 <p className="mb-3 text-center text-base text-white/50">
-                                    Get in touch
+                                    
+                                    {changeData?.getInTouch}
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
                                     <Link href={`mailto:${app.email}`}>
-                                        Write an Email |
+                                        
+                                        {changeData?.links?.writeEmail} |
+
                                     </Link>
                                     <Link href={paths.pages.getInTouch.href}>
-                                        Send a Message |
+                                    {changeData?.links?.sendMessage}  |
                                     </Link>
                                     <Link href={paths.pages.bookCall.href}>
-                                        Book a call |
+                                    {changeData?.links?.bookCall} |
                                     </Link>
                                     <Link href="https://wa.me/+4915114039455">
-                                        Chat on WhatsApp
+                                    {changeData?.links?.chatWhatsApp}
                                     </Link>
                                 </div>
                             </div>
                             <div>
                                 <p className="mb-3 text-center text-base text-white/50">
-                                    Quick connect
+                                {changeData?.quickConnect}
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
-                                    <Link href="/signup">Sign up |</Link>
-                                    <Link href="#">Pricing |</Link>
-                                    <Link href="/login">Sign in |</Link>
-                                    <Link href="#">Portfolio |</Link>
+                                    <Link href="/signup">{changeData?.links?.signUp} |</Link>
+                                    <Link href="#">{changeData?.links?.pricing} |</Link>
+                                    <Link href="/login">{changeData?.links?.signIn} |</Link>
+                                    <Link href="#">{changeData?.links?.portfolio} |</Link>
                                     <Link href={paths.pages.service.href}>
-                                        Services |
+                                    {changeData?.links?.services} |
                                     </Link>
-                                    <Link href="#">FAQs |</Link>
+                                    <Link href="#">{changeData?.links?.faqs} |</Link>
                                     <Link href={paths.pages.benefits.href}>
-                                        Benifits
+                                    {changeData?.links?.benefits}
                                     </Link>
                                 </div>
                             </div>
                             <div>
                                 <p className="mb-3 text-center text-base text-white/50">
-                                    Follow Us
+                                {changeData?.followUs}
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
-                                    <a href="#">Instagram |</a>
-                                    <a href="#">Dribble |</a>
-                                    <a href="#">Twitter |</a>
-                                    <a href="#">Behance |</a>
-                                    <a href="#">Facebook |</a>
-                                    <a href="#">Pinterest |</a>
-                                    <a href="#">YouTube</a>
+                                    <a href="#">{changeData?.links?.instagram} |</a>
+                                    <a href="#">{changeData?.links?.dribble} |</a>
+                                    <a href="#">{changeData?.links?.twitter} |</a>
+                                    <a href="#">{changeData?.links?.behance} |</a>
+                                    <a href="#">{changeData?.links?.facebook} |</a>
+                                    <a href="#">{changeData?.links?.pinterest} |</a>
+                                    <a href="#">{changeData?.links?.youtube}</a>
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex w-full flex-col gap-4 text-center text-xs text-white">
                             <p className="text-center text-base text-white/50">
-                                Legal Pages
+                            {changeData?.legalPages}
                             </p>
                             <div className="flex flex-wrap items-center justify-center gap-1">
                                 <Link href="/privacy-policy">
-                                    Privacy Policy |
+                                {changeData?.links?.privacyPolicy} |
                                 </Link>
-                                <Link href="/terms">Terms & Conditions |</Link>
-                                <Link href="/imprint">Imprint</Link>
+                                <Link href="/terms">{changeData?.links?.terms} |</Link>
+                                <Link href="/imprint">{changeData?.links?.imprint}</Link>
                             </div>
                             <p className="text-white/50">
-                                Copyright © 2024.{' '}
+                            {changeData?.copyright1}{' '}
                                 <span className="text-[#5D59E1]">
-                                    WebWunder
+                                {changeData?.webwunder}
                                 </span>
-                                . All Rights Reserved.
+                                {changeData?.copyright2}{' '}
+
                             </p>
                         </div>
                     </div>
 
                     {/* Desktop Layout */}
                     <div className="hidden lg:block">
-                        <div className="grid grid-flow-dense grid-cols-2 gap-y-8 lg:flex lg:flex-row-reverse lg:justify-between">
-                            <div className="col-span-2 mb-4 flex flex-col text-center lg:w-[400px] lg:items-end">
-                                <Link className="mb-4" href={`/`}>
-                                    <Image
-                                        src={Logo}
-                                        className="mx-auto w-[336px] object-contain"
-                                        alt="WebWunder Logo"
-                                    />
-                                </Link>
-                                <p className="font-dm-sans text-[18px] font-normal text-gray-500 text-white/50 lg:text-end">
-                                    Winning Websites. Unshakable Support.
-                                </p>
-                                <p className="mt-5 text-end font-dm-sans text-[18px] font-bold text-white">
-                                    We Accept:
-                                </p>
-                                <div className="mt-3 grid grid-cols-4 place-items-center gap-5">
-                                    {paymentMethods.map((item, index) => (
-                                         <Image key={index}
-                                         src={item.image}
-                                         alt="Payment"
-                                         height={item.height}
-                                         width={item.width}
-                                     />
-                                    ))}
-                                </div>
-                            </div>
-                            <div className="row-span-2 lg:min-w-max">
-                                <p className="invisible text-[16px] text-gray-500">
-                                    Follow us
-                                </p>
-                                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
-                                    <a target="_blank" href="#">
-                                        Dribble
-                                    </a>
-                                    <a target="_blank" href="#">
-                                        Behance
-                                    </a>
-                                    <a target="_blank" href="#">
-                                        Pinterest
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="row-span-2 lg:min-w-max">
-                                <p className="font-dm-sans text-[16px] font-normal text-white/50">
-                                    Follow Us
-                                </p>
-                                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
-                                    <a target="_blank" href="#">
-                                        Instagram
-                                    </a>
-                                    <a target="_blank" href="#">
-                                        Twitter
-                                    </a>
-                                    <a
-                                        target="_blank"
-                                        href="https://www.facebook.com/profile.php?id=61559097817136"
-                                    >
-                                        Facebook
-                                    </a>
-                                    <a
-                                        target="_blank"
-                                        href="https://www.youtube.com/@WebWunder-io"
-                                    >
-                                        YouTube
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="row-span-2 lg:min-w-max">
-                                <p className="invisible text-[16px] text-gray-500">
-                                    Follow us
-                                </p>
-                                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
-                                    <a
-                                        target="_blank"
-                                        href={paths.pages.pricing.href}
-                                    >
-                                        Pricing
-                                    </a>
-                                    <a
-                                        target="_blank"
-                                        href={paths.pages.portfolio.href}
-                                    >
-                                        Portfolio
-                                    </a>
-                                    <a
-                                        target="_blank"
-                                        href={paths.pages.faq.href}
-                                    >
-                                        FAQs
-                                    </a>
-                                </div>
-                            </div>
-                            <div className="col-start-1 row-span-2 ps-4 lg:min-w-max lg:ps-0">
-                                <p className="font-dm-sans text-[16px] font-normal text-white/50">
-                                    Quick Connect
-                                </p>
-                                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
-                                    <Link href="/signup">Sign up</Link>
-                                    <Link href="/login">Sign in</Link>
-                                    <Link href={paths.pages.service.href}>
-                                        Services
-                                    </Link>
-                                    <Link href={paths.pages.benefits.href}>
-                                        Benefits
-                                    </Link>
-                                </div>
-                            </div>
-                            <div className="col-start-2">
-                                <p className="font-dm-sans text-[16px] font-normal text-white/50">
-                                    Get in touch
-                                </p>
-                                <div className="mt-3 flex flex-col gap-x-6 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:gap-y-3">
-                                    <Link
-                                        target="_blank"
-                                        href={`mailto:${app.email}`}
-                                    >
-                                        Write an Email
-                                    </Link>
-                                    <Link href={paths.pages.getInTouch.href}>
-                                        Send a Message
-                                    </Link>
-                                    <Link
-                                        target="_blank"
-                                        href={paths.pages.bookCall.href}
-                                    >
-                                        Book a call
-                                    </Link>
-                                    <Link
-                                        target="_blank"
-                                        href="https://wa.me/+4915114039455"
-                                    >
-                                        Chat on WhatsApp
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="mb-6 mt-12 w-full border-b opacity-60"></div>
-                        <div className="flex flex-col items-center justify-between gap-5 lg:flex-row">
-                            <div className="flex flex-row items-center gap-4 font-dm-sans text-[18px] font-normal text-white">
-                                <Link href="/privacy-policy">
-                                    Privacy Policy
-                                </Link>
-                                <Link href="/terms">Term & Conditions</Link>
-                                <Link href="imprint">Imprint</Link>
-                            </div>
-                            <p className="font-dm-san text-[18px] font-normal text-white/50">
-                                Copyright © 2024.{' '}
-                                <span className="text-[#5D59E1]">
-                                    WebWunder
-                                </span>
-                                . All Rights Reserved.
-                            </p>
-                        </div>
-                    </div>
+            <div className="grid grid-flow-dense grid-cols-2 gap-y-8 lg:flex lg:flex-row-reverse lg:justify-between">
+              <div className="col-span-2 mb-4 flex flex-col text-center lg:w-[400px] lg:items-end">
+                <Link className="mb-4" href={`/`}>
+                  <Image
+                    src={Logo}
+                    className="mx-auto w-[336px] object-contain"
+                    alt="WebWunder Logo"
+                  />
+                </Link>
+                <p className="font-dm-sans text-[18px] w-44 font-normal text-gray-500 text-white/50 lg:text-end">
+                  {changeData?.winningSupport}
+                  {/* winningSupport */}
+                </p>
+                <p className="mt-5 text-end font-dm-sans text-[18px] font-bold text-white">
+                  {changeData?.weAccept}
+                </p>
+                <div className="mt-3 grid grid-cols-4 place-items-center gap-5">
+                  {paymentMethods.map((item, index) => (
+                    <Image
+                      key={index}
+                      src={item.image}
+                      alt="Payment"
+                      height={item.height}
+                      width={item.width}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="row-span-2 lg:min-w-max">
+                <p className="font-dm-sans text-[16px] font-normal text-white/50">
+                  {changeData?.followUs}
+                </p>
+                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                  <a target="_blank" href="#">
+                    {changeData?.links?.dribble}
+                  </a>
+                  <a target="_blank" href="#">
+                    {changeData?.links?.behance}
+                  </a>
+                  <a target="_blank" href="#">
+                    {changeData?.links?.pinterest}
+                  </a>
+                </div>
+              </div>
+              <div className="row-span-2 lg:min-w-max">
+                <p className="font-dm-sans text-[16px] font-normal text-white/50">
+                  {changeData?.followUs}
+                </p>
+                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                  <a target="_blank" href="#">
+                    {changeData?.links?.instagram}
+                  </a>
+                  <a target="_blank" href="#">
+                    {changeData?.links?.twitter}
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/profile.php?id=61559097817136"
+                  >
+                    {changeData?.links?.facebook}
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://www.youtube.com/@WebWunder-io"
+                  >
+                    {changeData?.links?.youtube}
+                  </a>
+                </div>
+              </div>
+              <div className="row-span-2 lg:min-w-max">
+                <p className="font-dm-sans text-[16px] font-normal text-white/50">
+                  {changeData?.followUs}
+                </p>
+                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                  <a target="_blank" href={paths.pages.pricing.href}>
+                    {changeData?.links?.pricing}
+                  </a>
+                  <a target="_blank" href={paths.pages.portfolio.href}>
+                    {changeData?.links?.portfolio}
+                  </a>
+                  <a target="_blank" href={paths.pages.faq.href}>
+                    {changeData?.links?.faqs}
+                  </a>
+                </div>
+              </div>
+              <div className="col-start-1 row-span-2 ps-4 lg:min-w-max lg:ps-0">
+                <p className="font-dm-sans text-[16px] font-normal text-white/50">
+                  {changeData?.quickConnect}
+                </p>
+                <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                  <Link href="/signup">{changeData?.links?.signUp}</Link>
+                  <Link href="/login">{changeData?.links?.signIn}</Link>
+                  <Link href={paths.pages.service.href}>
+                    {changeData?.links?.services}
+                  </Link>
+                  <Link href={paths.pages.benefits.href}>
+                    {changeData?.links?.benefits}
+                  </Link>
+                </div>
+              </div>
+              <div className="col-start-2">
+                <p className="font-dm-sans text-[16px] font-normal text-white/50">
+                  {changeData?.getInTouch}
+                </p>
+                <div className="mt-3 flex flex-col gap-x-6 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:gap-y-3">
+                  <Link target="_blank" href={`mailto:${app.email}`}>
+                    {changeData?.links?.writeEmail}
+                  </Link>
+                  <Link href={paths.pages.getInTouch.href}>
+                    {changeData?.links?.sendMessage}
+                  </Link>
+                  <Link target="_blank" href={paths.pages.bookCall.href}>
+                    {changeData?.links?.bookCall}
+                  </Link>
+                  <Link target="_blank" href="https://wa.me/+4915114039455">
+                    {changeData?.links?.chatWhatsApp}
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="mb-6 mt-12 w-full border-b opacity-60"></div>
+            <div className="flex flex-col items-center justify-between gap-5 lg:flex-row">
+              <div className="flex flex-row items-center gap-4 font-dm-sans text-[18px] font-normal text-white">
+                <Link href="/privacy-policy">
+                  {changeData?.links?.privacyPolicy}
+                </Link>
+                <Link href="/terms">
+                  {changeData?.links?.terms}
+                </Link>
+                <Link href="/imprint">
+                  {changeData?.links?.imprint}
+                </Link>
+              </div>
+              <p className="font-dm-sans text-[18px] font-normal text-white/50">
+                {changeData?.copyright1}
+                <span className="text-[#5D59E1]">
+                  {changeData?.webwunder}
+                </span>
+                {changeData?.copyright2}
+              </p>
+            </div>
+          </div>
                 </div>
             </FadeIn>
         </footer>
