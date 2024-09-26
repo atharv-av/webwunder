@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import { ArrowRight } from 'lucide-react';
@@ -8,6 +8,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader } from '../ui/card';
 import { Badge } from '../ui/badge';
+import {languageData} from '@/langauge'
+import axios from 'axios';
 
 interface TestimonialProps {
     image: string
@@ -15,7 +17,32 @@ interface TestimonialProps {
     description: string
 }
 
-const Testimonial: React.FC<TestimonialProps> = ({ image, title, description }) => (
+const Testimonial: React.FC<TestimonialProps> = ({ image, title, description }) => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+
+    const detectUserLanguage = async () => {
+
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
+      useEffect(() => {
+        detectUserLanguage();
+      }, []);
+    return(
     <div className="keen-slider__slide">
       <div className='h-[400px] rounded-xl overflow-hidden w-[calc(100vw-40px)] md:w-full bg-white border-2 '>
         <Image className='h-64' src={image} alt={title} width={1000} height={1000} />
@@ -26,9 +53,33 @@ const Testimonial: React.FC<TestimonialProps> = ({ image, title, description }) 
         </div>
       </div>
     </div>
-);
+)};
 
 const Why_mobCrousel: React.FC = () => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+
+    const detectUserLanguage = async () => {
+
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+    
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+    
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+      };
+      useEffect(() => {
+        detectUserLanguage();
+      }, []);
     const [currentSlide, setCurrentSlide] = useState(0); // Track the active slide
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         {

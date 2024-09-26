@@ -101,7 +101,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
                             </span>
                         </div>
                         <div className="font-inter text-lg font-semibold text-white lg:text-xl">
-                            €{setupFee}                                 / {languageData?.paymentsCard?.[changeLanguage]?.setupFeetag}
+                            {/* €{setupFee} */}
+                            {languageData?.paymentsCard?.[changeLanguage]?.setupFeetag}
 
                         </div>
                     </div>

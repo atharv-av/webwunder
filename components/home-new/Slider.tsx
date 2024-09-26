@@ -12,6 +12,7 @@ interface TestimonialProps {
     title: string
 }
 
+
 const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
     <div className="keen-slider__slide">
         <div className="p-4">

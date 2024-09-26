@@ -19,7 +19,7 @@ export const languageData = {
                 'Websites by Entrepreneurs for Entrepreneurs. Proven to Boost Sales and Cut Costs.',
             watchVideo: 'Watch Video',
             bookCall: 'Book a Call',
-            projectsInfo:
+            projectsInfo:  
                 'Hundreds of perfect projects delivered to hundreds of thrilled customers.',
         },
     },
@@ -127,14 +127,16 @@ export const languageData = {
     allInOnePage: {
       de: {
           title: 'All-in-one Agentur',
+          header : 'Mit WebWunder brauchen Sie nie wieder eine andere Agentur.',
           description: 'Mit WebWunder brauchen Sie nie wieder eine andere Agentur. Unsere umfassende All-in-one-Lösung deckt alle Aspekte Ihrer digitalen Präsenz ab – vom Webdesign bis hin zu Marketingstrategien. So müssen Sie nie wieder auf eine andere Agentur zurückgreifen. Wir kümmern uns um alles, damit Sie sich voll und ganz auf das Wachstum Ihres Unternehmens konzentrieren können.',
           finalNote: 'Abonnements',
           callToAction: 'Kostenloses Erstgespräch',
-          explorePlans: 'Pläne erkunden',
+          explorePlans: 'Abonnements',
           getInTouch: 'Kontaktieren Sie uns'
       },
       en: {
           title: 'All-in-one Agency',
+          header : 'With WebWunder, Youll Never Need Another Agency. Ever.',
           description: 'Our comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you’ll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.',
           finalNote: 'Subscriptions',
           callToAction: 'Book a Call',
@@ -182,6 +184,7 @@ export const languageData = {
                 },
             ],
             steps: {
+                cta : 'Drei Schritte',
                 title: 'Drei Schritte',
                 description: 'Ihre Website in drei einfachen Schritten',
                 steps: [
@@ -464,7 +467,8 @@ export const languageData = {
     },
     contactUs: {
         de: {
-            title: 'Komm zu uns',
+            cta : 'Komm zu uns',
+            title: 'Lass uns loslegen!',
             letsGetStarted: 'Lass uns loslegen!',
             call: 'Anruf',
             book15MinCall: 'Buche einen 15-Minuten-Anruf',
@@ -483,6 +487,7 @@ export const languageData = {
             sendMessage: 'Nachricht senden',
         },
         en: {
+            cta : 'Contact Us',
             title: 'Let’s Get Started!',
             letsGetStarted: 'Let’s Get Started!',
             call: 'Call',
@@ -520,7 +525,8 @@ export const languageData = {
                 'Bewegungsgrafiken',
             ],
             description:
-                'Für Unternehmer wie dich gemacht. Entdecken Sie unser Portfolio von Websites, die mehr können als nur gut aussehen – sie sind strategisch entwickelt, um Erfolg zu bringen und herausragende Leistungen zu erbringen, während Ihre wertvolle Zeit geschont wird.',
+                'Für Unternehmer wie dich gemacht.',
+            detail : 'Entdecken Sie unser Portfolio von Websites, die mehr können als nur gut aussehen – sie sind strategisch entwickelt, um Erfolg zu bringen und herausragende Leistungen zu erbringen, während Ihre wertvolle Zeit geschont wird.',
             seeMore: 'Mehr sehen',
         },
         en: {
@@ -540,7 +546,8 @@ export const languageData = {
                 'Motion Graphics',
             ],
             description:
-                'Built for Entrepreneurs Like You. Explore our portfolio of websites designed to do more than just look great—they’re strategically crafted to drive success and deliver outstanding performance, all while respecting your valuable time.',
+                'Built for Entrepreneurs Like You. ',
+            detail : 'Explore our portfolio of websites designed to do more than just look great—they’re strategically crafted to drive success and deliver outstanding performance, all while respecting your valuable time.',
             seeMore: 'See More Work',
         },
     },
@@ -597,6 +604,7 @@ export const languageData = {
             subtitle: 'Fragen?',
             description:
                 'Hier sind schnelle Antworten. Brauchen Sie mehr? Kontaktieren Sie uns einfach!',
+            description2 : 'Brauchen Sie mehr? Kontaktieren Sie uns einfach!',
             bookCall: 'Kostenloses Erstgespräch',
             questions: [
                 {
@@ -638,15 +646,18 @@ export const languageData = {
                     answer: 'Absolut! WebWunder kümmert sich um alles – von Website-Texten und Branding bis hin zur vollständigen Corporate Identity.',
                 },
             ],
-            finalNote:
-                'Kommen Sie zu uns! Lassen Sie die Konkurrenz hinter sich!',
-            finalCallToAction: 'Kostenloses Erstgespräch',
+           
+            contactCall: 'Kostenloses Erstgespräch',
+            contactCta : 'Kommen sie zu uns!',
+            contactTitle: 'Lassen Sie die Konkurrenz hinter sich!',
+            contactDescription :'Wählen Sie Ihre Website, entwickelt von Unternehmern für Unternehmer, und sehen Sie, wie Ihr Geschäft durch die Decke geht.',
         },
         en: {
             title: 'Frequently Asked Questions',
             subtitle: 'Got Questions?',
             description:
-                'Here are some quick answers. Need more? Just reach out!',
+                'Here are some quick answers.',
+            description2 : 'Need more? Just reach out!',
             bookCall: 'Book a Call',
             questions: [
                 {
@@ -687,8 +698,10 @@ export const languageData = {
                     answer: 'Absolutely! WebWunder takes care of everything—from website copy and branding to complete corporate identity creation.',
                 },
             ],
-            finalNote: 'Leave the Competition Behind!',
-            finalCallToAction: 'Book a Call',
+            contactCta : 'Get in Touch',
+            contactTitle: 'Leave the Competition Behind!',
+            contactDescription :'Join WebWunders subscription web design service, built by entrepreneurs for entrepreneurs, and watch your business soar.',
+            contactCall: 'Book a Call',
         },
     },
 }

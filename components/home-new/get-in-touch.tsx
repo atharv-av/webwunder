@@ -1,38 +1,66 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '../ui/button'
 import { ArrowRight } from 'lucide-react'
-
+import { languageData } from '@/langauge'
+import axios from 'axios'
 const GetInTouch = () => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
+
+    const detectUserLanguage = async () => {
+        try {
+            const response = await axios.get('https://ipapi.co/json/')
+            const countryCode = response.data.country_code
+
+            const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
+
+            if (germanSpeakingCountries.includes(countryCode)) {
+                setChangeLanguage('de')
+            } else {
+                setChangeLanguage('en')
+            }
+        } catch (error) {
+            console.error('Error fetching user location:', error)
+            // Default to English if there's an error
+            setChangeLanguage('en')
+        }
+    }
+    useEffect(() => {
+        detectUserLanguage()
+    }, [])
     return (
         <div className="relative h-[400px] bg-black">
             <div
                 className="absolute inset-0 scale-150"
                 style={{
-                    backgroundImage:
-                        "url('/images/bg-grad-review.png')",
+                    backgroundImage: "url('/images/bg-grad-review.png')",
                     backgroundSize: 'contain',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                 }}
             ></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center p-4 gap-3 text-center">
-                <Badge data-aos="fade-up"   data-aos-anchor-placement="bottom-bottom" className="mb-4 bg-[#5D59E1] font-archivo text-sm font-normal">
-                    Get in Touch
-                </Badge>
-                <h2 className="mb-4 font-archivo font-bold text-white lg:text-[45px] text-[25px]">
-                    Leave the Competition Behind!
-                </h2>
-                <p className="max-w-2xl font-archivo lg:text-base text-sm font-normal text-white md:text-[16px]">
-                    Join WebWunder&apos;s subscription web design service, built by
-                    entrepreneurs for entrepreneurs, and watch your business
-                    soar.
-                </p>
-                <button
-                    className="flex  hover:scale-95 transition-all  w-fit px-2 py-1 lg:px-4 lg:py-2 rounded-full items-center justify-between gap-3 bg-white"
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-4 text-center">
+                <Badge
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom"
+                    className="mb-3 bg-[#5D59E1] font-archivo text-sm font-normal"
                 >
+                    {languageData?.faqPage?.[changeLanguage]?.contactCta}
+                </Badge>
+                <h2 className=" font-archivo text-[25px] font-bold text-white lg:text-[45px]">
+                    {/* Leave the Competition Behind! */}
+                    {languageData?.faqPage?.[changeLanguage]?.contactTitle}
+                </h2>
+                <p className="max-w-2xl font-archivo text-sm font-normal text-gray-400 md:text-[16px] lg:text-base">
+                    {
+                        languageData?.faqPage?.[changeLanguage]
+                            ?.contactDescription
+                    }
+                </p>
+                <button className="flex w-fit items-center justify-between gap-3 rounded-full bg-white px-2 py-1 transition-all hover:scale-95 lg:px-4 lg:py-2">
                     <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                        Book a Call
+                        {languageData?.faqPage?.[changeLanguage]?.bookCall}
                     </p>
                     <ArrowRight size={15} className="text-[#24252A]" />
                 </button>

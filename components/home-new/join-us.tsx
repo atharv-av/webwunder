@@ -29,7 +29,32 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
     title,
     description,
     timeCommitment,
-}) => (
+}) => 
+{
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
+    const detectUserLanguage = async () => {
+
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
+
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
+    }
+    useEffect(() => {
+        detectUserLanguage()
+    }, [])
+    return(
     <div className="flex">
         <div className="mr-4 flex flex-col items-center">
             <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white"></div>
@@ -52,30 +77,29 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
             </p>
         </div>
     </div>
-)
+)}
 
 const JoinUs: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
     const detectUserLanguage = async () => {
-        setChangeLanguage('en')
 
-        // try {
-        //   const response = await axios.get('https://ipapi.co/json/');
-        //   const countryCode = response.data.country_code;
+        try {
+          const response = await axios.get('https://ipapi.co/json/');
+          const countryCode = response.data.country_code;
 
-        //   const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
+          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
 
-        //   if (germanSpeakingCountries.includes(countryCode)) {
-        //     setChangeLanguage('de');
-        //   } else {
-        //     setChangeLanguage('en');
-        //   }
-        // } catch (error) {
-        //   console.error('Error fetching user location:', error);
-        //   // Default to English if there's an error
-        //   setChangeLanguage('en');
-        // }
+          if (germanSpeakingCountries.includes(countryCode)) {
+            setChangeLanguage('de');
+          } else {
+            setChangeLanguage('en');
+          }
+        } catch (error) {
+          console.error('Error fetching user location:', error);
+          // Default to English if there's an error
+          setChangeLanguage('en');
+        }
     }
     useEffect(() => {
         detectUserLanguage()
@@ -208,37 +232,37 @@ const JoinUs: React.FC = () => {
             <div className="mt-5 flex w-full scale-90 flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:gap-20 lg:pl-20">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
-                        {/* {languageData?.joinUsSection?.[changeLanguage]?.}
-                         */}
-                        Join us
+                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
+                        
+                        
                     </Badge>
                     <p className="text-center font-archivo text-[25px] font-bold leading-none text-white">
-                        Get Your Website in <br /> Three Easy Steps
+                    {languageData?.joinUsSection?.[changeLanguage]?.steps?.title }
+
                     </p>
                     <p className="mb-5 mt-0 w-1/2 text-center font-archivo text-sm font-normal text-white/50">
-                        Hate meetings? Us too—that&apos;s why we&apos;ve
-                        minimized them. In under an hour of your valuable time,
-                        we help successful businesses become even more
-                        successful. Here&apos;s how it works:
+                    {languageData?.joinUsSection?.[changeLanguage]?.steps?.description }
+
                     </p>
                     <div className="flex max-w-xl flex-col items-start rounded-lg">
                         <TimelineStep
                             number={1}
-                            title="Book A Call"
-                            description="A quick 15-minute chat to understand your needs and pick the perfect plan."
-                            timeCommitment="15 minutes."
+                            title=  {languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
+
+                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
+                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
                         />
                         <TimelineStep
                             number={2}
-                            title="Design & Content"
-                            description="Share your content ideas, or let us help craft them. We'll handle everything and send it to you for final approval."
-                            timeCommitment="15 minutes."
+                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
+                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
+                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
                         />
                         <TimelineStep
                             number={3}
-                            title="Launch Your Site"
-                            description="We turn your vision into reality and get your website live, ready to dominate the market."
-                            timeCommitment="15 minutes."
+                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title}
+                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
+                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
                         />
                     </div>
                 </div>
@@ -253,36 +277,35 @@ const JoinUs: React.FC = () => {
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
                     <div className="hidden flex-col items-start gap-4 lg:flex lg:w-3/4">
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
-                            Three Steps
+                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
                         </Badge>
                         <p className="font-archivo text-[45px] font-bold leading-none text-white">
-                            Get Your Website in Three Easy Steps
+                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.title }
                         </p>
                         <p className="mb-5 mt-0 font-archivo text-base font-normal text-white/50">
-                            Hate meetings? Us too—that&apos;s why we&apos;ve
-                            minimized them. In under an hour of your valuable
-                            time, we help successful businesses become even more
-                            successful. Here&apos;s how it works:
+                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.description }
+
                         </p>
                         <div className="flex max-w-xl flex-col items-start rounded-lg">
-                            <TimelineStep
-                                number={1}
-                                title="Book A Call"
-                                description="A quick 15-minute chat to understand your needs and pick the perfect plan."
-                                timeCommitment="15 minutes."
-                            />
-                            <TimelineStep
-                                number={2}
-                                title="Design & Content"
-                                description="Share your content ideas, or let us help craft them. We'll handle everything and send it to you for final approval."
-                                timeCommitment="15 minutes."
-                            />
-                            <TimelineStep
-                                number={3}
-                                title="Launch Your Site"
-                                description="We turn your vision into reality and get your website live, ready to dominate the market."
-                                timeCommitment="15 minutes."
-                            />
+                        <TimelineStep
+                            number={1}
+                            title=  {languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
+
+                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
+                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
+                        />
+                        <TimelineStep
+                            number={2}
+                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
+                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
+                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
+                        />
+                        <TimelineStep
+                            number={3}
+                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title}
+                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
+                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
+                        />
                         </div>
                     </div>
                 </div>

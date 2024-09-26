@@ -1,10 +1,11 @@
-"use client"
-import React, { useState } from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { Badge } from '../ui/badge'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-
+import { languageData } from '@/langauge'
+import axios from 'axios'
 interface ContactCardProps {
     width: string
     bgColor: string
@@ -18,42 +19,6 @@ interface ContactCardProps {
     onMouseLeave: () => void
 }
 
-const contactCards = [
-    {
-        id: 1,
-        width: 'lg:w-[40%] w-full',
-        bgColor: 'bg-[#FB421F]',
-        tag: 'Call',
-        title: 'Book a 15-Minute Call',
-        description:
-            "In just 15 minutes, we'll cut to the chase and show you how WebWunder can transform your business. We value your time—because we’re entrepreneurs too.",
-        buttonText: 'Book Now',
-        buttonTarget: '#',
-    },
-    {
-        id: 2,
-        width: 'lg:w-1/4 w-full',
-        bgColor: 'bg-[#25D366]',
-        tag: 'Chat',
-        title: 'Prefer to Chat First?',
-        description:
-            "Connect with us on WhatsApp for a quick conversation. We're here to help!",
-        buttonText: 'Chat on WhatsApp',
-        buttonTarget: '#',
-    },
-    {
-        id: 3,
-        width: 'lg:w-[22%] w-full',
-        bgColor: 'bg-[#4148FA]',
-        tag: 'Email',
-        title: 'Get in Touch',
-        description:
-            "Prefer to reach out first? Send us your questions, and we'll reply quickly.",
-        buttonText: 'Send a Message',
-        buttonTarget: '#',
-    },
-]
-
 const ContactCard: React.FC<ContactCardProps> = ({
     width,
     bgColor,
@@ -66,9 +31,11 @@ const ContactCard: React.FC<ContactCardProps> = ({
     onMouseEnter,
     onMouseLeave,
 }) => {
+   
+   
     return (
         <div
-            className={`transition-all  duration-300 flex lg:h-80 h-fit flex-col items-start justify-between ${
+            className={`flex h-fit flex-col items-start justify-between transition-all duration-300 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
             } ${bgColor} rounded-xl p-8`}
             onMouseEnter={onMouseEnter}
@@ -87,7 +54,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
             </div>
             <Button
                 size={'sm'}
-                className="gap-2 mt-8 rounded-full bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
+                className="mt-8 gap-2 rounded-full bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
                 asChild
             >
                 <Link href={buttonTarget} className="">
@@ -107,17 +74,78 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }
 
 const ContactUs = () => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
+
+    const detectUserLanguage = async () => {
+        try {
+            const response = await axios.get('https://ipapi.co/json/')
+            const countryCode = response.data.country_code
+
+            const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH'] // Belgium, Germany, Austria, Switzerland
+
+            if (germanSpeakingCountries.includes(countryCode)) {
+                setChangeLanguage('de')
+            } else {
+                setChangeLanguage('en')
+            }
+        } catch (error) {
+            console.error('Error fetching user location:', error)
+            // Default to English if there's an error
+            setChangeLanguage('en')
+        }
+    }
+    useEffect(() => {
+        detectUserLanguage()
+    }, [])
+    const contactCards = [
+        {
+            id: 1,
+            width: 'lg:w-[40%] w-full',
+            bgColor: 'bg-[#FB421F]',
+            tag: languageData?.contactUs?.[changeLanguage]?.call,
+            title: languageData?.contactUs?.[changeLanguage]?.book15MinCall,
+            description:
+                languageData?.contactUs?.[changeLanguage]?.callDescription,
+            buttonText: languageData?.contactUs?.[changeLanguage]?.bookNow,
+            buttonTarget: '#',
+        },
+        {
+            id: 2,
+            width: 'lg:w-1/4 w-full',
+            bgColor: 'bg-[#25D366]',
+            tag: languageData?.contactUs?.[changeLanguage]?.chat,
+            title: languageData?.contactUs?.[changeLanguage]?.preferChatFirst,
+            description:
+            languageData?.contactUs?.[changeLanguage]?.chatDescription,
+            buttonText: languageData?.contactUs?.[changeLanguage]?.chatOnWhatsApp,
+            buttonTarget: '#',
+        },
+        {
+            id: 3,
+            width: 'lg:w-[22%] w-full',
+            bgColor: 'bg-[#4148FA]',
+            tag: languageData?.contactUs?.[changeLanguage]?.email,
+            title: languageData?.contactUs?.[changeLanguage]?.getInTouch,
+            description:
+            languageData?.contactUs?.[changeLanguage]?.emailDescription,
+            buttonText: languageData?.contactUs?.[changeLanguage]?.sendMessage,
+            buttonTarget: '#',
+        },
+    ]
     const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
     return (
         <div className="flex flex-col items-center gap-4 bg-black">
-            <Badge data-aos="fade-up" className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal">
-                Contact Us
+            <Badge
+                data-aos="fade-up"
+                className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal"
+            >
+                {languageData?.contactUs?.[changeLanguage]?.cta}
             </Badge>
-            <p className="font-archivo lg:text-[45px] text-[25px] font-bold text-white">
-                Let&apos;s Get Started!
+            <p className="font-archivo text-[25px] font-bold text-white lg:text-[45px]">
+                {languageData?.contactUs?.[changeLanguage]?.title}
             </p>
-            <div className="flex flex-col lg:w-[89%] xl:max-w-[1230px] w-full mx-auto items-center justify-center lg:gap-3 gap-5 lg:flex-row lg:px-0 px-4">
+            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1230px]">
                 {contactCards.map((card) => (
                     <ContactCard
                         key={card.id}
