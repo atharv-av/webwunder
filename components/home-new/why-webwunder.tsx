@@ -53,95 +53,95 @@ const WhyWebWunder = () => {
     }
 
 
-    useEffect(() => {
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
+    // useEffect(() => {
+    //     // Register ScrollTrigger plugin
+    //     gsap.registerPlugin(ScrollTrigger);
 
-        // Select all words in the text
-        const words = document.querySelectorAll('.word');
+    //     // Select all words in the text
+    //     const words = document.querySelectorAll('.word');
 
-        // Create a timeline for scroll-triggered animations
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.animated-text', // The container for the text
-                start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
-                end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
-                scrub: 1, // Smooth scrubbing
-                // markers: true, // Enable markers for debugging (optional)
-            },
-        });
+    //     // Create a timeline for scroll-triggered animations
+    //     const tl = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '.animated-text', // The container for the text
+    //             start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
+    //             end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+    //             scrub: 1, // Smooth scrubbing
+    //             // markers: true, // Enable markers for debugging (optional)
+    //         },
+    //     });
 
-        // Animate each word individually
-        words.forEach((word, index) => {
-            tl.to(word, {
-                color: '#24252A', // Change to black
-                duration: 1,
-                ease: 'none',
-                stagger: {
-                    amount: 0.5, // Delay between each word's animation
-                    from: "start", // Start from the first word
-                },
-            }, index * 0.2); // Stagger start time for each word
-        });
-    }, []);
+    //     // Animate each word individually
+    //     words.forEach((word, index) => {
+    //         tl.to(word, {
+    //             color: '#24252A', // Change to black
+    //             duration: 1,
+    //             ease: 'none',
+    //             stagger: {
+    //                 amount: 0.5, // Delay between each word's animation
+    //                 from: "start", // Start from the first word
+    //             },
+    //         }, index * 0.2); // Stagger start time for each word
+    //     });
+    // }, []);
 
 
-    useEffect(() => {
-        // Register GSAP plugins
+    // useEffect(() => {
+    //     // Register GSAP plugins
     
-        // Get all heading elements you want to animate
-        const upperdiv = document.querySelectorAll('.upperdiv');
+    //     // Get all heading elements you want to animate
+    //     const upperdiv = document.querySelectorAll('.upperdiv');
 
-        // Set a timeout to delay the animation
-        const timeoutId = setTimeout(() => {
-            // Animate each letter into view
-            gsap.from(upperdiv, {
-                height: 0, // Start 30px below
+    //     // Set a timeout to delay the animation
+    //     const timeoutId = setTimeout(() => {
+    //         // Animate each letter into view
+    //         gsap.from(upperdiv, {
+    //             height: 0, // Start 30px below
 
-                duration: 0.5,
-                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: upperdiv, // The container for the text
-                    start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
-                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
-                    scrub: 1, // Smooth scrubbing
-                    // markers: true, // Enable markers for debugging (optional)
-                },
-            });
-        }, 300); // Delay of 300ms
+    //             duration: 0.5,
+    //             stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+    //             ease: 'power2.out',
+    //             scrollTrigger: {
+    //                 trigger: upperdiv, // The container for the text
+    //                 start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
+    //                 end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+    //                 scrub: 1, // Smooth scrubbing
+    //                 // markers: true, // Enable markers for debugging (optional)
+    //             },
+    //         });
+    //     }, 300); // Delay of 300ms
 
-        return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
-    }, []);
+    //     return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
+    // }, []);
     
-    useEffect(() => {
-        // Register GSAP plugins
+    // useEffect(() => {
+    //     // Register GSAP plugins
        
 
-        // Get all heading elements you want to animate
-        const lowerrdiv = document.querySelectorAll('.lowerrdiv');
+    //     // Get all heading elements you want to animate
+    //     const lowerrdiv = document.querySelectorAll('.lowerrdiv');
 
-        // Set a timeout to delay the animation
-        const timeoutId = setTimeout(() => {
-            // Animate each letter into view
-            gsap.from(lowerrdiv, {
-                height: 0, // Start 30px below
+    //     // Set a timeout to delay the animation
+    //     const timeoutId = setTimeout(() => {
+    //         // Animate each letter into view
+    //         gsap.from(lowerrdiv, {
+    //             height: 0, // Start 30px below
 
-                duration: 1,
-                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
-                ease: 'power2.out',
-                scrollTrigger: {
-                    trigger: ".trig", // The container for the text
-                    start: 'top 30%', // Start when the top of the container reaches 75% of the viewport
-                    end: 'bottom -50%', // End when the bottom of the container reaches 25% of the viewport
-                    scrub: 1, // Smooth scrubbing
-                    // markers: true, // Enable markers for debugging (optional)
-                },
-            });
-        }, 300); // Delay of 300ms
+    //             duration: 1,
+    //             stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+    //             ease: 'power2.out',
+    //             scrollTrigger: {
+    //                 trigger: ".trig", // The container for the text
+    //                 start: 'top 30%', // Start when the top of the container reaches 75% of the viewport
+    //                 end: 'bottom -50%', // End when the bottom of the container reaches 25% of the viewport
+    //                 scrub: 1, // Smooth scrubbing
+    //                 // markers: true, // Enable markers for debugging (optional)
+    //             },
+    //         });
+    //     }, 300); // Delay of 300ms
 
-        return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
-    }, []);
+    //     return () => clearTimeout(timeoutId); // Cleanup timeout on component unmount
+    // }, []);
 
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
     const mainItems = [
@@ -196,12 +196,12 @@ const WhyWebWunder = () => {
         <div className="my-10 flex flex-col items-center justify-center gap-6 px-4">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
-                <Badge data-aos="fade-up" className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
+                <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
                 {languageData?.additionalSection?.[changeLanguage]?.designedToDominate}
                 </Badge>
-                <div className="flex flex-col items-center leading-none animated-text">
+                <div className="flex flex-col items-center leading-none ">
                     {/* Split text into individual words */}
-                    <p className="font-archivo text-[32px] font-bold text-zinc-400 md:text-[45px]">
+                    <p className="font-archivo text-[32px] font-bold text-black md:text-[45px]">
                         <span className="word">
                             {/* Why WebWunder? */}
                         {languageData?.additionalSection?.[changeLanguage]?.whyWebWunder}
@@ -242,7 +242,7 @@ const WhyWebWunder = () => {
                                 className="flex flex-row items-center justify-between gap-4"
                             >
                                 <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                    Book a call
+                                {languageData?.additionalSection?.[changeLanguage]?.bookCall}
                                 </p>
                                 <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
                                 <ArrowRight

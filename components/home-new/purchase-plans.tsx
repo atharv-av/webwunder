@@ -279,7 +279,7 @@ const PurchasePlans: React.FC = () => {
                     {/* Market-Conquering Business Solutions */}
                     {languageData?.paymentsCard?.[changeLanguage]?.headline}
                 </Badge>
-                <p className="mt-4 font-archivo text-[25px] font-bold text-white lg:text-[45px]">
+                <p className="mt-4 font-archivo text-center lg:text-left text-[25px] font-bold text-white lg:text-[45px]">
                     {/* No Contracts, Just Results */}
                     {languageData?.paymentsCard?.[changeLanguage]?.subheadline}
                 </p>

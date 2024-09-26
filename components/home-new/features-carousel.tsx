@@ -2,18 +2,7 @@
 
 import React, { useEffect, useState, useRef } from 'react'
 import Marquee from 'react-fast-marquee'
-
-const carouselItems: string[] = [
-    'Web Design',
-    'Graphic Design',
-    'Video Editing',
-    'Motion Graphics',
-    'Web Development',
-    'Branding',
-    'SEO',
-    'Digital Marketing',
-    'Brochure',
-]
+import { languageData } from '@/langauge'
 
 interface CarouselProps {
     bgColor: string
@@ -61,6 +50,19 @@ const FeaturesCarousel: React.FC<CarouselProps> = ({
 
         return () => clearInterval(intervalId)
     }, [])
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+
+useEffect(() => {
+    if (typeof window !== 'undefined') {
+        const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+        if (storedLang) {
+            setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+        }
+    }
+}, [])
+
+const carouselItems: string[] = languageData?.services?.[changeLanguage];
+
 
     return (
         <div

@@ -159,7 +159,7 @@ const Footer = () => {
                     alt="WebWunder Logo"
                   />
                 </Link>
-                <p className="font-dm-sans text-[18px] w-44 font-normal text-gray-500 text-white/50 lg:text-end">
+                <p className="font-dm-sans text-[18px] lg:w-60 font-normal text-gray-500 text-white/50 lg:text-end">
                   {changeData?.winningSupport}
                   {/* winningSupport */}
                 </p>

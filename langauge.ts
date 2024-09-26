@@ -603,7 +603,7 @@ export const languageData = {
             title: 'Häufig gestellte Fragen',
             subtitle: 'Fragen?',
             description:
-                'Hier sind schnelle Antworten. Brauchen Sie mehr? Kontaktieren Sie uns einfach!',
+                'Hier sind schnelle Antworten.',
             description2: 'Brauchen Sie mehr? Kontaktieren Sie uns einfach!',
             bookCall: 'Kostenloses Erstgespräch',
             questions: [
@@ -1833,4 +1833,30 @@ export const languageData = {
             copyright2: '. Alle Rechte vorbehalten.',
         },
     },
+    services : {
+        de: [
+          'Webdesign',
+          'Grafikdesign',
+          'Videobearbeitung',
+          'Bewegungsgrafiken',
+          'Webentwicklung',
+          'Branding',
+          'SEO',
+          'Digital Marketing',
+          'Broschüren',
+          'ANIMATION'
+        ],
+        en: [
+          'Web Design',
+          'Graphic Design',
+          'Video Editing',
+          'Motion Graphics',
+          'Web Development',
+          'Branding',
+          'SEO',
+          'Digital Marketing',
+          'Brochure',
+          'ANIMATION'
+        ]
+      }      
 }

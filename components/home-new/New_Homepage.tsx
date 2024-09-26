@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Header from '../layout/home-template-new/header'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
@@ -57,15 +57,46 @@ const New_Homepage = () => {
         ))
     }
 
+
+    const textSectionRef = useRef<HTMLDivElement>(null);
+    const image1Ref = useRef<HTMLImageElement>(null);
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.pageYOffset;
+            const windowHeight = window.innerHeight;
+            
+            if (textSectionRef.current) {
+                textSectionRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            }
+            
+            if (image1Ref.current) {
+                const scrollPercentage = scrollPosition / windowHeight;
+                // const translateY = -scrollPosition * 0.1; // Negative value for upward movement
+                const scale = 1 + scrollPercentage * 0.1; // Scale from 1 to 1.05
+                image1Ref.current.style.transform = ` scale(${scale})`;//translateY(${translateY}px)
+                image1Ref.current.style.transformOrigin = 'center bottom';
+            }
+
+
+
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         
-            <div className="h-full bg-white lg:min-h-screen lg:p-5">
+            <div className="h-full lg:bg-white lg:min-h-screen lg:p-5">
                 <div className="bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl">
                     <div className="relative z-10">
                         <Header />
                     </div>
 
-                    <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 pt-4">
+                    <div ref={textSectionRef} className="mx-auto  flex max-w-6xl flex-col items-center justify-center gap-4 pt-4">
                         <Badge
                             data-aos="fade-up"
                             className="w-fit rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
@@ -75,14 +106,14 @@ const New_Homepage = () => {
                         </Badge>
                         
                         <div className="heading">
-                            <p className="overflow-hidden text-center font-archivo text-[40px] font-bold leading-none text-white lg:text-7xl">
+                            <p className="overflow-hidden text-center  font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
                                 {
                                     languageData?.heroSection?.[changeLanguage]
                                         ?.headline
                                 }
                                 {/* {splitText("Winning")} {"  "}{splitText("Websites")} */}
                             </p>
-                            <p className="overflow-hidden text-center font-archivo text-[35px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
+                            <p className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
                                 {
                                     languageData?.heroSection?.[changeLanguage]
                                         ?.subHeadline
@@ -159,8 +190,7 @@ const New_Homepage = () => {
                         </p>
                     </div>
                     <Image
-                        data-aos="fade-up"
-                        data-aos-duration="3000"
+                    ref={image1Ref}
                         src="/images/home/hero/homebg.png"
                         alt="Figma"
                         className="hidden w-screen md:flex"
@@ -168,8 +198,6 @@ const New_Homepage = () => {
                         height={5000}
                     />
                     <Image
-                        data-aos="fade-up"
-                        data-aos-duration="3000"
                         src="/images/homebg2.png"
                         alt="Figma"
                         className="mt-6 flex w-screen md:hidden"

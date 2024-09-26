@@ -202,7 +202,7 @@ const JoinUsSection: React.FC = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center overflow-hidden md:col-span-1 lg:col-span-2">
+                    <div className="flex flex-col items-center justify-center overflow-hidden md:col-span-1 lg:col-span-2">
                         <div
                             ref={sliderRef}
                             className="keen-slider cursor-grab"

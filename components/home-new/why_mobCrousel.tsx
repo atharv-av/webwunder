@@ -1,15 +1,15 @@
-"use client"
+'use client'
 
-import React, { useEffect, useState } from 'react';
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Card, CardContent, CardHeader } from '../ui/card';
-import { Badge } from '../ui/badge';
-import {languageData} from '@/langauge'
-import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useKeenSlider } from 'keen-slider/react'
+import 'keen-slider/keen-slider.min.css'
+import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Card, CardContent, CardHeader } from '../ui/card'
+import { Badge } from '../ui/badge'
+import { languageData } from '@/langauge'
+import axios from 'axios'
 
 interface TestimonialProps {
     image: string
@@ -17,70 +17,52 @@ interface TestimonialProps {
     description: string
 }
 
-const Testimonial: React.FC<TestimonialProps> = ({ image, title, description }) => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+const Testimonial: React.FC<TestimonialProps> = ({
+    image,
+    title,
+    description,
+}) => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-    const detectUserLanguage = async () => {
-
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-    
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
         }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
-    return(
-    <div className="keen-slider__slide">
-      <div className='h-[400px] rounded-xl overflow-hidden w-[calc(100vw-40px)] md:w-full bg-white border-2 '>
-        <Image className='h-64' src={image} alt={title} width={1000} height={1000} />
-        <div className='p-2'>
-
-        <h1 className='font-bold text-xl'>{title}</h1>
-        <p>{description}</p>
+    }, [])
+    return (
+        <div className="keen-slider__slide">
+            <div className="h-[400px] w-[calc(100vw-40px)] overflow-hidden rounded-xl border-2 bg-white md:w-full">
+                <Image
+                    className="h-64"
+                    src={image}
+                    alt={title}
+                    width={1000}
+                    height={1000}
+                />
+                <div className="p-2">
+                    <h1 className="text-xl font-bold">{title}</h1>
+                    <p>{description}</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-)};
+    )
+}
 
 const Why_mobCrousel: React.FC = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en');
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-    const detectUserLanguage = async () => {
-
-        try {
-          const response = await axios.get('https://ipapi.co/json/');
-          const countryCode = response.data.country_code;
-    
-          const germanSpeakingCountries = ['BE', 'DE', 'AT', 'CH']; // Belgium, Germany, Austria, Switzerland
-    
-          if (germanSpeakingCountries.includes(countryCode)) {
-            setChangeLanguage('de');
-          } else {
-            setChangeLanguage('en');
-          }
-        } catch (error) {
-          console.error('Error fetching user location:', error);
-          // Default to English if there's an error
-          setChangeLanguage('en');
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
         }
-      };
-      useEffect(() => {
-        detectUserLanguage();
-      }, []);
-    const [currentSlide, setCurrentSlide] = useState(0); // Track the active slide
+    }, [])
+    const [currentSlide, setCurrentSlide] = useState(0) // Track the active slide
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         {
             loop: true,
@@ -90,86 +72,117 @@ const Why_mobCrousel: React.FC = () => {
                 spacing: -150,
             },
             slideChanged(s) {
-                setCurrentSlide(s.track.details.rel); // Update active slide index
+                setCurrentSlide(s.track.details.rel) // Update active slide index
             },
         },
-        []
-    );
+        [],
+    )
 
-    const [items] = useState([
+    const mainItems = [
         {
-            cardWidth: 'lg:w-[700pxw-full',
+            cardWidth: 'lg:w-[700px] w-full',
             image: '/images/home/why-webwunder/why-webwunder-1.png',
-            smallImage: "/images/home/why-webwunder/why-webwunder-1-small.png",
+            smallImage: '/images/home/why-webwunder/why-webwunder-1-small.png',
             imgWidth: 700,
-            title: 'Boost Revenue with Strategic, Conversion-Optimized Solutions',
+            title: languageData?.additionalSection?.[changeLanguage]?.tabs[0]
+                .title,
             description:
-                'Turn visitors into loyal customers with designs that drive lasting success.',
+                languageData?.additionalSection?.[changeLanguage]?.tabs[0]
+                    .description,
         },
         {
-            cardWidth: 'lg:w-[350pxw-full',
+            cardWidth: 'lg:w-[350px] w-full',
             image: '/images/home/why-webwunder/why-webwunder-2.png',
             imgWidth: 350,
-            title: 'Purpose-Driven Design',
+            title: languageData?.additionalSection?.[changeLanguage]?.tabs[1]
+                .title,
             description:
-                'Our strategic designs empower your brand to command premium pricing and boost profitability.',
+                languageData?.additionalSection?.[changeLanguage]?.tabs[1]
+                    .description,
         },
         {
-            cardWidth: 'lg:w-[350pxw-full',
+            cardWidth: 'lg:w-[350px] w-full',
             image: '/images/home/why-webwunder/why-webwunder-3.png',
             imgWidth: 350,
-            title: 'All-Inclusive Services for Design, SEO, and Continuous Optimization',
+            title: languageData?.additionalSection?.[changeLanguage]?.tabs[2]
+                .title,
             description:
-                "From design to SEO, content creation, and AI-driven updates, we take care of everything—so you don't have to.",
+                languageData?.additionalSection?.[changeLanguage]?.tabs[2]
+                    .description,
         },
         {
-            cardWidth: 'lg:w-[350pxw-full',
+            cardWidth: 'lg:w-[350px] w-full',
             image: '/images/home/why-webwunder/why-webwunder-4.png',
             imgWidth: 350,
-            title: 'Cost-Effective Solution That Streamlines Lead Generation',
+            title: languageData?.additionalSection?.[changeLanguage]?.tabs[3]
+                .title,
             description:
-                'Streamline your customer journey, attract qualified leads, and save valuable time with efficient communication.',
+                languageData?.additionalSection?.[changeLanguage]?.tabs[3]
+                    .description,
         },
         {
-            cardWidth: 'lg:w-[350pxw-fit',
+            cardWidth: 'lg:w-[350px] w-fit',
             image: '/images/home/why-webwunder/why-webwunder-5.png',
             imgWidth: 350,
-            title: 'Tailored Marketing Support to Enhance Brand Visibility and Growth',
+            title: languageData?.additionalSection?.[changeLanguage]?.tabs[4]
+                .title,
             description:
-                'Comprehensive support, covering everything from branding to social media, guarantees your business stands out and grows.',
+                languageData?.additionalSection?.[changeLanguage]?.tabs[4]
+                    .description,
         },
-    ]);
+    ]
 
     return (
-        <section  style={{
-            backgroundImage:
-                'url("/images/home/why-webwunder/why-webwunder-bg.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-        }} className=" text-black py-24 min-h-[500px]  lg:pl-32">
-
-<div className="flex flex-col items-center gap-4 text-center">
-                <Badge data-aos="fade-up" className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
-                    Designed to Dominate
+        <section
+            style={{
+                backgroundImage:
+                    'url("/images/home/why-webwunder/why-webwunder-bg.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+            }}
+            className="min-h-[500px] py-24 text-black lg:pl-32"
+        >
+            <div className="flex flex-col items-center gap-4 text-center">
+                <Badge
+                    data-aos="fade-up"
+                    className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white"
+                >
+                    {
+                        languageData?.additionalSection?.[changeLanguage]
+                            ?.designedToDominate
+                    }
                 </Badge>
-                <div className="flex flex-col items-center leading-none animated-text">
+                <div className=" flex flex-col items-center leading-none">
                     {/* Split text into individual words */}
-                    <p className="font-archivo text-[32px] font-bold text-zinc-400 md:text-[45px]">
-                        <span className="word">Why</span> <span className="word">WebWunder?</span> <br />
-                        <span className="word">We</span> <span className="word">Make</span> <span className="word">it</span> <span className="word">Clear.</span>
+                    <p className="font-archivo text-[32px] font-bold text-black md:text-[45px]">
+                        {
+                            languageData?.additionalSection?.[changeLanguage]
+                                ?.whyWebWunder
+                        }{' '}
+                        <br />
+                        {
+                            languageData?.additionalSection?.[changeLanguage]
+                                ?.weMakeItClear
+                        }
                     </p>
                 </div>
                 <p className="font-archivo text-sm font-normal text-black/50 md:text-base">
-                    Your business deserves more than just a website—it deserves
-                    a game-changer.
+                    {
+                        languageData?.additionalSection?.[changeLanguage]
+                            ?.businessDeservesMore
+                    }
                 </p>
 
                 {/* Buttons */}
                 <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                    <button className="flex  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                         <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                            Explore Plans
+                            {
+                                languageData?.additionalSection?.[
+                                    changeLanguage
+                                ]?.explorePlans
+                            }
                         </p>
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
                             <ArrowRight
@@ -179,91 +192,43 @@ const Why_mobCrousel: React.FC = () => {
                             />
                         </div>
                     </button>
-                    <button className="flex border  hover:scale-95 transition-all  w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2">
-                            <Link
-                                href="#"
-                                className="flex flex-row items-center justify-between gap-4"
-                            >
-                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                    Book a call
-                                </p>
-                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
+                        <Link
+                            href="#"
+                            className="flex flex-row items-center justify-between gap-4"
+                        >
+                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                {
+                                    languageData?.additionalSection?.[
+                                        changeLanguage
+                                    ]?.bookCall
+                                }
+                            </p>
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
                                 <ArrowRight
                                     size={18}
                                     fontWeight={100}
                                     className="text-[#ffffff]"
                                 />
                             </div>
-                            </Link>
-                        </button>
+                        </Link>
+                    </button>
                 </div>
             </div>
 
-
             <div className="mx-auto px-4 sm:px-6 lg:px-0">
-                <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 items-center">
-                    {/* <div className="lg:col-span-1">
-                        <h2 className="text-4xl font-bold mb-4">Join Us! Why?<br />Clear and Simple.</h2>
-                        <div className="my-4 flex items-start justify-start gap-2 lg:my-2 lg:gap-3">
-
-                            <button className="flex hover:scale-95 transition-all w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
-                                <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                                Explore Plans
-                                </p>
-                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
-                                    <ArrowRight
-                                        size={18}
-                                        fontWeight={100}
-                                        className="text-[#24252A]"
-                                    />
-                                </div>
-                            </button>
-
-                            <button className="flex w-fit  hover:scale-95 transition-all  flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2">
-                                <Link
-                                    href="#"
-                                    className="flex flex-row items-center justify-between gap-4"
-                                >
-                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                        Book a call
-                                    </p>
-                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
-                                        <ArrowRight
-                                            size={18}
-                                            fontWeight={100}
-                                            className="text-[#ffffff]"
-                                        />
-                                    </div>
-                                </Link>
-                            </button>
-                        </div>
-                        <div className="flex space-x-4 mt-12">
-                            <button
-                                className="bg-[#8080f2] rounded-full p-3"
-                                onClick={() => instanceRef.current?.prev()} // Move to previous slide
-                            >
-                                <ArrowRight className="rotate-180" size={24} />
-                            </button>
-                            <button
-                                className="bg-[#8080f2] rounded-full p-3"
-                                onClick={() => instanceRef.current?.next()} // Move to next slide
-                            >
-                                <ArrowRight size={24} />
-                            </button>
-                        </div>
-                    </div> */}
-                    <div  className="lg:col-span-1 flex flex-col items-center justify-center overflow-hidden">
+                <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-1">
+                    <div className="flex flex-col items-center justify-center overflow-hidden lg:col-span-1">
                         <div ref={sliderRef} className="keen-slider">
-                            {[...items].map((testimonial, index) => (
+                            {mainItems.map((testimonial, index) => (
                                 <Testimonial key={index} {...testimonial} />
                             ))}
                         </div>
-                        <div  className='mt-8 w-96 h-4 flex justify-between'>
+                        <div className="mt-8 flex h-4 w-96 justify-between">
                             {/* Pagination discs */}
-                            {[...Array(items.length)].map((_, idx) => (
+                            {[...Array(mainItems.length)].map((_, idx) => (
                                 <div
                                     key={idx}
-                                    
                                     className={`h-1 w-16 rounded-full ${idx === currentSlide ? 'bg-[#5D59E1]' : 'bg-zinc-400'}`}
                                 />
                             ))}
@@ -272,7 +237,7 @@ const Why_mobCrousel: React.FC = () => {
                 </div>
             </div>
         </section>
-    );
-};
+    )
+}
 
-export default Why_mobCrousel;
+export default Why_mobCrousel
