@@ -8,13 +8,22 @@ import Image from 'next/image'
 import { Badge } from '../ui/badge'
 import FeaturesCarousel from './features-carousel'
 import { gsap, ScrollTrigger } from 'gsap/all'
-
+import { languageData } from '@/langauge'
 const AllInOne = () => {
 
     const textSectionRef = useRef<HTMLDivElement>(null);
     const image1Ref = useRef<HTMLImageElement>(null);
     const [scrollPercent, setScrollPercent] = useState(0);
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.pageYOffset;
@@ -101,23 +110,21 @@ const AllInOne = () => {
                         
                   <div className='lg:translate-y-20'>
                         <Badge data-aos="fade-up" className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
-                            All-in-one Agency
-                        </Badge>
+                        {languageData?.allInOnePage?.[changeLanguage]?.title}                        </Badge>
                   </div>
 
                   <div className='lg:translate-y-20 animated-text2 flex flex-col items-center leading-none'>
                     <p className="w-4/5 text-center font-archivo text-[25px] font-bold leading-none lg:text-zinc-400 text-zinc-800 lg:w-3/5 lg:text-[45px] animated-text-1">
-                        <span className="word2">With</span> <span className="word2">WebWunder,</span> <span className="word2">You'll</span> <span className="word2">Never</span> <span className="word2">Need</span> <span className="word2">Another</span> <span className="word2">Agency.</span> <span className="word2">Ever.</span>
+                    {languageData?.allInOnePage?.[changeLanguage]?.header}
                     </p>
                   </div>
 
                   <p className="lg:translate-y-20 text-center font-archivo text-sm font-normal text-black px-4 lg:w-[65%] lg:text-base">
-                    Our comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you'll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.
-                  </p>
+                  {languageData?.allInOnePage?.[changeLanguage]?.description}                  </p>
 
                   <div className="lg:translate-y-20 flex items-center justify-center gap-3 sm:gap-5">
                     <button className="flex hover:scale-95 transition-all w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
-                        <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">Explore Plans</p>
+                        <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">{languageData?.allInOnePage?.[changeLanguage]?.explorePlans}</p>
                         <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fbfbfb] lg:h-8 lg:w-8">
                             <ArrowRight size={18} className="text-[#24252A]" />
                         </div>
@@ -125,7 +132,7 @@ const AllInOne = () => {
 
                     <button className="flex w-fit hover:scale-95 transition-all flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2">
                         <Link href="#" className="flex flex-row items-center justify-between gap-4">
-                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">Book a call</p>
+                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">{languageData?.allInOnePage?.[changeLanguage].getInTouch}</p>
                             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
                                 <ArrowRight size={18} className="text-[#ffffff]" />
                             </div>

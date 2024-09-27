@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { languageData } from '@/langauge'
 import axios from 'axios'
+import Link from 'next/link'
 
 const galleryImages = [
     '/images/home/our-portfolio/our-portfolio-1.png',
@@ -19,6 +20,26 @@ const galleryImages = [
 
 const OurPortfolio = () => {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+    const [isVeryLargeScreen, setIsVeryLargeScreen] = useState(false);
+
+  useEffect(() => {
+    // Function to check screen size
+    const handleResize = () => {
+      setIsVeryLargeScreen(window.innerWidth >= 1536); // Tailwind's 2xl breakpoint is 1536px
+    };
+
+    // Check screen size on mount
+    handleResize();
+
+    // Add event listener to check on resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -122,13 +143,13 @@ const OurPortfolio = () => {
                 data-aos="fade-up"
                 className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal"
             >
-                Our Portfolio
+                {/* Our Portfolio */}
                 {languageData?.userPortfolio?.[changeLanguage]?.title}
 
 
             </Badge>
             <p className="w-2/3 text-center font-archivo text-[25px] font-bold leading-none text-white lg:w-full lg:text-[45px]">
-                Websites, Logos, Creatives & More
+                {/* Websites, Logos, Creatives & More */}
                 {languageData?.userPortfolio?.[changeLanguage]?.subtitle}
 
             </p>
@@ -163,16 +184,18 @@ const OurPortfolio = () => {
                         <Image
                             src={image}
                             alt="Our Portfolio"
-                            width={350}
-                            height={350}
+                            width={isVeryLargeScreen ? 450 : 350}
+                            height={isVeryLargeScreen ? 450 : 350}
+                            // fill
                             className="rounded-3xl"
                         />
+                        
                     </motion.div>
                 ))}
             </div>
-            <div className="flex flex-col items-center gap-2 px-8 lg:max-w-6xl lg:items-start xl:max-w-6xl">
+            <div className="flex flex-col items-center gap-2 px-8 lg:max-w-6xl 2xl:max-w-[1450px] lg:items-start xl:max-w-6xl">
                 <p className="text-center font-archivo text-lg font-bold text-white lg:text-start lg:text-[26px]">
-                    Built for Entrepreneurs Like You
+                    {/* Built for Entrepreneurs Like You */}
                     {languageData?.userPortfolio?.[changeLanguage]?.description}
 
                 </p>
@@ -182,15 +205,28 @@ const OurPortfolio = () => {
 
                     </p>
                     <div className="my-5 flex items-center justify-center lg:my-0">
-                        <Button
-                            size={'base'}
-                            className="flex items-center justify-between gap-3 bg-white transition-all hover:scale-95"
-                        >
-                            <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                            {languageData?.userPortfolio?.[changeLanguage]?.seeMore}
-                            </p>
-                            <ArrowRight size={15} className="text-[#24252A]" />
-                        </Button>
+                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
+                                <Link
+                                    href="#"
+                                    className="flex flex-row items-center justify-between gap-4"
+                                >
+                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                        {/* Book a call */}
+                                        {
+                                            languageData?.heroSection?.[
+                                                changeLanguage
+                                            ]?.bookCall
+                                        }
+                                    </p>
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                                        <ArrowRight
+                                            size={18}
+                                            fontWeight={100}
+                                            className="text-[#ffffff]"
+                                        />
+                                    </div>
+                                </Link>
+                            </button>
                     </div>
                 </div>
             </div>

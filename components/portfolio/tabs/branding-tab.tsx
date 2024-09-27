@@ -34,7 +34,7 @@ const BrandingTab = () => {
             ?.projects[0]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-cover bg-center bg-no-repeat',
         },
         {
             width: 'lg:w-[30rem] xl:w-[35rem] w-4/5',
@@ -54,7 +54,7 @@ const BrandingTab = () => {
             ?.projects[1]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-cover bg-center bg-no-repeat',
         },
         {
             width: 'lg:w-[30rem] xl:w-[35rem] w-4/5',
@@ -74,7 +74,7 @@ const BrandingTab = () => {
             ?.projects[2]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-cover bg-center bg-no-repeat',
         },
         {
             width: 'lg:w-[35rem] xl:w-[40rem] w-4/5',
@@ -94,11 +94,11 @@ const BrandingTab = () => {
             ?.projects[3]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-cover bg-center bg-no-repeat',
         },
     ]
     return (
-        <div className="flex xl:max-w-[78rem] flex-wrap items-center justify-center gap-4">
+        <div className="flex xl:max-w-[78rem] lg:scale-[85%] 2xl:scale-100 scale-100 lg:mt-12 2xl:mt-10 flex-wrap items-center justify-center gap-4">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}

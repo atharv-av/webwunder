@@ -59,18 +59,18 @@ const Reviews = () => {
                     speed="slow"
                 />
             </div>
-            <div className="flex flex-col items-center gap-2 lg:w-4/5 lg:items-start">
-                <p className="font-archivo text-lg font-bold text-white lg:text-[26px]">
+            <div className="flex flex-col items-center lg:justify-between gap-2 lg:w-4/5 2xl:ml-96 2xl:w-4/5 2xl:items-center lg:items-center">
+                <p className="font-archivo self-start text-lg font-bold text-white lg:text-[26px]">
                     {languageData?.ourClient?.[changeLanguage]?.reviewPrompt}
                 </p>
-                <div className="lg:flex lg:justify-between">
+                <div className="lg:flex lg:justify-between self-start">
                     <p className="text-center font-archivo text-sm font-normal text-white/50 lg:w-3/5 lg:text-start lg:text-base">
                         {
                             languageData?.ourClient?.[changeLanguage]
                                 ?.reviewDescription
                         }
                     </p>
-                    <div className="my-5 flex items-center justify-center lg:my-0">
+                    <div className="my-5 flex items-center justify-center lg:my-0 ">
                         <Button
                             size={'base'}
                             className="flex items-center justify-between gap-3 bg-[#FFDC26] transition-all hover:scale-95"

@@ -65,7 +65,7 @@ const FAQs = () => {
     // ]
     return (
         <div className="flex items-center justify-center bg-black">
-            <div className="flex lg:flex-row flex-col lg:w-4/5 lg:items-start items-center justify-between bg-black">
+            <div className="flex lg:flex-row flex-col lg:w-4/5 2xl:w-2/3 lg:items-start items-center justify-between bg-black">
                 <div className="lg:mt-20 mt-10 flex flex-col lg:items-start items-center justify-start gap-4">
                     <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                         {/* Frequently Asked Questions */}
