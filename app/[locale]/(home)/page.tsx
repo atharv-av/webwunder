@@ -1,4 +1,3 @@
-
 import BrandsCarousel from '@/components/home-new/brands-carousel'
 import WhyWebWunder from '@/components/home-new/why-webwunder'
 import AllInOne from '../../../components/home-new/all-in-one'
@@ -15,31 +14,30 @@ import New_Homepage from '@/components/home-new/New_Homepage'
 import Why_mobCrousel from '@/components/home-new/why_mobCrousel'
 import LangLayout from '../langLayout'
 
-
 export default function HomePage() {
     return (
         <LangLayout>
-        <div className="overflow-hidden">
-            {/* <HomeLanding /> */}
-            <New_Homepage />
-            <BrandsCarousel />
-            <div className='lg:flex hidden'>
-                <WhyWebWunder />
+            <div className="overflow-hidden">
+                {/* <HomeLanding /> */}
+                <New_Homepage />
+                <BrandsCarousel />
+                <div className="hidden lg:flex">
+                    <WhyWebWunder />
+                </div>
+                <div className="flex lg:hidden">
+                    <Why_mobCrousel />
+                </div>
+                <AllInOne />
+                <JoinUs />
+                <StayOnTop />
+                <PurchasePlans />
+                <ContactUs />
+                <OurPortfolio />
+                <Reviews />
+                <FAQs />
+                <GetInTouch />
+                <Footer />
             </div>
-            <div className='lg:hidden flex'>
-                <Why_mobCrousel />
-            </div>
-            <AllInOne />
-            <JoinUs />
-            <StayOnTop />
-            <PurchasePlans />
-            <ContactUs />
-            <OurPortfolio />
-            <Reviews />
-            <FAQs />
-            <GetInTouch />
-            <Footer />
-        </div>
         </LangLayout>
     )
 }
