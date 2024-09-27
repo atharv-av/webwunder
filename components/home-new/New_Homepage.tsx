@@ -198,7 +198,7 @@ const New_Homepage = () => {
                         height={5000}
                     />
                     <Image
-                        src="/images/homebg2.png"
+                          src="/images/homebg2.png"
                         alt="Figma"
                         className="mt-6 flex w-screen md:hidden"
                         width={5000}
