@@ -10,7 +10,6 @@ import { LoginForm } from './form/fields'
 import { languageData } from '@/langauge'
 import axios from 'axios'
 
-
 export default function LoginPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [sliding, setSliding] = useState(false)
@@ -23,13 +22,13 @@ export default function LoginPage() {
 
             // Define breakpoints at intervals of 100px
             if (windowWidth >= 1536) {
-                setScale("scale-110") // For 1536px and above
+                setScale('scale-110') // For 1536px and above
             } else if (windowWidth >= 1280) {
-                setScale("scale-105") // For 1400px to 1535px
+                setScale('scale-105') // For 1400px to 1535px
             } else if (windowWidth >= 1024) {
-                setScale("scale-95") // For 1300px to 1399px
+                setScale('scale-95') // For 1300px to 1399px
             } else {
-                setScale("scale-95") // Default or fallback width
+                setScale('scale-95') // Default or fallback width
             }
         }
 
@@ -94,13 +93,14 @@ export default function LoginPage() {
         {
             image: '/assets/auth1.png',
             title: languageData?.loginPage?.[changeLanguage]?.title,
-            description:
-            languageData?.loginPage?.[changeLanguage]?.description,        },
+            description: languageData?.loginPage?.[changeLanguage]?.description,
+        },
         {
             image: '/assets/auth2.png',
             title: languageData?.loginPage?.[changeLanguage]?.title2,
             description:
-            languageData?.loginPage?.[changeLanguage]?.description2   },
+                languageData?.loginPage?.[changeLanguage]?.description2,
+        },
     ]
 
     return (
@@ -109,7 +109,7 @@ export default function LoginPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[60%]">
+            <div className="relative m-6 h-[50vh] w-full overflow-hidden lg:h-screen lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -174,17 +174,24 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div className={`m-auto  flex flex-col ${scale} items-center justify-center px-6 py-8`}>
-                <div className="w-full max-w-lg space-y-2">
+            <div
+                className={`m-auto flex flex-col ${scale} items-center justify-center px-6 py-8`}
+            >
+                <div className="w-full max-w-lg space-y-2 lg:min-w-[30rem]">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.welcomeBack }
+                            {
+                                languageData?.loginPage?.[changeLanguage]
+                                    ?.welcomeBack
+                            }
                         </h2>
                         <p className="font-archivo text-base font-normal text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.newTo}{' '}
+                            {languageData?.loginPage?.[changeLanguage]?.newTo}{' '}
                             <Link href="/signup" className="text-[#5D59E1]">
-                            { languageData?.loginPage?.[changeLanguage]?.signUp}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.signUp
+                                }{' '}
                             </Link>
                         </p>
                     </div>
@@ -193,51 +200,75 @@ export default function LoginPage() {
 
                     <div className="text-center">
                         <p className="mb-4 font-archivo text-base font-normal text-white">
-                        { languageData?.loginPage?.[changeLanguage]?.orSignInwith}{' '}
+                            {
+                                languageData?.loginPage?.[changeLanguage]
+                                    ?.orSignInwith
+                            }{' '}
                         </p>
                         <Socials />
                     </div>
 
                     <div className="space-y-4 text-center text-xs text-white/70">
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
-                            <a href="/privacy-policy" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.privacyPolicy}{' '}
-
+                            <a
+                                href="/privacy-policy"
+                                className="hover:text-white"
+                            >
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.privacyPolicy
+                                }{' '}
                             </a>
                             <a href="/terms" className="hover:text-white">
                                 {/* Terms & Conditions */}
-                            { languageData?.loginPage?.[changeLanguage]?.termsConditions}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.termsConditions
+                                }{' '}
                             </a>
                             <a href="/imprint" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.imprint}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.imprint
+                                }{' '}
                             </a>
                         </div>
                         <div className="flex flex-wrap justify-center gap-4 font-inter text-sm font-normal text-white">
                             <a href="#" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.navLinks[0]}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.navLinks[0]
+                                }{' '}
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.navLinks[1]}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.navLinks[1]
+                                }{' '}
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.navLinks[2]}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.navLinks[2]
+                                }{' '}
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.navLinks[3]}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.navLinks[3]
+                                }{' '}
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.navLinks[4]}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.navLinks[4]
+                                }{' '}
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.loginPage?.[changeLanguage]?.navLinks[5]}{' '}
-
+                                {
+                                    languageData?.loginPage?.[changeLanguage]
+                                        ?.navLinks[5]
+                                }{' '}
                             </a>
                         </div>
                     </div>
