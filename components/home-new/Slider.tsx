@@ -12,7 +12,6 @@ interface TestimonialProps {
     title: string
 }
 
-
 const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
     <div className="keen-slider__slide">
         <div className="p-4">
@@ -136,8 +135,8 @@ const JoinUsSection: React.FC = () => {
         <section className="bg-black py-12 text-white lg:pl-32">
             <div className="mx-auto px-4 sm:px-6 lg:px-0">
                 <div className="grid grid-cols-1 items-center lg:grid-cols-3">
-                    <div className="lg:col-span-1 flex justify-center flex-col items-center lg:items-start lg:pl-20">
-                        <h2 className="mb-4 text-center lg:text-start text-4xl font-bold">
+                    <div className="flex flex-col items-center justify-center lg:col-span-1 lg:items-start lg:pl-20">
+                        <h2 className="mb-4 text-center text-4xl font-bold lg:text-start">
                             {
                                 languageData?.joinUsSection?.[changeLanguage]
                                     ?.title
@@ -148,7 +147,7 @@ const JoinUsSection: React.FC = () => {
                                     ?.description
                             }
                         </h2>
-                        <div className="my-1  flex items-start justify-start gap-2 lg:my-2 lg:gap-3">
+                        <div className="my-1 flex items-start justify-start gap-2 lg:my-2 lg:gap-3">
                             <button className="flex w-fit flex-row items-center justify-between gap-2 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                                 <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                     {
@@ -165,29 +164,29 @@ const JoinUsSection: React.FC = () => {
                                     />
                                 </div>
                             </button>
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
+                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
                                 <Link
                                     href="#"
                                     className="flex flex-row items-center justify-between gap-4"
                                 >
                                     <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
                                         {
-                                            languageData?.joinUsSection?.[
+                                            languageData?.additionalSection?.[
                                                 changeLanguage
                                             ]?.bookCall
                                         }
                                     </p>
-                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
                                         <ArrowRight
                                             size={18}
                                             fontWeight={100}
-                                            className="text-[#ffffff]"
+                                            className="text-[#24252A]"
                                         />
                                     </div>
                                 </Link>
                             </button>
                         </div>
-                        <div className="mt-6 lg:flex self-start hidden space-x-4">
+                        <div className="mt-6 hidden space-x-4 self-start lg:flex">
                             <button
                                 className="rounded-full bg-[#8080f2] p-3"
                                 onClick={() => instanceRef.current?.prev()}
@@ -224,20 +223,20 @@ const JoinUsSection: React.FC = () => {
                             ))}
                         </div>
                     </div>
-                    <div className="mt-6 flex lg:hidden space-x-4 justify-center">
-                            <button
-                                className="rounded-full bg-[#8080f2] p-3"
-                                onClick={() => instanceRef.current?.prev()}
-                            >
-                                <ArrowRight className="rotate-180" size={24} />
-                            </button>
-                            <button
-                                className="rounded-full bg-[#8080f2] p-3"
-                                onClick={() => instanceRef.current?.next()}
-                            >
-                                <ArrowRight size={24} />
-                            </button>
-                        </div>
+                    <div className="mt-6 flex justify-center space-x-4 lg:hidden">
+                        <button
+                            className="rounded-full bg-[#8080f2] p-3"
+                            onClick={() => instanceRef.current?.prev()}
+                        >
+                            <ArrowRight className="rotate-180" size={24} />
+                        </button>
+                        <button
+                            className="rounded-full bg-[#8080f2] p-3"
+                            onClick={() => instanceRef.current?.next()}
+                        >
+                            <ArrowRight size={24} />
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

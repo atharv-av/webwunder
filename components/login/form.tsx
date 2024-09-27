@@ -104,7 +104,7 @@ export default function LoginPage() {
     ]
 
     return (
-        <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
+        <div className="flex min-h-screen flex-col overflow-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
             <div className="block md:hidden">
                 <Header />
             </div>

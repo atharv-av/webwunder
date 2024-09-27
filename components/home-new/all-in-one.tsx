@@ -116,7 +116,7 @@ const AllInOne = () => {
                         className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4"
                         ref={textSectionRef}
                     >
-                        <div className="lg:translate-y-20">
+                        <div className="lg:translate-y-20 2xl:translate-y-0">
                             <Badge
                                 data-aos="fade-up"
                                 className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
@@ -128,8 +128,8 @@ const AllInOne = () => {
                             </Badge>
                         </div>
 
-                        <div className="animated-text2 flex flex-col items-center leading-none lg:translate-y-20">
-                            <p className="animated-text-1 w-4/5 text-center font-archivo text-[25px] font-bold leading-none text-zinc-800 lg:w-3/5 lg:text-[45px] lg:text-zinc-400">
+                        <div className="animated-text2 flex flex-col items-center leading-none lg:translate-y-20 2xl:translate-y-0">
+                            <p className="animated-text-1 w-4/5 text-center font-archivo text-[25px] font-bold leading-none text-black lg:w-3/5 lg:text-[45px]">
                                 {
                                     languageData?.allInOnePage?.[changeLanguage]
                                         ?.header
@@ -137,14 +137,14 @@ const AllInOne = () => {
                             </p>
                         </div>
 
-                        <p className="px-4 text-center font-archivo text-sm font-normal text-black lg:w-[65%] lg:translate-y-20 lg:text-base">
+                        <p className="px-4 text-center font-archivo text-sm font-normal text-black lg:w-[65%] lg:translate-y-20 lg:text-base 2xl:translate-y-0">
                             {
                                 languageData?.allInOnePage?.[changeLanguage]
                                     ?.description
                             }{' '}
                         </p>
 
-                        <div className="flex items-center justify-center gap-3 sm:gap-5 lg:translate-y-20">
+                        <div className="flex items-center justify-center gap-3 sm:gap-5 lg:translate-y-20 2xl:translate-y-0">
                             <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                                 <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                     {
@@ -161,30 +161,31 @@ const AllInOne = () => {
                                 </div>
                             </button>
 
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
-                                <Link
-                                    href="#"
-                                    className="flex flex-row items-center justify-between gap-4"
-                                >
-                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                        {
-                                            languageData?.allInOnePage?.[
-                                                changeLanguage
-                                            ].getInTouch
-                                        }
-                                    </p>
-                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
-                                        <ArrowRight
-                                            size={18}
-                                            className="text-[#ffffff]"
-                                        />
-                                    </div>
-                                </Link>
-                            </button>
+                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
+                        <Link
+                            href="#"
+                            className="flex flex-row items-center justify-between gap-4"
+                        >
+                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                {
+                                    languageData?.additionalSection?.[
+                                        changeLanguage
+                                    ]?.bookCall
+                                }
+                            </p>
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                                <ArrowRight
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
+                                />
+                            </div>
+                        </Link>
+                    </button>
                         </div>
                     </div>
 
-                    <div className="lg:translate-y-[132px]">
+                    <div className="lg:translate-y-[132px] md:mt-0 mt-10">
                         <Image
                             ref={image1Ref}
                             src="/images/rock-group-image.png"

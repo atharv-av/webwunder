@@ -20,26 +20,25 @@ const galleryImages = [
 
 const OurPortfolio = () => {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
-    const [isVeryLargeScreen, setIsVeryLargeScreen] = useState(false);
+    const [isVeryLargeScreen, setIsVeryLargeScreen] = useState(false)
 
-  useEffect(() => {
-    // Function to check screen size
-    const handleResize = () => {
-      setIsVeryLargeScreen(window.innerWidth >= 1536); // Tailwind's 2xl breakpoint is 1536px
-    };
+    useEffect(() => {
+        // Function to check screen size
+        const handleResize = () => {
+            setIsVeryLargeScreen(window.innerWidth >= 1536) // Tailwind's 2xl breakpoint is 1536px
+        }
 
-    // Check screen size on mount
-    handleResize();
+        // Check screen size on mount
+        handleResize()
 
-    // Add event listener to check on resize
-    window.addEventListener('resize', handleResize);
+        // Add event listener to check on resize
+        window.addEventListener('resize', handleResize)
 
-    // Cleanup event listener on unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+        // Cleanup event listener on unmount
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -138,20 +137,17 @@ const OurPortfolio = () => {
     }, [])
 
     return (
-        <div className="flex flex-col items-center gap-4 bg-black px-4 lg:px-0">
+        <div className="-mt-4 flex flex-col items-center gap-4 bg-black px-4 lg:mt-auto lg:px-0">
             <Badge
                 data-aos="fade-up"
                 className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal"
             >
                 {/* Our Portfolio */}
                 {languageData?.userPortfolio?.[changeLanguage]?.title}
-
-
             </Badge>
             <p className="w-2/3 text-center font-archivo text-[25px] font-bold leading-none text-white lg:w-full lg:text-[45px]">
                 {/* Websites, Logos, Creatives & More */}
                 {languageData?.userPortfolio?.[changeLanguage]?.subtitle}
-
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 lg:w-3/5">
                 {tags.map((tag, index) => (
@@ -163,7 +159,7 @@ const OurPortfolio = () => {
                     </div>
                 ))}
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-7 lg:grid-cols-3 lg:gap-5">
+            <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 2xl:w-[1450px] 2xl:gap-y-9">
                 {galleryImages.map((image, index) => (
                     <motion.div
                         key={index}
@@ -189,44 +185,40 @@ const OurPortfolio = () => {
                             // fill
                             className="rounded-3xl"
                         />
-                        
                     </motion.div>
                 ))}
             </div>
-            <div className="flex flex-col items-center gap-2 px-8 lg:max-w-6xl 2xl:max-w-[1450px] lg:items-start xl:max-w-6xl">
+            <div className="flex flex-col items-center gap-2 px-8 lg:max-w-6xl lg:items-start xl:max-w-6xl 2xl:max-w-[1500px] lg:mt-4">
                 <p className="text-center font-archivo text-lg font-bold text-white lg:text-start lg:text-[26px]">
                     {/* Built for Entrepreneurs Like You */}
                     {languageData?.userPortfolio?.[changeLanguage]?.description}
-
                 </p>
                 <div className="mx-auto lg:flex lg:justify-between">
                     <p className="w-full text-center font-archivo text-sm font-normal text-white/50 lg:w-3/4 lg:text-start lg:text-base">
-                    {languageData?.userPortfolio?.[changeLanguage]?.detail}
-
+                        {languageData?.userPortfolio?.[changeLanguage]?.detail}
                     </p>
-                    <div className="my-5 flex items-center justify-center lg:my-0">
-                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
-                                <Link
-                                    href="#"
-                                    className="flex flex-row items-center justify-between gap-4"
-                                >
-                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                        {/* Book a call */}
-                                        {
-                                            languageData?.heroSection?.[
-                                                changeLanguage
-                                            ]?.bookCall
-                                        }
-                                    </p>
-                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
-                                        <ArrowRight
-                                            size={18}
-                                            fontWeight={100}
-                                            className="text-[#ffffff]"
-                                        />
-                                    </div>
-                                </Link>
-                            </button>
+                    <div className="mt-5 lg:mt-0 flex items-start justify-center">
+                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
+                            <Link
+                                href="#"
+                                className="flex flex-row items-center justify-between gap-4"
+                            >
+                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                    {
+                                        languageData?.additionalSection?.[
+                                            changeLanguage
+                                        ]?.bookCall
+                                    }
+                                </p>
+                                <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                                    <ArrowRight
+                                        size={18}
+                                        fontWeight={100}
+                                        className="text-[#24252A]"
+                                    />
+                                </div>
+                            </Link>
+                        </button>
                     </div>
                 </div>
             </div>

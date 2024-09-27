@@ -194,20 +194,18 @@ const JoinUs: React.FC = () => {
 
     return (
         
-        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] pt-16 text-white">
+        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] lg:pt-16 text-white">
             <Slider />
-            <div className="mt-5 flex w-full scale-90 flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:gap-20 2xl:pl-20">
+            <div className="lg:mt-0 -mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:flex-row lg:gap-20 2xl:pl-20">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                         {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
-                        
-                        
                     </Badge>
                     <p className="text-center font-archivo text-[25px] font-bold leading-none text-white">
                     {languageData?.joinUsSection?.[changeLanguage]?.steps?.title }
 
                     </p>
-                    <p className="mb-5 mt-0 w-1/2 text-center font-archivo text-sm font-normal text-white/50">
+                    <p className="mb-5 mt-0 lg:w-1/2 text-center font-archivo text-sm font-normal text-white/50">
                     {languageData?.joinUsSection?.[changeLanguage]?.steps?.description }
 
                     </p>
@@ -242,7 +240,7 @@ const JoinUs: React.FC = () => {
                 />
 
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
-                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-11/12">
+                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-11/12 2xl:w-4/5">
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
                         {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
                         </Badge>

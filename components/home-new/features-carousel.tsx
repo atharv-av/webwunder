@@ -17,7 +17,7 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, textColor }) => (
     <p
-        className={`mx-3 w-fit px-4 font-archivo text-sm font-bold lg:text-xl ${textColor}`}
+        className={`md:mx-3 -mx-3 w-fit px-4 font-archivo text-sm font-bold lg:text-xl ${textColor}`}
     >
         {item}
     </p>

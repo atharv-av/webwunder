@@ -32,12 +32,9 @@ const ContactCard: React.FC<ContactCardProps> = ({
     onMouseEnter,
     onMouseLeave,
 }) => {
-   
-   
     return (
-        
         <div
-            className={`flex h-fit flex-col items-start justify-between transition-all duration-300 lg:h-80 ${
+            className={`flex h-[300px] flex-col items-start justify-between transition-all duration-300 lg:mt-2 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
             } ${bgColor} rounded-xl p-8`}
             onMouseEnter={onMouseEnter}
@@ -54,25 +51,19 @@ const ContactCard: React.FC<ContactCardProps> = ({
                     {description}
                 </p>
             </div>
-            <Button
-                size={'sm'}
-                className="mt-8 gap-2 rounded-full bg-[#24252A] p-4 font-archivo text-sm font-medium sm:gap-3 sm:p-5 lg:flex"
-                asChild
-            >
-                <Link href={buttonTarget} className="">
-                    <p className="font-archivo text-[15px] font-normal text-white sm:text-sm">
-                        {buttonText}
-                    </p>
-                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white">
-                        <ArrowRight
-                            size={16}
-                            className="font-light text-black"
-                        />
-                    </div>
-                </Link>
-            </Button>
+            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                    {buttonText}
+                </p>
+                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
+                    <ArrowRight
+                        size={18}
+                        fontWeight={100}
+                        className="text-[#24252A]"
+                    />
+                </div>
+            </button>
         </div>
-        
     )
 }
 
@@ -90,7 +81,7 @@ const ContactUs = () => {
     const contactCards = [
         {
             id: 1,
-            width: 'lg:w-[40%] w-full',
+            width: 'lg:w-[40%] 2xl:w-[42%] w-full',
             bgColor: 'bg-[#FB421F]',
             tag: languageData?.contactUs?.[changeLanguage]?.call,
             title: languageData?.contactUs?.[changeLanguage]?.book15MinCall,
@@ -101,23 +92,24 @@ const ContactUs = () => {
         },
         {
             id: 2,
-            width: 'lg:w-1/4 w-full',
+            width: 'lg:w-1/4 2xl:w-[33%] w-full',
             bgColor: 'bg-[#25D366]',
             tag: languageData?.contactUs?.[changeLanguage]?.chat,
             title: languageData?.contactUs?.[changeLanguage]?.preferChatFirst,
             description:
-            languageData?.contactUs?.[changeLanguage]?.chatDescription,
-            buttonText: languageData?.contactUs?.[changeLanguage]?.chatOnWhatsApp,
+                languageData?.contactUs?.[changeLanguage]?.chatDescription,
+            buttonText:
+                languageData?.contactUs?.[changeLanguage]?.chatOnWhatsApp,
             buttonTarget: '#',
         },
         {
             id: 3,
-            width: 'lg:w-[22%] w-full',
+            width: 'lg:w-[22%] 2xl:w-[27%] w-full',
             bgColor: 'bg-[#4148FA]',
             tag: languageData?.contactUs?.[changeLanguage]?.email,
             title: languageData?.contactUs?.[changeLanguage]?.getInTouch,
             description:
-            languageData?.contactUs?.[changeLanguage]?.emailDescription,
+                languageData?.contactUs?.[changeLanguage]?.emailDescription,
             buttonText: languageData?.contactUs?.[changeLanguage]?.sendMessage,
             buttonTarget: '#',
         },
@@ -125,8 +117,7 @@ const ContactUs = () => {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
     return (
-        
-        <div className="flex flex-col items-center gap-4 bg-black">
+        <div className="flex flex-col items-center gap-4 bg-black 2xl:pt-3">
             <Badge
                 data-aos="fade-up"
                 className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal"
@@ -136,7 +127,7 @@ const ContactUs = () => {
             <p className="font-archivo text-[25px] font-bold text-white lg:text-[45px]">
                 {languageData?.contactUs?.[changeLanguage]?.title}
             </p>
-            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1230px]">
+            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1230px] 2xl:max-w-[1450px]">
                 {contactCards.map((card) => (
                     <ContactCard
                         key={card.id}
@@ -154,7 +145,6 @@ const ContactUs = () => {
                 ))}
             </div>
         </div>
-
     )
 }
 

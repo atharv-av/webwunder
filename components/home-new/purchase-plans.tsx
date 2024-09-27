@@ -104,7 +104,7 @@ const MobilePurchasePlans: React.FC = () => {
 
     return (
         <div className="w-full lg:hidden">
-            <Slider {...settings}>
+            <Slider className='' {...settings}>
                 {plans.map((plan, index) => (
                     <div key={index} className="px-4">
                         <PricingCard
@@ -118,7 +118,7 @@ const MobilePurchasePlans: React.FC = () => {
                 {plans.map((_, i) => (
                     <button
                         key={i}
-                        className={`h-1 w-12 cursor-pointer rounded-full ${
+                        className={`h-1 w-14 cursor-pointer rounded-full ${
                             i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
                         }`}
                     ></button>
@@ -216,7 +216,7 @@ const DesktopPurchasePlans: React.FC = () => {
     return (
         <>
         
-                <div className="hidden h-full w-full overflow-hidden lg:block mr-10">
+                <div className="hidden h-full w-full overflow-hidden -mt-4 lg:block mr-10">
                 <Slider {...settings}>
                     {plans.map((plan, index) => (
                         <div
@@ -237,11 +237,11 @@ const DesktopPurchasePlans: React.FC = () => {
                         </div>
                     ))}
                 </Slider>
-                <div className="mt-8 flex items-center justify-center space-x-4">
+                <div className="-mt-8 flex items-center justify-center space-x-4">
                     {plans.map((_, i) => (
                         <button
                             key={i}
-                            className={`h-1 w-12 cursor-pointer rounded-full ${
+                            className={`h-1 w-28 cursor-pointer rounded-full ${
                                 i === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'
@@ -273,7 +273,7 @@ const PurchasePlans: React.FC = () => {
 
     return (
         
-        <div className="flex h-fit flex-col items-center justify-center gap-10 bg-black">
+        <div className="flex -mt-14 h-fit flex-col items-center justify-center gap-10 bg-black">
             <div className="flex w-5/6 flex-col items-center">
                 <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                     {/* Market-Conquering Business Solutions */}

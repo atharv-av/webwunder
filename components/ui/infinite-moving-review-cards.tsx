@@ -113,7 +113,7 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="relative w-[350px] max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 px-8 py-10 md:w-[500px]"
+                        className="relative h-[300px] w-[250px] max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 p-5 sm:w-[300px] md:h-auto md:w-[500px] md:px-8 md:py-10"
                         style={{
                             background:
                                 'linear-gradient(180deg, var(--slate-800), var(--slate-900))',
@@ -125,11 +125,11 @@ export const InfiniteMovingCards = ({
                                 aria-hidden="true"
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%+_4px)] w-[calc(100%+_4px)] rounded-xl bg-[#191919]"
                             ></div>
-                            <span className="relative z-20 mb-1 font-figtree text-[22px] font-semibold leading-[1.6] text-white">
+                            <span className="relative z-20 font-figtree text-base font-semibold leading-none text-white md:mb-1 md:text-[22px] md:leading-[1.6]">
                                 &quot;{item.content}&quot;
                             </span>
                             <div className="relative z-20 mt-6 flex flex-col items-start">
-                                <span className="mb-3 font-figtree text-sm font-normal leading-[1.6] text-white/50">
+                                <span className="mb-1 font-figtree text-sm font-normal leading-[1.6] text-white/50 md:mb-3">
                                     {item.writer}
                                 </span>
 
@@ -160,7 +160,7 @@ export const InfiniteMovingCards = ({
                 {/* Duplicate the list to create the illusion of infinite scrolling */}
                 {items.map((item, idx) => (
                     <li
-                        className="relative w-[350px] max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 px-8 py-10 md:w-[500px]"
+                        className="relative h-[300px] w-[250px] max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 p-5 sm:w-[300px] md:h-auto md:w-[500px] md:px-8 md:py-10"
                         style={{
                             background:
                                 'linear-gradient(180deg, var(--slate-800), var(--slate-900))',
@@ -172,11 +172,11 @@ export const InfiniteMovingCards = ({
                                 aria-hidden="true"
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%+_4px)] w-[calc(100%+_4px)] rounded-xl bg-[#191919]"
                             ></div>
-                            <span className="relative z-20 mb-1 font-figtree text-[22px] font-semibold leading-[1.6] text-white">
+                            <span className="relative z-20 font-figtree text-base font-semibold leading-none text-white md:mb-1 md:text-[22px] md:leading-[1.6]">
                                 &quot;{item.content}&quot;
                             </span>
                             <div className="relative z-20 mt-6 flex flex-col items-start">
-                                <span className="mb-3 font-figtree text-sm font-normal leading-[1.6] text-white/50">
+                                <span className="mb-1 font-figtree text-sm font-normal leading-[1.6] text-white/50 md:mb-3">
                                     {item.writer}
                                 </span>
 

@@ -141,7 +141,7 @@ const Why_mobCrousel: React.FC = () => {
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
             }}
-            className="min-h-[500px] py-24 text-black lg:pl-32"
+            className="min-h-[500px] py-10 text-black lg:pl-32"
         >
             <div className="flex flex-col items-center gap-4 text-center">
                 <Badge
@@ -175,7 +175,7 @@ const Why_mobCrousel: React.FC = () => {
                 </p>
 
                 {/* Buttons */}
-                <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
+                <div className="mt-2 mb-7 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
                     <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                         <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                             {
@@ -204,11 +204,11 @@ const Why_mobCrousel: React.FC = () => {
                                     ]?.bookCall
                                 }
                             </p>
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
                                 <ArrowRight
                                     size={18}
                                     fontWeight={100}
-                                    className="text-[#ffffff]"
+                                    className="text-[#24252A]"
                                 />
                             </div>
                         </Link>

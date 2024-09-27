@@ -58,19 +58,27 @@ const Reviews = () => {
                     direction="left"
                     speed="slow"
                 />
-            </div>
-            <div className="flex flex-col items-center lg:justify-between gap-2 lg:w-4/5 2xl:ml-96 2xl:w-4/5 2xl:items-center lg:items-center">
-                <p className="font-archivo self-start text-lg font-bold text-white lg:text-[26px]">
+            </div>{' '}
+            {/* <div className="relative -my-28 flex scale-50 flex-col items-center justify-center overflow-hidden rounded-md antialiased md:hidden">
+                <InfiniteMovingCards
+                    items={testimonials}
+                    direction="left"
+                    speed="slow"
+                />
+            </div> */}
+            <div className="flex flex-col items-center gap-2 lg:px-10 2xl:px-0 lg:items-center lg:justify-between 2xl:w-[1450px] 2xl:items-center">
+                <p className="lg:self-start text-center font-archivo text-lg font-bold text-white lg:text-[26px]">
                     {languageData?.ourClient?.[changeLanguage]?.reviewPrompt}
                 </p>
-                <div className="lg:flex lg:justify-between self-start">
-                    <p className="text-center font-archivo text-sm font-normal text-white/50 lg:w-3/5 lg:text-start lg:text-base">
+                {/* Wrap the title and description in a flex column container */}
+                <div className="flex flex-col lg:w-full lg:flex-row lg:items-start lg:justify-between">
+                    <p className="self-start text-center font-archivo text-sm font-normal text-white/50 lg:mr-8 lg:w-3/5 lg:text-start lg:text-base">
                         {
                             languageData?.ourClient?.[changeLanguage]
                                 ?.reviewDescription
                         }
                     </p>
-                    <div className="my-5 flex items-center justify-center lg:my-0 ">
+                    <div className="my-5 flex items-center justify-center lg:my-0">
                         <Button
                             size={'base'}
                             className="flex items-center justify-between gap-3 bg-[#FFDC26] transition-all hover:scale-95"
@@ -80,8 +88,6 @@ const Reviews = () => {
                                     languageData?.ourClient?.[changeLanguage]
                                         ?.writeReview
                                 }
-
-                                {/* Write a Review */}
                             </p>
                             <ArrowRight size={15} className="text-[#24252A]" />
                         </Button>

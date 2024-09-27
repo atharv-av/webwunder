@@ -157,28 +157,27 @@ const New_Homepage = () => {
                                 </div>
                             </button>
 
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
-                                <Link
-                                    href="#"
-                                    className="flex flex-row items-center justify-between gap-4"
-                                >
-                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                        {/* Book a call */}
-                                        {
-                                            languageData?.heroSection?.[
-                                                changeLanguage
-                                            ]?.bookCall
-                                        }
-                                    </p>
-                                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
-                                        <ArrowRight
-                                            size={18}
-                                            fontWeight={100}
-                                            className="text-[#ffffff]"
-                                        />
-                                    </div>
-                                </Link>
-                            </button>
+                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
+                            <Link
+                                href="#"
+                                className="flex flex-row items-center justify-between gap-4"
+                            >
+                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                    {
+                                        languageData?.additionalSection?.[
+                                            changeLanguage
+                                        ]?.bookCall
+                                    }
+                                </p>
+                                <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                                    <ArrowRight
+                                        size={18}
+                                        fontWeight={100}
+                                        className="text-[#24252A]"
+                                    />
+                                </div>
+                            </Link>
+                        </button>
                         </div>
                         <p className="toptrigger relative mb-6 text-center font-archivo text-base font-bold text-white sm:top-3 lg:text-xl">
                             {/* Hundreds of perfect projects delivered to hundreds of

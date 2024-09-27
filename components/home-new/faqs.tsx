@@ -65,7 +65,7 @@ const FAQs = () => {
     // ]
     return (
         <div className="flex items-center justify-center bg-black">
-            <div className="flex lg:flex-row flex-col lg:w-4/5 2xl:w-2/3 lg:items-start items-center justify-between bg-black">
+            <div className="flex lg:flex-row flex-col lg:w-4/5 2xl:w-[1450px] lg:items-start items-center justify-between bg-black">
                 <div className="lg:mt-20 mt-10 flex flex-col lg:items-start items-center justify-start gap-4">
                     <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                         {/* Frequently Asked Questions */}
@@ -83,7 +83,7 @@ const FAQs = () => {
                     </p>
                     <Button
                         size={'base'}
-                        className="flex  hover:scale-95 transition-all  items-center justify-between gap-3 bg-white"
+                        className="md:flex hidden hover:scale-95 transition-all  items-center justify-between gap-3 bg-white"
                     >
                         <p className="font-archivo text-[15px] font-medium text-[#24252A]">
                         {languageData?.faqPage?.[changeLanguage]?.bookCall}
@@ -95,7 +95,7 @@ const FAQs = () => {
                 <Accordion
                     type="single"
                     collapsible
-                    className="mt-20 lg:w-3/5 w-screen space-y-2"
+                    className="md:mt-20 mt-10 lg:w-3/5 w-screen space-y-2"
                 >
                     {faqData.map((faq, index) => (
                         <AccordionItem

@@ -81,6 +81,10 @@ const config = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             keyframes: {
+                heartbeat: {
+                    '0%, 100%': { transform: 'scale(1)' },
+                    '50%': { transform: 'scale(1.1)' },
+                  },
                 marquee: {
                     '0%': { transform: 'translateX(100%)' },
                     '100%': { transform: 'translateX(-100%)' },
@@ -115,6 +119,7 @@ const config = {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
                 'bounce-slow': 'bounce 3s infinite',
+                heartbeat: 'heartbeat 1s ease-in-out infinite',
             },
             marquee: 'marquee 10s linear infinite',
             fontFamily: {

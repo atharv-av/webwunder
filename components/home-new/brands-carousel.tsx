@@ -29,7 +29,7 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, index }) => (
     <Image
-        className="mx-12"
+        className="lg:mx-12 md:mx-8 mx-4 scale-90 md:scale-100"
         key={index}
         src={item.src}
         alt="logo"
@@ -41,7 +41,7 @@ const CarouselItem: React.FC<CarouselItemProps> = ({ item, index }) => (
 const BrandsCarousel: React.FC = () => {
     return (
         <div
-            className="relative bottom-8 z-10 h-20 bg-[#5D59E1]"
+            className="relative bottom-8 z-10 lg:h-20 h-16 bg-[#5D59E1]"
             style={{ transform: 'rotate(-1.55deg)' }}
         >
             <div className="flex h-full w-full items-center justify-center bg-[#5D59E1]">
