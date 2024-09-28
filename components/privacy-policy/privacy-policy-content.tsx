@@ -1,9 +1,11 @@
-import { languageData } from '@/langauge';
+import { languageData } from '@/langauge'
 import React, { useState, useEffect } from 'react'
 
 interface policyProps {
     title: string
-    content: string | { text: string; company: string; address: string; email: string }
+    content:
+        | string
+        | { text: string; company: string; address: string; email: string }
     isContact?: boolean
 }
 
@@ -19,23 +21,27 @@ const PolicySection: React.FC<policyProps> = ({
         {/* Render based on whether content is an object or string */}
         {isContact && typeof content === 'object' ? (
             <div className="font-archivo text-base text-white/50">
-                <p>{content.text}</p>
-                <p className="mt-2">{content.company}</p>
-                <p>{content.address}</p>
+                <p className="text-white/50">{content.text}</p>
+                <p className="mt-2 text-white/50">{content.company}</p>
+                <p className="text-white/50">{content.address}</p>
                 <p>
                     Email:{' '}
-                    <a href={`mailto:${content.email}`} className="text-[#5D59E1] hover:underline">
+                    <a
+                        href={`mailto:${content.email}`}
+                        className="text-[#5D59E1] hover:underline"
+                    >
                         {content.email}
                     </a>
                 </p>
             </div>
         ) : (
             // Render if content is a string
-            <p className="font-archivo text-base text-white/50">{content as string}</p>
+            <p className="font-archivo text-base text-white/50">
+                {content as string}
+            </p>
         )}
     </div>
 )
-
 
 const PrivacyPolicyContent = () => {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
@@ -49,19 +55,19 @@ const PrivacyPolicyContent = () => {
         }
     }, [])
 
-    
-
     return (
         <div className="px-20 py-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                {languageData?.policySections?.[changeLanguage].map((section, index) => (
-                    <PolicySection
-                        key={index}
-                        title={section.title}
-                        content={section.content}
-                        isContact={section.isContact}
-                    />
-                ))}
+                {languageData?.policySections?.[changeLanguage].map(
+                    (section, index) => (
+                        <PolicySection
+                            key={index}
+                            title={section.title}
+                            content={section.content}
+                            isContact={section.isContact}
+                        />
+                    ),
+                )}
             </div>
         </div>
     )

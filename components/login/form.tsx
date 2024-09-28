@@ -174,10 +174,11 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div
-                className={`relative m-auto flex flex-col ${scale} items-center justify-center lg:px-6 px-4 py-8`}
-            >
-                <div className="absolute inset-0 rotate-45 rounded-full bg-[url('/images/login-bg-ellipse.png')] bg-contain bg-center bg-no-repeat opacity-20"></div>
+            <div className={`m-auto  w-[40%] h-[91vh] flex flex-col ${scale} items-center justify-center px-6 py-8`}
+               style={{ backgroundImage: "url('/images/login-bg-main.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+
+            
+             >
                 <div className="z-10 w-full max-w-lg space-y-2 lg:min-w-[30rem]">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">

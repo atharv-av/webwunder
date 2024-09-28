@@ -240,7 +240,7 @@ const JoinUs: React.FC = () => {
                 />
 
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
-                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-11/12 2xl:w-4/5">
+                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-11/12 2xl:w-1/2">
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
                         {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
                         </Badge>
