@@ -174,8 +174,8 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div className={`m-auto  w-[40%] h-[91vh] flex flex-col ${scale} items-center justify-center px-6 py-8`}
-               style={{ backgroundImage: "url('/images/login-bg-main.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+            <div className={`m-auto  lg:w-[40%] lg:h-[91vh] flex flex-col ${scale} items-center justify-center px-3 py-8 bg-[url('/images/login-bg-main.png')] bg-cover bg-center`}
+            //    style={{ backgroundImage: "url('/images/login-bg-main.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
 
             
              >

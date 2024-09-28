@@ -17,7 +17,7 @@ const PolicyContent: React.FC<PolicyProps> = ({
     content,
 }) => {
     return (
-        <div className="bg-gradient-to-br from-[#100013] via-0% to-[#000000] p-6">
+        <div className="bg-gradient-to-br from-[#100013] via-0% to-[#000000] lg:p-6">
             <div className="relative h-[75vh] overflow-hidden rounded-t-lg bg-black">
                 <div className="absolute inset-0 bg-[url('/images/main-hero-small.png')] bg-cover bg-center lg:bg-[url('/images/main-hero-2.png')] lg:opacity-30"></div>
                 <div className="relative z-10">
