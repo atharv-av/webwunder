@@ -35,7 +35,7 @@ const ContentCard: React.FC<PortfolioProps> = ({
 }) => {
     return (
         <Card
-            className={`${width}  relative my-8 h-[50vh] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[80vh]`}
+            className={`${width}  relative my-4 h-[400px] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[600px]`}
             style={{
                 background: `linear-gradient(to bottom, ${bgColor}, black)`,
             }}
@@ -46,12 +46,12 @@ const ContentCard: React.FC<PortfolioProps> = ({
                 style={{ backgroundImage: `url(${img})` }}
             >
                 <div className="flex flex-col items-start gap-3 p-10">
-                    <div className="z-10 flex flex-wrap gap-1">
+                    <div className="z-10 flex flex-wrap gap-2">
                         {tags &&
                             tags.map((tag, index) => (
                                 <Badge
                                     key={index}
-                                    className={`${tag.tagColor} p-1 font-inter text-[10px] font-bold text-black lg:p-2`}
+                                    className={`${tag.tagColor} py-1 px-2 font-inter text-[10px] font-bold text-black lg:p-2`}
                                 >
                                     {tag.tagName}
                                 </Badge>

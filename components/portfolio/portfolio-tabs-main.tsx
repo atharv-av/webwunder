@@ -48,10 +48,10 @@ const PortfolioMainContent = () => {
                     }
                 </p>
             </div>
-            <Tabs defaultValue="webdesign" className="mx-auto">
-                <TabsList className="mx-2 mt-5 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white lg:mx-auto lg:-mb-20 2xl:mb-10">
+            <Tabs defaultValue="webdesign" className="mx-auto px-3">
+                <TabsList className="mt-5 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white md:mx-2 lg:mx-auto lg:-mb-28 2xl:mb-6">
                     <TabsTrigger
-                        className="font-poppins rounded-full px-3 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="webdesign"
                     >
                         {
@@ -60,7 +60,7 @@ const PortfolioMainContent = () => {
                         }
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full px-3 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="branding"
                     >
                         {
@@ -69,16 +69,16 @@ const PortfolioMainContent = () => {
                         }
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full px-3 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="socialmedia"
                     >
                         Social Media
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full px-3 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="graphicdesigning"
                     >
-                        <p className="px-5 text-white">Graphic Designing</p>
+                        Graphic Designing
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="webdesign">
@@ -94,15 +94,15 @@ const PortfolioMainContent = () => {
                     <GraphicDesigningTab />
                 </TabsContent>
             </Tabs>
-            <div className="relative flex h-[400px] w-full flex-col items-center justify-center gap-3">
+            <div className="relative flex h-[400px] w-full flex-col items-center justify-center gap-5 px-4 lg:gap-3">
                 <div
                     style={{
                         backgroundImage: "url('/images/bg-grad-review.png')",
-                        backgroundSize: 'contain',
+                        // backgroundSize: 'contain',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat',
                     }}
-                    className="absolute inset-0 scale-150"
+                    className="absolute inset-0 scale-100 bg-cover lg:scale-[200%] lg:bg-contain"
                 ></div>
                 <Badge className="z-10 w-fit self-center rounded-full bg-[#5D59E1] px-3 py-1 font-archivo text-sm font-normal">
                     {
@@ -110,7 +110,7 @@ const PortfolioMainContent = () => {
                             ?.getInTouchSection?.title
                     }
                 </Badge>
-                <p className="z-10 text-center font-archivo text-[25px] font-bold text-white lg:text-[45px]">
+                <p className="z-10 text-center font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px] lg:leading-normal">
                     {
                         languageData?.portfolioPage?.[changeLanguage]
                             ?.getInTouchSection?.subtitle
@@ -122,23 +122,23 @@ const PortfolioMainContent = () => {
                             ?.getInTouchSection?.description
                     }
                 </p>
-                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#ffffff] p-2 transition-all hover:scale-95">
+                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] px-2 py-1 transition-all hover:scale-95 md:p-2 lg:mt-2">
                     <Link
                         href="#"
                         className="flex flex-row items-center justify-between gap-4"
                     >
                         <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                            {/* Book a call */}
                             {
-                                languageData?.heroSection?.[changeLanguage]
-                                    ?.bookCall
+                                languageData?.additionalSection?.[
+                                    changeLanguage
+                                ]?.bookCall
                             }
                         </p>
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#000000] lg:h-8 lg:w-8">
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
                             <ArrowRight
                                 size={18}
                                 fontWeight={100}
-                                className="text-[#ffffff]"
+                                className="text-[#24252A]"
                             />
                         </div>
                     </Link>

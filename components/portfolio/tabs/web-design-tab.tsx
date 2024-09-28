@@ -25,41 +25,41 @@ const WebDesignTab = () => {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[0] || 'Web Design',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#5D59E1]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[1] || 'Branding',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#FF1EF6]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[2] || 'Graphic Design',
-                    tagColor: 'bg-[#10b981]',
+                    tagColor: 'bg-[#FFDC26]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[3] || 'Web Development',
-                    tagColor: 'bg-[#f59e0b]',
+                    tagColor: 'bg-[#27DAB7]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[4] || 'SEO',
-                    tagColor: 'bg-[#f59e0b]',
+                    tagColor: 'bg-[#FF9E0C]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[5] || 'Social Media',
-                    tagColor: 'bg-[#f59e0b]',
+                    tagColor: 'bg-[#FB421F]',
                 },
             ],
             title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                ?.projects[1]?.title,
+                ?.projects[0]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
             bgProps: 'bg-contain bg-center bg-no-repeat',
@@ -71,31 +71,80 @@ const WebDesignTab = () => {
             tags: [
                 {
                     tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[0],
-                    tagColor: 'bg-[#3b82f6]',
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[0] || 'Web Design',
+                    tagColor: 'bg-[#5D59E1]',
                 },
                 {
                     tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[1],
-                    tagColor: 'bg-[#3b82f6]',
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[1] || 'Branding',
+                    tagColor: 'bg-[#FF1EF6]',
                 },
                 {
                     tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[2],
-                    tagColor: 'bg-[#10b981]',
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[2] || 'Graphic Design',
+                    tagColor: 'bg-[#FFDC26]',
                 },
                 {
                     tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[3],
-                    tagColor: 'bg-[#f59e0b]',
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[3] || 'Web Development',
+                    tagColor: 'bg-[#27DAB7]',
+                },
+            ],
+
+            title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
+                ?.projects[1]?.title,
+            project: '/projects/leapx',
+            bgGradient: 'bg-gradient-to-b from-black/10 to-black',
+            bgProps: 'bg-contain bg-center bg-no-repeat',
+        },
+        {
+            width: 'lg:w-[35rem] xl:w-[40rem] w-full',
+            img: '/images/portfolio/rentstate.png',
+            bgColor: '#0ECECE',
+            tags: [
+                {
+                    tagName:
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[0] || 'Web Design',
+                    tagColor: 'bg-[#5D59E1]',
+                },
+                {
+                    tagName:
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[1] || 'Branding',
+                    tagColor: 'bg-[#FF1EF6]',
+                },
+                {
+                    tagName:
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[2] || 'Graphic Design',
+                    tagColor: 'bg-[#FFDC26]',
+                },
+                {
+                    tagName:
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[3] || 'Web Development',
+                    tagColor: 'bg-[#27DAB7]',
+                },
+                {
+                    tagName:
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[4] || 'SEO',
+                    tagColor: 'bg-[#FF9E0C]',
+                },
+                {
+                    tagName:
+                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
+                            ?.projects[0]?.tags[5] || 'Social Media',
+                    tagColor: 'bg-[#FB421F]',
                 },
             ],
             title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                ?.projects[0]?.title,
+                ?.projects[2]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
             bgProps: 'bg-contain bg-center bg-no-repeat',
@@ -103,84 +152,36 @@ const WebDesignTab = () => {
         {
             width: 'lg:w-[30rem] xl:w-[35rem] w-full',
             img: '/images/portfolio/praxiskattan.png',
-            bgColor: '#0ECECE',
-            tags: [
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[0],
-                    tagColor: 'bg-[#3b82f6]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[1],
-                    tagColor: 'bg-[#3b82f6]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[2],
-                    tagColor: 'bg-[#10b981]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                            ?.projects[1]?.tags[3],
-                    tagColor: 'bg-[#f59e0b]',
-                },
-            ],
-            title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
-                ?.projects[3]?.title,
-            project: '/projects/praxiskattan',
-            bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
-        },
-        {
-            width: 'lg:w-[35rem] xl:w-[40rem] w-full',
-            img: '/images/portfolio/rentstate.png',
             bgColor: '#04CA76',
             tags: [
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[0] || 'Web Design',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#5D59E1]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[1] || 'Branding',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#FF1EF6]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[2] || 'Graphic Design',
-                    tagColor: 'bg-[#10b981]',
+                    tagColor: 'bg-[#FFDC26]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[3] || 'Web Development',
-                    tagColor: 'bg-[#f59e0b]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                            ?.projects[0]?.tags[4] || 'SEO',
-                    tagColor: 'bg-[#f59e0b]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                            ?.projects[0]?.tags[5] || 'Social Media',
-                    tagColor: 'bg-[#f59e0b]',
+                    tagColor: 'bg-[#27DAB7]',
                 },
             ],
-            title: languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                ?.projects[2]?.title,
-            project: '/projects/leapx',
+            title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
+                ?.projects[3]?.title,
+            project: '/projects/praxiskattan',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
             bgProps: 'bg-contain bg-center bg-no-repeat',
         },
@@ -193,37 +194,25 @@ const WebDesignTab = () => {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[0] || 'Web Design',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#5D59E1]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[1] || 'Branding',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#FF1EF6]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[2] || 'Graphic Design',
-                    tagColor: 'bg-[#10b981]',
+                    tagColor: 'bg-[#FFDC26]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[3] || 'Web Development',
-                    tagColor: 'bg-[#f59e0b]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                            ?.projects[0]?.tags[4] || 'SEO',
-                    tagColor: 'bg-[#f59e0b]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                            ?.projects[0]?.tags[5] || 'Social Media',
-                    tagColor: 'bg-[#f59e0b]',
+                    tagColor: 'bg-[#27DAB7]',
                 },
             ],
             title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
@@ -234,44 +223,32 @@ const WebDesignTab = () => {
         },
         {
             width: 'lg:w-[30rem] xl:w-[35rem] w-full',
-            img: '/images/portfolio/praxiskattan.png',
+            img: '/images/portfolio/fitflex.png',
             bgColor: '#1D59F4',
             tags: [
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[0] || 'Web Design',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#5D59E1]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[1] || 'Branding',
-                    tagColor: 'bg-[#3b82f6]',
+                    tagColor: 'bg-[#FF1EF6]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[2] || 'Graphic Design',
-                    tagColor: 'bg-[#10b981]',
+                    tagColor: 'bg-[#FFDC26]',
                 },
                 {
                     tagName:
                         languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
                             ?.projects[0]?.tags[3] || 'Web Development',
-                    tagColor: 'bg-[#f59e0b]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                            ?.projects[0]?.tags[4] || 'SEO',
-                    tagColor: 'bg-[#f59e0b]',
-                },
-                {
-                    tagName:
-                        languageData?.portfolioPage?.[changeLanguage]?.tabs[2]
-                            ?.projects[0]?.tags[5] || 'Social Media',
-                    tagColor: 'bg-[#f59e0b]',
+                    tagColor: 'bg-[#27DAB7]',
                 },
             ],
             title: languageData?.portfolioPage?.[changeLanguage]?.tabs[0]
@@ -282,7 +259,7 @@ const WebDesignTab = () => {
         },
     ]
     return (
-        <div className="flex lg:scale-[85%] 2xl:scale-100 scale-100 flex-wrap items-center justify-center gap-4 px-4 xl:max-w-[78rem]">
+        <div className="flex scale-100 flex-wrap items-center justify-center gap-4 px-2 lg:scale-[85%] xl:max-w-[78rem] 2xl:scale-100">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}

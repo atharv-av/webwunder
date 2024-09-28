@@ -22,7 +22,6 @@ const PortfolioLanding = () => {
                 <div className="relative z-10">
                     <Header />
                 </div>
-haihaos
                 <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 p-4 pt-4">
                     <Badge
                         data-aos="fade-up"
@@ -40,14 +39,20 @@ haihaos
                             {/* Entrepreneurial Insight and Precision, Transforming
 
                             Businesses into Success Stories */}
-                             {languageData?.portfolioPage?.[changeLanguage]?.subtitle}
+                            {
+                                languageData?.portfolioPage?.[changeLanguage]
+                                    ?.subtitle
+                            }
                         </p>
                     </div>
 
-                    <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3"></div>
+                    {/* <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3"></div> */}
 
-                    <p className="toptrigger relative mx-auto mb-6 max-w-4xl text-center font-archivo text-base text-white">
-                    {languageData?.portfolioPage?.[changeLanguage]?.description}
+                    <p className="toptrigger relative mx-auto mb-6 max-w-5xl text-center font-archivo text-base text-white">
+                        {
+                            languageData?.portfolioPage?.[changeLanguage]
+                                ?.description
+                        }
                     </p>
                 </div>
                 <Image
@@ -59,7 +64,6 @@ haihaos
                     width={5000}
                     height={5000}
                 />
-
                 <Image
                     data-aos="fade-up"
                     data-aos-duration="3000"

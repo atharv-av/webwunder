@@ -21,7 +21,7 @@ interface CarouselItemProps {
 
 const CarouselItem: React.FC<CarouselItemProps> = ({ item, index }) => (
     <p 
-        className="text-[20px] w-fit font-bold font-archivo text-white px-4" 
+        className="lg:text-[20px] text-base w-fit font-bold font-archivo text-white px-4" 
         key={index}
     >
         {item}
@@ -50,10 +50,10 @@ const PortfolioCarousel: React.FC = () => {
     }, []);
 
     return (
-        <div className="relative bottom-8 z-10 bg-white h-20" style={{ transform: 'rotate(-1.55deg)' }}>
+        <div className="mb-6 lg:mb-14 relative bottom-8 z-10 bg-white h-16 lg:h-20" style={{ transform: 'rotate(-1.55deg)' }}>
             <div 
                 ref={containerRef}
-                className="flex h-full w-fit flex-row items-center gap-20 bg-[#5D59E1] whitespace-nowrap"
+                className="flex h-full w-fit flex-row items-center lg:gap-20 gap-5 bg-[#5D59E1] whitespace-nowrap"
                 style={{ 
                     transform: `translateX(-${position}px)`,
                     transition: 'transform 0.03s linear',

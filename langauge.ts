@@ -1028,7 +1028,7 @@ export const languageData = {
                                 'Graphic Design',
                                 'Web Development',
                             ],
-                            title: 'Fitflex Website',
+                            title: 'Fitsync Website',
                             cta: 'View Project',
                         },
                         {
