@@ -241,7 +241,7 @@ const AllInOne = () => {
                         </div>
                     </div>
 
-                    <div className="translate-y-[142px] images relative md:mt-0 mt-10">
+                    <div className="translate-y-[142px] lg:flex hidden images relative md:mt-0 mt-10">
                         <Image
                             ref={image1Ref}
                             className='scale-75 z-20 main relative'
@@ -278,6 +278,15 @@ const AllInOne = () => {
                             height={4000}
                         />
                     </div>
+
+                    <Image
+                            data-aos="fade-up"
+                            className='translate-y-6 lg:hidden flex'
+                            src="/images/home/all-in-one/allInOne.png"
+                            alt="All in one agency"
+                            width={4000}
+                            height={4000}
+                        />
 
                 </div>
             </div>
