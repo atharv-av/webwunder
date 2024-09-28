@@ -51,7 +51,7 @@ const PortfolioMainContent = () => {
             <Tabs defaultValue="webdesign" className="mx-auto px-3">
                 <TabsList className="mt-5 grid h-fit w-fit grid-cols-4 rounded-full bg-[#191919] text-white md:mx-2 lg:mx-auto lg:-mb-28 2xl:mb-6">
                     <TabsTrigger
-                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[8.5px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="webdesign"
                     >
                         {
@@ -60,7 +60,7 @@ const PortfolioMainContent = () => {
                         }
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[8.5px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="branding"
                     >
                         {
@@ -69,13 +69,13 @@ const PortfolioMainContent = () => {
                         }
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[8.5px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="socialmedia"
                     >
                         Social Media
                     </TabsTrigger>
                     <TabsTrigger
-                        className="font-poppins rounded-full py-2 text-[10px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
+                        className="font-poppins rounded-full py-2 text-[8.5px] font-semibold data-[state=active]:bg-[#5D59E1] data-[state=active]:text-white md:px-3 lg:p-4 lg:text-sm"
                         value="graphicdesigning"
                     >
                         Graphic Designing

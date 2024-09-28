@@ -49,7 +49,7 @@ const BrandingTab = () => {
                 ?.projects[0]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-contain bg-top bg-no-repeat',
         },
         {
             width: 'lg:w-[30rem] xl:w-[35rem] w-full',
@@ -85,7 +85,7 @@ const BrandingTab = () => {
                 ?.projects[1]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-contain bg-top bg-no-repeat',
         },
         {
             width: 'lg:w-[30rem] xl:w-[35rem] w-full',
@@ -121,7 +121,7 @@ const BrandingTab = () => {
                 ?.projects[2]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-contain bg-center lg:bottom-40 bottom-32 rotate-12 bg-no-repeat',
         },
         {
             width: 'lg:w-[35rem] xl:w-[40rem] w-full',
@@ -157,7 +157,7 @@ const BrandingTab = () => {
                 ?.projects[3]?.title,
             project: '/projects/leapx',
             bgGradient: 'bg-gradient-to-b from-black/10 to-black',
-            bgProps: 'bg-contain bg-center bg-no-repeat',
+            bgProps: 'bg-contain bg-top bg-no-repeat',
         },
     ]
     return (

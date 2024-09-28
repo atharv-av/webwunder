@@ -44,8 +44,8 @@ const ContentCard: React.FC<PortfolioProps> = ({
             <div
                 className={`absolute inset-0 flex w-full items-end ${bgProps}`}
                 style={{ backgroundImage: `url(${img})` }}
-            >
-                <div className="flex flex-col items-start gap-3 p-10">
+            />
+                <div className="flex flex-col items-start absolute bottom-0 gap-3 p-10">
                     <div className="z-10 flex flex-wrap gap-2">
                         {tags &&
                             tags.map((tag, index) => (
@@ -75,7 +75,7 @@ const ContentCard: React.FC<PortfolioProps> = ({
                         </button>
                     )}
                 </div>
-            </div>
+            {/* </div> */}
         </Card>
     )
 }

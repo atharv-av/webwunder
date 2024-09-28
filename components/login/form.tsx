@@ -109,7 +109,7 @@ export default function LoginPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative ml-4 mt-4 h-[50vh] w-full overflow-hidden lg:h-[97vh] lg:w-[60%]">
+            <div className="relative h-[50vh] w-full overflow-hidden lg:ml-4 lg:mt-4 lg:h-[97vh] lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -117,10 +117,10 @@ export default function LoginPage() {
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
                             {/* Wrap the Image in a div with padding */}
-                            <div className="h-full w-full">
+                            <div className="h-full w-full rounded-3xl">
                                 <Link href="/">
                                     <Image
-                                        className="rounded-2xl object-cover"
+                                        className="rounded-3xl p-4 lg:p-0"
                                         src={slide.image}
                                         alt={`Slide ${index + 1}`}
                                         fill
@@ -175,9 +175,10 @@ export default function LoginPage() {
 
             {/* Right side with form */}
             <div
-                className={`m-auto flex flex-col ${scale} items-center justify-center px-6 py-8`}
+                className={`relative m-auto flex flex-col ${scale} items-center justify-center lg:px-6 px-4 py-8`}
             >
-                <div className="w-full max-w-lg space-y-2 lg:min-w-[30rem]">
+                <div className="absolute inset-0 rotate-45 rounded-full bg-[url('/images/login-bg-ellipse.png')] bg-contain bg-center bg-no-repeat opacity-20"></div>
+                <div className="z-10 w-full max-w-lg space-y-2 lg:min-w-[30rem]">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
                             {
