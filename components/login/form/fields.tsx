@@ -1,4 +1,3 @@
-
 'use client'
 
 import { paths } from '@/paths'
@@ -125,17 +124,19 @@ export const LoginForm = () => {
         }
     }, [])
     return (
-        <form onSubmit={handleSubmit(submit)} className="space-y-4  w-auto  ">
+        <form onSubmit={handleSubmit(submit)} className="w-auto space-y-4">
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
-                { languageData?.loginPage?.[changeLanguage]?.emailLabel}{' '}
-
+                    {languageData?.loginPage?.[changeLanguage]?.emailLabel}{' '}
                 </label>
                 <input
                     {...register('email')}
                     type="email"
-                    className="w-full rounded-lg border  border-white bg-transparent active:bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                    placeholder=   { languageData?.loginPage?.[changeLanguage]?.emailPlaceholder}
+                    className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none active:bg-[#908AA0]/50"
+                    placeholder={
+                        languageData?.loginPage?.[changeLanguage]
+                            ?.emailPlaceholder
+                    }
                 />
                 <p className="ps-4 text-destructive">
                     {formState.errors.email?.message}
@@ -143,14 +144,16 @@ export const LoginForm = () => {
             </div>
             <div>
                 <label className="mb-1 block font-inter text-sm font-bold text-white">
-                { languageData?.loginPage?.[changeLanguage]?.passwordLabel}{' '}
-
+                    {languageData?.loginPage?.[changeLanguage]?.passwordLabel}{' '}
                 </label>
                 <input
                     {...register('password')}
                     type="password"
-                    className="w-full rounded-lg border border-white  bg-transparent px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
-                    placeholder=                { languageData?.loginPage?.[changeLanguage]?.passwordPlaceholder}
+                    className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    placeholder={
+                        languageData?.loginPage?.[changeLanguage]
+                            ?.passwordPlaceholder
+                    }
                 />
                 <p className="ps-4 text-destructive">
                     {formState.errors.password?.message}
@@ -160,7 +163,9 @@ export const LoginForm = () => {
                 <div
                     onClick={sendResetPassword}
                     className="cursor-pointer font-archivo text-base font-semibold text-[#5D59E1]"
-                > { languageData?.loginPage?.[changeLanguage]?.forgotPassword}
+                >
+                    {' '}
+                    {languageData?.loginPage?.[changeLanguage]?.forgotPassword}
                 </div>
             </div>
             <button
@@ -168,7 +173,7 @@ export const LoginForm = () => {
                 type="submit"
                 className="w-full rounded-full bg-[#5D59E1] py-3 font-archivo text-base font-normal text-white transition duration-300 hover:bg-[#4a47d1]"
             >
-                 { languageData?.loginPage?.[changeLanguage]?.loginButton}
+                {languageData?.loginPage?.[changeLanguage]?.loginButton}
             </button>
         </form>
     )

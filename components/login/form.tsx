@@ -22,13 +22,13 @@ export default function LoginPage() {
 
             // Define breakpoints at intervals of 100px
             if (windowWidth >= 1536) {
-                setScale('scale-110') // For 1536px and above
+                setScale('scale-100') // For 1536px and above
             } else if (windowWidth >= 1280) {
-                setScale('scale-105') // For 1400px to 1535px
+                setScale('scale-90') // For 1400px to 1535px
             } else if (windowWidth >= 1024) {
-                setScale('scale-95') // For 1300px to 1399px
+                setScale('scale-75') // For 1300px to 1399px
             } else {
-                setScale('scale-95') // Default or fallback width
+                setScale('scale-[95%]') // Default or fallback width
             }
         }
 
@@ -104,12 +104,12 @@ export default function LoginPage() {
     ]
 
     return (
-        <div className="flex min-h-screen flex-col overflow-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
+        <div className="flex min-h-screen flex-col overflow-hidden bg-gradient-to-b from-[#070308] via-[#1D0821] to-[#110513] lg:flex-row">
             <div className="block md:hidden">
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative m-6 h-[50vh] w-full overflow-hidden lg:h-screen lg:w-[60%]">
+            <div className="relative ml-4 mt-4 h-[50vh] w-full overflow-hidden lg:h-[97vh] lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -117,7 +117,7 @@ export default function LoginPage() {
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
                             {/* Wrap the Image in a div with padding */}
-                            <div className="h-full w-full p-4">
+                            <div className="h-full w-full">
                                 <Link href="/">
                                     <Image
                                         className="rounded-2xl object-cover"

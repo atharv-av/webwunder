@@ -13,7 +13,6 @@ import { SignupForm } from './form/fields'
 import { languageData } from '@/langauge'
 import axios from 'axios'
 
-
 export default function SignupPage() {
     const [currentSlide, setCurrentSlide] = useState(0)
     const [sliding, setSliding] = useState(false)
@@ -26,13 +25,13 @@ export default function SignupPage() {
 
             // Define breakpoints at intervals of 100px
             if (windowWidth >= 1536) {
-                setScale('scale-95') // For 1536px and above
+                setScale('scale-100') // For 1536px and above
             } else if (windowWidth >= 1280) {
-                setScale('scale-100') // For 1400px to 1535px
+                setScale('scale-90') // For 1400px to 1535px
             } else if (windowWidth >= 1024) {
-                setScale('scale-90') // For 1300px to 1399px
+                setScale('scale-75') // For 1300px to 1399px
             } else {
-                setScale('scale-95') // Default or fallback width
+                setScale('scale-[95%]') // Default or fallback width
             }
         }
 
@@ -83,7 +82,6 @@ export default function SignupPage() {
         }
     }
 
-
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
     useEffect(() => {
@@ -94,40 +92,42 @@ export default function SignupPage() {
             }
         }
     }, [])
-    
-const slides = [
-    {
-        image: '/assets/auth1.png',
-        title: languageData?.loginPage?.[changeLanguage]?.title,
-        description:
-        languageData?.loginPage?.[changeLanguage]?.description,        },
-    {
-        image: '/assets/auth2.png',
-        title: languageData?.loginPage?.[changeLanguage]?.title2,
-        description:
-        languageData?.loginPage?.[changeLanguage]?.description2   },
-]
+
+    const slides = [
+        {
+            image: '/assets/auth1.png',
+            title: languageData?.loginPage?.[changeLanguage]?.title,
+            description: languageData?.loginPage?.[changeLanguage]?.description,
+        },
+        {
+            image: '/assets/auth2.png',
+            title: languageData?.loginPage?.[changeLanguage]?.title2,
+            description:
+                languageData?.loginPage?.[changeLanguage]?.description2,
+        },
+    ]
     return (
-        <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-t from-black to-[#2C003E] lg:flex-row">
+        <div className="flex min-h-screen flex-col overflow-x-hidden bg-gradient-to-b from-[#070308] via-[#1D0821] to-[#110513] lg:flex-row">
             <div className="block md:hidden">
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[60vh] w-full overflow-hidden lg:h-screen lg:w-[60%]">
+            <div className="relative ml-4 mt-4 h-[60vh] w-full overflow-hidden lg:h-[97vh] lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
                             key={index}
                             className={`absolute inset-0 transition-transform duration-500 ease-in-out ${getSlideClass(index)}`}
                         >
-                            <div className="h-full w-full p-4">
-                                <Image
-                                    className="rounded-xl object-cover"
-                                    src={slide.image}
-                                    alt={`Slide ${index + 1}`}
-                                    width={1000} // Set specific width and height instead of layout fill
-                                    height={600}
-                                />
+                            <div className="h-full w-full">
+                                <Link href="/">
+                                    <Image
+                                        className="rounded-2xl object-cover"
+                                        src={slide.image}
+                                        alt={`Slide ${index + 1}`}
+                                        fill
+                                    />
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -182,12 +182,21 @@ const slides = [
                 <div className="w-full max-w-lg space-y-3">
                     <div className="space-y-2 text-left">
                         <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
-                        { languageData?.signupPage?.[changeLanguage]?.createAccount}
+                            {
+                                languageData?.signupPage?.[changeLanguage]
+                                    ?.createAccount
+                            }
                         </h2>
                         <p className="font-archivo text-base font-normal text-white">
-                        { languageData?.signupPage?.[changeLanguage]?.alreadyHaveAccount}
+                            {
+                                languageData?.signupPage?.[changeLanguage]
+                                    ?.alreadyHaveAccount
+                            }
                             <Link href="/login" className="text-[#5D59E1]">
-                            { languageData?.signupPage?.[changeLanguage]?.signIn}
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.signIn
+                                }
                             </Link>
                         </p>
                     </div>
@@ -196,43 +205,68 @@ const slides = [
 
                     <div className="text-center">
                         <p className="mb-4 font-archivo text-base font-normal text-white">
-                        { languageData?.signupPage?.[changeLanguage]?.orSignUpwith}
-
+                            {
+                                languageData?.signupPage?.[changeLanguage]
+                                    ?.orSignUpwith
+                            }
                         </p>
                         <Socials />
                     </div>
 
                     <div className="space-y-4 text-center text-xs text-white/70">
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
-                            <a href="/privacy-policy" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.privacyPolicy}
+                            <a
+                                href="/privacy-policy"
+                                className="hover:text-white"
+                            >
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.privacyPolicy
+                                }
                             </a>
                             <a href="/terms" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.termsConditions}
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.termsConditions
+                                }
                             </a>
                             <a href="/imprint" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.imprint}
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.imprint
+                                }
                             </a>
                         </div>
                         <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a href="#" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.navLinks[0]}
-
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.navLinks[0]
+                                }
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.navLinks[1]}
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.navLinks[1]
+                                }
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.navLinks[2]}
-
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.navLinks[2]
+                                }
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.navLinks[3]}
-
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.navLinks[3]
+                                }
                             </a>
                             <a href="#" className="hover:text-white">
-                            { languageData?.signupPage?.[changeLanguage]?.navLinks[4]}
-
+                                {
+                                    languageData?.signupPage?.[changeLanguage]
+                                        ?.navLinks[4]
+                                }
                             </a>
                         </div>
                     </div>
