@@ -4,8 +4,9 @@ export const languageData = {
             badge: 'Felsenfester Geschäftserfolg',
             headline: 'UNBESIEGBARE WEBSEITEN',
             subHeadline: 'UNERSCHÜTTERLICHER SUPPORT',
+            shortDescription : 'Erprobt, um Umsatz zu steigern und Kosten zu reduzieren.',
             description:
-                'Webseiten von Unternehmern für Unternehmer. Erprobt, um Umsatz zu steigern und Kosten zu reduzieren.',
+                'Webseiten von Unternehmern für Unternehmer.',
             watchVideo: 'Video Ansehen',
             bookCall: 'Kostenloses Erstgespräch',
             projectsInfo:
@@ -16,7 +17,8 @@ export const languageData = {
             headline: 'Winning Websites',
             subHeadline: 'Unshakable Support',
             description:
-                'Websites by Entrepreneurs for Entrepreneurs. Proven to Boost Sales and Cut Costs.',
+                'Websites by Entrepreneurs for Entrepreneurs.',
+            shortDescription : 'Proven to Boost Sales and Cut Costs.',
             watchVideo: 'Watch Video',
             bookCall: 'Book a Call',
             projectsInfo:

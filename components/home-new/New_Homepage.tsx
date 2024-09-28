@@ -57,63 +57,63 @@ const New_Homepage = () => {
         ))
     }
 
-
-    const textSectionRef = useRef<HTMLDivElement>(null);
-    const image1Ref = useRef<HTMLImageElement>(null);
-    const image2Ref = useRef<HTMLImageElement>(null);
-    const image3Ref = useRef<HTMLImageElement>(null);
+    const textSectionRef = useRef<HTMLDivElement>(null)
+    const image1Ref = useRef<HTMLImageElement>(null)
+    const image2Ref = useRef<HTMLImageElement>(null)
+    const image3Ref = useRef<HTMLImageElement>(null)
     useEffect(() => {
         const handleScroll = () => {
-            const scrollPosition = window.pageYOffset;
-            const windowHeight = window.innerHeight;
+            const scrollPosition = window.pageYOffset
+            const windowHeight = window.innerHeight
 
             // Handle first image (scaling)
             if (image1Ref.current) {
-                const scrollPercentage = scrollPosition / windowHeight;
-                const scale = 1 + scrollPercentage * 0.1; // Scale from 1 to 1.1
-                image1Ref.current.style.transform = `scale(${scale})`;
-                image1Ref.current.style.transformOrigin = 'center bottom';
+                const scrollPercentage = scrollPosition / windowHeight
+                const scale = 1 + scrollPercentage * 0.1 // Scale from 1 to 1.1
+                image1Ref.current.style.transform = `scale(${scale})`
+                image1Ref.current.style.transformOrigin = 'center bottom'
             }
 
             // Handle second image (translate downwards)
             if (image2Ref.current) {
-                const translateY = scrollPosition * 0.2; // Move downwards with positive value
-                image2Ref.current.style.transform = `translateY(${translateY}px)`;
-                image2Ref.current.style.transformOrigin = 'center bottom';
+                const translateY = scrollPosition * 0.2 // Move downwards with positive value
+                image2Ref.current.style.transform = `translateY(${translateY}px)`
+                image2Ref.current.style.transformOrigin = 'center bottom'
             }
-            
+
             // Handle second image (translate downwards)
             if (image3Ref.current) {
-                const translateY = scrollPosition * 0.2; // Move downwards with positive value
-                image3Ref.current.style.transform = `translateY(${translateY}px)`;
-                image3Ref.current.style.transformOrigin = 'center bottom';
+                const translateY = scrollPosition * 0.2 // Move downwards with positive value
+                image3Ref.current.style.transform = `translateY(${translateY}px)`
+                image3Ref.current.style.transformOrigin = 'center bottom'
             }
 
             // Handle text section (parallax effect)
             if (textSectionRef.current) {
-                textSectionRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+                textSectionRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`
             }
-        };
+        }
 
         // Attach the single scroll event listener
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll)
 
         return () => {
             // Cleanup the event listener on component unmount
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     return (
-
-        <div className="h-full lg:bg-white lg:min-h-screen lg:p-5">
-            <div className="bg-gradient-to-br relative overflow-hidden from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl">
+        <div className="h-full lg:min-h-screen lg:bg-white lg:p-5">
+            <div className="relative overflow-hidden bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl">
                 <div className="relative z-10">
                     <Header />
                 </div>
 
-                <div ref={textSectionRef} className="mx-auto relative z-50 flex max-w-6xl flex-col items-center justify-center gap-4 pt-4">
+                <div
+                    ref={textSectionRef}
+                    className="relative z-50 mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 pt-4"
+                >
                     <Badge
                         data-aos="fade-up"
                         className="w-fit rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
@@ -123,7 +123,7 @@ const New_Homepage = () => {
                     </Badge>
 
                     <div className="heading">
-                        <p className="overflow-hidden text-center  font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
+                        <p className="overflow-hidden text-center font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
                             {
                                 languageData?.heroSection?.[changeLanguage]
                                     ?.headline
@@ -153,16 +153,18 @@ const New_Homepage = () => {
                             data-aos="fade-up"
                             className="text-center font-archivo text-sm font-normal text-white lg:text-base"
                         >
-                            Proven to Boost Sales and Cut Costs.
+                            {
+                                languageData?.heroSection?.[changeLanguage]
+                                    ?.shortDescription
+                            }{' '}
                         </p>
                     </div>
                     <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
                         <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 {
-                                    languageData?.heroSection?.[
-                                        changeLanguage
-                                    ]?.watchVideo
+                                    languageData?.heroSection?.[changeLanguage]
+                                        ?.watchVideo
                                 }
                             </p>
                             <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
@@ -205,30 +207,28 @@ const New_Homepage = () => {
                         }
                     </p>
                 </div>
-                <div className='relative'>
+                <div className="relative">
                     <Image
                         ref={image1Ref}
                         src="/images/home/hero/rockLaptop.png"
                         alt="Figma"
-                        className="hidden z-20 w-screen pt-12 md:flex relative"
+                        className="relative z-20 hidden w-screen pt-12 md:flex"
                         width={5000}
                         height={5000}
                     />
                     <Image
-
                         ref={image2Ref}
                         src="/images/home/hero/phone1.png"
                         alt="Figma"
-                        className="hidden bottom-20 z-10 md:flex h-80 w-72 left-72 absolute"
+                        className="absolute bottom-20 left-72 z-10 hidden h-80 w-72 md:flex"
                         width={5000}
                         height={5000}
                     />
                     <Image
                         ref={image3Ref}
-
                         src="/images/home/hero/phone2.png"
                         alt="Figma"
-                        className="hidden bottom-28 z-10 md:flex h-64 w-36 right-72 absolute"
+                        className="absolute bottom-28 right-72 z-10 hidden h-64 w-36 md:flex"
                         width={5000}
                         height={5000}
                     />
@@ -243,7 +243,6 @@ const New_Homepage = () => {
                 />
             </div>
         </div>
-
     )
 }
 

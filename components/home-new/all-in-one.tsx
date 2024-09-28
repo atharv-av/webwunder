@@ -89,7 +89,7 @@ const AllInOne = () => {
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    markers: true, // Enable markers for debugging (optional)
+                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -104,7 +104,7 @@ const AllInOne = () => {
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    markers: true, // Enable markers for debugging (optional)
+                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -118,7 +118,7 @@ const AllInOne = () => {
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    markers: true, // Enable markers for debugging (optional)
+                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -133,7 +133,7 @@ const AllInOne = () => {
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    markers: true, // Enable markers for debugging (optional)
+                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -147,7 +147,7 @@ const AllInOne = () => {
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    markers: true, // Enable markers for debugging (optional)
+                   
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
