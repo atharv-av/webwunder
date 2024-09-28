@@ -23,83 +23,139 @@ const AllInOne = () => {
             }
         }
     }, [])
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollPosition = window.pageYOffset
+    //         const documentHeight =
+    //             document.documentElement.scrollHeight - window.innerHeight
+    //         const percentageScrolled = (scrollPosition / documentHeight) * 100
+    //         setScrollPercent(percentageScrolled) // Corrected the setScrollPercent line
+
+    //         console.log(percentageScrolled) // Log the correct value of percentageScrolled
+
+    //         // Only start the parallax effect when scrolled 30% of the page
+    //         if (percentageScrolled >= 20) {
+    //             const adjustedScrollPosition =
+    //                 scrollPosition - 0.2 * documentHeight
+
+    //             if (textSectionRef.current) {
+    //                 textSectionRef.current.style.transform = `translateY(${adjustedScrollPosition * 0.3}px`
+    //             }
+
+    //             if (image1Ref.current) {
+    //                 const adjustedScrollPercentage =
+    //                     adjustedScrollPosition / (documentHeight * 0.7) // Adjusted for the remaining 70%
+    //                 const scale = 1 + adjustedScrollPercentage * 0.15 // Scale from 1 to 1.05
+    //                 image1Ref.current.style.transform = `scale(${scale})` // Adjusted transformation
+    //                 image1Ref.current.style.transformOrigin = 'center bottom'
+    //             }
+    //         } else {
+    //             // Reset transformations if scroll is less than 30%
+    //             if (textSectionRef.current) {
+    //                 textSectionRef.current.style.transform = 'none'
+    //             }
+    //             if (image1Ref.current) {
+    //                 image1Ref.current.style.transform = 'none'
+    //             }
+    //         }
+    //     }
+
+    //     window.addEventListener('scroll', handleScroll)
+
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll)
+    //     }
+    // }, [scrollPercent]) // Added scrollPercent as dependency
+
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.pageYOffset
-            const documentHeight =
-                document.documentElement.scrollHeight - window.innerHeight
-            const percentageScrolled = (scrollPosition / documentHeight) * 100
-            setScrollPercent(percentageScrolled) // Corrected the setScrollPercent line
-
-            console.log(percentageScrolled) // Log the correct value of percentageScrolled
-
-            // Only start the parallax effect when scrolled 30% of the page
-            if (percentageScrolled >= 20) {
-                const adjustedScrollPosition =
-                    scrollPosition - 0.2 * documentHeight
-
-                if (textSectionRef.current) {
-                    textSectionRef.current.style.transform = `translateY(${adjustedScrollPosition * 0.3}px`
-                }
-
-                if (image1Ref.current) {
-                    const adjustedScrollPercentage =
-                        adjustedScrollPosition / (documentHeight * 0.7) // Adjusted for the remaining 70%
-                    const scale = 1 + adjustedScrollPercentage * 0.15 // Scale from 1 to 1.05
-                    image1Ref.current.style.transform = `scale(${scale})` // Adjusted transformation
-                    image1Ref.current.style.transformOrigin = 'center bottom'
-                }
-            } else {
-                // Reset transformations if scroll is less than 30%
-                if (textSectionRef.current) {
-                    textSectionRef.current.style.transform = 'none'
-                }
-                if (image1Ref.current) {
-                    image1Ref.current.style.transform = 'none'
-                }
-            }
-        }
-
-        window.addEventListener('scroll', handleScroll)
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [scrollPercent]) // Added scrollPercent as dependency
-
-    useEffect(() => {
-        // Register ScrollTrigger plugin
+        // Register GSAP plugins
         gsap.registerPlugin(ScrollTrigger)
 
-        // Select all words in the text
-        const words = document.querySelectorAll('.word2')
+        // Get all heading elements you want to animate
+        const main = document.querySelectorAll('.main')
+        const s1 = document.querySelectorAll('.screen1')
+        const s2 = document.querySelectorAll('.screen2')
+        const s3 = document.querySelectorAll('.screen3')
+        const s4 = document.querySelectorAll('.screen4')
 
-        // Create a timeline for scroll-triggered animations
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.animated-text2', // The container for the text
-                start: 'top 75%', // Start when the top of the container reaches 75% of the viewport
-                end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
-                scrub: 1, // Smooth scrubbing
-            },
-        })
-
-        // Animate each word individually
-        words.forEach((word, index) => {
-            tl.to(
-                word,
-                {
-                    color: '#24252A', // Change to black
-                    duration: 1,
-                    ease: 'none',
-                    stagger: {
-                        amount: 0.5, // Delay between each word's animation
-                        from: 'start', // Start from the first word
-                    },
+        // Set a timeout to delay the animation
+        const timeoutId = setTimeout(() => {
+            // Animate each letter into view
+            gsap.to(s1, {
+                y: -200,
+                x: -200,
+                scrollTrigger: {
+                    trigger: ".images",
+                    start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    markers: true, // Enable markers for debugging (optional)
                 },
-                index * 0.2,
-            ) // Stagger start time for each word
-        })
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+
+            gsap.to(s2, {
+                y: -300,
+                x: -100,
+                scrollTrigger: {
+                    trigger: ".images",
+                    start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    markers: true, // Enable markers for debugging (optional)
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+            gsap.to(s3, {
+                y: -300,
+                x: 100,
+                scrollTrigger: {
+                    trigger: ".images",
+                    start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    markers: true, // Enable markers for debugging (optional)
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+
+            gsap.to(s4, {
+                y: -200,
+                x: 200,
+                scrollTrigger: {
+                    trigger: ".images",
+                    start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    markers: true, // Enable markers for debugging (optional)
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+
+            gsap.to(main, {
+                scale:0.8,
+                scrollTrigger: {
+                    trigger: ".images",
+                    start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    markers: true, // Enable markers for debugging (optional)
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+        }, 300) // Delay of 300ms
+
+        return () => clearTimeout(timeoutId) // Cleanup timeout on component unmount
     }, [])
 
     return (
@@ -118,7 +174,7 @@ const AllInOne = () => {
                     >
                         <div className="lg:translate-y-20 2xl:translate-y-0">
                             <Badge
-                                data-aos="fade-up"
+
                                 className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
                             >
                                 {
@@ -162,38 +218,67 @@ const AllInOne = () => {
                             </button>
 
                             <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
-                        <Link
-                            href="#"
-                            className="flex flex-row items-center justify-between gap-4"
-                        >
-                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                {
-                                    languageData?.additionalSection?.[
-                                        changeLanguage
-                                    ]?.bookCall
-                                }
-                            </p>
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
-                                <ArrowRight
-                                    size={18}
-                                    fontWeight={100}
-                                    className="text-[#24252A]"
-                                />
-                            </div>
-                        </Link>
-                    </button>
+                                <Link
+                                    href="#"
+                                    className="flex flex-row items-center justify-between gap-4"
+                                >
+                                    <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                        {
+                                            languageData?.additionalSection?.[
+                                                changeLanguage
+                                            ]?.bookCall
+                                        }
+                                    </p>
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                                        <ArrowRight
+                                            size={18}
+                                            fontWeight={100}
+                                            className="text-[#24252A]"
+                                        />
+                                    </div>
+                                </Link>
+                            </button>
                         </div>
                     </div>
 
-                    <div className="lg:translate-y-[132px] md:mt-0 mt-10">
+                    <div className="translate-y-[142px] images relative md:mt-0 mt-10">
                         <Image
                             ref={image1Ref}
-                            src="/images/rock-group-image.png"
+                            className='scale-75 z-20 main relative'
+                            src="/images/home/all-in-one/smain.png"
                             alt="All in one agency"
-                            width={5000}
-                            height={5000}
+                            width={4000}
+                            height={4000}
+                        />
+                        <Image
+                            className='h-64 screen1 w-80 absolute left-8 bottom-64'
+                            src="/images/home/all-in-one/s1.png"
+                            alt="All in one agency"
+                            width={4000}
+                            height={4000}
+                        />
+                        <Image
+                            className='h-64 w-80 screen2 absolute left-36 top-0'
+                            src="/images/home/all-in-one/s2.png"
+                            alt="All in one agency"
+                            width={4000}
+                            height={4000}
+                        />  <Image
+                            className='h-64 w-80 screen3 absolute right-44 -top-4'
+                            src="/images/home/all-in-one/s3.png"
+                            alt="All in one agency"
+                            width={4000}
+                            height={4000}
+                        />
+                        <Image
+                            className='h-64 w-80 screen4 absolute right-16 bottom-72'
+                            src="/images/home/all-in-one/s4.png"
+                            alt="All in one agency"
+                            width={4000}
+                            height={4000}
                         />
                     </div>
+
                 </div>
             </div>
         </div>

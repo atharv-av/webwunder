@@ -60,104 +60,121 @@ const New_Homepage = () => {
 
     const textSectionRef = useRef<HTMLDivElement>(null);
     const image1Ref = useRef<HTMLImageElement>(null);
+    const image2Ref = useRef<HTMLImageElement>(null);
+    const image3Ref = useRef<HTMLImageElement>(null);
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.pageYOffset;
             const windowHeight = window.innerHeight;
-            
-            if (textSectionRef.current) {
-                textSectionRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`;
-            }
-            
+
+            // Handle first image (scaling)
             if (image1Ref.current) {
                 const scrollPercentage = scrollPosition / windowHeight;
-                // const translateY = -scrollPosition * 0.1; // Negative value for upward movement
-                const scale = 1 + scrollPercentage * 0.1; // Scale from 1 to 1.05
-                image1Ref.current.style.transform = ` scale(${scale})`;//translateY(${translateY}px)
+                const scale = 1 + scrollPercentage * 0.1; // Scale from 1 to 1.1
+                image1Ref.current.style.transform = `scale(${scale})`;
                 image1Ref.current.style.transformOrigin = 'center bottom';
             }
 
+            // Handle second image (translate downwards)
+            if (image2Ref.current) {
+                const translateY = scrollPosition * 0.2; // Move downwards with positive value
+                image2Ref.current.style.transform = `translateY(${translateY}px)`;
+                image2Ref.current.style.transformOrigin = 'center bottom';
+            }
+            
+            // Handle second image (translate downwards)
+            if (image3Ref.current) {
+                const translateY = scrollPosition * 0.2; // Move downwards with positive value
+                image3Ref.current.style.transform = `translateY(${translateY}px)`;
+                image3Ref.current.style.transformOrigin = 'center bottom';
+            }
 
-
+            // Handle text section (parallax effect)
+            if (textSectionRef.current) {
+                textSectionRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`;
+            }
         };
 
+        // Attach the single scroll event listener
         window.addEventListener('scroll', handleScroll);
 
         return () => {
+            // Cleanup the event listener on component unmount
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
 
+
     return (
-        
-            <div className="h-full lg:bg-white lg:min-h-screen lg:p-5">
-                <div className="bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl">
-                    <div className="relative z-10">
-                        <Header />
+
+        <div className="h-full lg:bg-white lg:min-h-screen lg:p-5">
+            <div className="bg-gradient-to-br relative overflow-hidden from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl">
+                <div className="relative z-10">
+                    <Header />
+                </div>
+
+                <div ref={textSectionRef} className="mx-auto relative z-50 flex max-w-6xl flex-col items-center justify-center gap-4 pt-4">
+                    <Badge
+                        data-aos="fade-up"
+                        className="w-fit rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
+                    >
+                        {/* Rock-Solid Business Growth */}
+                        {languageData?.heroSection?.[changeLanguage]?.badge}
+                    </Badge>
+
+                    <div className="heading">
+                        <p className="overflow-hidden text-center  font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
+                            {
+                                languageData?.heroSection?.[changeLanguage]
+                                    ?.headline
+                            }
+                            {/* {splitText("Winning")} {"  "}{splitText("Websites")} */}
+                        </p>
+                        <p className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
+                            {
+                                languageData?.heroSection?.[changeLanguage]
+                                    ?.subHeadline
+                            }
+                            {/* {splitText("Unshakable")}  {"  "}  {splitText("Support")} */}
+                        </p>
                     </div>
-
-                    <div ref={textSectionRef} className="mx-auto  flex max-w-6xl flex-col items-center justify-center gap-4 pt-4">
-                        <Badge
+                    <div>
+                        <p
                             data-aos="fade-up"
-                            className="w-fit rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
+                            className="text-center font-archivo text-base font-bold text-white lg:text-lg"
                         >
-                            {/* Rock-Solid Business Growth */}
-                            {languageData?.heroSection?.[changeLanguage]?.badge}
-                        </Badge>
-                        
-                        <div className="heading">
-                            <p className="overflow-hidden text-center  font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
+                            {/* Websites by Entrepreneurs for Entrepreneurs */}
+                            {
+                                languageData?.heroSection?.[changeLanguage]
+                                    ?.description
+                            }
+                        </p>
+                        <p
+                            data-aos="fade-up"
+                            className="text-center font-archivo text-sm font-normal text-white lg:text-base"
+                        >
+                            Proven to Boost Sales and Cut Costs.
+                        </p>
+                    </div>
+                    <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
+                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                            <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 {
-                                    languageData?.heroSection?.[changeLanguage]
-                                        ?.headline
-                                }
-                                {/* {splitText("Winning")} {"  "}{splitText("Websites")} */}
-                            </p>
-                            <p className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
-                                {
-                                    languageData?.heroSection?.[changeLanguage]
-                                        ?.subHeadline
-                                }
-                                {/* {splitText("Unshakable")}  {"  "}  {splitText("Support")} */}
-                            </p>
-                        </div>
-                        <div>
-                            <p
-                                data-aos="fade-up"
-                                className="text-center font-archivo text-base font-bold text-white lg:text-lg"
-                            >
-                                {/* Websites by Entrepreneurs for Entrepreneurs */}
-                                {
-                                    languageData?.heroSection?.[changeLanguage]
-                                        ?.description
+                                    languageData?.heroSection?.[
+                                        changeLanguage
+                                    ]?.watchVideo
                                 }
                             </p>
-                            <p
-                                data-aos="fade-up"
-                                className="text-center font-archivo text-sm font-normal text-white lg:text-base"
-                            >
-                                Proven to Boost Sales and Cut Costs.
-                            </p>
-                        </div>
-                        <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
-                                <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                                    {
-                                        languageData?.heroSection?.[
-                                            changeLanguage
-                                        ]?.watchVideo
-                                    }
-                                </p>
-                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
-                                    <ArrowRight
-                                        size={18}
-                                        fontWeight={100}
-                                        className="text-[#24252A]"
-                                    />
-                                </div>
-                            </button>
+                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
+                                <ArrowRight
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
+                                />
+                            </div>
+                        </button>
 
-                            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
+                        <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
                             <Link
                                 href="#"
                                 className="flex flex-row items-center justify-between gap-4"
@@ -178,34 +195,55 @@ const New_Homepage = () => {
                                 </div>
                             </Link>
                         </button>
-                        </div>
-                        <p className="toptrigger relative mb-6 text-center font-archivo text-base font-bold text-white sm:top-3 lg:text-xl">
-                            {/* Hundreds of perfect projects delivered to hundreds of
-                        thrilled customers. */}
-                            {
-                                languageData?.heroSection?.[changeLanguage]
-                                    ?.projectsInfo
-                            }
-                        </p>
                     </div>
+                    <p className="toptrigger relative mb-6 text-center font-archivo text-base font-bold text-white sm:top-3 lg:text-xl">
+                        {/* Hundreds of perfect projects delivered to hundreds of
+                        thrilled customers. */}
+                        {
+                            languageData?.heroSection?.[changeLanguage]
+                                ?.projectsInfo
+                        }
+                    </p>
+                </div>
+                <div className='relative'>
                     <Image
-                    ref={image1Ref}
-                        src="/images/home/hero/homebg.png"
+                        ref={image1Ref}
+                        src="/images/home/hero/rockLaptop.png"
                         alt="Figma"
-                        className="hidden w-screen md:flex"
+                        className="hidden z-20 w-screen pt-12 md:flex relative"
                         width={5000}
                         height={5000}
                     />
                     <Image
-                          src="/images/homebg2.png"
+
+                        ref={image2Ref}
+                        src="/images/home/hero/phone1.png"
                         alt="Figma"
-                        className="mt-6 flex w-screen md:hidden"
+                        className="hidden bottom-20 z-10 md:flex h-80 w-72 left-72 absolute"
+                        width={5000}
+                        height={5000}
+                    />
+                    <Image
+                        ref={image3Ref}
+
+                        src="/images/home/hero/phone2.png"
+                        alt="Figma"
+                        className="hidden bottom-28 z-10 md:flex h-64 w-36 right-72 absolute"
                         width={5000}
                         height={5000}
                     />
                 </div>
+
+                <Image
+                    src="/images/homebg2.png"
+                    alt="Figma"
+                    className="mt-6 flex w-screen md:hidden"
+                    width={5000}
+                    height={5000}
+                />
             </div>
-        
+        </div>
+
     )
 }
 
