@@ -85,11 +85,10 @@ const AllInOne = () => {
                 y: -200,
                 x: -200,
                 scrollTrigger: {
-                    trigger: ".images",
+                    trigger: '.images',
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -100,11 +99,10 @@ const AllInOne = () => {
                 y: -300,
                 x: -100,
                 scrollTrigger: {
-                    trigger: ".images",
+                    trigger: '.images',
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -114,11 +112,10 @@ const AllInOne = () => {
                 y: -300,
                 x: 100,
                 scrollTrigger: {
-                    trigger: ".images",
+                    trigger: '.images',
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -129,11 +126,10 @@ const AllInOne = () => {
                 y: -200,
                 x: 200,
                 scrollTrigger: {
-                    trigger: ".images",
+                    trigger: '.images',
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                    
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -141,13 +137,12 @@ const AllInOne = () => {
             })
 
             gsap.to(main, {
-                scale:0.8,
+                scale: 0.8,
                 scrollTrigger: {
-                    trigger: ".images",
+                    trigger: '.images',
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
                     end: 'bottom 25%', // End when the bottom of the container reaches 25% of the viewport
                     scrub: 1, // Smooth scrubbing
-                   
                 },
                 duration: 0.5,
                 stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
@@ -173,10 +168,7 @@ const AllInOne = () => {
                         ref={textSectionRef}
                     >
                         <div className="lg:translate-y-20 2xl:translate-y-0">
-                            <Badge
-
-                                className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
-                            >
+                            <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                                 {
                                     languageData?.allInOnePage?.[changeLanguage]
                                         ?.title
@@ -219,7 +211,8 @@ const AllInOne = () => {
 
                             <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
                                 <Link
-                                    href="#"
+                                    href="https://tidycal.com/skylumina/webwunder"
+                                    target="_blank"
                                     className="flex flex-row items-center justify-between gap-4"
                                 >
                                     <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
@@ -241,37 +234,38 @@ const AllInOne = () => {
                         </div>
                     </div>
 
-                    <div className="translate-y-[142px] lg:flex hidden images relative md:mt-0 mt-10">
+                    <div className="images relative mt-10 hidden translate-y-[142px] md:mt-0 lg:flex">
                         <Image
                             ref={image1Ref}
-                            className='scale-75 z-20 main relative'
+                            className="main relative z-20 scale-75"
                             src="/images/home/all-in-one/smain.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />
                         <Image
-                            className='h-64 screen1 w-80 absolute left-8 bottom-64'
+                            className="screen1 absolute bottom-64 left-8 h-64 w-80"
                             src="/images/home/all-in-one/s1.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />
                         <Image
-                            className='h-64 w-80 screen2 absolute left-36 top-0'
+                            className="screen2 absolute left-36 top-0 h-64 w-80"
                             src="/images/home/all-in-one/s2.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
-                        />  <Image
-                            className='h-64 w-80 screen3 absolute right-44 -top-4'
+                        />{' '}
+                        <Image
+                            className="screen3 absolute -top-4 right-44 h-64 w-80"
                             src="/images/home/all-in-one/s3.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />
                         <Image
-                            className='h-64 w-80 screen4 absolute right-16 bottom-72'
+                            className="screen4 absolute bottom-72 right-16 h-64 w-80"
                             src="/images/home/all-in-one/s4.png"
                             alt="All in one agency"
                             width={4000}
@@ -280,14 +274,13 @@ const AllInOne = () => {
                     </div>
 
                     <Image
-                            data-aos="fade-up"
-                            className='translate-y-6 lg:hidden flex'
-                            src="/images/home/all-in-one/allInOne.png"
-                            alt="All in one agency"
-                            width={4000}
-                            height={4000}
-                        />
-
+                        data-aos="fade-up"
+                        className="flex translate-y-6 lg:hidden"
+                        src="/images/home/all-in-one/allInOne.png"
+                        alt="All in one agency"
+                        width={4000}
+                        height={4000}
+                    />
                 </div>
             </div>
         </div>

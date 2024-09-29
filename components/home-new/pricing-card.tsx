@@ -49,7 +49,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
         <Card
             className={`flex cursor-grab flex-col justify-between rounded-3xl border-2 border-white bg-[#191919] text-white transition-all duration-300 lg:w-[500px] xl:w-[700px] lg:scale-[87%] lg:border lg:border-[#D9D9D9] ${
                 isCenter
-                    ? 'lg:h-[1000px] lg:scale-[200%] xl:scale-90 lg:border-[6px] relative lg:bottom-10  lg:border-white'
+                    ? 'lg:h-[1000px] lg:scale-[200%] xl:scale-90 lg:border-[5px] relative lg:bottom-10  lg:border-white'
                     : 'lg:h-[900px]'
             }`}
         >
@@ -136,7 +136,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     {languageData?.paymentsCard?.[changeLanguage]?.signMeUp}
 
                 </button>
-                <button className="w-full rounded-full border border-black bg-transparent py-4 font-inter text-base font-normal text-white transition-all hover:scale-95 hover:border hover:border-blue-500">
+                <button className="w-full rounded-full text-[#7E8492]  bg-transparent py-4 font-inter text-base font-normal transition-all hover:scale-95 ">
                     {/* Cancel Anytime */}
                      {languageData?.paymentsCard?.[changeLanguage]?.cancelAnytime   }
 
