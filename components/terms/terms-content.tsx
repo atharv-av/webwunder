@@ -13,7 +13,7 @@ const TermsContent = () => {
 
     return (
         <div className="p-8 font-sans text-gray-300">
-            <div className="mx-auto max-w-4xl">
+            <div className="mx-auto lg:max-w-5xl 2xl:max-w-7xl">
                 {languageData?.termsData[changeLanguage].map((term, index) => (
                     <div key={index} className="mb-12">
                         <h1 className="mb-2 font-archivo text-[25px] font-bold text-white">

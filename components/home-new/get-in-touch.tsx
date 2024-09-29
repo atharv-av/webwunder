@@ -39,7 +39,7 @@ const GetInTouch = () => {
                     {/* Leave the Competition Behind! */}
                     {languageData?.faqPage?.[changeLanguage]?.contactTitle}
                 </h2>
-                <p className="max-w-2xl font-archivo text-sm font-normal text-gray-400 md:text-[16px] lg:text-base">
+                <p className="max-w-xl font-archivo text-sm font-normal text-gray-400 md:text-[16px] lg:text-base">
                     {
                         languageData?.faqPage?.[changeLanguage]
                             ?.contactDescription

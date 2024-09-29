@@ -196,7 +196,7 @@ const JoinUs: React.FC = () => {
         
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] lg:pt-16 text-white">
             <Slider />
-            <div className="lg:mt-0 -mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:flex-row lg:gap-20 2xl:pl-20">
+            <div className="lg:mt-0 -mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:flex-row lg:gap-20 2xl:gap-0 2xl:pl-20">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                         {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }

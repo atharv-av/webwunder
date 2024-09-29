@@ -116,7 +116,7 @@ const PortfolioMainContent = () => {
                             ?.getInTouchSection?.subtitle
                     }
                 </p>
-                <p className="z-10 self-center text-center font-archivo text-base font-normal text-white/50 lg:w-[51%]">
+                <p className="z-10 self-center text-center font-archivo text-base font-normal text-white/50 max-w-xl">
                     {
                         languageData?.portfolioPage?.[changeLanguage]
                             ?.getInTouchSection?.description
