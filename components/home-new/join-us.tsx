@@ -10,7 +10,6 @@ import Image from 'next/image'
 import Slider from './Slider'
 import { languageData } from '@/langauge'
 
-   
 interface CarouselItem {
     id: number
     icon: string
@@ -30,33 +29,32 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
     title,
     description,
     timeCommitment,
-}) => 
-{
-  
-    return(
-    <div className="flex">
-        <div className="mr-4 flex flex-col items-center">
-            <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white"></div>
-            {number < 3 && (
-                <div className="h-full border-l-2 border-dashed border-white"></div>
-            )}
+}) => {
+    return (
+        <div className="flex">
+            <div className="mr-4 flex flex-col items-center">
+                <div className="flex h-4 w-4 items-center justify-center rounded-full bg-white"></div>
+                {number < 3 && (
+                    <div className="h-full border-l-2 border-dashed border-white"></div>
+                )}
+            </div>
+            <div className="flex flex-col gap-2 pb-8">
+                <p className="font-archivo text-base font-bold leading-none text-[#9DFF50]">
+                    Step {number}
+                </p>
+                <h3 className="font-archivo text-[25px] font-bold text-white">
+                    {title}
+                </h3>
+                <p className="font-archivo text-sm font-normal text-white/50">
+                    {description}
+                </p>
+                <p className="font-archivo text-sm font-bold text-[#9DFF50]">
+                    Time commitment: {timeCommitment}
+                </p>
+            </div>
         </div>
-        <div className="flex flex-col gap-2 pb-8">
-            <p className="font-archivo text-base font-bold leading-none text-[#9DFF50]">
-                Step {number}
-            </p>
-            <h3 className="font-archivo text-[25px] font-bold text-white">
-                {title}
-            </h3>
-            <p className="font-archivo text-sm font-normal text-white/50">
-                {description}
-            </p>
-            <p className="font-archivo text-sm font-bold text-[#9DFF50]">
-                Time commitment: {timeCommitment}
-            </p>
-        </div>
-    </div>
-)}
+    )
+}
 
 const JoinUs: React.FC = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -193,41 +191,73 @@ const JoinUs: React.FC = () => {
     }, [])
 
     return (
-        
-        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] lg:pt-16 text-white">
+        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] text-white lg:pt-16">
             <Slider />
-            <div className="lg:mt-0 -mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:flex-row lg:gap-20 2xl:gap-0 2xl:pl-20">
+            <div className="-mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:gap-20 2xl:gap-0 2xl:px-28">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
-                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
+                        {
+                            languageData?.joinUsSection?.[changeLanguage]?.steps
+                                ?.cta
+                        }
                     </Badge>
                     <p className="text-center font-archivo text-[25px] font-bold leading-none text-white">
-                    {languageData?.joinUsSection?.[changeLanguage]?.steps?.title }
-
+                        {
+                            languageData?.joinUsSection?.[changeLanguage]?.steps
+                                ?.title
+                        }
                     </p>
-                    <p className="mb-5 mt-0 lg:w-1/2 text-center font-archivo text-sm font-normal text-white/50">
-                    {languageData?.joinUsSection?.[changeLanguage]?.steps?.description }
-
+                    <p className="mb-5 mt-0 text-center font-archivo text-sm font-normal text-white/50 lg:w-1/2">
+                        {
+                            languageData?.joinUsSection?.[changeLanguage]?.steps
+                                ?.description
+                        }
                     </p>
                     <div className="flex max-w-xl flex-col items-start rounded-lg">
                         <TimelineStep
                             number={1}
-                            title=  {languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
-
-                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
-                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
+                            title={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.title
+                            }
+                            description={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.description
+                            }
+                            timeCommitment={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.time
+                            }
                         />
                         <TimelineStep
                             number={2}
-                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
-                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
-                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
+                            title={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.title
+                            }
+                            description={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.description
+                            }
+                            timeCommitment={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.time
+                            }
                         />
                         <TimelineStep
                             number={3}
-                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title}
-                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
-                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
+                            title={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.title
+                            }
+                            description={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.description
+                            }
+                            timeCommitment={
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.steps[0]?.time
+                            }
                         />
                     </div>
                 </div>
@@ -240,43 +270,87 @@ const JoinUs: React.FC = () => {
                 />
 
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
-                    <div className="hidden flex-col items-start gap-4 lg:flex lg:w-11/12 2xl:w-1/2">
+                    <div
+                        className={`hidden flex-col items-start gap-4 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-1/2'}`}
+                    >
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
-                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.cta }
+                            {
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.cta
+                            }
                         </Badge>
                         <p className="font-archivo text-[45px] font-bold leading-none text-white">
-                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.title }
+                            {
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.title
+                            }
                         </p>
                         <p className="mb-5 mt-0 font-archivo text-base font-normal text-white/50">
-                        {languageData?.joinUsSection?.[changeLanguage]?.steps?.description }
-
+                            {
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.steps?.description
+                            }
                         </p>
-                        <div className="flex max-w-xl flex-col items-start rounded-lg">
-                        <TimelineStep
-                            number={1}
-                            title=  {languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
-
-                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
-                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
-                        />
-                        <TimelineStep
-                            number={2}
-                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title }
-                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
-                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
-                        />
-                        <TimelineStep
-                            number={3}
-                            title={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.title}
-                            description={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.description }
-                            timeCommitment={languageData?.joinUsSection?.[changeLanguage]?.steps?.steps[0]?.time }
-                        />
+                        <div className="flex max-w-xl 2xl:max-w-3xl flex-col items-start rounded-lg">
+                            <TimelineStep
+                                number={1}
+                                title={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.title
+                                }
+                                description={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.description
+                                }
+                                timeCommitment={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.time
+                                }
+                            />
+                            <TimelineStep
+                                number={2}
+                                title={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.title
+                                }
+                                description={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.description
+                                }
+                                timeCommitment={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.time
+                                }
+                            />
+                            <TimelineStep
+                                number={3}
+                                title={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.title
+                                }
+                                description={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.description
+                                }
+                                timeCommitment={
+                                    languageData?.joinUsSection?.[
+                                        changeLanguage
+                                    ]?.steps?.steps[0]?.time
+                                }
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     )
 }
 

@@ -44,7 +44,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
                 <div className="h-fit w-fit rounded-full border border-white bg-transparent px-2 py-1 font-archivo text-sm font-normal text-white">
                     {tag}
                 </div>
-                <p className="font-archivo text-[26px] font-bold text-white">
+                <p className="font-archivo text-[26px] leading-none font-bold text-white">
                     {title}
                 </p>
                 <p className="font-archivo text-sm font-normal text-white">

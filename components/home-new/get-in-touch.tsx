@@ -35,7 +35,7 @@ const GetInTouch = () => {
                 >
                     {languageData?.faqPage?.[changeLanguage]?.contactCta}
                 </Badge>
-                <h2 className=" font-archivo text-[25px] font-bold text-white lg:text-[45px]">
+                <h2 className=" font-archivo leading-none text-[25px] font-bold text-white lg:text-[45px]">
                     {/* Leave the Competition Behind! */}
                     {languageData?.faqPage?.[changeLanguage]?.contactTitle}
                 </h2>

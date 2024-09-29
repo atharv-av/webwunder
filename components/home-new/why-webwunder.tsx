@@ -202,7 +202,7 @@ const WhyWebWunder = () => {
         }
     }, [])
     return (
-        <div className="mt-80 flex flex-col items-center justify-center gap-6 px-4 lg:my-10">
+        <div className="mt-80 flex flex-col items-center justify-center gap-6 px-4 lg:my-10 2xl:-mb-1">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
                 <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
@@ -244,7 +244,9 @@ const WhyWebWunder = () => {
 
                 {/* Buttons */}
                 <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                    <button
+                        className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
+                    >
                         <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                             {
                                 languageData?.additionalSection?.[
@@ -252,7 +254,9 @@ const WhyWebWunder = () => {
                                 ]?.explorePlans
                             }
                         </p>
-                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                        <div
+                            className={`flex ${changeLanguage === 'de' ? 'h-8 w-10' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                        >
                             <ArrowRight
                                 size={18}
                                 fontWeight={100}
@@ -260,7 +264,9 @@ const WhyWebWunder = () => {
                             />
                         </div>
                     </button>
-                    <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
+                    <button
+                        className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
+                    >
                         <Link
                             href="#"
                             className="flex flex-row items-center justify-between gap-4"
@@ -337,7 +343,7 @@ const WhyWebWunder = () => {
                 ) : (
                     <div className="flex flex-wrap justify-center gap-16 lg:gap-4">
                         {/* First row - 2 items */}
-                        <div className="flex h-full w-full flex-wrap justify-center gap-16 lg:gap-4">
+                        <div className="flex h-full w-full flex-wrap justify-center xl:gap-6 gap-16 lg:gap-4">
                             {mainItems.slice(0, 2).map((item, index) => (
                                 <div key={index} className="upperdiv trig">
                                     <MainCard
@@ -351,7 +357,7 @@ const WhyWebWunder = () => {
                             ))}
                         </div>
                         {/* Second row - 3 items */}
-                        <div className="flex w-full flex-wrap justify-center gap-16 lg:gap-4">
+                        <div className="flex xl:gap-4 w-full flex-wrap justify-center gap-6 lg:gap-4">
                             {mainItems.slice(2).map((item, index) => (
                                 <div
                                     key={index}

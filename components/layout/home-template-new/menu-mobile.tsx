@@ -66,7 +66,7 @@ export default function SidebarMenu() {
         setMenuSection(document.getElementById('menu-section'))
     }, [])
     return (
-        <div className="flex cursor-pointer p-0 pe-0 lg:hidden">
+        <div className="flex cursor-pointer p-0 pe-0 z-50 lg:hidden">
             <div className="flex justify-center pt-3 items-center" onClick={() => setShown(true)}>
                 <div className="rounded-lg">
                     <Menu02SVG className="text-3xl text-darkbtn-foreground" />
@@ -74,7 +74,7 @@ export default function SidebarMenu() {
             </div>
             {menuSection
                 ? createPortal(
-                      <div className="menu relative z-30">
+                      <div className="menu relative z-50">
                           <div className="fixed top-0 w-full" ref={scope}>
                               <div
                                   onClick={() => setShown(false)}

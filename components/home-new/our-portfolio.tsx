@@ -188,7 +188,7 @@ const OurPortfolio = () => {
                     </motion.div>
                 ))}
             </div>
-            <div className="flex flex-col items-center gap-2 px-8 lg:max-w-6xl lg:items-start xl:max-w-6xl 2xl:max-w-[1500px] lg:mt-4">
+            <div className="flex flex-col items-center gap-2 px-1 lg:px-8 lg:max-w-6xl lg:items-start xl:max-w-6xl 2xl:max-w-[1500px] lg:mt-6">
                 <p className="text-center font-archivo text-lg font-bold text-white lg:text-start lg:text-[26px]">
                     {/* Built for Entrepreneurs Like You */}
                     {languageData?.userPortfolio?.[changeLanguage]?.description}

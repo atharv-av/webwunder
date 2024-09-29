@@ -86,7 +86,9 @@ const StayOnTop = () => {
                             }
                         </p>
                         <div className="my-4 flex items-center justify-start gap-2 lg:my-2 lg:gap-3">
-                            <button className="flex w-fit min-w-40 flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                            <button
+                                className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
+                            >
                                 <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                     {/* See Plans */}
                                     {
@@ -95,7 +97,9 @@ const StayOnTop = () => {
                                         ]?.seePlans
                                     }
                                 </p>
-                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                                <div
+                                    className={`flex ${changeLanguage === 'de' ? 'h-8 w-8' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                                >
                                     <ArrowRight
                                         size={18}
                                         fontWeight={100}
@@ -104,7 +108,9 @@ const StayOnTop = () => {
                                 </div>
                             </button>
 
-                            <button className="w-fit min-w-40 rounded-full bg-white px-3 py-2 font-archivo text-sm font-medium transition-all hover:scale-95 lg:py-3">
+                            <button
+                                className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
+                            >
                                 <Link
                                     href="#"
                                     className="flex flex-row items-center justify-between gap-4"
@@ -128,28 +134,28 @@ const StayOnTop = () => {
                     </div>
                     <div className="flex lg:hidden">
                         <Image
-                            className="animate-heartbeat absolute left-4 top-4 lg:left-48 lg:top-12 xl:left-48 xl:top-12"
+                            className="absolute left-4 top-4 animate-heartbeat lg:left-48 lg:top-12 xl:left-48 xl:top-12"
                             src="/images/home/stay-on-top/icon-3.png"
                             alt="Unlimited Design"
                             width={75.56}
                             height={79.07}
                         />
                         <Image
-                            className="animate-heartbeat absolute right-4 top-4 lg:bottom-44 lg:left-12 xl:bottom-44 xl:left-12"
+                            className="absolute right-4 top-4 animate-heartbeat lg:bottom-44 lg:left-12 xl:bottom-44 xl:left-12"
                             src="/images/home/stay-on-top/icon-5.png"
                             alt="Unlimited Design"
                             width={50}
                             height={50}
                         />
                         <Image
-                            className="animate-heartbeat absolute left-8 top-96 lg:right-12 lg:top-12 xl:right-12 xl:top-12"
+                            className="absolute left-8 top-96 animate-heartbeat lg:right-12 lg:top-12 xl:right-12 xl:top-12"
                             src="/images/home/stay-on-top/icon-1.png"
                             alt="Unlimited Design"
                             width={76}
                             height={79}
                         />
                         <Image
-                            className="animate-heartbeat absolute bottom-80 right-12 lg:bottom-16 lg:left-[43%] xl:bottom-44 xl:left-[48%]"
+                            className="absolute bottom-80 right-12 animate-heartbeat lg:bottom-16 lg:left-[43%] xl:bottom-44 xl:left-[48%]"
                             src="/images/home/stay-on-top/icon-4.png"
                             alt="Unlimited Design"
                             width={32.26}
@@ -159,28 +165,28 @@ const StayOnTop = () => {
 
                     <div className="hidden lg:flex">
                         <Image
-                            className="animate-heartbeat absolute lg:left-48 lg:top-12 xl:left-48 xl:top-12"
+                            className="absolute animate-heartbeat lg:left-48 lg:top-12 xl:left-48 xl:top-12"
                             src="/images/home/stay-on-top/icon-3.png"
                             alt="Unlimited Design"
                             width={75.56}
                             height={79.07}
                         />
                         <Image
-                            className="animate-heartbeat absolute lg:bottom-44 lg:left-12 xl:bottom-44 xl:left-12"
+                            className="absolute animate-heartbeat lg:bottom-44 lg:left-12 xl:bottom-44 xl:left-12"
                             src="/images/home/stay-on-top/icon-5.png"
                             alt="Unlimited Design"
                             width={50}
                             height={50}
                         />
                         <Image
-                            className="animate-heartbeat absolute lg:right-12 lg:top-12 xl:right-12 xl:top-12"
+                            className="absolute animate-heartbeat lg:right-12 lg:top-12 xl:right-12 xl:top-12"
                             src="/images/home/stay-on-top/icon-1.png"
                             alt="Unlimited Design"
                             width={76}
                             height={79}
                         />
                         <Image
-                            className="animate-heartbeat absolute lg:bottom-16 lg:left-[43%] xl:bottom-44 xl:left-[48%]"
+                            className="absolute animate-heartbeat lg:bottom-16 lg:left-[43%] xl:bottom-44 xl:left-[48%]"
                             src="/images/home/stay-on-top/icon-4.png"
                             alt="Unlimited Design"
                             width={32.26}

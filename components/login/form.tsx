@@ -180,8 +180,8 @@ export default function LoginPage() {
             
              >
                 <div className="z-10 w-full max-w-lg space-y-2 lg:min-w-[30rem]">
-                    <div className="space-y-2 text-left">
-                        <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
+                    <div className={`space-y-2 lg:ml-0 mx-auto lg:text-left ${changeLanguage === 'de' ? 'ml-8' : 'ml-0'}`}>
+                        <h2 className={`font-archivo leading-none text-[45px] lg:w-full ${changeLanguage === 'de' ? 'w-3/4' : 'w-full'} font-bold text-white`}>
                             {
                                 languageData?.loginPage?.[changeLanguage]
                                     ?.welcomeBack
@@ -211,7 +211,7 @@ export default function LoginPage() {
                     </div>
 
                     <div className="space-y-4 text-center text-xs text-white/70">
-                        <div className="flex justify-center space-x-4 font-archivo text-sm font-normal text-white">
+                        <div className="flex flex-wrap justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a
                                 href="/privacy-policy"
                                 className="hover:text-white"

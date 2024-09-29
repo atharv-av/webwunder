@@ -4,9 +4,9 @@ export const languageData = {
             badge: 'Felsenfester Geschäftserfolg',
             headline: 'UNBESIEGBARE WEBSEITEN',
             subHeadline: 'UNERSCHÜTTERLICHER SUPPORT',
-            shortDescription : 'Erprobt, um Umsatz zu steigern und Kosten zu reduzieren.',
-            description:
-                'Webseiten von Unternehmern für Unternehmer.',
+            shortDescription:
+                'Erprobt, um Umsatz zu steigern und Kosten zu reduzieren.',
+            description: 'Webseiten von Unternehmern für Unternehmer.',
             watchVideo: 'Video Ansehen',
             bookCall: 'Kostenloses Erstgespräch',
             projectsInfo:
@@ -16,9 +16,8 @@ export const languageData = {
             badge: 'Rock-Solid Business Growth',
             headline: 'Winning Websites',
             subHeadline: 'Unshakable Support',
-            description:
-                'Websites by Entrepreneurs for Entrepreneurs.',
-            shortDescription : 'Proven to Boost Sales and Cut Costs.',
+            description: 'Websites by Entrepreneurs for Entrepreneurs.',
+            shortDescription: 'Proven to Boost Sales and Cut Costs.',
             watchVideo: 'Watch Video',
             bookCall: 'Book a Call',
             projectsInfo:
@@ -189,8 +188,9 @@ export const languageData = {
             ],
             steps: {
                 cta: 'Drei Schritte',
-                title: 'Drei Schritte',
-                description: 'Ihre Website in drei einfachen Schritten',
+                title: 'Ihre Website in drei einfachen Schritten',
+                description:
+                    "Keine Lust auf endlose Meetings? Wir auch nicht—deshalb haben wir sie auf ein Minimum reduziert. In weniger als einer Stunde Ihrer wertvollen Zeit machen wir erfolgreiche Unternehmen noch erfolgreicher. So funktioniert’s:",
                 steps: [
                     {
                         step: 'Schritt 1',
@@ -478,7 +478,7 @@ export const languageData = {
             book15MinCall: 'Buche einen 15-Minuten-Anruf',
             callDescription:
                 'In nur 15 Minuten kommen wir direkt auf den Punkt und zeigen dir, wie WebWunder dein Business transformieren kann. Wir schätzen deine Zeit – denn wir sind auch Unternehmer.',
-            bookNow: 'Kostenloses Erstgespräch buchen',
+            bookNow: 'Jetzt buchen',
             chat: 'Chatten',
             preferChatFirst: 'Möchtest du lieber zuerst chatten?',
             chatDescription:
@@ -604,8 +604,7 @@ export const languageData = {
         de: {
             title: 'Häufig gestellte Fragen',
             subtitle: 'Fragen?',
-            description:
-                'Hier sind schnelle Antworten.',
+            description: 'Hier sind schnelle Antworten.',
             description2: 'Brauchen Sie mehr? Kontaktieren Sie uns einfach!',
             bookCall: 'Kostenloses Erstgespräch',
             questions: [
@@ -1835,30 +1834,30 @@ export const languageData = {
             copyright2: '. Alle Rechte vorbehalten.',
         },
     },
-    services : {
+    services: {
         de: [
-          'Webdesign',
-          'Grafikdesign',
-          'Videobearbeitung',
-          'Bewegungsgrafiken',
-          'Webentwicklung',
-          'Branding',
-          'SEO',
-          'Digital Marketing',
-          'Broschüren',
-          'ANIMATION'
+            'Webdesign',
+            'Grafikdesign',
+            'Videobearbeitung',
+            'Bewegungsgrafiken',
+            'Webentwicklung',
+            'Branding',
+            'SEO',
+            'Digital Marketing',
+            'Broschüren',
+            'ANIMATION',
         ],
         en: [
-          'Web Design',
-          'Graphic Design',
-          'Video Editing',
-          'Motion Graphics',
-          'Web Development',
-          'Branding',
-          'SEO',
-          'Digital Marketing',
-          'Brochure',
-          'ANIMATION'
-        ]
-      }      
+            'Web Design',
+            'Graphic Design',
+            'Video Editing',
+            'Motion Graphics',
+            'Web Development',
+            'Branding',
+            'SEO',
+            'Digital Marketing',
+            'Brochure',
+            'ANIMATION',
+        ],
+    },
 }

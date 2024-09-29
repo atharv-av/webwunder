@@ -115,13 +115,13 @@ const Footer = () => {
                                 {changeData?.followUs}
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
-                                    <a href="#">{changeData?.links?.instagram} |</a>
+                                    <a href="https://www.instagram.com/web_wunder/">{changeData?.links?.instagram} |</a>
                                     <a href="#">{changeData?.links?.dribble} |</a>
-                                    <a href="#">{changeData?.links?.twitter} |</a>
-                                    <a href="#">{changeData?.links?.behance} |</a>
+                                    <a href="https://x.com/web_wunder">{changeData?.links?.twitter} |</a>
+                                    <a href="https://www.behance.net/webwunder">{changeData?.links?.behance} |</a>
                                     <a href="#">{changeData?.links?.facebook} |</a>
-                                    <a href="#">{changeData?.links?.pinterest} |</a>
-                                    <a href="#">{changeData?.links?.youtube}</a>
+                                    <a href="https://www.pinterest.com/webwunderde/">{changeData?.links?.pinterest} |</a>
+                                    <a href="https://www.youtube.com/@web_wunder">{changeData?.links?.youtube}</a>
                                 </div>
                             </div>
                         </div>
@@ -186,10 +186,10 @@ const Footer = () => {
                   <a target="_blank" href="#">
                     {changeData?.links?.dribble}
                   </a>
-                  <a target="_blank" href="#">
+                  <a target="_blank" href="https://www.behance.net/webwunder">
                     {changeData?.links?.behance}
                   </a>
-                  <a target="_blank" href="#">
+                  <a target="_blank" href="https://www.pinterest.com/webwunderde/">
                     {changeData?.links?.pinterest}
                   </a>
                 </div>
@@ -199,10 +199,10 @@ const Footer = () => {
                   {changeData?.followUs}
                 </p>
                 <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
-                  <a target="_blank" href="#">
+                  <a target="_blank" href="https://www.instagram.com/web_wunder/">
                     {changeData?.links?.instagram}
                   </a>
-                  <a target="_blank" href="#">
+                  <a target="_blank" href="https://x.com/web_wunder">
                     {changeData?.links?.twitter}
                   </a>
                   <a

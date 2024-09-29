@@ -1,15 +1,21 @@
-
 'use client'
 import Link from 'next/link'
 import { paths } from '@/paths'
 import { Button } from '@/components/ui/button'
 import MenuMobile from '@/components/layout/home-template-new/menu-mobile'
-import { CircleUserRound, MoveUpRight } from 'lucide-react'
+import { ArrowDown, CircleUserRound, Flag, MoveUpRight } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { languageData } from '@/langauge'
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuLabel,
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
+import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
+import Image from 'next/image'
 export default function Menu() {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
-
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -23,7 +29,7 @@ export default function Menu() {
     const newMainMenu = {
         benefits: {
             href: '/#benefits',
-            name:  languageData?.navItems?.[changeLanguage]?.benefits,
+            name: languageData?.navItems?.[changeLanguage]?.benefits,
         },
         yourWebsite: {
             href: '/#your-website',
@@ -45,8 +51,6 @@ export default function Menu() {
             href: '/#join-webwunder',
             name: languageData?.navItems?.[changeLanguage]?.contact,
         },
-       
-        
     }
     return (
         <nav className="flex items-center gap-3">
@@ -58,7 +62,7 @@ export default function Menu() {
                     >
                         <Link
                             scroll
-                            className="text-sm font-inter text-white"
+                            className="font-inter text-sm text-white"
                             href={value.href}
                         >
                             {value.name}
@@ -66,14 +70,33 @@ export default function Menu() {
                     </li>
                 ))}
             </ol>
+            {/* <DropdownMenu>
+                <DropdownMenuTrigger className='flex rounded-full bg-white/20 items-center px-1 py-2 cursor-pointer'>
+                    <Image src="/images/germany-flag-icon.png" alt='UK Flag' width={25} height={25} />
+                    <button
+                        className=" text-base font-medium text-white hover:text-white"
+                    >
+                        EN
+                        Value
+                    </button>
+                    <ArrowDown />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-fit">
+                    <DropdownMenuItem>EN</DropdownMenuItem>
+                    <DropdownMenuItem>DE</DropdownMenuItem>
+                </DropdownMenuContent>
+            </DropdownMenu> */}
+
             {process.env.NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' ? (
                 <Button
                     size={'sm'}
-                    className="hidden text-base font-medium gap-3 rounded-full bg-white/20 p-5 hover:text-white text-white lg:flex"
+                    className="hidden gap-3 rounded-full bg-white/20 p-5 text-base font-medium text-white hover:text-white lg:flex"
                     asChild
                 >
                     <Link href={paths.pages.login.href}>
-                        <div className='font-inter text-sm'>{ languageData?.navItems?.[changeLanguage]?.login}</div>
+                        <div className="font-inter text-sm">
+                            {languageData?.navItems?.[changeLanguage]?.login}
+                        </div>
                         <CircleUserRound />
                     </Link>
                 </Button>
@@ -81,11 +104,13 @@ export default function Menu() {
             {process.env.NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' ? (
                 <Button
                     size={'sm'}
-                    className="hidden text-base font-medium gap-3 rounded-full bg-white p-5 lg:flex"
+                    className="hidden gap-3 rounded-full bg-white p-5 text-base font-medium lg:flex"
                     asChild
                 >
                     <Link href={paths.pages.login.href}>
-                        <p className='font-inter text-sm'>{ languageData?.navItems?.[changeLanguage]?.signup}</p>
+                        <p className="font-inter text-sm">
+                            {languageData?.navItems?.[changeLanguage]?.signup}
+                        </p>
                         <MoveUpRight className="text-gray-500" />
                     </Link>
                 </Button>
