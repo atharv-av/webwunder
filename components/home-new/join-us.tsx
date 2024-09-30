@@ -9,6 +9,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
 import Slider from './Slider'
 import { languageData } from '@/langauge'
+import { gsap, ScrollTrigger } from 'gsap/all'
+
 
 interface CarouselItem {
     id: number
@@ -190,6 +192,75 @@ const JoinUs: React.FC = () => {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+
+
+    useEffect(() => {
+        // Register GSAP plugins
+        gsap.registerPlugin(ScrollTrigger)
+
+        // Get all heading elements you want to animate
+
+        const s1 = document.querySelectorAll('.rock')
+        const s2 = document.querySelectorAll('.ph1')
+        const s3 = document.querySelectorAll('.ph2')
+
+
+        // Set a timeout to delay the animation
+        const timeoutId = setTimeout(() => {
+            // Animate each letter into view
+            gsap.to(s1, {
+                y: -80,
+                scrollTrigger: {
+                    trigger: ".rock",
+                    start: 'top 90%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 50%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    // markers:true
+
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+
+            gsap.to(s2, {
+
+                x: -100,
+                scrollTrigger: {
+                    trigger: ".rock",
+                    start: 'top 90%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 50%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    // markers: true
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+
+
+            gsap.to(s3, {
+                y: 60,
+
+                scrollTrigger: {
+                    trigger: ".rock",
+                    start: 'top 90%', // Start when the top of the container reaches 75% of the viewport
+                    end: 'bottom 50%', // End when the bottom of the container reaches 25% of the viewport
+                    scrub: 1, // Smooth scrubbing
+                    // markers: true
+                },
+                duration: 0.5,
+                stagger: 0.1, // Stagger animation by 0.1 seconds for each letter
+                ease: 'power2.out',
+            })
+
+
+        }, 300) // Delay of 300ms
+
+        return () => clearTimeout(timeoutId) // Cleanup timeout on component unmount
+    }, [])
+
+
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] text-white lg:pt-16">
             <Slider />
@@ -262,13 +333,46 @@ const JoinUs: React.FC = () => {
                     </div>
                 </div>
 
-                <Image
+                {/* <Image
+                
+        
                     src="/images/home/join-us/three-steps-bg.png"
                     alt="Three steps"
                     height={800}
                     width={imageWidth}
-                />
+                /> */}
 
+<Image
+                            data-aos="fade-up"
+                            className='translate-y-6 lg:hidden flex'
+                            src="/images/home/join-us/three-steps-bg.png"
+                            alt="All in one agency"
+                            width={4000}
+                            height={4000}
+                        />
+
+                <Image
+                    className='rock lg:flex hidden'
+                    src="/images/home/join-us/rock.png"
+                    alt="Three steps"
+                    height={800}
+                    width={imageWidth}
+                />
+                <Image
+                    className='ph1 absolute left-16 lg:flex hidden top-80 h-[450px] w-96'
+                    src="/images/home/join-us/ph1.png"
+                    alt="Three steps"
+                    height={1000}
+                    width={imageWidth}
+                />
+                <Image
+                    className='ph2 absolute top-1 lg:flex hidden left-[450px] h-[450px] w-80'
+                    src="/images/home/join-us/ph2.png"
+                    alt="Three steps"
+                    height={1000}
+                    width={imageWidth}
+                />
+              
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
                     <div
                         className={`hidden flex-col items-start gap-4 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-1/2'}`}
@@ -355,7 +459,7 @@ const JoinUs: React.FC = () => {
 }
 
 {
-    ;<style jsx>{`
+    ; <style jsx>{`
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
         }
