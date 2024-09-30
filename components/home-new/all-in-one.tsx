@@ -159,7 +159,7 @@ const AllInOne = () => {
     }, [])
 
     return (
-        <div className="bg-gradient-to-b from-[#e8e8e6] to-[#4c4a4b]">
+        <div className="bg-[url('/images/home/all-in-one/all-in-one-bg.png')] bg-cover bg-center">
             <div className="lg:min-h-[60vh]">
                 <FeaturesCarousel
                     bgColor="bg-[#CAFF00]"

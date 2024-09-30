@@ -77,7 +77,6 @@ export default function Menu() {
                         className=" text-base font-medium text-white hover:text-white"
                     >
                         EN
-                        Value
                     </button>
                     <ArrowDown />
                 </DropdownMenuTrigger>

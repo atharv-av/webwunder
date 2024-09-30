@@ -18,7 +18,7 @@ const PortfolioLanding = () => {
     }, [])
     return (
         <div className="bg-white lg:p-4">
-            <div className="bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl lg:p-0">
+            <div className="bg-[url('/images/portfolio/portfolio-bg.png')] bg-center bg-cover lg:rounded-2xl lg:p-0">
                 <div className="relative z-10">
                     <Header />
                 </div>
