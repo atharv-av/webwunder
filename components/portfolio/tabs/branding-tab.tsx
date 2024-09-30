@@ -161,7 +161,7 @@ const BrandingTab = () => {
         },
     ]
     return (
-        <div className="flex scale-100 flex-wrap items-center justify-center gap-4 px-2 lg:mt-12 lg:scale-[85%] xl:max-w-[78rem] 2xl:mt-10 2xl:scale-100">
+        <div className="flex scale-100 flex-wrap items-center justify-center lg:gap-6 lg:mt-12 lg:scale-[85%] xl:max-w-[78rem] 2xl:mt-10 2xl:scale-100">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}
@@ -174,6 +174,7 @@ const BrandingTab = () => {
                     bgGradient={item.bgGradient}
                     bgProps={item.bgProps}
                     isBtnVisible={true}
+                    isGradient={true}
                 />
             ))}
         </div>

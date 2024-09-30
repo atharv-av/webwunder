@@ -9,9 +9,9 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from '@/components/ui/accordion'
-import {languageData} from '@/langauge'
-import axios from 'axios';
-
+import { languageData } from '@/langauge'
+import axios from 'axios'
+import Link from 'next/link'
 
 const FAQs = () => {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
@@ -24,7 +24,7 @@ const FAQs = () => {
             }
         }
     }, [])
-      const faqData = languageData?.faqPage?.[changeLanguage]?.questions   
+    const faqData = languageData?.faqPage?.[changeLanguage]?.questions
     //    [
     //     {
     //         question:
@@ -64,49 +64,53 @@ const FAQs = () => {
     //     },
     // ]
     return (
-        <div className="flex items-center justify-center bg-black">
-            <div className="flex lg:flex-row flex-col lg:w-4/5 2xl:w-[1450px] lg:items-start items-center justify-between bg-black">
-                <div className="lg:mt-20 mt-10 flex flex-col lg:items-start items-center justify-start gap-4">
+        <div id='faqs' className="flex items-center justify-center bg-black">
+            <div className="flex flex-col items-center justify-between bg-black lg:w-4/5 lg:flex-row lg:items-start 2xl:w-[1450px]">
+                <div className="mt-10 flex flex-col items-center justify-start gap-4 lg:mt-20 lg:items-start">
                     <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
                         {/* Frequently Asked Questions */}
                         {languageData?.faqPage?.[changeLanguage]?.title}
                     </Badge>
-                    <p className="font-archivo leading-none lg:leading-normal lg:text-[45px] text-[25px] font-bold text-white">
+                    <p className="font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px] lg:leading-normal">
                         {/* Got Questions? */}
                         {languageData?.faqPage?.[changeLanguage]?.subtitle}
                     </p>
-                    <p className="font-archivo leading-none lg:leading-normal lg:text-[26px] text-lg font-bold text-white">
-                    {languageData?.faqPage?.[changeLanguage]?.description}
+                    <p className="font-archivo text-lg font-bold leading-none text-white lg:text-[26px] lg:leading-normal">
+                        {languageData?.faqPage?.[changeLanguage]?.description}
                     </p>
-                    <p className="font-archivo leading-none lg:leading-normal lg:text-base text-sm font-normal text-gray-300">
-                    {languageData?.faqPage?.[changeLanguage]?.description2}
+                    <p className="font-archivo text-sm font-normal leading-none text-gray-300 lg:text-base lg:leading-normal">
+                        {languageData?.faqPage?.[changeLanguage]?.description2}
                     </p>
-                    <Button
-                        size={'base'}
-                        className="md:flex hidden hover:scale-95 transition-all  items-center justify-between gap-3 bg-white"
-                    >
-                        <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                        {languageData?.faqPage?.[changeLanguage]?.bookCall}
-
-                        </p>
-                        <ArrowRight size={15} className="text-[#24252A]" />
-                    </Button>
+                    <Link href="https://tidycal.com/skylumina/webwunder">
+                        <Button
+                            size={'base'}
+                            className="hidden items-center justify-between gap-3 bg-white transition-all hover:scale-95 md:flex"
+                        >
+                            <p className="font-archivo text-[15px] font-medium text-[#24252A]">
+                                {
+                                    languageData?.faqPage?.[changeLanguage]
+                                        ?.bookCall
+                                }
+                            </p>
+                            <ArrowRight size={15} className="text-[#24252A]" />
+                        </Button>
+                    </Link>
                 </div>
                 <Accordion
                     type="single"
                     collapsible
-                    className="md:mt-20 mt-10 lg:w-3/5 w-screen space-y-2"
+                    className="mt-10 w-screen space-y-2 md:mt-20 lg:w-3/5"
                 >
                     {faqData.map((faq, index) => (
                         <AccordionItem
                             key={`item-${index + 1}`}
                             value={`item-${index + 1}`}
-                            className="overflow-hidden  border mx-1 border-gray-200  rounded-lg border-transparent data-[state=open]:border-white/20"
+                            className="mx-1 overflow-hidden rounded-lg border border-gray-200 border-transparent data-[state=open]:border-white/20"
                         >
-                            <AccordionTrigger className="px-4 py-2 text-left w-4/5 font-archivo lg:text-xl text-base font-bold text-white hover:no-underline">
-                                {faq.question}  
+                            <AccordionTrigger className="w-4/5 px-4 py-2 text-left font-archivo text-base font-bold text-white hover:no-underline lg:text-xl">
+                                {faq.question}
                             </AccordionTrigger>
-                            <AccordionContent className="px-4  py-2  flex justify-center  mx-2 w-full items-center rounded-lg font-archivo text-sm font-normal text-white/50">
+                            <AccordionContent className="mx-2 flex w-full items-center justify-center rounded-lg px-4 py-2 font-archivo text-sm font-normal text-white/50">
                                 {faq.answer}
                             </AccordionContent>
                         </AccordionItem>

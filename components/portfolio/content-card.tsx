@@ -20,6 +20,7 @@ interface PortfolioProps {
     bgGradient?: string
     bgProps?: string
     isBtnVisible: boolean
+    isGradient?: boolean
 }
 
 const ContentCard: React.FC<PortfolioProps> = ({
@@ -32,49 +33,54 @@ const ContentCard: React.FC<PortfolioProps> = ({
     bgGradient,
     bgProps,
     isBtnVisible,
+    isGradient,
 }) => {
     return (
         <Card
-            className={`${width}  relative my-4 h-[400px] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[600px]`}
+            className={`${width} relative my-4 h-[400px] overflow-hidden rounded-3xl border-none outline-none transition-all hover:shadow-lg lg:my-0 lg:h-[600px]`}
             style={{
-                background: `linear-gradient(to bottom, ${bgColor}, black)`,
+                background: isGradient
+                    ? `linear-gradient(to bottom, ${bgColor}, black)`
+                    : `${bgColor}`,
             }}
         >
-            <div className={`absolute  inset-0 z-10 ${bgGradient}`} />
+            {isGradient && (
+                <div className={`absolute inset-0 z-10 ${bgGradient}`} />
+            )}
             <div
                 className={`absolute inset-0 flex w-full items-end ${bgProps}`}
                 style={{ backgroundImage: `url(${img})` }}
             />
-                <div className="flex flex-col items-start absolute bottom-0 gap-3 p-10">
-                    <div className="z-10 flex flex-wrap gap-2">
-                        {tags &&
-                            tags.map((tag, index) => (
-                                <Badge
-                                    key={index}
-                                    className={`${tag.tagColor} py-1 px-2 font-inter text-[10px] font-bold text-black lg:p-2`}
-                                >
-                                    {tag.tagName}
-                                </Badge>
-                            ))}
-                    </div>
-                    <p className="z-10 font-archivo text-[30px] font-bold leading-none text-white lg:text-[40px]">
-                        {title}
-                    </p>
-                    {isBtnVisible && (
-                        <button className="z-20 flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
-                            <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                                View Project
-                            </p>
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
-                                <ArrowRight
-                                    size={18}
-                                    fontWeight={100}
-                                    className="text-[#24252A]"
-                                />
-                            </div>
-                        </button>
-                    )}
+            <div className="absolute bottom-0 flex flex-col items-start gap-3 p-10">
+                <div className="z-10 flex flex-wrap gap-2">
+                    {tags &&
+                        tags.map((tag, index) => (
+                            <Badge
+                                key={index}
+                                className={`${tag.tagColor} px-2 py-1 font-inter text-[10px] font-bold text-black lg:p-2`}
+                            >
+                                {tag.tagName}
+                            </Badge>
+                        ))}
                 </div>
+                <p className="z-10 font-archivo text-[30px] font-bold leading-none text-white lg:text-[40px]">
+                    {title}
+                </p>
+                {isBtnVisible && (
+                    <button className="z-20 flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2">
+                        <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                            View Project
+                        </p>
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-white lg:h-8 lg:w-8">
+                            <ArrowRight
+                                size={18}
+                                fontWeight={100}
+                                className="text-[#24252A]"
+                            />
+                        </div>
+                    </button>
+                )}
+            </div>
             {/* </div> */}
         </Card>
     )

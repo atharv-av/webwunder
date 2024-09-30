@@ -137,7 +137,7 @@ const OurPortfolio = () => {
     }, [])
 
     return (
-        <div className="-mt-4 flex flex-col items-center gap-4 bg-black px-4 lg:mt-auto lg:px-0">
+        <div id='our-portfolio' className="-mt-4 flex flex-col items-center gap-4 bg-black px-4 lg:mt-auto lg:px-0">
             <Badge
                 data-aos="fade-up"
                 className="mt-20 bg-[#5D59E1] font-archivo text-sm font-normal"
@@ -159,7 +159,7 @@ const OurPortfolio = () => {
                     </div>
                 ))}
             </div>
-            <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 2xl:w-[1450px] 2xl:gap-y-9">
+            <div className="mt-8 2xl:mt-12 grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-4 2xl:w-[1450px] 2xl:gap-y-9">
                 {galleryImages.map((image, index) => (
                     <motion.div
                         key={index}
@@ -188,7 +188,7 @@ const OurPortfolio = () => {
                     </motion.div>
                 ))}
             </div>
-            <div className="flex flex-col items-center gap-2 px-1 lg:px-8 lg:max-w-6xl lg:items-start xl:max-w-6xl 2xl:max-w-[1500px] lg:mt-6">
+            <div className="flex flex-col items-center gap-2 px-1 lg:px-8 lg:max-w-6xl lg:items-start xl:max-w-6xl 2xl:max-w-[1500px] lg:mt-6 2xl:mt-9">
                 <p className="text-center font-archivo text-lg font-bold text-white lg:text-start lg:text-[26px]">
                     {/* Built for Entrepreneurs Like You */}
                     {languageData?.userPortfolio?.[changeLanguage]?.description}
@@ -200,7 +200,7 @@ const OurPortfolio = () => {
                     <div className="mt-5 lg:mt-0 flex items-start justify-center">
                         <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
                             <Link
-                                href="#"
+                                href="https://tidycal.com/skylumina/webwunder"
                                 className="flex flex-row items-center justify-between gap-4"
                             >
                                 <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">

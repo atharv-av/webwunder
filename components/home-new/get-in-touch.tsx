@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import { languageData } from '@/langauge'
 import Link from 'next/link'
 const GetInTouch = () => {
-       const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -35,7 +35,7 @@ const GetInTouch = () => {
                 >
                     {languageData?.faqPage?.[changeLanguage]?.contactCta}
                 </Badge>
-                <h2 className=" font-archivo leading-none text-[25px] font-bold text-white lg:text-[45px]">
+                <h2 className="font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px]">
                     {/* Leave the Competition Behind! */}
                     {languageData?.faqPage?.[changeLanguage]?.contactTitle}
                 </h2>
@@ -45,27 +45,27 @@ const GetInTouch = () => {
                             ?.contactDescription
                     }
                 </p>
-                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] md:p-2 px-2 py-1 transition-all hover:scale-95">
-                        <Link
-                            href="#"
-                            className="flex flex-row items-center justify-between gap-4"
-                        >
-                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
-                                {
-                                    languageData?.additionalSection?.[
-                                        changeLanguage
-                                    ]?.bookCall
-                                }
-                            </p>
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
-                                <ArrowRight
-                                    size={18}
-                                    fontWeight={100}
-                                    className="text-[#24252A]"
-                                />
-                            </div>
-                        </Link>
-                    </button>
+                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] px-2 py-1 transition-all hover:scale-95 md:p-2">
+                    <Link
+                        href="https://www.figma.com/exit?url=https%3A%2F%2Ftidycal.com%2Fskylumina%2Fwebwunder"
+                        className="flex flex-row items-center justify-between gap-4"
+                    >
+                        <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                            {
+                                languageData?.additionalSection?.[
+                                    changeLanguage
+                                ]?.bookCall
+                            }
+                        </p>
+                        <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                            <ArrowRight
+                                size={18}
+                                fontWeight={100}
+                                className="text-[#24252A]"
+                            />
+                        </div>
+                    </Link>
+                </button>
             </div>
         </div>
     )

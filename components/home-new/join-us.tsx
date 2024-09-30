@@ -262,7 +262,7 @@ const JoinUs: React.FC = () => {
 
 
     return (
-        <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] text-white lg:pt-16">
+        <div id='join-us' className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] text-white lg:pt-16">
             <Slider />
             <div className="-mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:gap-20 2xl:gap-0 2xl:px-28">
                 <div className="flex flex-col items-center gap-4 lg:hidden">

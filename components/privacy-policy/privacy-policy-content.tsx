@@ -24,7 +24,7 @@ const PolicySection: React.FC<policyProps> = ({
                 <p className="text-white/50">{content.text}</p>
                 <p className="mt-2 text-white/50">{content.company}</p>
                 <p className="text-white/50">{content.address}</p>
-                <p>
+                <p className='text-white/50'>
                     Email:{' '}
                     <a
                         href={`mailto:${content.email}`}
@@ -56,7 +56,7 @@ const PrivacyPolicyContent = () => {
     }, [])
 
     return (
-        <div className="px-20 py-8">
+        <div className="lg:px-20 px-6 py-8">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 {languageData?.policySections?.[changeLanguage].map(
                     (section, index) => (

@@ -259,7 +259,7 @@ const WebDesignTab = () => {
         },
     ]
     return (
-        <div className="flex scale-100 flex-wrap items-center justify-center gap-4 px-2 lg:scale-[85%] xl:max-w-[78rem] 2xl:scale-100">
+        <div className="flex scale-100 flex-wrap items-center justify-center lg:gap-6 lg:scale-[85%] xl:max-w-[78rem] 2xl:scale-100">
             {tabItems.map((item, index) => (
                 <ContentCard
                     key={index}
@@ -272,6 +272,7 @@ const WebDesignTab = () => {
                     bgGradient={item.bgGradient}
                     bgProps={item.bgProps}
                     isBtnVisible={true}
+                    isGradient={true}
                 />
             ))}
         </div>

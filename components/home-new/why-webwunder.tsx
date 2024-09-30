@@ -244,49 +244,53 @@ const WhyWebWunder = () => {
 
                 {/* Buttons */}
                 <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                    <button
-                        className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
-                    >
-                        <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                            {
-                                languageData?.additionalSection?.[
-                                    changeLanguage
-                                ]?.explorePlans
-                            }
-                        </p>
-                        <div
-                            className={`flex ${changeLanguage === 'de' ? 'h-8 w-10' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                    <Link href="#purchase-plans">
+                        <button
+                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
                         >
-                            <ArrowRight
-                                size={18}
-                                fontWeight={100}
-                                className="text-[#24252A]"
-                            />
-                        </div>
-                    </button>
-                    <button
-                        className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
-                    >
-                        <Link
-                            href="#"
-                            className="flex flex-row items-center justify-between gap-4"
-                        >
-                            <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                            <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 {
                                     languageData?.additionalSection?.[
                                         changeLanguage
-                                    ]?.bookCall
+                                    ]?.explorePlans
                                 }
                             </p>
-                            <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                            <div
+                                className={`flex ${changeLanguage === 'de' ? 'h-8 w-10' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                            >
                                 <ArrowRight
                                     size={18}
                                     fontWeight={100}
                                     className="text-[#24252A]"
                                 />
                             </div>
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
+                    <Link href="https://tidycal.com/skylumina/webwunder">
+                        <button
+                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
+                        >
+                            <Link
+                                href="#"
+                                className="flex flex-row items-center justify-between gap-4"
+                            >
+                                <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
+                                    {
+                                        languageData?.additionalSection?.[
+                                            changeLanguage
+                                        ]?.bookCall
+                                    }
+                                </p>
+                                <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">
+                                    <ArrowRight
+                                        size={18}
+                                        fontWeight={100}
+                                        className="text-[#24252A]"
+                                    />
+                                </div>
+                            </Link>
+                        </button>
+                    </Link>
                 </div>
             </div>
 
@@ -343,7 +347,7 @@ const WhyWebWunder = () => {
                 ) : (
                     <div className="flex flex-wrap justify-center gap-16 lg:gap-4">
                         {/* First row - 2 items */}
-                        <div className="flex h-full w-full flex-wrap justify-center xl:gap-6 gap-16 lg:gap-4">
+                        <div className="flex h-full w-full flex-wrap justify-center gap-16 lg:gap-4 xl:gap-6">
                             {mainItems.slice(0, 2).map((item, index) => (
                                 <div key={index} className="upperdiv trig">
                                     <MainCard
@@ -357,7 +361,7 @@ const WhyWebWunder = () => {
                             ))}
                         </div>
                         {/* Second row - 3 items */}
-                        <div className="flex xl:gap-4 w-full flex-wrap justify-center gap-6 lg:gap-4">
+                        <div className="flex w-full flex-wrap justify-center gap-6 lg:gap-4 xl:gap-4">
                             {mainItems.slice(2).map((item, index) => (
                                 <div
                                     key={index}
