@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import { paths } from '@/paths'
 import { createPortal } from 'react-dom'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 function useAnimation(isShown: boolean, menuSection: HTMLElement | null) {
     const [scope, animate] = useAnimate()
@@ -67,9 +68,15 @@ export default function SidebarMenu() {
     }, [])
     return (
         <div className="flex cursor-pointer p-0 pe-0 z-50 lg:hidden">
-            <div className="flex justify-center pt-3 items-center" onClick={() => setShown(true)}>
+            <div className="flex justify-center items-center" onClick={() => setShown(true)}>
                 <div className="rounded-lg">
-                    {/* <Menu02SVG className="text-3xl text-darkbtn-foreground" /> */}
+                    <Image
+                    className='w-5'
+                   src="/menu.svg"
+                    alt="emnu"
+                    width={4000}
+                    height={4000}
+                    />
                 </div>
             </div>
             {menuSection
