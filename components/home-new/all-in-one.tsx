@@ -167,7 +167,7 @@ const AllInOne = () => {
                         className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4"
                         ref={textSectionRef}
                     >
-                        <div className="lg:translate-y-20 lg:pt-12 2xl:translate-y-0">
+                        <div className=" 2xl:translate-y-0">
                             <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                                 {
                                     languageData?.allInOnePage?.[changeLanguage]
@@ -176,7 +176,7 @@ const AllInOne = () => {
                             </Badge>
                         </div>
 
-                        <div className="animated-text2 flex flex-col items-center leading-none lg:translate-y-20 2xl:translate-y-0">
+                        <div className="animated-text2 flex flex-col items-center leading-none 2xl:translate-y-0">
                             <p className="animated-text-1 w-4/5 text-center font-archivo text-[25px] font-bold leading-none text-black lg:w-3/5 lg:text-[45px]">
                                 {
                                     languageData?.allInOnePage?.[changeLanguage]
@@ -185,14 +185,14 @@ const AllInOne = () => {
                             </p>
                         </div>
 
-                        <p className="px-4 text-center font-archivo text-sm font-normal text-black lg:w-[65%] lg:translate-y-20 lg:text-base 2xl:translate-y-0">
+                        <p className="px-4 text-center font-archivo text-sm font-normal text-black lg:w-[65%] lg:text-base 2xl:translate-y-0">
                             {
                                 languageData?.allInOnePage?.[changeLanguage]
                                     ?.description
                             }{' '}
                         </p>
 
-                        <div className="flex items-center justify-center gap-3 sm:gap-5 lg:translate-y-20 2xl:translate-y-0">
+                        <div className="flex items-center justify-center gap-3 sm:gap-5 2xl:translate-y-0">
                             <Link href="#purchase-plans">
                                 <button
                                     className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}

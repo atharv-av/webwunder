@@ -266,21 +266,21 @@ export const languageData = {
                         title: 'Book a Call',
                         description:
                             'A quick 15-minute chat to understand your needs and pick the perfect plan.',
-                        time: ' 15 minutes.',
+                        time: ' Time commitment: 15 minutes.',
                     },
                     {
                         step: 'Step 2',
                         title: 'Design & Content',
                         description:
                             'Share your ideas or let us help develop them. We’ll handle everything and send it for your final approval.',
-                        time: ' 15 minutes.',
+                        time: ' Time commitment: 15 minutes.',
                     },
                     {
                         step: 'Step 3',
                         title: 'Launch Website',
                         description:
                             'We’ll execute your vision and take your website live, ready to dominate the market.',
-                        time: ' 15 minutes.',
+                        time: ' Time commitment: 15 minutes.',
                     },
                 ],
             },
@@ -411,6 +411,7 @@ export const languageData = {
                         'Professional copywriting and branding',
                         'One monthly design task',
                         'Design refresh every 36 months',
+                        'Cancel anytime'
                     ],
                 },
                 {
@@ -427,6 +428,7 @@ export const languageData = {
                         'Design refresh every 36 months',
                         'Two design tasks per month for enhanced flexibility',
                         'More extensive site capabilities to support your business growth',
+                        'Cancel anytime'
                     ],
                 },
                 {
@@ -447,6 +449,7 @@ export const languageData = {
                         'Three design tasks per month for continuous creativity',
                         'Social media posting and management support',
                         'Extra time dedicated monthly to your project for top-tier performance',
+                        'Cancel anytime'
                     ],
                 },
                 {
@@ -461,6 +464,7 @@ export const languageData = {
                         'Support for multiple brands',
                         'Full ownership of all designs',
                         'Exclusive, top-priority service',
+                        'Cancel anytime'
                     ],
                 },
             ],

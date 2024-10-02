@@ -68,7 +68,7 @@ export default function SidebarMenu() {
                                     <button onClick={closeMenu} className="text-2xl">&times;</button>
                                 </div>
                                 <nav className="flex-grow text-center">
-                                    <ul className="space-y-4 text-xl">
+                                    <ul className="space-y-3 text-xl">
                                         {menuItems.map((item) => (
                                             <li key={item}>
                                                 <Link href="#" className="block py-2">
@@ -89,7 +89,7 @@ export default function SidebarMenu() {
                                         ))}
                                     </div>
                                     <p className="font-semibold text-zinc-500 mb-2">Follow us</p>
-                                    <div className="flex flex-wrap text-center justify-center items-center gap-2 text-sm">
+                                    <div className="flex flex-wrap text-center pb-6 justify-center items-center gap-2 text-sm">
                                         {socialMedia.map((platform, index) => (
                                             <React.Fragment key={platform}>
                                                 <Link href="#">{platform}</Link>

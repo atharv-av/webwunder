@@ -104,12 +104,12 @@ export default function LoginPage() {
     ]
 
     return (
-        <div className="flex min-h-screen flex-col overflow-hidden bg-[url('/images/group.png')] bg-black lg:bg-gradient-to-b from-[#070308] via-[#1D0821] to-[#110513] lg:flex-row">
+        <div className="flex min-h-screen flex-col overflow-hidden bg-[url('/images/group.png')] bg-black lg:flex-row">
             <div className="block md:hidden">
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[50vh] w-full overflow-hidden lg:ml-4 lg:mt-4 lg:h-[97vh] lg:w-[60%]">
+            <div className="relative h-[50vh] rounded-3xl w-full overflow-hidden lg:ml-4 lg:mt-4 lg:h-[97vh] lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -174,7 +174,7 @@ export default function LoginPage() {
             </div>
 
             {/* Right side with form */}
-            <div className={`m-auto  lg:w-[40%] lg:h-[91vh] flex flex-col ${scale} items-center justify-center px-3 py-8 bg-[url('/images/login-bg-main.png')] bg-cover bg-center`}
+            <div className={`m-auto  lg:w-[40%] lg:h-[91vh] flex flex-col ${scale} items-center justify-center px-3 py-8 bg-cover bg-center`}
             //    style={{ backgroundImage: "url('/images/login-bg-main.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}
 
             

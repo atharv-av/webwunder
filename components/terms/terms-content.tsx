@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { languageData } from '@/langauge'
 const TermsContent = () => {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // State for language change
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') 
 
     useEffect(() => {
         const storedLang = localStorage.getItem('lang') as 'de' | 'en'

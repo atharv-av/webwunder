@@ -34,7 +34,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
     return (
         <div
-            className={`flex h-[300px] flex-col items-start justify-between transition-all duration-300 lg:mt-2 lg:h-80 ${
+            className={`flex h-[250px] flex-col items-start justify-between transition-all duration-300 lg:mt-2 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
             } ${bgColor} rounded-3xl p-8`}
             onMouseEnter={onMouseEnter}

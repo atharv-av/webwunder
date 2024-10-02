@@ -79,7 +79,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     </div>
                 </CardHeader>
 
-                <CardContent className="flex-grow space-y-4">
+                <CardContent className="flex-grow space-y-2">
                     <div className="leading-none">
                         <div className="font-inter text-[45px] font-semibold text-white lg:text-[70px]">
                             €{price}
@@ -102,7 +102,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                             {languageData?.paymentsCard?.[changeLanguage]?.whatYouGet}
 
                         </p>
-                        <div className={`space-y-2  ${
+                        <div className={`  ${
                 isCenter
                     ? 'flex flex-col gap-3 leading-2'
                     : ''
@@ -118,7 +118,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                                             className="font-extrabold text-black"
                                         />
                                     </div>
-                                    <span className="my-1 font-inter text-[13px] font-normal leading-none text-white/50 lg:my-0 lg:text-base">
+                                    <span className="font-inter text-[12px] font-light leading-none text-white/50 lg:my-0 lg:text-base">
                                         {feature}
                                     </span>
                                 </div>

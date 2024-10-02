@@ -10,12 +10,12 @@ import axios from 'axios'
 import Link from 'next/link'
 
 const galleryImages = [
-    '/images/home/our-portfolio/our-portfolio-1.png',
-    '/images/home/our-portfolio/our-portfolio-2.png',
-    '/images/home/our-portfolio/our-portfolio-3.png',
-    '/images/home/our-portfolio/our-portfolio-4.png',
-    '/images/home/our-portfolio/our-portfolio-5.png',
-    '/images/home/our-portfolio/our-portfolio-6.png',
+    '/images/home/our-portfolio/p1.jpg',
+    '/images/home/our-portfolio/p7.jpg',
+    '/images/home/our-portfolio/p3.jpg',
+    '/images/home/our-portfolio/p4.jpg',
+    '/images/home/our-portfolio/p5.jpg',
+    '/images/home/our-portfolio/p6.jpg',
 ]
 
 const OurPortfolio = () => {
@@ -180,8 +180,8 @@ const OurPortfolio = () => {
                         <Image
                             src={image}
                             alt="Our Portfolio"
-                            width={4000}
-                            height={4000}
+                            width={500}
+                            height={300}
                             // fill
                             className="rounded-3xl"
                         />

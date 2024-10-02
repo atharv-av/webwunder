@@ -45,15 +45,15 @@ const StayOnTop = () => {
                     height={25}
                 />
             </div>
-            <div className="-mt-36 block scale-50 bg-gradient-to-b from-black via-[#121212] to-[#121212] md:hidden">
+            <div className="-mt-36 block h-full py-6 scale-50 bg-gradient-to-b from-black via-[#121212] to-[#131313] md:hidden">
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="mt-6 hidden bg-gradient-to-b from-black via-[#121212] to-[#121212] md:block lg:pb-20 xl:mb-20">
+            <div className="mt-6 hidden bg-gradient-to-b from-black via-[#121212] to-[#131313] md:block lg:pb-20 xl:mb-20">
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="relative -mt-48 flex w-screen flex-col items-center justify-between gap-12 bg-gradient-to-bl from-[#0D0D0D] to-[#1E1E1E] pt-5 lg:flex-row lg:pt-14 xl:pt-0 2xl:pt-20">
+            <div className="relative -mt-48 flex w-screen flex-col items-center justify-between gap-12 bg-gradient-to-b from-[#131313] to-[#1E1E1E] pt-5 lg:flex-row lg:pt-14 xl:pt-0 2xl:pt-20">
                 <div className="flex flex-col lg:ml-24">
                     <div className="flex max-w-[575px] flex-col items-center justify-center gap-4 p-4 lg:items-start 2xl:relative 2xl:bottom-32 2xl:left-36">
                         <Badge

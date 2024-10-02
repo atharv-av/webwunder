@@ -51,7 +51,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
                     {description}
                 </p>
                 <p className="font-archivo text-sm font-bold text-[#9DFF50]">
-                    Time commitment: {timeCommitment}
+                    {timeCommitment}
                 </p>
             </div>
         </div>
@@ -342,14 +342,14 @@ const JoinUs: React.FC = () => {
                     width={imageWidth}
                 /> */}
 
-<Image
-               
-                            className='translate-y-6 scale-125 pt-6 lg:hidden flex'
-                            src="/images/home/join-us/three-steps-bg.png"
-                            alt="All in one agency"
-                            width={4000}
-                            height={4000}
-                        />
+                <Image
+
+                    className='translate-y-6 scale-125 pt-6 lg:hidden flex'
+                    src="/images/home/join-us/joinusMob.png"
+                    alt="All in one agency"
+                    width={4000}
+                    height={4000}
+                />
 
                 <Image
                     className='rock lg:flex hidden'
@@ -372,7 +372,7 @@ const JoinUs: React.FC = () => {
                     height={1000}
                     width={imageWidth}
                 />
-              
+
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
                     <div
                         className={`hidden flex-col items-start gap-12 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-2/3'}`}
@@ -419,17 +419,17 @@ const JoinUs: React.FC = () => {
                                 title={
                                     languageData?.joinUsSection?.[
                                         changeLanguage
-                                    ]?.steps?.steps[0]?.title
+                                    ]?.steps?.steps[1]?.title
                                 }
                                 description={
                                     languageData?.joinUsSection?.[
                                         changeLanguage
-                                    ]?.steps?.steps[0]?.description
+                                    ]?.steps?.steps[1]?.description
                                 }
                                 timeCommitment={
                                     languageData?.joinUsSection?.[
                                         changeLanguage
-                                    ]?.steps?.steps[0]?.time
+                                    ]?.steps?.steps[1]?.time
                                 }
                             />
                             <TimelineStep
@@ -437,17 +437,17 @@ const JoinUs: React.FC = () => {
                                 title={
                                     languageData?.joinUsSection?.[
                                         changeLanguage
-                                    ]?.steps?.steps[0]?.title
+                                    ]?.steps?.steps[2]?.title
                                 }
                                 description={
                                     languageData?.joinUsSection?.[
                                         changeLanguage
-                                    ]?.steps?.steps[0]?.description
+                                    ]?.steps?.steps[2]?.description
                                 }
                                 timeCommitment={
                                     languageData?.joinUsSection?.[
                                         changeLanguage
-                                    ]?.steps?.steps[0]?.time
+                                    ]?.steps?.steps[2]?.time
                                 }
                             />
                         </div>

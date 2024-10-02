@@ -112,7 +112,7 @@ export default function SignupPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative lg:ml-4 lg:mt-4 h-[60vh] w-full overflow-hidden lg:h-[97vh] lg:w-[60%]">
+            <div className="relative rounded-3xl lg:ml-4 lg:mt-4 h-[60vh] w-full overflow-hidden lg:h-[97vh] lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
