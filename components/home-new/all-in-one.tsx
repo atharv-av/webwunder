@@ -159,7 +159,7 @@ const AllInOne = () => {
     }, [])
 
     return (
-        <div className="bg-gradient-to-b from-[#e8e8e6] to-[#4c4a4b]">
+        <div className="bg-gradient-to-b from-[#eeefee] to-[#727272]">
             <div className="lg:min-h-[60vh]">
                 <FeaturesCarousel
                     bgColor="bg-[#CAFF00]"
@@ -172,7 +172,7 @@ const AllInOne = () => {
                         className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4"
                         ref={textSectionRef}
                     >
-                        <div className="lg:translate-y-20 2xl:translate-y-0">
+                        <div className="lg:translate-y-20 lg:pt-12 2xl:translate-y-0">
                             <Badge
 
                                 className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
@@ -280,8 +280,7 @@ const AllInOne = () => {
                     </div>
 
                     <Image
-                            data-aos="fade-up"
-                            className='translate-y-6 lg:hidden flex'
+                            className='-translate-y-6 pt-16 scale-[1.30] lg:hidden flex'
                             src="/images/home/all-in-one/allInOne.png"
                             alt="All in one agency"
                             width={4000}

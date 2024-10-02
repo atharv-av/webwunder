@@ -130,7 +130,7 @@ const New_Homepage = () => {
                             }
                             {/* {splitText("Winning")} {"  "}{splitText("Websites")} */}
                         </p>
-                        <p className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-6xl">
+                        <p className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-5xl">
                             {
                                 languageData?.heroSection?.[changeLanguage]
                                     ?.subHeadline
@@ -141,7 +141,7 @@ const New_Homepage = () => {
                     <div>
                         <p
                             data-aos="fade-up"
-                            className="text-center font-archivo text-base font-bold text-white lg:text-lg"
+                            className="text-center font-archivo text-sm font-bold text-white lg:text-lg"
                         >
                             {/* Websites by Entrepreneurs for Entrepreneurs */}
                             {
@@ -151,7 +151,7 @@ const New_Homepage = () => {
                         </p>
                         <p
                             data-aos="fade-up"
-                            className="text-center font-archivo text-sm font-normal text-white lg:text-base"
+                            className="text-center font-archivo text-sm  font-normal text-white lg:text-base"
                         >
                             {
                                 languageData?.heroSection?.[changeLanguage]
@@ -205,7 +205,7 @@ const New_Homepage = () => {
                             </Link>
                         </button>
                     </div>
-                    <p className="toptrigger relative mb-6 text-center font-archivo text-base font-bold text-white sm:top-3 lg:text-xl">
+                    <p className="toptrigger relative mb-6 text-center font-archivo text-sm font-bold text-white sm:top-3 lg:text-xl">
                         {/* Hundreds of perfect projects delivered to hundreds of
                         thrilled customers. */}
                         {

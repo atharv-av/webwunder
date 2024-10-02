@@ -225,7 +225,7 @@ const JoinUs: React.FC = () => {
 
             gsap.to(s2, {
 
-                x: -100,
+                x: 100,
                 scrollTrigger: {
                     trigger: ".rock",
                     start: 'top 90%', // Start when the top of the container reaches 75% of the viewport
@@ -264,7 +264,7 @@ const JoinUs: React.FC = () => {
     return (
         <div className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] text-white lg:pt-16">
             <Slider />
-            <div className="-mt-20 flex w-full scale-90 flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:gap-20 2xl:gap-0 2xl:px-28">
+            <div className="-mt-20 flex w-full scale-75 flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:gap-20 2xl:gap-0 2xl:px-28">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                         {
@@ -359,14 +359,14 @@ const JoinUs: React.FC = () => {
                     width={imageWidth}
                 />
                 <Image
-                    className='ph1 absolute left-16 lg:flex hidden top-80 h-[450px] w-96'
+                    className='ph1 absolute left-8 lg:flex hidden top-80 h-[450px] w-96'
                     src="/images/home/join-us/ph1.png"
                     alt="Three steps"
                     height={1000}
                     width={imageWidth}
                 />
                 <Image
-                    className='ph2 absolute top-1 lg:flex hidden left-[450px] h-[450px] w-80'
+                    className='ph2 absolute top-1 lg:flex hidden left-[400px] h-[450px] w-80'
                     src="/images/home/join-us/ph2.png"
                     alt="Three steps"
                     height={1000}

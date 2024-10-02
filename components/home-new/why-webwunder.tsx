@@ -202,10 +202,10 @@ const WhyWebWunder = () => {
         }
     }, [])
     return (
-        <div className="mt-80 flex flex-col items-center justify-center gap-6 px-4 lg:my-10 2xl:-mb-1">
+        <div className="mt-80 flex flex-col items-center justify-center gap-6 px-4 lg:my-10 2xl:mb-16">
             {/* Heading */}
             <div className="flex flex-col items-center gap-4 text-center">
-                <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal text-white">
+                <Badge className="w-fit mt-12 bg-[#5D59E1] font-archivo text-sm font-normal text-white">
                     {
                         languageData?.additionalSection?.[changeLanguage]
                             ?.designedToDominate

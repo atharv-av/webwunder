@@ -275,7 +275,7 @@ const PurchasePlans: React.FC = () => {
         
         <div className="flex -mt-14 h-fit flex-col items-center justify-center gap-10 bg-black">
             <div className="flex w-5/6 flex-col items-center">
-                <Badge className="bg-[#5D59E1] font-archivo text-sm font-normal">
+                <Badge className="bg-[#5D59E1] lg:mt-12 font-archivo text-sm font-normal">
                     {/* Market-Conquering Business Solutions */}
                     {languageData?.paymentsCard?.[changeLanguage]?.headline}
                 </Badge>

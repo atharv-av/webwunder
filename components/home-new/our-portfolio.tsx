@@ -180,8 +180,8 @@ const OurPortfolio = () => {
                         <Image
                             src={image}
                             alt="Our Portfolio"
-                            width={isVeryLargeScreen ? 450 : 350}
-                            height={isVeryLargeScreen ? 450 : 350}
+                            width={4000}
+                            height={4000}
                             // fill
                             className="rounded-3xl"
                         />
