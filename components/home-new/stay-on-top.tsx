@@ -53,9 +53,9 @@ const StayOnTop = () => {
                 <HeroCardsRight />
                 <HeroCardsLeft />
             </div>
-            <div className="relative -mt-44 flex flex-col items-center justify-between gap-12 bg-gradient-to-bl from-[#0D0D0D] to-[#1E1E1E] pt-5 lg:flex-row lg:pt-14 xl:pt-0 2xl:pt-20">
+            <div className="relative -mt-48 flex w-screen flex-col items-center justify-between gap-12 bg-gradient-to-bl from-[#0D0D0D] to-[#1E1E1E] pt-5 lg:flex-row lg:pt-14 xl:pt-0 2xl:pt-20">
                 <div className="flex flex-col lg:ml-24">
-                    <div className="flex max-w-[575px] flex-col items-center justify-center gap-4 p-4 lg:items-start">
+                    <div className="flex max-w-[575px] flex-col items-center justify-center gap-4 p-4 lg:items-start 2xl:relative 2xl:bottom-32 2xl:left-36">
                         <Badge
                             data-aos="fade-up"
                             className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal"
@@ -73,7 +73,7 @@ const StayOnTop = () => {
                                     ?.title
                             }
                         </p>
-                        <p className="w-11/12 text-left font-archivo text-[13px] font-normal text-white/50 lg:w-auto lg:text-start lg:text-base">
+                        <p className="w-11/12 text-left font-archivo text-[13px] font-normal text-white/50 lg:w-auto lg:text-start text-center lg:text-base">
                             {/* We&apos;ve created the Unlimited Design Package for
                             businesses that just can&apos;t get enough of our
                             exceptional design work. With limited spots
@@ -86,33 +86,35 @@ const StayOnTop = () => {
                             }
                         </p>
                         <div className="my-4 flex items-center justify-start gap-2 lg:my-2 lg:gap-3">
-                            <button
-                                className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
-                            >
-                                <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                                    {/* See Plans */}
-                                    {
-                                        languageData?.unlimitedDesign?.[
-                                            changeLanguage
-                                        ]?.seePlans
-                                    }
-                                </p>
-                                <div
-                                    className={`flex ${changeLanguage === 'de' ? 'h-8 w-8' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                            <Link href="#purchase-plans">
+                                <button
+                                    className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
                                 >
-                                    <ArrowRight
-                                        size={18}
-                                        fontWeight={100}
-                                        className="text-[#24252A]"
-                                    />
-                                </div>
-                            </button>
+                                    <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                                        {/* See Plans */}
+                                        {
+                                            languageData?.unlimitedDesign?.[
+                                                changeLanguage
+                                            ]?.seePlans
+                                        }
+                                    </p>
+                                    <div
+                                        className={`flex ${changeLanguage === 'de' ? 'h-8 w-8' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                                    >
+                                        <ArrowRight
+                                            size={18}
+                                            fontWeight={100}
+                                            className="text-[#24252A]"
+                                        />
+                                    </div>
+                                </button>
+                            </Link>
 
                             <button
                                 className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
                             >
                                 <Link
-                                    href="#"
+                                    href="https://tidycal.com/skylumina/webwunder"
                                     className="flex flex-row items-center justify-between gap-4"
                                 >
                                     <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">

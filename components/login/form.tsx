@@ -179,15 +179,15 @@ export default function LoginPage() {
 
             
              >
-                <div className="z-10 w-full max-w-lg space-y-2 lg:min-w-[30rem]">
+                <div className="z-10 w-full max-w-lg lg:space-y-4 space-y-10 lg:min-w-[30rem]">
                     <div className={`space-y-2 lg:ml-0 mx-auto lg:text-left ${changeLanguage === 'de' ? 'ml-8' : 'ml-0'}`}>
-                        <h2 className={`font-archivo leading-none text-[45px] lg:w-full ${changeLanguage === 'de' ? 'w-3/4' : 'w-full'} font-bold text-white`}>
+                        <h2 className={`font-archivo lg:text-start text-center leading-none text-[45px] lg:w-full ${changeLanguage === 'de' ? 'w-3/4' : 'w-full'} font-bold text-white`}>
                             {
                                 languageData?.loginPage?.[changeLanguage]
                                     ?.welcomeBack
                             }
                         </h2>
-                        <p className="font-archivo text-base font-normal text-white">
+                        <p className="font-archivo lg:text-start text-center text-base font-normal text-white">
                             {languageData?.loginPage?.[changeLanguage]?.newTo}{' '}
                             <Link href="/signup" className="text-[#5D59E1]">
                                 {
@@ -210,7 +210,7 @@ export default function LoginPage() {
                         <Socials />
                     </div>
 
-                    <div className="space-y-4 text-center text-xs text-white/70">
+                    <div className="space-y-16 text-center text-xs text-white/70">
                         <div className="flex flex-wrap justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a
                                 href="/privacy-policy"

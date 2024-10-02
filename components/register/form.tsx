@@ -179,15 +179,15 @@ export default function SignupPage() {
             <div
                 className={`flex w-full flex-col ${scale} items-center justify-center px-6 py-8 lg:w-[45%] lg:py-0`}
             >
-                <div className="w-full max-w-lg space-y-3">
+                <div className="w-full max-w-lg lg:space-y-4 space-y-10">
                     <div className="space-y-2 text-left">
-                        <h2 className="font-archivo text-[45px] font-bold leading-none text-white">
+                        <h2 className="font-archivo lg:text-start text-center text-[45px] font-bold leading-none text-white">
                             {
                                 languageData?.signupPage?.[changeLanguage]
                                     ?.createAccount
                             }
                         </h2>
-                        <p className="font-archivo text-base font-normal text-white">
+                        <p className="font-archivo lg:text-start text-center text-base font-normal text-white">
                             {
                                 languageData?.signupPage?.[changeLanguage]
                                     ?.alreadyHaveAccount
@@ -213,7 +213,7 @@ export default function SignupPage() {
                         <Socials />
                     </div>
 
-                    <div className="space-y-4 text-center text-xs text-white/70">
+                    <div className="space-y-16 text-center text-xs text-white/70">
                         <div className="flex flex-wrap justify-center space-x-4 font-archivo text-sm font-normal text-white">
                             <a
                                 href="/privacy-policy"

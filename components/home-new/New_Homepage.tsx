@@ -105,7 +105,7 @@ const New_Homepage = () => {
 
     return (
         <div className="h-full lg:min-h-screen lg:bg-white lg:p-5">
-            <div className="relative overflow-hidden bg-gradient-to-br from-[#393939] via-[#545455] to-[#323232] lg:rounded-2xl">
+            <div className="relative overflow-hidden bg-[url('/images/home/home-landing-img.png')] bg-cover bg-center lg:rounded-2xl">
                 <div className="relative z-10">
                     <Header />
                 </div>

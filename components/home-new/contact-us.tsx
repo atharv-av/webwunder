@@ -36,7 +36,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
         <div
             className={`flex h-[300px] flex-col items-start justify-between transition-all duration-300 lg:mt-2 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
-            } ${bgColor} rounded-xl p-8`}
+            } ${bgColor} rounded-3xl p-8`}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
@@ -44,25 +44,27 @@ const ContactCard: React.FC<ContactCardProps> = ({
                 <div className="h-fit w-fit rounded-full border border-white bg-transparent px-2 py-1 font-archivo text-sm font-normal text-white">
                     {tag}
                 </div>
-                <p className="font-archivo text-[26px] leading-none font-bold text-white">
+                <p className="font-archivo text-[26px] font-bold leading-none text-white">
                     {title}
                 </p>
                 <p className="font-archivo text-sm font-normal text-white">
                     {description}
                 </p>
             </div>
-            <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
-                <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                    {buttonText}
-                </p>
-                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
-                    <ArrowRight
-                        size={18}
-                        fontWeight={100}
-                        className="text-[#24252A]"
-                    />
-                </div>
-            </button>
+            <Link target='_blank' href={buttonTarget}>
+                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                    <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                        {buttonText}
+                    </p>
+                    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8">
+                        <ArrowRight
+                            size={18}
+                            fontWeight={100}
+                            className="text-[#24252A]"
+                        />
+                    </div>
+                </button>
+            </Link>
         </div>
     )
 }
@@ -88,7 +90,7 @@ const ContactUs = () => {
             description:
                 languageData?.contactUs?.[changeLanguage]?.callDescription,
             buttonText: languageData?.contactUs?.[changeLanguage]?.bookNow,
-            buttonTarget: '#',
+            buttonTarget: 'https://tidycal.com/skylumina/webwunder',
         },
         {
             id: 2,
@@ -100,7 +102,7 @@ const ContactUs = () => {
                 languageData?.contactUs?.[changeLanguage]?.chatDescription,
             buttonText:
                 languageData?.contactUs?.[changeLanguage]?.chatOnWhatsApp,
-            buttonTarget: '#',
+            buttonTarget: 'https://wa.me/c/4915114039455',
         },
         {
             id: 3,
@@ -111,13 +113,13 @@ const ContactUs = () => {
             description:
                 languageData?.contactUs?.[changeLanguage]?.emailDescription,
             buttonText: languageData?.contactUs?.[changeLanguage]?.sendMessage,
-            buttonTarget: '#',
+            buttonTarget: 'mailto:info@webwunder.de',
         },
     ]
     const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
     return (
-        <div className="flex flex-col items-center gap-4 bg-black 2xl:pt-3">
+        <div id='contact-us' className="flex flex-col items-center gap-4 bg-black 2xl:pt-3">
             <Badge
                 data-aos="fade-up"
                 className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal"
@@ -127,7 +129,7 @@ const ContactUs = () => {
             <p className="font-archivo text-[25px] font-bold text-white lg:text-[45px]">
                 {languageData?.contactUs?.[changeLanguage]?.title}
             </p>
-            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1230px] 2xl:max-w-[1450px]">
+            <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-4 lg:w-[89%] lg:flex-row lg:gap-3 lg:px-0 xl:max-w-[1230px] 2xl:max-w-[1450px] 2xl:gap-6">
                 {contactCards.map((card) => (
                     <ContactCard
                         key={card.id}

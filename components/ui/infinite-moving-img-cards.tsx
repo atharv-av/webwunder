@@ -49,7 +49,8 @@ export const InfiniteMovingCards = ({
 
     const getDirection = () => {
         if (containerRef.current) {
-            const animationDirection = direction === 'left' ? 'normal' : 'reverse'
+            const animationDirection =
+                direction === 'left' ? 'normal' : 'reverse'
             containerRef.current.style.setProperty(
                 '--animation-direction',
                 animationDirection,
@@ -73,7 +74,10 @@ export const InfiniteMovingCards = ({
                 default:
                     duration = '20s'
             }
-            containerRef.current.style.setProperty('--animation-duration', duration)
+            containerRef.current.style.setProperty(
+                '--animation-duration',
+                duration,
+            )
         }
     }
 
@@ -81,7 +85,7 @@ export const InfiniteMovingCards = ({
         <div
             ref={containerRef}
             className={cn(
-                'scroller relative z-20 max-w-screen-3xl h-fit overflow-hidden md:scale-100',
+                'scroller relative z-20 h-fit max-w-screen-3xl overflow-hidden md:scale-100',
                 className,
             )}
         >
@@ -95,7 +99,7 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="relative max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 lg:w-[350px]"
+                        className="relative max-w-full flex-shrink-0 rounded-[30px] border border-b-0 border-slate-700 lg:w-[350px]"
                         key={idx}
                     >
                         <Image
@@ -103,14 +107,14 @@ export const InfiniteMovingCards = ({
                             alt={item.altText}
                             width={350}
                             height={288}
-                            className="rounded-2xl object-cover"
+                            className="rounded-[30px] object-cover"
                         />
                     </li>
                 ))}
                 {/* Duplicate the list for infinite scrolling */}
                 {items.map((item, idx) => (
                     <li
-                        className="relative max-w-full flex-shrink-0 rounded-2xl border border-b-0 border-slate-700 lg:w-[350px]"
+                        className="relative max-w-full flex-shrink-0 rounded-[30px] border border-b-0 border-slate-700 lg:w-[350px]"
                         key={`duplicate-${idx}`}
                     >
                         <Image
@@ -118,7 +122,7 @@ export const InfiniteMovingCards = ({
                             alt={item.altText}
                             width={350}
                             height={288}
-                            className="rounded-2xl object-cover"
+                            className="rounded-[30px] object-cover"
                         />
                     </li>
                 ))}
@@ -131,7 +135,9 @@ export const InfiniteMovingCards = ({
                         transform: translateX(0);
                     }
                     100% {
-                        transform: translateX(calc(-100% / 2)); /* Adjust based on the duplicated list */
+                        transform: translateX(
+                            calc(-100% / 2)
+                        ); /* Adjust based on the duplicated list */
                     }
                 }
 

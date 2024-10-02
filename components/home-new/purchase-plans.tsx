@@ -103,7 +103,7 @@ const MobilePurchasePlans: React.FC = () => {
     ]
 
     return (
-        <div className="w-full lg:hidden">
+        <div id='purchase-plans' className="w-full lg:hidden">
             <Slider className='' {...settings}>
                 {plans.map((plan, index) => (
                     <div key={index} className="px-4">
@@ -216,7 +216,7 @@ const DesktopPurchasePlans: React.FC = () => {
     return (
         <>
         
-                <div className="hidden h-full w-full overflow-hidden -mt-4 lg:block mr-10">
+                <div id='purchase-plans' className="hidden h-full w-full overflow-hidden mt-2 lg:block mr-10">
                 <Slider {...settings}>
                     {plans.map((plan, index) => (
                         <div

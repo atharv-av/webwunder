@@ -153,7 +153,7 @@ const Why_mobCrousel: React.FC = () => {
                             ?.designedToDominate
                     }
                 </Badge>
-                <div className=" flex flex-col items-center leading-none">
+                <div className="flex flex-col items-center leading-none">
                     {/* Split text into individual words */}
                     <p className="font-archivo text-[32px] font-bold text-black md:text-[45px]">
                         {
@@ -175,27 +175,35 @@ const Why_mobCrousel: React.FC = () => {
                 </p>
 
                 {/* Buttons */}
-                <div className="mt-2 mb-7 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
-                    <button className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
+                <div className="mb-7 mt-2 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
+                    <Link href="#purchase-plans">
+                        {' '}
+                        <button
+                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
+                        >
+                            <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
+                                {
+                                    languageData?.additionalSection?.[
+                                        changeLanguage
+                                    ]?.explorePlans
+                                }
+                            </p>
+                            <div
+                                className={`flex ${changeLanguage === 'de' ? 'h-10 w-10' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                            >
+                                <ArrowRight
+                                    size={18}
+                                    fontWeight={100}
+                                    className="text-[#24252A]"
+                                />
+                            </div>
+                        </button>
+                    </Link>
+                    <button
+                        className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
                     >
-                        <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
-                            {
-                                languageData?.additionalSection?.[
-                                    changeLanguage
-                                ]?.explorePlans
-                            }
-                        </p>
-                        <div className={`flex ${changeLanguage === 'de' ? 'h-10 w-10' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}>
-                            <ArrowRight
-                                size={18}
-                                fontWeight={100}
-                                className="text-[#24252A]"
-                            />
-                        </div>
-                    </button>
-                    <button className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}>
                         <Link
-                            href="#"
+                            href="https://tidycal.com/skylumina/webwunder"
                             className="flex flex-row items-center justify-between gap-4"
                         >
                             <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">

@@ -1,42 +1,55 @@
-'use client'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { paths } from '@/paths'
 import { Button } from '@/components/ui/button'
 import MenuMobile from '@/components/layout/home-template-new/menu-mobile'
 import { ArrowDown, CircleUserRound, Flag, MoveUpRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
 import { languageData } from '@/langauge'
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { DropdownMenuItem } from '@radix-ui/react-dropdown-menu'
+    Select,
+    SelectContent,
+    SelectLabel,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select'
 import Image from 'next/image'
+
 export default function Menu() {
-    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en')
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
             const storedLang = localStorage.getItem('lang') as 'de' | 'en'
             if (storedLang) {
-                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+                setChangeLanguage(storedLang)
             }
         }
     }, [])
 
+    const handleLanguageChange = (value: string) => {
+        const newLang = value === 'german' ? 'de' : 'en'
+        setChangeLanguage(newLang)
+        localStorage.setItem('lang', newLang)
+        location.reload()
+    }
+
+    const getLanguageIcon = (lang: 'de' | 'en') => {
+        return lang === 'de' ? '/images/germany.png' : '/images/united-kingdom.png'
+    }
+
     const newMainMenu = {
         benefits: {
-            href: '/#benefits',
+            href: '/#join-us',
             name: languageData?.navItems?.[changeLanguage]?.benefits,
         },
         yourWebsite: {
-            href: '/#your-website',
+            href: '/#all-in-one',
             name: languageData?.navItems?.[changeLanguage]?.yourWebsite,
         },
         prices: {
-            href: '/#prices',
+            href: '/#purchase-plans',
             name: languageData?.navItems?.[changeLanguage]?.prices,
         },
         portfolio: {
@@ -44,14 +57,15 @@ export default function Menu() {
             name: languageData?.navItems?.[changeLanguage]?.portfolio,
         },
         faq: {
-            href: '/#faq',
+            href: '/#faqs',
             name: languageData?.navItems?.[changeLanguage]?.faqs,
         },
         contact: {
-            href: '/#join-webwunder',
+            href: '/#contact-us',
             name: languageData?.navItems?.[changeLanguage]?.contact,
         },
     }
+
     return (
         <nav className="flex items-center gap-3">
             <ol className="mr-32 hidden py-8 lg:flex lg:gap-5">
@@ -70,22 +84,25 @@ export default function Menu() {
                     </li>
                 ))}
             </ol>
-            {/* <DropdownMenu>
-                <DropdownMenuTrigger className='flex rounded-full bg-white/20 items-center px-1 py-2 cursor-pointer'>
-                    <Image src="/images/germany-flag-icon.png" alt='UK Flag' width={25} height={25} />
-                    <button
-                        className=" text-base font-medium text-white hover:text-white"
-                    >
-                        EN
-                        Value
-                    </button>
-                    <ArrowDown />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-fit">
-                    <DropdownMenuItem>EN</DropdownMenuItem>
-                    <DropdownMenuItem>DE</DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu> */}
+            <Select onValueChange={handleLanguageChange} value={changeLanguage === 'de' ? 'german' : 'english'}>
+                <SelectTrigger className="w-28 hidden rounded-full bg-white/20 p-3 gap-2 text-base font-medium text-white border-none hover:text-white lg:flex">
+                    {/* <SelectValue /> */}
+                    <Image src={getLanguageIcon(changeLanguage)} alt='Language' width={25} height={25} />
+                    <p className='text-white'>{changeLanguage === 'de' ? 'DE' : 'EN'}</p>
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectGroup className="flex flex-row justify-around">
+                        <SelectItem value="english" className="flex items-center gap-2">
+                            <Image src="/images/united-kingdom.png" alt='English' width={25} height={25} />
+                            <span>EN</span>
+                        </SelectItem>
+                        <SelectItem value="german" className="flex items-center gap-2">
+                            <Image src="/images/germany.png" alt='German' width={25} height={25} />
+                            <span>DE</span>
+                        </SelectItem>
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
 
             {process.env.NEXT_PUBLIC_DISABLE_SIGNUP !== 'true' ? (
                 <Button

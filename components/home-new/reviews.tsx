@@ -6,6 +6,7 @@ import { Button } from '../ui/button'
 import { ArrowRight } from 'lucide-react'
 import { languageData } from '@/langauge'
 import axios from 'axios'
+import Link from 'next/link'
 
 const Reviews = () => {
     const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
@@ -66,8 +67,8 @@ const Reviews = () => {
                     speed="slow"
                 />
             </div> */}
-            <div className="flex flex-col items-center gap-2 lg:px-10 2xl:px-0 lg:items-center lg:justify-between 2xl:w-[1450px] 2xl:items-center">
-                <p className="lg:self-start text-center font-archivo text-lg font-bold text-white lg:text-[26px]">
+            <div className="flex flex-col items-center gap-2 lg:items-center lg:justify-between lg:px-10 2xl:w-[1450px] 2xl:items-center 2xl:px-0">
+                <p className="text-center font-archivo text-lg font-bold text-white lg:self-start lg:text-[26px]">
                     {languageData?.ourClient?.[changeLanguage]?.reviewPrompt}
                 </p>
                 {/* Wrap the title and description in a flex column container */}
@@ -79,18 +80,24 @@ const Reviews = () => {
                         }
                     </p>
                     <div className="my-5 flex items-center justify-center lg:my-0">
-                        <Button
-                            size={'base'}
-                            className="flex items-center justify-between gap-3 bg-[#FFDC26] transition-all hover:scale-95"
-                        >
-                            <p className="font-archivo text-[15px] font-medium text-[#24252A]">
-                                {
-                                    languageData?.ourClient?.[changeLanguage]
-                                        ?.writeReview
-                                }
-                            </p>
-                            <ArrowRight size={15} className="text-[#24252A]" />
-                        </Button>
+                        <Link href="https://g.page/r/CUIwk9NM4ejJEBM/review">
+                            <Button
+                                size={'base'}
+                                className="flex items-center justify-between gap-3 bg-[#FFDC26] transition-all hover:scale-95"
+                            >
+                                <p className="font-archivo text-[15px] font-medium text-[#24252A]">
+                                    {
+                                        languageData?.ourClient?.[
+                                            changeLanguage
+                                        ]?.writeReview
+                                    }
+                                </p>
+                                <ArrowRight
+                                    size={15}
+                                    className="text-[#24252A]"
+                                />
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </div>

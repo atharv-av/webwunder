@@ -73,9 +73,9 @@ export const SignupForm = () => {
         }
     }, [])
     return (
-        <form onSubmit={handleSubmit(submit)} className="space-y-4">
-            <div className="mb-4 flex flex-row gap-3 xl:gap-6 2xl:gap-8">
-                <div className="w-1/2">
+        <form onSubmit={handleSubmit(submit)} className="lg:space-y-4 space-y-6">
+            <div className="mb-4 flex lg:flex-row flex-col gap-6 xl:gap-6 2xl:gap-8">
+                <div className="lg:w-1/2 w-full">
                     <label className="mb-1 block font-inter text-sm font-bold text-white">
                         {languageData?.signupPage?.[changeLanguage]?.firstName}
                     </label>
@@ -89,7 +89,7 @@ export const SignupForm = () => {
                         }
                     />
                 </div>
-                <div className="w-1/2">
+                <div className="lg:w-1/2 w-full">
                     <label className="mb-1 block font-inter text-sm font-bold text-white">
                         {languageData?.signupPage?.[changeLanguage]?.lastName}
                     </label>
