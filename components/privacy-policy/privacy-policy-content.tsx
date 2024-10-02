@@ -56,8 +56,8 @@ const PrivacyPolicyContent = () => {
     }, [])
 
     return (
-        <div className="lg:px-20 px-6 py-8">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="lg:px-20 px-6 bg-[url('/images/ppc.png')] bg-center bg-cover bg-no-repeat py-8">
+            <div className="grid grid-cols-1  gap-6 md:grid-cols-2">
                 {languageData?.policySections?.[changeLanguage].map(
                     (section, index) => (
                         <PolicySection
