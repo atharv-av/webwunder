@@ -36,6 +36,7 @@ export const languageData = {
             signup: 'Anmelden',
         },
         en: {
+      
             benefits: 'Benefits',
             yourWebsite: 'Your Website',
             prices: 'Prices',
@@ -265,21 +266,21 @@ export const languageData = {
                         title: 'Book a Call',
                         description:
                             'A quick 15-minute chat to understand your needs and pick the perfect plan.',
-                        time: 'Time commitment: 15 minutes.',
+                        time: ' 15 minutes.',
                     },
                     {
                         step: 'Step 2',
                         title: 'Design & Content',
                         description:
                             'Share your ideas or let us help develop them. We’ll handle everything and send it for your final approval.',
-                        time: 'Time commitment: 15 minutes.',
+                        time: ' 15 minutes.',
                     },
                     {
                         step: 'Step 3',
                         title: 'Launch Website',
                         description:
                             'We’ll execute your vision and take your website live, ready to dominate the market.',
-                        time: 'Time commitment: 15 minutes.',
+                        time: ' 15 minutes.',
                     },
                 ],
             },
@@ -802,7 +803,7 @@ export const languageData = {
             description:
                 'Hate meetings? Us too—that’s why we&apos;ve minimized them. In under an hour of your valuable time, we help successful businesses become even more successful.',
             createAccount: 'Create an account',
-            alreadyHaveAccount: 'Already have an account?',
+            alreadyHaveAccount: 'Already have an account? ',
             signIn: 'Sign In',
             firstName: 'First Name',
             lastName: 'Last Name',

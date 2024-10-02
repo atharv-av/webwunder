@@ -1,147 +1,109 @@
 'use client'
 
-import Link from 'next/link'
-import { useAnimate } from 'framer-motion'
-import Logo from '@/components/common/logo'
-// import Menu02SVG from '@/public/images/menu.svg'
-
-import XCloseSVG from '@/assets/icons/x-close.svg'
-import { useEffect, useState } from 'react'
-import { paths } from '@/paths'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
+import Link from 'next/link'
+import Logo from '@/components/common/logo'
 
-function useAnimation(isShown: boolean, menuSection: HTMLElement | null) {
-    const [scope, animate] = useAnimate()
+const menuItems = [
+    'Home', 'Benefits', 'Your Website', 'Prices', 'Portfolio', 'FAQs', 'Contact', 'Sign In', 'Sign Up'
+]
 
-    useEffect(() => {
-        const sequence: Parameters<typeof animate>[0] = isShown
-            ? [
-                  [
-                      'div.menu-backdrop',
-                      { transform: 'translateY(0)' },
-                      { duration: 0 },
-                  ],
-                  [
-                      'div.menu-list',
-                      { transform: 'translateY(0)' },
-                      { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.3 },
-                  ],
-                  // [
-                  //     "li",
-                  //     { transform: "scale(1)", opacity: 1, },
-                  //     { delay: stagger(0.05), },
-                  // ]
-              ]
-            : [
-                  // [
-                  //     "li",
-                  //     { transform: "scale(0.5)", opacity: 0, },
-                  //     { delay: stagger(0.05, { from: "last" }) }
-                  // ],
-                  [
-                      'div.menu-list',
-                      { transform: 'translateY(-110%)' },
-                      { at: '-0.1' },
-                  ],
-                  [
-                      'div.menu-backdrop',
-                      { transform: 'translateY(-110%)' },
-                      { duration: 0.01 },
-                  ],
-              ]
+const contactMethods = [
+    'Write an Email', 'Send a Message', 'Book a Call', 'Chat on WhatsApp'
+]
 
-        if (menuSection) animate(sequence)
-    }, [isShown, menuSection, animate])
-    return scope
-}
+const socialMedia = [
+    'Instagram', 'Twitter', 'Facebook', 'Youtube', 'Dribbble', 'Behance', 'Pinterest'
+]
 
 export default function SidebarMenu() {
-    const [menuSection, setMenuSection] = useState<HTMLElement | null>(null)
     const [isShown, setShown] = useState(false)
 
-    const scope = useAnimation(isShown, menuSection)
+    const openMenu = () => setShown(true)
+    const closeMenu = () => setShown(false)
 
-    useEffect(() => {
-        setMenuSection(document.getElementById('menu-section'))
-    }, [])
     return (
-        <div className="flex cursor-pointer p-0 pe-0 z-50 lg:hidden">
-            <div className="flex justify-center items-center" onClick={() => setShown(true)}>
-                <div className="rounded-lg">
-                    <Image
-                    className='w-5'
-                   src="/menu.svg"
-                    alt="emnu"
-                    width={4000}
-                    height={4000}
-                    />
+        <>
+            <div className="flex cursor-pointer p-0 pe-0 z-50 lg:hidden">
+                <div className="flex justify-center items-center">
+                    <div onClick={openMenu} className="rounded-lg">
+                        <Image
+                            className='w-5'
+                            src="/menu.svg"
+                            alt="menu"
+                            width={40}
+                            height={40}
+                        />
+                    </div>
                 </div>
             </div>
-            {menuSection
-                ? createPortal(
-                      <div className="menu relative z-50">
-                          <div className="fixed top-0 w-full" ref={scope}>
-                              <div
-                                  onClick={() => setShown(false)}
-                                  className={`menu-backdrop absolute right-0 top-0 h-dvh w-screen -translate-y-[110%] bg-transparent opacity-0 ${isShown ? 'translate-x-full' : ''}`}
-                              ></div>
-                              <div
-                                  className={`menu-list absolute right-0 top-0 flex w-full -translate-y-[110%] flex-col overflow-y-auto bg-white p-2 shadow-xl`}
-                              >
-                                  <div className="mb-8 flex justify-between">
-                                      <Logo />
-                                      <XCloseSVG
-                                          onClick={() => setShown(false)}
-                                          className="m-2 cursor-pointer"
-                                      />
-                                  </div>
-                                  <ul className="space-y-4 px-4 font-extrabold">
-                                      {Object.entries(paths.menu.main).map(
-                                          ([key, value]) => (
-                                              <li
-                                                  key={value.href}
-                                                  onClick={() =>
-                                                      setShown(false)
-                                                  }
-                                              >
-                                                  <Link href={value.href}>
-                                                      {value.name}
-                                                  </Link>
-                                              </li>
-                                          ),
-                                      )}
-                                  </ul>
-                                  <div className="mx-4 mb-4 mt-12 grid grid-cols-2 gap-8">
-                                      {process.env
-                                          .NEXT_PUBLIC_DISABLE_SIGNUP  !== 'true' ? (
-                                          <Button
-                                              className="min-h-14 min-w-7 px-2"
-                                              variant={'dark'}
-                                          >
-                                              <Link
-                                                  href={paths.pages.signUp.href}
-                                              >
-                                                  Sign up
-                                              </Link>
-                                          </Button>
-                                      ) : null}
-                                      <Button className="min-h-14 min-w-7 bg-[#27DAB7]">
-                                          <Link
-                                              target="_blank"
-                                              href={paths.pages.bookCall.href}
-                                          >
-                                              Book a call
-                                          </Link>
-                                      </Button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>,
-                      menuSection,
-                  )
-                : null}
-        </div>
+            {typeof document !== 'undefined' && createPortal(
+                <AnimatePresence>
+                    {isShown && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="menu fixed inset-0 z-50"
+                        >
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={closeMenu}
+                                className="menu-backdrop  absolute inset-0 bg-black bg-opacity-50"
+                            />
+                            <motion.div
+                                initial={{ x: '100%' }}
+                                animate={{ x: 0 }}
+                                exit={{ x: '100%' }}
+                                transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
+                                className="menu-list w-screen absolute right-0 top-0 bottom-0 flex flex-col bg-black text-white p-6 shadow-xl"
+                            >
+                                <div className="flex justify-between items-center mb-8">
+                                <Logo />
+                                    <button onClick={closeMenu} className="text-2xl">&times;</button>
+                                </div>
+                                <nav className="flex-grow text-center">
+                                    <ul className="space-y-4 text-xl">
+                                        {menuItems.map((item) => (
+                                            <li key={item}>
+                                                <Link href="#" className="block py-2">
+                                                    {item}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </nav>
+                                <div className="text-center ">
+                                    <p className="font-semibold text-zinc-500 mb-2">Get in touch</p>
+                                    <div className="flex flex-wrap text-center justify-center items-center gap-2 text-sm mb-4">
+                                        {contactMethods.map((method, index) => (
+                                            <React.Fragment key={method}>
+                                                <Link href="#">{method}</Link>
+                                                {index < contactMethods.length - 1 && <span>|</span>}
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                    <p className="font-semibold text-zinc-500 mb-2">Follow us</p>
+                                    <div className="flex flex-wrap text-center justify-center items-center gap-2 text-sm">
+                                        {socialMedia.map((platform, index) => (
+                                            <React.Fragment key={platform}>
+                                                <Link href="#">{platform}</Link>
+                                                {index < socialMedia.length - 1 && <span>|</span>}
+                                            </React.Fragment>
+                                        ))}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
+        </>
     )
 }

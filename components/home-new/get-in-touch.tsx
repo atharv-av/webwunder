@@ -35,11 +35,11 @@ const GetInTouch = () => {
                 >
                     {languageData?.faqPage?.[changeLanguage]?.contactCta}
                 </Badge>
-                <h2 className="font-archivo text-[25px] font-bold leading-none text-white lg:text-[45px]">
+                <h2 className="font-archivo text-[20px] font-bold leading-none text-white lg:text-[45px]">
                     {/* Leave the Competition Behind! */}
                     {languageData?.faqPage?.[changeLanguage]?.contactTitle}
                 </h2>
-                <p className="max-w-xl font-archivo text-sm font-normal text-gray-400 md:text-[16px] lg:text-base">
+                <p className="max-w-xl font-archivo text-xs font-normal text-gray-400 md:text-[16px] lg:text-base">
                     {
                         languageData?.faqPage?.[changeLanguage]
                             ?.contactDescription

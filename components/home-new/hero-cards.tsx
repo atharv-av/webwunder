@@ -88,31 +88,47 @@ export function HeroCardsLeft() {
 // Image items for both components
 const imageItems = [
   {
-    imageSrc: '/images/home/stay-on-top/hero-4.png',
+    imageSrc: '/images/home/stay-on-top/ebm.png',
     altText: 'Stay on top',
   },
   {
-    imageSrc: '/images/home/stay-on-top/hero-2.png',
+    imageSrc: '/images/home/stay-on-top/h2.png',
     altText: 'Stay on top',
   },
   {
-    imageSrc: '/images/home/stay-on-top/hero-3.png',
+    imageSrc: '/images/home/stay-on-top/h3.png',
     altText: 'Stay on top',
   },
   {
-    imageSrc: '/images/home/stay-on-top/hero-4.png',
+    imageSrc: '/images/home/stay-on-top/h4.png',
     altText: 'Stay on top',
   },
   {
-    imageSrc: '/images/home/stay-on-top/hero-6.png',
+    imageSrc: '/images/home/stay-on-top/h5.png',
     altText: 'Stay on top',
   },
   {
-    imageSrc: '/images/home/stay-on-top/hero-7.png',
+    imageSrc: '/images/home/stay-on-top/h6.png',
     altText: 'Stay on top',
   },
   {
-    imageSrc: '/images/home/stay-on-top/hero-8.png',
+    imageSrc: '/images/home/stay-on-top/h7.png',
     altText: 'Stay on top',
-  }
+  },
+  {
+    imageSrc: '/images/home/stay-on-top/h8.png',
+    altText: 'Stay on top',
+  }, {
+    imageSrc: '/images/home/stay-on-top/h9.png',
+    altText: 'Stay on top',
+  }, {
+    imageSrc: '/images/home/stay-on-top/h10.png',
+    altText: 'Stay on top',
+  }, {
+    imageSrc: '/images/home/stay-on-top/h11.png',
+    altText: 'Stay on top',
+  }, {
+    imageSrc: '/images/home/stay-on-top/h12.png',
+    altText: 'Stay on top',
+  },
 ]

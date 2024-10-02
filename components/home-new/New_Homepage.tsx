@@ -219,7 +219,7 @@ const New_Homepage = () => {
                         ref={image1Ref}
                         src="/images/home/hero/rockLaptop.png"
                         alt="Figma"
-                        className="relative z-20 hidden w-screen pt-12 md:flex"
+                        className="relative z-20 hidden w-screen pt-12 lg:flex"
                         width={5000}
                         height={5000}
                     />
@@ -227,7 +227,7 @@ const New_Homepage = () => {
                         ref={image2Ref}
                         src="/images/home/hero/phone1.png"
                         alt="Figma"
-                        className="absolute bottom-20 left-72 z-10 hidden h-80 w-72 md:flex"
+                        className="absolute bottom-20 left-72 z-10 hidden h-80 w-72 lg:flex"
                         width={5000}
                         height={5000}
                     />
@@ -235,7 +235,7 @@ const New_Homepage = () => {
                         ref={image3Ref}
                         src="/images/home/hero/phone2.png"
                         alt="Figma"
-                        className="absolute bottom-28 right-72 z-10 hidden h-64 w-36 md:flex"
+                        className="absolute bottom-28 right-72 z-10 hidden h-64 w-36 lg:flex"
                         width={5000}
                         height={5000}
                     />
@@ -244,7 +244,7 @@ const New_Homepage = () => {
                 <Image
                     src="/images/homebg2.png"
                     alt="Figma"
-                    className="mt-6 flex w-screen md:hidden"
+                    className="mt-6 flex w-screen lg:hidden"
                     width={5000}
                     height={5000}
                 />

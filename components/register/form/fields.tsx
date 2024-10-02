@@ -74,7 +74,7 @@ export const SignupForm = () => {
     }, [])
     return (
         <form onSubmit={handleSubmit(submit)} className="lg:space-y-4 space-y-6">
-            <div className="mb-4 flex lg:flex-row flex-col gap-6 xl:gap-6 2xl:gap-8">
+            <div className="mb-4 flex lg:flex-row flex-col gap-3">
                 <div className="lg:w-1/2 w-full">
                     <label className="mb-1 block font-inter text-sm font-bold text-white">
                         {languageData?.signupPage?.[changeLanguage]?.firstName}
@@ -82,7 +82,7 @@ export const SignupForm = () => {
                     <input
                         {...register('firstName')}
                         type="text"
-                        className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                        className="w-full rounded-lg bg-[#FFFFFF] bg-opacity-10 shadow-md  border-2 border-zinc-600  px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                         placeholder={
                             languageData?.signupPage?.[changeLanguage]
                                 ?.firstNamePlaceholder
@@ -96,7 +96,7 @@ export const SignupForm = () => {
                     <input
                         {...register('lastName')}
                         type="text"
-                        className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                        className="w-full rounded-lg bg-[#FFFFFF] bg-opacity-10 shadow-md  border-2 border-zinc-600  px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                         placeholder={
                             languageData?.signupPage?.[changeLanguage]
                                 ?.lastNamePlaceholder
@@ -111,7 +111,7 @@ export const SignupForm = () => {
                 <input
                     {...register('email')}
                     type="email"
-                    className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    className="w-full rounded-lg bg-[#FFFFFF] bg-opacity-10 shadow-md  border-2 border-zinc-600 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                     placeholder={
                         languageData?.signupPage?.[changeLanguage]
                             ?.emailPlaceholder
@@ -125,7 +125,7 @@ export const SignupForm = () => {
                 <input
                     {...register('password')}
                     type="password"
-                    className="w-full rounded-lg border border-white bg-[#908AA0]/50 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
+                    className="w-full rounded-lg bg-[#FFFFFF] bg-opacity-10 shadow-md  border-2 border-zinc-600 px-4 py-3 text-white placeholder-gray-400 focus:outline-none"
                     placeholder={
                         languageData?.signupPage?.[changeLanguage]
                             ?.passwordPlaceholder

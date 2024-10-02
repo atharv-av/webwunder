@@ -264,7 +264,7 @@ const JoinUs: React.FC = () => {
     return (
         <div id='join-us' className="flex h-fit flex-col items-center justify-center gap-5 bg-[#020202] text-white lg:pt-16">
             <Slider />
-            <div className="-mt-20 flex w-full scale-75 flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:gap-20 2xl:gap-0 2xl:px-28">
+            <div className="-mt-44 flex w-full scale-75 flex-col items-center justify-between px-4 lg:mt-0 lg:flex-row lg:gap-20 2xl:gap-0 2xl:px-28">
                 <div className="flex flex-col items-center gap-4 lg:hidden">
                     <Badge className="w-fit bg-[#5D59E1] font-archivo text-sm font-normal">
                         {
@@ -343,8 +343,8 @@ const JoinUs: React.FC = () => {
                 /> */}
 
 <Image
-                            data-aos="fade-up"
-                            className='translate-y-6 lg:hidden flex'
+               
+                            className='translate-y-6 scale-125 pt-6 lg:hidden flex'
                             src="/images/home/join-us/three-steps-bg.png"
                             alt="All in one agency"
                             width={4000}
@@ -375,7 +375,7 @@ const JoinUs: React.FC = () => {
               
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
                     <div
-                        className={`hidden flex-col items-start gap-4 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-1/2'}`}
+                        className={`hidden flex-col items-start gap-12 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-2/3'}`}
                     >
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
                             {
