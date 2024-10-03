@@ -87,13 +87,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
                                 / {languageData?.paymentsCard?.[changeLanguage]?.priceTag}
                             </span>
                         </div>
-                        <div className="font-inter text-lg font-semibold text-white lg:text-xl">
+                        <div className="font-inter lg:pt-0 pt-1 lg:pb-2 pb-1 text-lg font-semibold text-white lg:text-xl">
                             €{setupFee}
                             
 
                         </div>
                     </div>
-                    <p className="font-inter text-sm font-normal text-white/50 lg:text-base">
+                    <p className="font-inter pb-2 text-sm font-normal text-white/50 lg:text-base">
                         {description}
                     </p>
                     <div className="space-y-2">
@@ -104,13 +104,13 @@ const PricingCard: React.FC<PricingCardProps> = ({
                         </p>
                         <div className={`  ${
                 isCenter
-                    ? 'flex flex-col gap-3 leading-2'
+                    ? 'flex flex-col'
                     : ''
             }`}>
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-center space-x-2"
+                                    className="flex items-center lg:py-0 py-1 space-x-2"
                                 >
                                     <div className="flex h-fit w-fit items-center justify-center rounded-full bg-[#46B277] p-1">
                                         <Check
@@ -118,7 +118,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                                             className="font-extrabold text-black"
                                         />
                                     </div>
-                                    <span className="font-inter text-[12px] font-light leading-none text-white/50 lg:my-0 lg:text-base">
+                                    <span className="font-inter text-[12px] py-1 font-light leading-none text-white/50 lg:my-0 lg:text-base">
                                         {feature}
                                     </span>
                                 </div>
@@ -136,11 +136,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     {languageData?.paymentsCard?.[changeLanguage]?.signMeUp}
 
                 </button>
-                <button className="w-full rounded-full bg-transparent py-4 font-inter text-base font-normal text-white transition-all hover:scale-95">
-                    {/* Cancel Anytime */}
-                     {languageData?.paymentsCard?.[changeLanguage]?.cancelAnytime   }
-
-                </button>
+              
             </CardFooter>
         </Card>
     )

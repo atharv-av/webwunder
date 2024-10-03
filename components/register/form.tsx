@@ -112,7 +112,7 @@ export default function SignupPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative rounded-3xl lg:ml-4 lg:mt-4 h-[60vh] w-full overflow-hidden lg:h-[97vh] lg:w-[60%]">
+            <div className="relative rounded-3xl lg:ml-4 lg:mt-4 h-[60vh] w-full overflow-hidden lg:h-[94vh] lg:w-[60%]">
                 <div className="absolute inset-0">
                     {slides.map((slide, index) => (
                         <div
@@ -142,7 +142,7 @@ export default function SignupPage() {
                         />
                     </Link>
                 </div>
-                <div className="absolute inset-x-0 bottom-0 z-10 space-y-3 bg-gradient-to-t from-black to-transparent p-6 px-10 text-white">
+                <div className="absolute inset-x-0 bottom-0 z-10 space-y-3  p-6 px-10 text-white">
                     <h1 className="text-xl font-bold leading-none md:text-2xl lg:text-3xl">
                         {slides[currentSlide].title}
                     </h1>
@@ -157,7 +157,7 @@ export default function SignupPage() {
                             <span className="text-white">of</span>
                             <span className="text-white">{slides.length}</span>
                         </div>
-                        <div className="flex space-x-2">
+                        <div className="flex pb-3 space-x-2">
                             <button
                                 onClick={prevSlide}
                                 className="rounded-full border border-white/40 bg-transparent p-2 text-white hover:bg-white/20"

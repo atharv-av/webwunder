@@ -102,7 +102,7 @@ const ContactUs = () => {
                 languageData?.contactUs?.[changeLanguage]?.chatDescription,
             buttonText:
                 languageData?.contactUs?.[changeLanguage]?.chatOnWhatsApp,
-            buttonTarget: 'https://wa.me/c/4915114039455',
+            buttonTarget: 'href="https://wa.me/+4915114039455"',
         },
         {
             id: 3,

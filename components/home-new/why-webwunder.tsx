@@ -302,7 +302,7 @@ const WhyWebWunder = () => {
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
                 }}
-                className="h-full w-full lg:min-h-screen"
+                className="h-full w-full lg:pt-6 lg:pb-12"
             >
                 {isSmallScreen ? (
                     <div className="relative">

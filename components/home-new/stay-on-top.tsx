@@ -39,10 +39,11 @@ const StayOnTop = () => {
                     }
                 </p>
                 <Image
+                className='pb-12'
                     src="/images/home/stay-on-top/figma.png"
                     alt="Figma"
                     width={100}
-                    height={25}
+                    height={20}
                 />
             </div>
             <div className="-mt-36 block h-full py-6 scale-50 bg-gradient-to-b from-black via-[#121212] to-[#131313] md:hidden">

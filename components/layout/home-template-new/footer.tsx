@@ -72,7 +72,7 @@ const Footer = () => {
                                     {changeData?.getInTouch}
                                 </p>
                                 <div className="flex flex-wrap items-center justify-center gap-1 text-base text-white">
-                                    <Link href={`mailto:${app.email}`}>
+                                    <Link href={`mailto: info@webwunder.de`}>
                                         {changeData?.links?.writeEmail} |
                                     </Link>
                                     <Link href={paths.pages.getInTouch.href}>
@@ -81,7 +81,7 @@ const Footer = () => {
                                     <Link href={paths.pages.bookCall.href}>
                                         {changeData?.links?.bookCall} |
                                     </Link>
-                                    <Link href="https://wa.me/+4915114039455">
+                                    <Link href="https://wa.me/c/4915114039455">
                                         {changeData?.links?.chatWhatsApp}
                                     </Link>
                                 </div>
@@ -261,8 +261,8 @@ const Footer = () => {
                                 </p>
                                 <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                     <a
-                                        target="_blank"
-                                        href={paths.pages.pricing.href}
+                                        
+                                        href="#packages"
                                     >
                                         {changeData?.links?.pricing}
                                     </a>
@@ -285,6 +285,9 @@ const Footer = () => {
                                     {changeData?.quickConnect}
                                 </p>
                                 <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
+                                    <Link href={paths.pages.benefits.href}>
+                                        {changeData?.links?.benefits}
+                                    </Link>
                                     <Link href="/signup">
                                         {changeData?.links?.signUp}
                                     </Link>
@@ -293,9 +296,6 @@ const Footer = () => {
                                     </Link>
                                     <Link href={paths.pages.service.href}>
                                         {changeData?.links?.services}
-                                    </Link>
-                                    <Link href={paths.pages.benefits.href}>
-                                        {changeData?.links?.benefits}
                                     </Link>
                                 </div>
                             </div>

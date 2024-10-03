@@ -45,7 +45,7 @@ const Reviews = () => {
     return (
         <div className="flex flex-col items-center gap-4 bg-black px-4 lg:px-0">
             <Badge
-                data-aos="fade-up"
+               
                 className="mt-10 bg-[#5D59E1] font-archivo text-sm font-normal lg:mt-20"
             >
                 {languageData?.ourClient?.[changeLanguage]?.reviewsTitle}

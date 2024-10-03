@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react';import {
+import React, { useEffect, useState } from 'react'; import {
     Breadcrumb,
     BreadcrumbItem,
     BreadcrumbLink,
@@ -27,14 +27,14 @@ const ImprintBreadcrumb = () => {
                         className="font-dm-sans text-base font-normal text-white hover:font-semibold hover:text-white"
                         href="/"
                     >
-                                                  {lang === 'de' ? 'Heim' : 'Home'}
+                        {lang === 'de' ? 'Heim' : 'Home'}
 
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
                     <BreadcrumbPage className="font-dm-sans text-base font-normal text-[#5D59E1]">
-                    {lang === 'de' ? 'Impressum' : 'Imprint'}
+                        {lang === 'de' ? 'Impressum' : 'Imprint'}
                     </BreadcrumbPage>
                 </BreadcrumbItem>
             </BreadcrumbList>

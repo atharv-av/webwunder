@@ -11,7 +11,7 @@ interface CarouselItemType {
 }
 
 const carouselItems: CarouselItemType[] = [
-    { src: '/images/brands/adobe-cloud.png', width: 43, height: 42 },
+    { src: '/images/brands/i1.svg', width: 43, height: 42 },
     { src: '/images/brands/figma.png', width: 91, height: 41 },
     { src: '/images/brands/webflow.png', width: 113, height: 19 },
     { src: '/images/brands/nextjs.png', width: 62, height: 37 },

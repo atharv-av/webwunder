@@ -15,7 +15,7 @@ const galleryImages = [
     '/images/home/our-portfolio/p3.jpg',
     '/images/home/our-portfolio/p4.jpg',
     '/images/home/our-portfolio/p5.jpg',
-    '/images/home/our-portfolio/p6.jpg',
+    '/images/home/our-portfolio/p8.jpg',
 ]
 
 const OurPortfolio = () => {
@@ -149,7 +149,7 @@ const OurPortfolio = () => {
                 {/* Websites, Logos, Creatives & More */}
                 {languageData?.userPortfolio?.[changeLanguage]?.subtitle}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-3 lg:w-3/5">
+            <div className="flex flex-wrap items-center justify-center gap-3 lg:w-full">
                 {tags.map((tag, index) => (
                     <div
                         key={index}
@@ -205,9 +205,9 @@ const OurPortfolio = () => {
                             >
                                 <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">
                                     {
-                                        languageData?.additionalSection?.[
+                                        languageData?.userPortfolio?.[
                                             changeLanguage
-                                        ]?.bookCall
+                                        ]?.seeMore
                                     }
                                 </p>
                                 <div className="flex h-6 w-6 items-center justify-center rounded-full lg:h-8 lg:w-8">

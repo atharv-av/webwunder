@@ -34,9 +34,9 @@ const Testimonial: React.FC<TestimonialProps> = ({
     }, [])
     return (
         <div className="keen-slider__slide">
-            <div className="h-[400px] w-[calc(100vw-40px)] overflow-hidden rounded-xl border-2 bg-white md:w-full">
+            <div className="h-[370px] w-[calc(100vw-40px)] overflow-hidden rounded-xl border-2 bg-white md:w-full">
                 <Image
-                    className="h-64"
+                    className="h-56"
                     src={image}
                     alt={title}
                     width={1000}

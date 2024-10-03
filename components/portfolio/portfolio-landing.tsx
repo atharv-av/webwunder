@@ -17,12 +17,12 @@ const PortfolioLanding = () => {
         }
     }, [])
     return (
-        <div className="bg-white lg:p-4">
+        <div className="bg-white  lg:p-4">
             <div className="bg-[url('/images/portfolio/portfolio-bg.png')] bg-center bg-cover lg:rounded-2xl lg:p-0">
                 <div className="relative z-10">
                     <Header />
                 </div>
-                <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 p-4 pt-4">
+                <div className="mx-auto lg:pt-16 flex max-w-6xl flex-col items-center justify-center gap-4 p-4 pt-4">
                     <Badge
                         data-aos="fade-up"
                         className="w-fit rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
@@ -58,7 +58,7 @@ const PortfolioLanding = () => {
                 <Image
                     data-aos="fade-up"
                     data-aos-duration="3000"
-                    src="/images/portfolio/portImg.png"
+                    src="/images/portfolio/heroPort.png"
                     alt="Figma"
                     className="hidden w-screen lg:flex"
                     width={5000}

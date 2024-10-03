@@ -16,8 +16,8 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ icon, content, title }) => (
     <div className="keen-slider__slide">
-        <div className="p-4">
-            <div className="flex h-[280px] lg:h-[280px] min-h-56 w-fit flex-col justify-between overflow-hidden rounded-3xl bg-[#191919] p-4 lg:px-5">
+        <div className="p-2">
+            <div className="flex h-[280px] lg:h-[265px] min-h-56 w-fit flex-col justify-between overflow-hidden rounded-3xl bg-[#191919] p-4 lg:px-5">
                 <div className="flex flex-col gap-4 px-2">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#29292F]">
                         <Image src={icon} alt={title} width={25} height={25} />

@@ -137,7 +137,7 @@ const AllInOne = () => {
             })
 
             gsap.to(main, {
-                scale: 0.8,
+                scale: 0.9,
                 scrollTrigger: {
                     trigger: '.images',
                     start: 'top 50%', // Start when the top of the container reaches 75% of the viewport
@@ -167,7 +167,7 @@ const AllInOne = () => {
                         className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4"
                         ref={textSectionRef}
                     >
-                        <div className=" 2xl:translate-y-0">
+                        <div className="mt-8 2xl:translate-y-0">
                             <Badge className="rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm">
                                 {
                                     languageData?.allInOnePage?.[changeLanguage]
@@ -242,38 +242,38 @@ const AllInOne = () => {
                         </div>
                     </div>
 
-                    <div className="images relative mt-10 hidden translate-y-[142px] md:mt-0 lg:flex">
+                    <div className="images relative mt-10 hidden translate-y-[142px] md:mt-6 lg:flex">
                         <Image
                             ref={image1Ref}
-                            className="main relative z-20 scale-75"
-                            src="/images/home/all-in-one/smain.png"
+                            className="main  z-20 scale-110"
+                            src="/images/home/all-in-one/allnew.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />
                         <Image
-                            className="screen1 absolute bottom-64 left-8 h-64 w-80"
+                            className="screen1 absolute bottom-56 left-16 h-64 w-80"
                             src="/images/home/all-in-one/s1.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />
                         <Image
-                            className="screen2 absolute left-36 top-0 h-64 w-80"
+                            className="screen2 absolute left-36 -top-24 h-64 w-80"
                             src="/images/home/all-in-one/s2.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />{' '}
                         <Image
-                            className="screen3 absolute -top-4 right-44 h-64 w-80"
+                            className="screen3 absolute -top-20 right-44 h-64 w-80"
                             src="/images/home/all-in-one/s3.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}
                         />
                         <Image
-                            className="screen4 absolute bottom-72 right-16 h-64 w-80"
+                            className="screen4 absolute bottom-56 right-16 h-64 w-80"
                             src="/images/home/all-in-one/s4.png"
                             alt="All in one agency"
                             width={4000}
@@ -282,8 +282,8 @@ const AllInOne = () => {
                     </div>
 
                     <Image
-                            className='-translate-y-6 pt-16 scale-[1.30] lg:hidden flex'
-                            src="/images/home/all-in-one/allInOne.png"
+                            className='pt-16 translate-y-12 lg:hidden flex'
+                            src="/images/home/all-in-one/allnewmob.png"
                             alt="All in one agency"
                             width={4000}
                             height={4000}

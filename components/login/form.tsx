@@ -109,8 +109,8 @@ export default function LoginPage() {
                 <Header />
             </div>
             {/* Left side with carousel */}
-            <div className="relative h-[50vh] rounded-3xl w-full overflow-hidden lg:ml-4 lg:mt-4 lg:h-[97vh] lg:w-[60%]">
-                <div className="absolute inset-0">
+            <div className="relative h-[50vh] rounded-3xl w-full overflow-hidden lg:ml-4 lg:mt-4 lg:h-[91vh] lg:w-[60%]">
+                <div className="absolute  inset-0">
                     {slides.map((slide, index) => (
                         <div
                             key={index}

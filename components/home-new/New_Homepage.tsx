@@ -163,12 +163,15 @@ const New_Homepage = () => {
                         <button
                             className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] px-2 transition-all hover:scale-95`}
                         >
+                            <a href="https://youtu.be/1g0oik5droE">
+
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 {
                                     languageData?.heroSection?.[changeLanguage]
-                                        ?.watchVideo
+                                    ?.watchVideo
                                 }
                             </p>
+                                </a>
                             <div
                                 className={`flex ${changeLanguage === 'de' ? 'h-10 w-12' : 'h-8 w-8'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
                             >
@@ -217,7 +220,7 @@ const New_Homepage = () => {
                 <div className="relative">
                     <Image
                         ref={image1Ref}
-                        src="/images/home/hero/rockLaptop.png"
+                        src="/images/home/hero/newhero.png"
                         alt="Figma"
                         className="relative z-20 hidden w-screen pt-12 lg:flex"
                         width={5000}
@@ -242,7 +245,7 @@ const New_Homepage = () => {
                 </div>
 
                 <Image
-                    src="/images/homebg2.png"
+                     src="/images/home/hero/newheromob.png"
                     alt="Figma"
                     className="mt-24 flex w-screen bottom-0 lg:hidden"
                     width={5000}

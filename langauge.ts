@@ -2,8 +2,8 @@ export const languageData = {
     heroSection: {
         de: {
             badge: 'Felsenfester Geschäftserfolg',
-            headline: 'UNBESIEGBARE WEBSEITEN',
-            subHeadline: 'UNERSCHÜTTERLICHER SUPPORT',
+            headline: 'Unbesiegbare Webseiten',
+            subHeadline: 'Unerschütterlicher Support',
             shortDescription:
                 'Erprobt, um Umsatz zu steigern und Kosten zu reduzieren.',
             description: 'Webseiten von Unternehmern für Unternehmer.',
@@ -139,7 +139,7 @@ export const languageData = {
         },
         en: {
             title: 'All-in-one Agency',
-            header: 'With WebWunder, Youll Never Need Another Agency. Ever.',
+            header: "With WebWunder, You'll Never Need Another Agency. Ever.",
             description:
                 'Our comprehensive, all-in-one solution that addresses every facet of your digital presence, from website design to marketing strategies, ensuring you’ll never need to rely on another agency again. We handle it all, so you can focus on growing your business with confidence.',
             finalNote: 'Subscriptions',
@@ -167,24 +167,24 @@ export const languageData = {
                         'Erhalten Sie eine einzigartige Website, die Ihre Marke stärkt—100% individuell, keine Vorlagen.',
                 },
                 {
-                    title: 'Effortless Updates, Anytime, Anywhere',
+                    title: 'Mühelose Updates, jederzeit',
                     description:
-                        'Need changes? Email us from any device, and we’ll handle the rest. Our streamlined process makes updates seamless and stress-free.',
+                        'Änderungen? Einfach eine E-Mail senden, wir kümmern uns um den Rest. Schnell und stressfrei.',
                 },
                 {
-                    title: 'Built by Entrepreneurs, for Entrepreneurs',
+                    title: 'Von Unternehmern für Unternehmer',
                     description:
-                        'We understand the hustle. With WebWunder, get a powerhouse website in under an hour. We’ve perfected the process—100+ projects perfected.',
+                        'Wir verstehen Ihr Geschäft. Mit WebWunder bekommen Sie eine leistungsstarke Website in weniger als einer Stunde. Über 100 erfolgreiche Projekte sprechen für sich.',
                 },
                 {
-                    title: 'Free Updates and Design Refreshes',
+                    title: 'Kostenlose Updates und Design-Refreshes',
                     description:
-                        'Stay ahead with continuous updates, a free design refresh every 36 months, and transform your existing site with WebWunder.',
+                        'Bleiben Sie vorne mit kontinuierlichen Updates und einem kostenlosen Design-Refresh alle 36 Monate.',
                 },
                 {
-                    title: 'Results-Driven Web Designs',
+                    title: 'Ergebnisorientierte Webdesigns',
                     description:
-                        'Our websites are designed to perform, attract, and convert, driving real growth.',
+                        'Unsere Websites sind auf Leistung, Anziehung und Konvertierung ausgelegt und sorgen so für echtes Wachstum.',
                 },
             ],
             steps: {
@@ -272,14 +272,14 @@ export const languageData = {
                         step: 'Step 2',
                         title: 'Design & Content',
                         description:
-                            'Share your ideas or let us help develop them. We’ll handle everything and send it for your final approval.',
+                            'Share your content ideas, or let us help craft them. We’ll handle everything and send it to you for final approval',
                         time: ' Time commitment: 15 minutes.',
                     },
                     {
                         step: 'Step 3',
                         title: 'Launch Website',
                         description:
-                            'We’ll execute your vision and take your website live, ready to dominate the market.',
+                            'We turn your vision into reality and get your website live, ready to dominate the market.',
                         time: ' Time commitment: 15 minutes.',
                     },
                 ],
@@ -315,7 +315,7 @@ export const languageData = {
             headline: 'Markterobernde Unternehmenslösungen',
             subheadline: 'Keine Verträge, nur Erfolge',
             description:
-                'Erleben Sie die Power einer WebWunder-Website, die perfekt auf Ihr Unternehmen zugeschnitten ist. Wählen Sie aus drei Abonnements oder unserem Unlimited Design Paket. 100 % flexibel und jederzeit kündbar. Aber Vorsicht: Sie werden sich so wohl fühlen, dass Sie nie wieder wegwollen. Nach uns brauchen Sie keine andere Agentur mehr – und Ihre bisherige auch nicht!',
+                'Erleben Sie die Power einer WebWunder-Website, die perfekt auf Ihr Unternehmen zugeschnitten ist. Wählen Sie aus drei Abonnements oder unserem Unlimited Design Paket. 100% flexibel und jederzeit kündbar. Aber Vorsicht: Sie werden sich so wohl fühlen, dass Sie nie wieder wegwollen. Nach uns brauchen Sie keine andere Agentur mehr – und Ihre bisherige auch nicht!',
             whatYouGet: 'Was Sie bekommen:',
             tabs: [
                 {
@@ -437,7 +437,7 @@ export const languageData = {
                     setupFee: "2000 Setup Fee",
 
                     description:
-                        'For businesses seeking top-tier performance and comprehensive support for maximum success.',
+                        'For businesses seeking top-tier performance and comprehensive support for maximum impact.',
                     features: [
                         'Fully responsive, optimized for all devices',
                         'Continuous updates, plug-ins, and AI-powered SEO',
@@ -483,7 +483,7 @@ export const languageData = {
             book15MinCall: 'Buche einen 15-Minuten-Anruf',
             callDescription:
                 'In nur 15 Minuten kommen wir direkt auf den Punkt und zeigen dir, wie WebWunder dein Business transformieren kann. Wir schätzen deine Zeit – denn wir sind auch Unternehmer.',
-            bookNow: 'Jetzt buchen',
+            bookNow: 'Kostenloses Erstgespräch buchen',
             chat: 'Chatten',
             preferChatFirst: 'Möchtest du lieber zuerst chatten?',
             chatDescription:
@@ -626,7 +626,7 @@ export const languageData = {
                 {
                     question:
                         'Was ist der Unlimited Design Plan, und warum haben Sie ihn eingeführt?',
-                    answer: 'Unser Unlimited Design Plan wurde für Unternehmer entwickelt, die kontinuierlich hochwertige Designarbeit benötigen, ohne den Aufwand ständiger Verhandlungen. Dieses Paket bietet unbegrenzte Designanfragen, schnelle Lieferung und vollständiges Design-Eigentum – alles zu einer festen monatlichen Gebühr.',
+                    answer: 'Unser Unlimited Design Plan wurde für Unternehmer entwickelt, die kontinuierlich hochwertige Designarbeit benötigen, ohne den Aufwand ständiger Verhandlungen. Dieses Paket bietet unbegrenzte Designanfragen, schnelle Lieferung und vollständiges Design-Eigentum – alles zu einer festen monatlichen Gebühr. Es ist darauf ausgelegt, Ihre Bedürfnisse zu erfüllen, wann immer Sie sie brauchen, und eliminiert das Hin und Her mit Agenturen.',
                 },
                 {
                     question:
@@ -644,12 +644,12 @@ export const languageData = {
                 },
                 {
                     question: 'Ist meine Website für Suchmaschinen optimiert?',
-                    answer: 'Wir sind keine SEO-Agentur, aber wir sorgen dafür, dass Ihre Website mithilfe fortschrittlicher KI-Tools vollständig optimiert ist. Ihre WebWunder-Website ist darauf ausgelegt, in jeder Hinsicht besser zu performen – einschließlich der Suchmaschinenplatzierungen.',
+                    answer: 'Wir sind keine SEO-Agentur, aber wir sorgen dafür, dass Ihre Website mithilfe fortschrittlicher KI-Tools vollständig optimiert ist. Von Unternehmern für Unternehmer entwickelt, ist Ihre WebWunder-Website darauf ausgelegt, in jeder Hinsicht besser zu performen – einschließlich der Suchmaschinenplatzierungen. Mit dem Wachstum Ihres Unternehmens wächst auch Ihre Online-Sichtbarkeit. Für spezialisiertes Off-Page-SEO oder gezielte Werbekampagnen haben wir Partner, die Ihnen weiterhelfen können.',
                 },
                 {
                     question:
                         'Ich habe noch keine Inhalte, kein Branding und keine klare Vision für meine Website. Kann WebWunder dabei helfen?',
-                    answer: 'Absolut! WebWunder kümmert sich um alles – von Website-Texten und Branding bis hin zur vollständigen Corporate Identity.',
+                    answer: 'Absolut! WebWunder kümmert sich um alles – von Website-Texten und Branding bis hin zur vollständigen Corporate Identity. Wir erstellen Ihre Inhalte und gestalten eine einzigartige, kohärente Marke, die zu Ihren Unternehmenszielen passt. Für rechtliche Texte empfehlen wir, einen Anwalt zu konsultieren, um sicherzustellen, dass alles vollständig konform ist.',
                 },
             ],
 
@@ -669,7 +669,7 @@ export const languageData = {
                 {
                     question:
                         'What makes WebWunder’s websites different, and why should I choose WebWunder?',
-                    answer: 'At WebWunder, we’re entrepreneurs like you, so we understand the challenges you face. Our custom, template-free websites are designed to drive sales, reduce costs, and save you time. With continuous AI optimizations and hassle-free updates, you’ll never need another agency.',
+                    answer: 'At WebWunder, we’re entrepreneurs like you, so we understand the challenges you face. Our custom, template-free websites are designed to drive sales, reduce costs, and save you time. With continuous AI optimizations and hassle-free updates, you’ll never need another agency. We handle the heavy lifting so you can focus on scaling your business with confidence.',
                 },
                 {
                     question:
@@ -679,7 +679,7 @@ export const languageData = {
                 {
                     question:
                         'What is the Unlimited Design Plan, and why did you introduce it?',
-                    answer: 'Our Unlimited Design Plan was created for entrepreneurs who need constant, high-quality design work without the hassle of ongoing negotiations. This plan offers unlimited design requests, fast delivery, and full design ownership—all for a flat monthly fee.',
+                    answer: 'Our Unlimited Design Plan was created for entrepreneurs who need constant, high-quality design work without the hassle of ongoing negotiations. This plan offers unlimited design requests, fast delivery, and full design ownership—all for a flat monthly fee. It’s designed to meet your needs, when you need them, eliminating the back-and-forth with agencies.',
                 },
                 {
                     question:
@@ -701,7 +701,7 @@ export const languageData = {
                 {
                     question:
                         'I don’t have any content, branding, or even a clear vision for my website. Can WebWunder help with that?',
-                    answer: 'Absolutely! WebWunder takes care of everything—from website copy and branding to complete corporate identity creation.',
+                    answer: 'Absolutely! WebWunder takes care of everything—from website copy and branding to complete corporate identity creation. We’ll craft your content and design a unique, cohesive brand that aligns with your business goals. For legal texts, we recommend consulting a lawyer to ensure everything is fully compliant with your specific needs.',
                 },
             ],
             contactCta: 'Get in Touch',
@@ -1850,7 +1850,7 @@ export const languageData = {
             'SEO',
             'Digital Marketing',
             'Broschüren',
-            'ANIMATION',
+            'Animation',
         ],
         en: [
             'Web Design',
@@ -1862,7 +1862,7 @@ export const languageData = {
             'SEO',
             'Digital Marketing',
             'Brochure',
-            'ANIMATION',
+            'Animation',
         ],
     },
 }

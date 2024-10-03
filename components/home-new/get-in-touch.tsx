@@ -47,7 +47,7 @@ const GetInTouch = () => {
                 </p>
                 <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] px-2 py-1 transition-all hover:scale-95 md:p-2">
                     <Link
-                        href="https://www.figma.com/exit?url=https%3A%2F%2Ftidycal.com%2Fskylumina%2Fwebwunder"
+                        href="https://tidycal.com/skylumina/webwunder"
                         className="flex flex-row items-center justify-between gap-4"
                     >
                         <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">

@@ -99,7 +99,7 @@ const FAQs = () => {
                 <Accordion
                     type="single"
                     collapsible
-                    className="mt-10 w-screen space-y-2 md:mt-20 lg:w-3/5"
+                    className="mt-10 w-screen space-y-2 md:mt-20 h-full lg:w-3/5"
                 >
                     {faqData.map((faq, index) => (
                         <AccordionItem
@@ -110,7 +110,7 @@ const FAQs = () => {
                             <AccordionTrigger className="w-4/5 px-4 py-2 text-left font-archivo text-base font-bold text-white hover:no-underline lg:text-xl">
                                 {faq.question}
                             </AccordionTrigger>
-                            <AccordionContent className="mx-2 flex w-full items-center justify-center rounded-lg px-4 py-2 font-archivo text-sm font-normal text-white/50">
+                            <AccordionContent className="mx-2 flex w-full items-center rounded-lg px-4 text-left py-2 font-archivo text-sm font-normal text-white/50">
                                 {faq.answer}
                             </AccordionContent>
                         </AccordionItem>

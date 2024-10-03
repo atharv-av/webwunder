@@ -304,30 +304,30 @@ const JoinUs: React.FC = () => {
                             number={2}
                             title={
                                 languageData?.joinUsSection?.[changeLanguage]
-                                    ?.steps?.steps[0]?.title
+                                    ?.steps?.steps[1]?.title
                             }
                             description={
                                 languageData?.joinUsSection?.[changeLanguage]
-                                    ?.steps?.steps[0]?.description
+                                    ?.steps?.steps[1]?.description
                             }
                             timeCommitment={
                                 languageData?.joinUsSection?.[changeLanguage]
-                                    ?.steps?.steps[0]?.time
+                                    ?.steps?.steps[1]?.time
                             }
                         />
                         <TimelineStep
                             number={3}
                             title={
                                 languageData?.joinUsSection?.[changeLanguage]
-                                    ?.steps?.steps[0]?.title
+                                    ?.steps?.steps[2]?.title
                             }
                             description={
                                 languageData?.joinUsSection?.[changeLanguage]
-                                    ?.steps?.steps[0]?.description
+                                    ?.steps?.steps[2]?.description
                             }
                             timeCommitment={
                                 languageData?.joinUsSection?.[changeLanguage]
-                                    ?.steps?.steps[0]?.time
+                                    ?.steps?.steps[2]?.time
                             }
                         />
                     </div>
@@ -375,7 +375,7 @@ const JoinUs: React.FC = () => {
 
                 <div className="flex flex-col items-center lg:items-center lg:justify-between">
                     <div
-                        className={`hidden flex-col items-start gap-12 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-2/3'}`}
+                        className={`hidden flex-col items-start gap-8 lg:flex lg:w-11/12 ${changeLanguage === 'de' ? '2xl:w-3/4' : '2xl:w-2/3'}`}
                     >
                         <Badge className="w-fit self-start bg-[#5D59E1] font-archivo text-sm font-normal">
                             {
