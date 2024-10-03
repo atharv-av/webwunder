@@ -185,7 +185,7 @@ const AllInOne = () => {
                             </p>
                         </div>
 
-                        <p className="px-4 text-center font-archivo text-sm font-normal text-black lg:w-[65%] lg:text-base 2xl:translate-y-0">
+                        <p className="px-4 text-center font-archivo text-sm font-normal text-zinc-600 lg:w-[65%] lg:text-base 2xl:translate-y-0">
                             {
                                 languageData?.allInOnePage?.[changeLanguage]
                                     ?.description

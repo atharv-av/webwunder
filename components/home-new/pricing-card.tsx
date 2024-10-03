@@ -15,7 +15,7 @@ export interface PricingCardProps {
     title: string
     description: string
     price: number
-    setupFee: number
+    setupFee: string
     features: string[]
     ctaText?: string
     onSignUp?: () => void
@@ -88,8 +88,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
                             </span>
                         </div>
                         <div className="font-inter text-lg font-semibold text-white lg:text-xl">
-                            {/* €{setupFee} */}
-                            {languageData?.paymentsCard?.[changeLanguage]?.setupFeetag}
+                            €{setupFee}
+                            
 
                         </div>
                     </div>

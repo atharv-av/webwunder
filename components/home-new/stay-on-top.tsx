@@ -22,7 +22,7 @@ const StayOnTop = () => {
         }
     }, [])
     return (
-        <div className="-mt-10 flex flex-col items-center gap-6 bg-black">
+        <div className="md:-mt-10 pt-12 flex flex-col items-center gap-6 bg-black">
             <div className="flex flex-col items-center gap-4">
                 <Badge
                     data-aos="fade-up"

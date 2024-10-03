@@ -34,7 +34,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
 }) => {
     return (
         <div
-            className={`flex h-[250px] flex-col items-start justify-between transition-all duration-300 lg:mt-2 lg:h-80 ${
+            className={`flex h-fit flex-col items-start justify-between transition-all duration-300 lg:mt-2 lg:h-80 ${
                 isHovered ? 'lg:w-1/2' : width
             } ${bgColor} rounded-3xl p-8`}
             onMouseEnter={onMouseEnter}
@@ -52,7 +52,7 @@ const ContactCard: React.FC<ContactCardProps> = ({
                 </p>
             </div>
             <Link target='_blank' href={buttonTarget}>
-                <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
+                <button className="flex w-fit mt-4 flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95">
                     <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                         {buttonText}
                     </p>

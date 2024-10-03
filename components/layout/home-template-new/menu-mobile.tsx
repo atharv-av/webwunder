@@ -61,23 +61,23 @@ export default function SidebarMenu() {
                                 animate={{ x: 0 }}
                                 exit={{ x: '100%' }}
                                 transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
-                                className="menu-list w-screen absolute right-0 top-0 bottom-0 flex flex-col bg-black text-white p-6 shadow-xl"
+                                className="menu-list w-screen h-full absolute right-0 top-0 bottom-0 flex flex-col bg-black justify-between text-white p-6 shadow-xl"
                             >
                                 <div className="flex justify-between items-center mb-8">
                                 <Logo />
                                     <button onClick={closeMenu} className="text-2xl">&times;</button>
                                 </div>
-                                <nav className="flex-grow text-center">
-                                    <ul className="space-y-3 text-xl">
+                              
+                                    <ul className="flex flex-col text-center justify-evenly md:text-2xl text-xl space-y-2">
                                         {menuItems.map((item) => (
                                             <li key={item}>
-                                                <Link href="#" className="block py-2">
+                                                <Link href="#" className="block py-1">
                                                     {item}
                                                 </Link>
                                             </li>
                                         ))}
                                     </ul>
-                                </nav>
+                                
                                 <div className="text-center ">
                                     <p className="font-semibold text-zinc-500 mb-2">Get in touch</p>
                                     <div className="flex flex-wrap text-center justify-center items-center gap-2 text-sm mb-4">

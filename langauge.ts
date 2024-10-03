@@ -321,7 +321,7 @@ export const languageData = {
                 {
                     title: 'Start',
                     price: 490,
-                    setupFee: 2000,
+                    setupFee: "2000 Einrichtungsgebühr",
 
                     description:
                         'Perfekt für Startups und kleine Projekte, die eine starke Online-Basis brauchen.',
@@ -337,7 +337,7 @@ export const languageData = {
                 {
                     title: 'Scale',
                     price: 690,
-                    setupFee: 2000,
+                    setupFee: "2000 Einrichtungsgebühr",
                     description:
                         'Entwickelt für wachsende Unternehmen, die erweiterte Funktionen und zusätzlichen Design-Support benötigen.',
                     features: [
@@ -353,7 +353,7 @@ export const languageData = {
                 {
                     title: 'Pro',
                     price: 990,
-                    setupFee: 2000,
+                    setupFee: "2000 Einrichtungsgebühr",
 
                     description:
                         'Für Unternehmen, die erstklassige Leistung und umfassenden Support für maximalen Erfolg suchen.',
@@ -373,7 +373,7 @@ export const languageData = {
                 {
                     title: 'Unlimited Design',
                     price: 4990,
-                    setupFee: 2000,
+                    setupFee: "2000 Einrichtungsgebühr",
                     description:
                         'Für Unternehmen, die das Beste im Design verlangen – nur eine begrenzte Anzahl an Plätzen verfügbar.',
                     features: [
@@ -401,7 +401,7 @@ export const languageData = {
                 {
                     title: 'Start',
                     price: 490,
-                    setupFee: 2000,
+                    setupFee: "2000 Setup Fee",
                     description:
                         'Perfect for startups and small projects that need a strong online foundation.',
                     features: [
@@ -417,7 +417,7 @@ export const languageData = {
                 {
                     title: 'Scale',
                     price: 690,
-                    setupFee: 2000,
+                    setupFee: "2000 Setup Fee",
                     description:
                         'Designed for growing businesses that need advanced features and additional design support.',
                     features: [
@@ -434,7 +434,7 @@ export const languageData = {
                 {
                     title: 'Pro',
                     price: 990,
-                    setupFee: 2000,
+                    setupFee: "2000 Setup Fee",
 
                     description:
                         'For businesses seeking top-tier performance and comprehensive support for maximum success.',
@@ -455,7 +455,7 @@ export const languageData = {
                 {
                     title: 'Unlimited Design',
                     price: 4990,
-                    setupFee: 2000,
+                    setupFee: "2000 Setup Fee",
                     description:
                         'For businesses that demand the best in design—only a limited number of slots available.',
                     features: [

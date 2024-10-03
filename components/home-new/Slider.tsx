@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
 import { ArrowRight } from 'lucide-react'
+import { Badge } from '../ui/badge'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { languageData } from '@/langauge'
@@ -136,6 +138,13 @@ const JoinUsSection: React.FC = () => {
             <div className="mx-auto px-4 sm:px-6 lg:px-0">
                 <div className="grid grid-cols-1 items-center lg:grid-cols-3">
                     <div className="flex flex-col items-center justify-center lg:col-span-1 lg:items-start lg:pl-20">
+
+                    <Badge className="w-fit my-2 bg-[#5D59E1] font-archivo text-sm font-normal">
+                    {
+                                languageData?.joinUsSection?.[changeLanguage]
+                                    ?.cta
+                            }
+                    </Badge>
                         <h2 className="mb-4 text-center text-4xl font-bold lg:text-start">
                             {
                                 languageData?.joinUsSection?.[changeLanguage]

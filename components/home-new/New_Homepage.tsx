@@ -105,7 +105,7 @@ const New_Homepage = () => {
 
     return (
         <div className="h-full lg:min-h-screen lg:bg-white lg:p-5">
-            <div className="relative overflow-hidden bg-[url('/images/home/home-landing-img.png')] bg-cover bg-center lg:rounded-2xl">
+            <div className="relative h-full overflow-hidden bg-[url('/images/home/home-landing-img.png')] bg-cover bg-center lg:rounded-2xl">
                 <div className="relative z-10">
                     <Header />
                 </div>
@@ -116,7 +116,7 @@ const New_Homepage = () => {
                 >
                     <Badge
                         data-aos="fade-up"
-                        className="w-fit rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
+                        className="w-fit mt-12 rounded-full bg-[#5D59E1] px-5 py-1 font-archivo text-xs font-light text-white sm:text-sm"
                     >
                         {/* Rock-Solid Business Growth */}
                         {languageData?.heroSection?.[changeLanguage]?.badge}
@@ -205,7 +205,7 @@ const New_Homepage = () => {
                             </Link>
                         </button>
                     </div>
-                    <p className="toptrigger relative mb-6 text-center font-archivo text-sm font-bold text-white sm:top-3 lg:text-xl">
+                    <p className="toptrigger relative mb-6 px-7 text-center font-archivo text-sm font-bold text-white sm:top-3 lg:text-xl">
                         {/* Hundreds of perfect projects delivered to hundreds of
                         thrilled customers. */}
                         {
@@ -244,7 +244,7 @@ const New_Homepage = () => {
                 <Image
                     src="/images/homebg2.png"
                     alt="Figma"
-                    className="mt-24 flex w-screen lg:hidden"
+                    className="mt-24 flex w-screen bottom-0 lg:hidden"
                     width={5000}
                     height={5000}
                 />

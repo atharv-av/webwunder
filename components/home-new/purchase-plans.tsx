@@ -14,7 +14,7 @@ interface PlanProps {
     title: string
     description: string
     price: number
-    setupFee: number
+    setupFee: string
     features: string[]
     ctaText?: string
 }
@@ -61,7 +61,7 @@ const MobilePurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.features,
         },
         {
-            icon: '/images/home/purchase-plans/icon-3.png',
+            icon: '/images/home/purchase-plans/icon-2.png',
             iconBg: 'bg-[#27DAB7]',
             title: languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.title,
             description:
