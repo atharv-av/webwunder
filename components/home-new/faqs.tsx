@@ -99,7 +99,7 @@ const FAQs = () => {
                 <Accordion
                     type="single"
                     collapsible
-                    className="mt-10 w-screen space-y-2 md:mt-20 h-full lg:w-3/5"
+                    className="mt-10    w-screen space-y-2 md:mt-20 h-full lg:w-3/5"
                 >
                     {faqData.map((faq, index) => (
                         <AccordionItem
