@@ -28,7 +28,7 @@ export default function LoginPage() {
             } else if (windowWidth >= 1024) {
                 setScale('scale-75') // For 1300px to 1399px
             } else {
-                setScale('scale-[95%]') // Default or fallback width
+                setScale('scale-[100%]') // Default or fallback width
             }
         }
 
@@ -104,7 +104,7 @@ export default function LoginPage() {
     ]
 
     return (
-        <div className="flex min-h-screen flex-col overflow-hidden bg-[url('/images/group.png')] bg-black lg:flex-row">
+        <div className="flex min-h-screen flex-col overflow-hidden  bg-black lg:flex-row">
             <div className="block md:hidden">
                 <Header />
             </div>

@@ -161,7 +161,7 @@ const New_Homepage = () => {
                     </div>
                     <div className="my-4 flex items-center justify-center gap-2 lg:my-2 lg:gap-3">
                         <button
-                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] p-2 transition-all hover:scale-95`}
+                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full bg-[#24252A] px-2 transition-all hover:scale-95`}
                         >
                             <p className="ml-4 font-archivo text-sm font-medium text-white lg:text-[15px]">
                                 {
@@ -170,7 +170,7 @@ const New_Homepage = () => {
                                 }
                             </p>
                             <div
-                                className={`flex ${changeLanguage === 'de' ? 'h-10 w-12' : 'h-6 w-6'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
+                                className={`flex ${changeLanguage === 'de' ? 'h-10 w-12' : 'h-8 w-8'} items-center justify-center rounded-full bg-[#fefffe] lg:h-8 lg:w-8`}
                             >
                                 <ArrowRight
                                     size={18}
@@ -181,7 +181,7 @@ const New_Homepage = () => {
                         </button>
 
                         <button
-                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95`}
+                            className={`flex ${changeLanguage === 'de' ? 'h-14' : 'h-12'} w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] px-2 transition-all hover:scale-95`}
                         >
                             <Link
                                 target="_blank"
