@@ -36,7 +36,32 @@ export const languageData = {
             signup: 'Anmelden',
         },
         en: {
-      
+
+            benefits: 'Benefits',
+            yourWebsite: 'Your Website',
+            prices: 'Prices',
+            portfolio: 'Portfolio',
+            faqs: 'FAQs',
+            contact: 'Contact',
+            login: 'Log in',
+            signup: 'Sign up',
+        },
+    },
+    mobnavItems: {
+        de: {
+            home: 'Home',
+            benefits: 'Vorteile',
+            yourWebsite: 'Ihre Website',
+            prices: 'Preise',
+            portfolio: 'Portfolio',
+            faqs: 'FAQs',
+            contact: 'Kontakt',
+            login: 'Einloggen',
+            signup: 'Anmelden',
+        },
+        en: {
+
+            home: 'Home',
             benefits: 'Benefits',
             yourWebsite: 'Your Website',
             prices: 'Prices',
@@ -317,7 +342,64 @@ export const languageData = {
             description:
                 'Erleben Sie die Power einer WebWunder-Website, die perfekt auf Ihr Unternehmen zugeschnitten ist. Wählen Sie aus drei Abonnements oder unserem Unlimited Design Paket. 100% flexibel und jederzeit kündbar. Aber Vorsicht: Sie werden sich so wohl fühlen, dass Sie nie wieder wegwollen. Nach uns brauchen Sie keine andere Agentur mehr – und Ihre bisherige auch nicht!',
             whatYouGet: 'Was Sie bekommen:',
+
             tabs: [
+                {
+                    title: 'Scale',
+                    price: 690,
+                    setupFee: "2000 Einrichtungsgebühr",
+                    description:
+                        'Entwickelt für wachsende Unternehmen, die erweiterte Funktionen und zusätzlichen Design-Support benötigen.',
+                    signMeUp: 'Ich bin dabei!',
+                    features: [
+                        'Vollständig responsiv, optimiert für alle Geräte',
+                        'Laufende Updates, Plug-ins und KI-gestütztes SEO',
+                        'Sicheres Hosting, Backups und vollständige Google-Indexierung',
+                        'Professionelles Copywriting und Branding',
+                        'Design-Refresh alle 36 Monate',
+                        'Zwei Designaufgaben pro Monat für mehr Flexibilität',
+                        'Erweiterte Website-Funktionen zur Unterstützung Ihres Unternehmenswachstums',
+                        "Jederzeit kündbar"
+                    ],
+                },
+                {
+                    title: 'Pro',
+                    price: 990,
+                    setupFee: "2000 Einrichtungsgebühr",
+                    signMeUp: 'Ich bin dabei!',
+                    description:
+                        'Für Unternehmen, die erstklassige Leistung und umfassenden Support für maximalen Erfolg suchen.',
+                    features: [
+                        'Vollständig responsiv, optimiert für alle Geräte',
+                        'Laufende Updates, Plug-ins und KI-gestütztes SEO',
+                        'Sicheres Hosting, Backups und vollständige Google-Indexierung',
+                        'Professionelles Copywriting und Branding',
+                        'Design-Refresh alle 36 Monate',
+                        'Zwei Designaufgaben pro Monat für mehr Flexibilität',
+                        'Erweiterte Website-Funktionen zur Unterstützung Ihres Unternehmenswachstums',
+                        'Drei Designaufgaben pro Monat für kontinuierliche Kreativität',
+                        'Unterstützung beim Social-Media-Posting und -Management',
+                        'Mehr monatliche Zeit für Ihr Projekt, um Spitzenleistungen zu gewährleisten',
+                        "Jederzeit kündbar"
+                    ],
+
+                },
+                {
+                    title: 'Unlimited Design',
+                    price: 4990,
+                    setupFee: "2000 Einrichtungsgebühr",
+                    description:
+                        'Für Unternehmen, die das Beste im Design verlangen – nur eine begrenzte Anzahl an Plätzen verfügbar.',
+                    features: [
+                        'Unbegrenzte Designanfragen (eine nach der anderen)',
+                        'Priorisierte Lieferung (ca. 72 Stunden)',
+                        'Unterstützung für mehrere Marken',
+                        'Vollständiges Eigentum an allen Designs',
+                        'Exklusiver, top-priorisierter Service',
+                        "Jederzeit kündbar"
+                    ],
+                    signMeUp: 'Ich bin dabei!',
+                },
                 {
                     title: 'Start',
                     price: 490,
@@ -332,60 +414,15 @@ export const languageData = {
                         'Professionelles Copywriting und Branding',
                         'Eine monatliche Designaufgabe',
                         'Design-Refresh alle 36 Monate',
+                        "Jederzeit kündbar"
                     ],
+                    signMeUp: 'Ich bin dabei!',
                 },
-                {
-                    title: 'Scale',
-                    price: 690,
-                    setupFee: "2000 Einrichtungsgebühr",
-                    description:
-                        'Entwickelt für wachsende Unternehmen, die erweiterte Funktionen und zusätzlichen Design-Support benötigen.',
-                    features: [
-                        'Vollständig responsiv, optimiert für alle Geräte',
-                        'Laufende Updates, Plug-ins und KI-gestütztes SEO',
-                        'Sicheres Hosting, Backups und vollständige Google-Indexierung',
-                        'Professionelles Copywriting und Branding',
-                        'Design-Refresh alle 36 Monate',
-                        'Zwei Designaufgaben pro Monat für mehr Flexibilität',
-                        'Erweiterte Website-Funktionen zur Unterstützung Ihres Unternehmenswachstums',
-                    ],
-                },
-                {
-                    title: 'Pro',
-                    price: 990,
-                    setupFee: "2000 Einrichtungsgebühr",
 
-                    description:
-                        'Für Unternehmen, die erstklassige Leistung und umfassenden Support für maximalen Erfolg suchen.',
-                    features: [
-                        'Vollständig responsiv, optimiert für alle Geräte',
-                        'Laufende Updates, Plug-ins und KI-gestütztes SEO',
-                        'Sicheres Hosting, Backups und vollständige Google-Indexierung',
-                        'Professionelles Copywriting und Branding',
-                        'Design-Refresh alle 36 Monate',
-                        'Zwei Designaufgaben pro Monat für mehr Flexibilität',
-                        'Erweiterte Website-Funktionen zur Unterstützung Ihres Unternehmenswachstums',
-                        'Drei Designaufgaben pro Monat für kontinuierliche Kreativität',
-                        'Unterstützung beim Social-Media-Posting und -Management',
-                        'Mehr monatliche Zeit für Ihr Projekt, um Spitzenleistungen zu gewährleisten',
-                    ],
-                },
-                {
-                    title: 'Unlimited Design',
-                    price: 4990,
-                    setupFee: "2000 Einrichtungsgebühr",
-                    description:
-                        'Für Unternehmen, die das Beste im Design verlangen – nur eine begrenzte Anzahl an Plätzen verfügbar.',
-                    features: [
-                        'Unbegrenzte Designanfragen (eine nach der anderen)',
-                        'Priorisierte Lieferung (ca. 72 Stunden)',
-                        'Unterstützung für mehrere Marken',
-                        'Vollständiges Eigentum an allen Designs',
-                        'Exklusiver, top-priorisierter Service',
-                    ],
-                },
+
+
             ],
-            signMeUp: 'Ich bin dabei!',
+
             cancelAnytime: 'Jederzeit kündbar',
             priceTag: 'Monat',
             setupFeetag: 'Einrichtungsgebühr',
@@ -398,22 +435,6 @@ export const languageData = {
             whatYouGet: 'What You Get:',
 
             tabs: [
-                {
-                    title: 'Start',
-                    price: 490,
-                    setupFee: "2000 Setup Fee",
-                    description:
-                        'Perfect for startups and small projects that need a strong online foundation.',
-                    features: [
-                        'Fully responsive, optimized for all devices',
-                        'Continuous updates, plug-ins, and AI-powered SEO',
-                        'Secure hosting, backups, and full Google indexing',
-                        'Professional copywriting and branding',
-                        'One monthly design task',
-                        'Design refresh every 36 months',
-                        'Cancel anytime'
-                    ],
-                },
                 {
                     title: 'Scale',
                     price: 690,
@@ -430,6 +451,7 @@ export const languageData = {
                         'More extensive site capabilities to support your business growth',
                         'Cancel anytime'
                     ],
+                    signMeUp: 'Sign Me Up!',
                 },
                 {
                     title: 'Pro',
@@ -451,7 +473,11 @@ export const languageData = {
                         'Extra time dedicated monthly to your project for top-tier performance',
                         'Cancel anytime'
                     ],
+                    signMeUp: 'Sign Me Up!',
                 },
+
+
+
                 {
                     title: 'Unlimited Design',
                     price: 4990,
@@ -466,9 +492,27 @@ export const languageData = {
                         'Exclusive, top-priority service',
                         'Cancel anytime'
                     ],
+                    signMeUp: 'Sign Me Up!',
+                },
+                {
+                    title: 'Start',
+                    price: 490,
+                    setupFee: "2000 Setup Fee",
+                    description:
+                        'Perfect for startups and small projects that need a strong online foundation.',
+                    features: [
+                        'Fully responsive, optimized for all devices',
+                        'Continuous updates, plug-ins, and AI-powered SEO',
+                        'Secure hosting, backups, and full Google indexing',
+                        'Professional copywriting and branding',
+                        'One monthly design task',
+                        'Design refresh every 36 months',
+                        'Cancel anytime'
+                    ],
+                    signMeUp: 'Sign Me Up!',
                 },
             ],
-            signMeUp: 'Sign Me Up!',
+
             cancelAnytime: 'Cancel Anytime',
             priceTag: 'Month',
             setupFeetag: 'Setup Fee',
@@ -1782,12 +1826,14 @@ export const languageData = {
                 bookCall: 'Book a call',
                 chatWhatsApp: 'Chat on WhatsApp',
                 signUp: 'Sign up',
-                pricing: 'Pricing',
+                pricing: 'Prices',
                 signIn: 'Sign in',
                 portfolio: 'Portfolio',
                 services: 'Services',
                 faqs: 'FAQs',
+                contact: 'Contact',
                 benefits: 'Benefits',
+                yourwebsite: 'Your Website',
                 privacyPolicy: 'Privacy Policy',
                 terms: 'Terms & Conditions',
                 imprint: 'Imprint',
@@ -1822,7 +1868,9 @@ export const languageData = {
                 portfolio: 'Portfolio',
                 services: 'Dienstleistungen',
                 faqs: 'FAQs',
+                contact: 'Contact',
                 benefits: 'Vorteile',
+                yourwebsite: 'Your Website',
                 privacyPolicy: 'Datenschutz-Bestimmungen',
                 terms: 'Geschäftsbedingungen',
                 imprint: 'Impressum',

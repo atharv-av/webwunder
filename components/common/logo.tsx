@@ -16,7 +16,7 @@ export default function Logo({ className }: Props) {
     }
 
 
-    const classn = cn(['m-2', className])
+    const classn = cn(['', className])
     return (
         <Link href={`/`}>
             <Image src={`${logo.src}`}

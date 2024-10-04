@@ -15,6 +15,7 @@ interface PlanProps {
     description: string
     price: number
     setupFee: string
+    signMeUp: string
     features: string[]
     ctaText?: string
 }
@@ -59,6 +60,8 @@ const MobilePurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.features,
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.signMeUp
         },
         {
             icon: '/images/home/purchase-plans/icon-2.png',
@@ -73,6 +76,8 @@ const MobilePurchasePlans: React.FC = () => {
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.features,
             ctaText: 'Best Seller',
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.signMeUp
         },
         {
             icon: '/images/home/purchase-plans/icon-3.png',
@@ -86,6 +91,8 @@ const MobilePurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.features,
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.signMeUp
         },
         {
             icon: '/images/home/purchase-plans/icon-4.png',
@@ -99,6 +106,8 @@ const MobilePurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.features,
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.signMeUp
         },
     ]
 
@@ -118,9 +127,8 @@ const MobilePurchasePlans: React.FC = () => {
                 {plans.map((_, i) => (
                     <button
                         key={i}
-                        className={`h-1 w-14 cursor-pointer rounded-full ${
-                            i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
-                        }`}
+                        className={`h-1 w-14 cursor-pointer rounded-full ${i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
+                            }`}
                     ></button>
                 ))}
             </div>
@@ -159,8 +167,8 @@ const DesktopPurchasePlans: React.FC = () => {
 
     const plans: PlanProps[] = [
         {
-            icon: '/images/home/purchase-plans/icon-1.png',
-            iconBg: 'bg-[#FFDC26]',
+            icon: '/images/home/purchase-plans/icon-2.png',
+            iconBg: 'bg-[#27dab7]',
             title: languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.title,
             description:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[0]
@@ -170,10 +178,13 @@ const DesktopPurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.features,
+            ctaText: 'Best Seller',
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.signMeUp
         },
         {
-            icon: '/images/home/purchase-plans/icon-2.png',
-            iconBg: 'bg-[#27DAB7]',
+            icon: '/images/home/purchase-plans/icon-3.png',
+            iconBg: 'bg-[#FB421F]',
             title: languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.title,
             description:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[1]
@@ -183,11 +194,13 @@ const DesktopPurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.features,
-            ctaText: 'Best Seller',
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[1]?.signMeUp
+
         },
         {
-            icon: '/images/home/purchase-plans/icon-3.png',
-            iconBg: 'bg-[#FB421F]',
+            icon: '/images/home/purchase-plans/icon-4.png',
+            iconBg: 'bg-[#5D59E1]',
             title: languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.title,
             description:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[2]
@@ -197,10 +210,12 @@ const DesktopPurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.features,
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[2]?.signMeUp
         },
         {
-            icon: '/images/home/purchase-plans/icon-4.png',
-            iconBg: 'bg-[#5D59E1]',
+            icon: '/images/home/purchase-plans/icon-1.png',
+            iconBg: 'bg-[#ffdc26]',
             title: languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.title,
             description:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[3]
@@ -210,13 +225,15 @@ const DesktopPurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.setupFee,
             features:
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.features,
+            signMeUp:
+                languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.signMeUp
         },
     ]
 
     return (
         <>
-        
-                <div id='purchase-plans' className="hidden h-full w-full overflow-hidden mt-2 lg:block mr-10">
+
+            <div id='purchase-plans' className="hidden  h-full w-full overflow-hidden mt-2 lg:block pt-4 mr-10">
                 <Slider {...settings}>
                     {plans.map((plan, index) => (
                         <div
@@ -241,16 +258,15 @@ const DesktopPurchasePlans: React.FC = () => {
                     {plans.map((_, i) => (
                         <button
                             key={i}
-                            className={`h-1 w-28 cursor-pointer rounded-full ${
-                                i === currentIndex
+                            className={`h-1 w-28 cursor-pointer rounded-full ${i === currentIndex
                                     ? 'bg-[#5D59E1]'
                                     : 'bg-white/20'
-                            }`}
+                                }`}
                         ></button>
                     ))}
                 </div>
             </div>
-        
+
         </>
     )
 }
@@ -272,8 +288,8 @@ const PurchasePlans: React.FC = () => {
     }, [])
 
     return (
-        
-        <div id='packages' className="flex  -mt-14 h-fit flex-col items-center justify-center gap-10 bg-black">
+
+        <div id='packages' className="flex  -mt-14 h-full flex-col items-center justify-center gap-10 bg-black">
             <div className="flex w-5/6 flex-col items-center">
                 <Badge className="bg-[#5D59E1] lg:mt-12 font-archivo text-sm font-normal">
                     {/* Market-Conquering Business Solutions */}
@@ -297,7 +313,7 @@ const PurchasePlans: React.FC = () => {
             {/* Desktop Component */}
             <DesktopPurchasePlans />
         </div>
-        
+
     )
 }
 

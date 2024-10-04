@@ -58,6 +58,7 @@ const New_Homepage = () => {
     }
 
     const textSectionRef = useRef<HTMLDivElement>(null)
+   
     const image1Ref = useRef<HTMLImageElement>(null)
     const image2Ref = useRef<HTMLImageElement>(null)
     const image3Ref = useRef<HTMLImageElement>(null)
@@ -75,6 +76,13 @@ const New_Homepage = () => {
             }
 
             // Handle second image (translate downwards)
+            if (textSectionRef.current) {
+                const translateY = scrollPosition * 0.3 // Move downwards with positive value
+                textSectionRef.current.style.transform = `translateY(${translateY}px)`
+                textSectionRef.current.style.transformOrigin = 'center bottom'
+            }
+
+ // Handle second image (translate downwards)
             if (image2Ref.current) {
                 const translateY = scrollPosition * 0.2 // Move downwards with positive value
                 image2Ref.current.style.transform = `translateY(${translateY}px)`
@@ -89,9 +97,7 @@ const New_Homepage = () => {
             }
 
             // Handle text section (parallax effect)
-            if (textSectionRef.current) {
-                textSectionRef.current.style.transform = `translateY(${scrollPosition * 0.3}px)`
-            }
+           
         }
 
         // Attach the single scroll event listener
@@ -122,15 +128,15 @@ const New_Homepage = () => {
                         {languageData?.heroSection?.[changeLanguage]?.badge}
                     </Badge>
 
-                    <div className="heading">
-                        <p className="overflow-hidden text-center font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
+                    <div  className="heading">
+                        <p data-aos="fade-up" className="overflow-hidden text-center font-archivo text-[35px] font-bold leading-none text-white lg:text-7xl">
                             {
                                 languageData?.heroSection?.[changeLanguage]
                                     ?.headline
                             }
                             {/* {splitText("Winning")} {"  "}{splitText("Websites")} */}
                         </p>
-                        <p className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-5xl">
+                        <p  data-aos="fade-up" className="overflow-hidden text-center font-archivo text-[28px] font-bold leading-none text-[#9DFF50] lg:text-5xl">
                             {
                                 languageData?.heroSection?.[changeLanguage]
                                     ?.subHeadline

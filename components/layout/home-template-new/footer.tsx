@@ -200,9 +200,7 @@ const Footer = () => {
                                 </div>
                             </div>
                             <div className="row-span-2 lg:min-w-max">
-                                <p className="font-dm-sans text-[16px] font-normal text-white/50">
-                                    {changeData?.followUs}
-                                </p>
+                               
                                 <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                     <a
                                         target="_blank"
@@ -249,34 +247,38 @@ const Footer = () => {
                                     </a>
                                     <a
                                         target="_blank"
-                                        href="https://www.youtube.com/@WebWunder-io"
+                                        href="https://www.youtube.com/@web_wunder"
                                     >
                                         {changeData?.links?.youtube}
                                     </a>
                                 </div>
                             </div>
                             <div className="row-span-2 lg:min-w-max">
-                                <p className="font-dm-sans text-[16px] font-normal text-white/50">
-                                    {changeData?.followUs}
-                                </p>
+                                
                                 <div className="mt-3 flex flex-col gap-x-4 gap-y-3 font-dm-sans text-[18px] font-normal text-white lg:mt-3 lg:flex-col lg:items-start lg:gap-y-3">
                                     <a
                                         
-                                        href="#packages"
-                                    >
-                                        {changeData?.links?.pricing}
-                                    </a>
-                                    <a
-                                        target="_blank"
-                                        href={paths.pages.portfolio.href}
-                                    >
-                                        {changeData?.links?.portfolio}
-                                    </a>
-                                    <a
-                                        target="_blank"
-                                        href={paths.pages.faq.href}
+                                        href="#faqs"
                                     >
                                         {changeData?.links?.faqs}
+                                    </a>
+                                    <a
+                                        
+                                        href="#contact-us"
+                                    >
+                                        {changeData?.links?.contact}
+                                    </a>
+                                    <a
+                                        target="_blank"
+                                       
+                                    >
+                                        {changeData?.links?.signUp}
+                                    </a>
+                                     <a
+                                        target="_blank"
+                                        
+                                    >
+                                        {changeData?.links?.signIn}
                                     </a>
                                 </div>
                             </div>
@@ -288,15 +290,15 @@ const Footer = () => {
                                     <Link href={paths.pages.benefits.href}>
                                         {changeData?.links?.benefits}
                                     </Link>
-                                    <Link href="/signup">
-                                        {changeData?.links?.signUp}
-                                    </Link>
-                                    <Link href="/login">
-                                        {changeData?.links?.signIn}
-                                    </Link>
-                                    <Link href={paths.pages.service.href}>
-                                        {changeData?.links?.services}
-                                    </Link>
+                                    <a href="#all-in-one">
+                                        {changeData?.links?.yourwebsite}
+                                    </a>
+                                    <a href="#packages">
+                                        {changeData?.links?.pricing}
+                                    </a>
+                                    <a href="/portfolio">
+                                        {changeData?.links?.portfolio}
+                                    </a>
                                 </div>
                             </div>
                             <div className="col-start-2">
@@ -310,9 +312,7 @@ const Footer = () => {
                                     >
                                         {changeData?.links?.writeEmail}
                                     </Link>
-                                    <Link href={paths.pages.getInTouch.href}>
-                                        {changeData?.links?.sendMessage}
-                                    </Link>
+                                   
                                     <Link
                                         target="_blank"
                                         href={paths.pages.bookCall.href}

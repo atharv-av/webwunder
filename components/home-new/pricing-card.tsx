@@ -16,6 +16,7 @@ export interface PricingCardProps {
     description: string
     price: number
     setupFee: string
+    signMeUp:string
     features: string[]
     ctaText?: string
     onSignUp?: () => void
@@ -30,6 +31,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
     price,
     setupFee,
     features,
+    signMeUp,
     ctaText,
     onSignUp,
     isCenter = false,
@@ -47,10 +49,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
         }, [])
     return (
         <Card
-            className={`flex cursor-grab flex-col justify-between rounded-[32px] border-2 border-white bg-[#191919] h-fit lg:min-h-[800px] text-white transition-all duration-300 lg:w-[500px] xl:w-[700px] lg:scale-[87%] lg:border lg:border-[#D9D9D9] ${
+            className={`flex cursor-grab flex-col justify-between rounded-[32px] border-2 border-white bg-[#191919] h-fit lg:min-h- text-white transition-all duration-300 lg:w-[500px] xl:w-[700px] lg:scale-[87%] lg:border lg:border-[#D9D9D9] ${
                 isCenter
-                    ? 'lg:h-[1100px] lg:scale-[200%] xl:scale-90 lg:border-[5px] relative lg:bottom-14  lg:border-white'
-                    : 'lg:h-[900px]'
+                    ? ` ${changeLanguage === "de" ? "lg:h-[970px]" : "lg:h-[920px]"} lg:scale-[200%] lg:-translate-y-10 xl:scale-90 lg:border-[5px]  lg:border-white`
+                    : `lg:h-[880px] ${changeLanguage === "de" ? "xl:h-[910px]" : "xl:h-[837px]"}`
             }`}
         >
             <div className="flex flex-col">
@@ -133,7 +135,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     onClick={onSignUp}
                 >
                     {/* Sign Me Up! */}
-                    {languageData?.paymentsCard?.[changeLanguage]?.signMeUp}
+                    {languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.signMeUp}
 
                 </button>
               

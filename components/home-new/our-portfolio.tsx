@@ -200,7 +200,7 @@ const OurPortfolio = () => {
                     <div className="mt-5 lg:mt-0 flex items-start justify-center">
                         <button className="flex w-fit flex-row items-center justify-between gap-6 rounded-full border bg-[#ffffff] p-2 transition-all hover:scale-95">
                             <Link
-                                href="https://tidycal.com/skylumina/webwunder"
+                                href="/portfolio"
                                 className="flex flex-row items-center justify-between gap-4"
                             >
                                 <p className="ml-2 font-inter text-sm font-medium text-[#24252A] lg:text-[15px]">

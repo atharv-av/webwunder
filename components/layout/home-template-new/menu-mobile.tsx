@@ -1,11 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import Logo from '@/components/common/logo'
+import { languageData } from '@/langauge'
 
 const menuItems = [
     'Home', 'Benefits', 'Your Website', 'Prices', 'Portfolio', 'FAQs', 'Contact', 'Sign In', 'Sign Up'
@@ -25,6 +26,18 @@ export default function SidebarMenu() {
     const openMenu = () => setShown(true)
     const closeMenu = () => setShown(false)
 
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
+            }
+        }
+    }, [])
+    const menuitems = languageData?.mobnavItems?.[changeLanguage]
+    // console.log(menuitems)
     return (
         <>
             <div className="flex cursor-pointer p-0 pe-0 z-50 lg:hidden">
@@ -61,23 +74,24 @@ export default function SidebarMenu() {
                                 animate={{ x: 0 }}
                                 exit={{ x: '100%' }}
                                 transition={{ type: 'tween', ease: 'easeInOut', duration: 0.3 }}
-                                className="menu-list w-screen h-full absolute right-0 top-0 bottom-0 flex flex-col bg-black justify-between text-white p-6 shadow-xl"
+                                className="menu-list w-screen h-full absolute right-0 top-0 bottom-0 flex flex-col bg-black justify-between text-white px-6 py-2 shadow-xl"
                             >
-                                <div className="flex justify-between items-center mb-8">
-                                <Logo />
+                                <div className="flex justify-between items-center">
+                                    <Logo />
                                     <button onClick={closeMenu} className="text-2xl">&times;</button>
                                 </div>
-                              
-                                    <ul className="flex flex-col text-center justify-evenly md:text-2xl text-xl space-y-2">
-                                        {menuItems.map((item) => (
-                                            <li key={item}>
+
+                                <ul className="flex flex-col text-center justify-evenly md:text-2xl text-xl space-y-2">
+                                    {menuitems &&
+                                        Object.entries(menuitems).map(([key, value]) => (
+                                            <li key={key}>
                                                 <Link href="#" className="block py-1">
-                                                    {item}
+                                                    {value}
                                                 </Link>
                                             </li>
                                         ))}
-                                    </ul>
-                                
+                                </ul>
+
                                 <div className="text-center ">
                                     <p className="font-semibold text-zinc-500 mb-2">Get in touch</p>
                                     <div className="flex flex-wrap text-center justify-center items-center gap-2 text-sm mb-4">
