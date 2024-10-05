@@ -417,14 +417,18 @@ export const languageData = {
                         "Jederzeit kündbar"
                     ],
                     signMeUp: 'Ich bin dabei!',
+                    
                 },
 
 
 
             ],
+            signMeUp: 'Ich bin dabei!',
 
             cancelAnytime: 'Jederzeit kündbar',
             priceTag: 'Monat',
+            booked: 'Derzeit ausgebucht',
+            booked2 : 'melden Sie sich per E-Mail für die Warteliste an!',
             setupFeetag: 'Einrichtungsgebühr',
         },
         en: {
@@ -512,10 +516,14 @@ export const languageData = {
                     signMeUp: 'Sign Me Up!',
                 },
             ],
+            
+            signMeUp: 'Sign Me Up!',
 
             cancelAnytime: 'Cancel Anytime',
             priceTag: 'Month',
             setupFeetag: 'Setup Fee',
+            booked: 'Currently fully booked',
+            booked2 : 'Email us to join the waiting list!',
         },
     },
     contactUs: {
