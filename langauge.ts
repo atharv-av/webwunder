@@ -473,7 +473,7 @@ export const languageData = {
                         'Extra time dedicated monthly to your project for top-tier performance',
                         'Cancel anytime'
                     ],
-                    signMeUp: 'Sign Me Up!',
+                    signMeUp: ' Me Up!',
                 },
 
 
@@ -1819,7 +1819,7 @@ export const languageData = {
             quickConnect: 'Quick connect',
             weAccept: 'We Accept',
             legalPages: 'Legal Pages',
-            followUs: 'Follow Us',
+            followUs: 'Follow us',
             links: {
                 writeEmail: 'Write an Email',
                 sendMessage: 'Send a Message',

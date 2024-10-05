@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { Badge } from '../ui/badge'
 import { gsap } from 'gsap'
 
-import {languageData} from '@/langauge'
+import { languageData } from '@/langauge'
 import axios from 'axios';
 
 export interface PricingCardProps {
@@ -16,11 +16,12 @@ export interface PricingCardProps {
     description: string
     price: number
     setupFee: string
-    signMeUp:string
+    signMeUp: string
     features: string[]
     ctaText?: string
     onSignUp?: () => void
     isCenter?: boolean
+    onCardClick?:()=>void
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({
@@ -35,25 +36,25 @@ const PricingCard: React.FC<PricingCardProps> = ({
     ctaText,
     onSignUp,
     isCenter = false,
-}) =>
-     {
-        const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
+    onCardClick
+}) => {
+    const [changeLanguage, setChangeLanguage] = useState<'de' | 'en'>('en') // Initialize with default value
 
-        useEffect(() => {
-            if (typeof window !== 'undefined') {
-                const storedLang = localStorage.getItem('lang') as 'de' | 'en'
-                if (storedLang) {
-                    setChangeLanguage(storedLang) // Set state from localStorage after component mounts
-                }
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const storedLang = localStorage.getItem('lang') as 'de' | 'en'
+            if (storedLang) {
+                setChangeLanguage(storedLang) // Set state from localStorage after component mounts
             }
-        }, [])
+        }
+    }, [])
     return (
         <Card
-            className={`flex cursor-grab flex-col justify-between rounded-[32px] border-2 border-white bg-[#191919] h-fit lg:min-h- text-white transition-all duration-300 lg:w-[500px] xl:w-[700px] lg:scale-[87%] lg:border lg:border-[#D9D9D9] ${
-                isCenter
+            className={`flex cursor-grab flex-col justify-between rounded-[32px] border-2 border-white bg-[#191919] h-[730px] lg:min-h- text-white transition-all duration-300 lg:w-[500px] xl:w-[700px] lg:scale-[87%] lg:border lg:border-[#D9D9D9] ${isCenter
                     ? ` ${changeLanguage === "de" ? "lg:h-[970px]" : "lg:h-[920px]"} lg:scale-[200%] lg:-translate-y-10 xl:scale-90 lg:border-[5px]  lg:border-white`
                     : `lg:h-[880px] ${changeLanguage === "de" ? "xl:h-[910px]" : "xl:h-[837px]"}`
-            }`}
+                }`}
+                onClick={onCardClick}
         >
             <div className="flex flex-col">
                 <CardHeader className="space-y-4">
@@ -91,7 +92,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                         </div>
                         <div className="font-inter lg:pt-0 pt-1 lg:pb-2 pb-1 text-lg font-semibold text-white lg:text-xl">
                             €{setupFee}
-                            
+
 
                         </div>
                     </div>
@@ -104,11 +105,10 @@ const PricingCard: React.FC<PricingCardProps> = ({
                             {languageData?.paymentsCard?.[changeLanguage]?.whatYouGet}
 
                         </p>
-                        <div className={`  ${
-                isCenter
-                    ? 'flex flex-col'
-                    : ''
-            }`}>
+                        <div className={`  ${isCenter
+                                ? 'flex flex-col'
+                                : ''
+                            }`}>
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
@@ -138,7 +138,7 @@ const PricingCard: React.FC<PricingCardProps> = ({
                     {languageData?.paymentsCard?.[changeLanguage]?.tabs[0]?.signMeUp}
 
                 </button>
-              
+
             </CardFooter>
         </Card>
     )

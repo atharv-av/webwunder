@@ -111,14 +111,24 @@ const MobilePurchasePlans: React.FC = () => {
         },
     ]
 
+    const [sliderRef2, setSliderRef2] = useState<Slider | null>(null);
+
+    const handleCardClick = (index: number) => {
+        if (sliderRef2 && index !== currentIndex) {
+            sliderRef2.slickGoTo(index);
+        }
+    };
+
     return (
         <div id='purchase-plans' className="w-full lg:hidden">
-            <Slider className='' {...settings}>
+            <Slider  ref={setSliderRef2} className='' {...settings}>
                 {plans.map((plan, index) => (
                     <div key={index} className="px-4">
                         <PricingCard
                             {...plan}
                             isCenter={index === currentIndex}
+                            onCardClick={() => handleCardClick(index)}
+
                         />
                     </div>
                 ))}
@@ -229,26 +239,26 @@ const DesktopPurchasePlans: React.FC = () => {
                 languageData?.paymentsCard?.[changeLanguage]?.tabs[3]?.signMeUp
         },
     ]
+    const [sliderRef, setSliderRef] = useState<Slider | null>(null);
+
+    const handleCardClick = (index: number) => {
+        if (sliderRef && index !== currentIndex) {
+            sliderRef.slickGoTo(index);
+        }
+    };
 
     return (
         <>
 
-            <div id='purchase-plans' className="hidden  h-full w-full overflow-hidden mt-2 lg:block pt-4 mr-10">
-                <Slider {...settings}>
+<div id='purchase-plans' className="hidden h-full w-full overflow-hidden mt-2 lg:block pt-4 mr-10">
+                <Slider ref={setSliderRef} {...settings}>
                     {plans.map((plan, index) => (
-                        <div
-                            key={index}
-                            className="h-full px-1"
-                            style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                            }}
-                        >
-                            <div className="flex h-full w-[107%]  items-center justify-center p-1">
+                        <div key={index} className="h-full px-1">
+                            <div className="flex h-full w-[107%] items-center justify-center p-1">
                                 <PricingCard
                                     {...plan}
                                     isCenter={index === currentIndex}
+                                    onCardClick={() => handleCardClick(index)}
                                 />
                             </div>
                         </div>
@@ -258,10 +268,10 @@ const DesktopPurchasePlans: React.FC = () => {
                     {plans.map((_, i) => (
                         <button
                             key={i}
-                            className={`h-1 w-28 cursor-pointer rounded-full ${i === currentIndex
-                                    ? 'bg-[#5D59E1]'
-                                    : 'bg-white/20'
-                                }`}
+                            className={`h-1 w-28 cursor-pointer rounded-full ${
+                                i === currentIndex ? 'bg-[#5D59E1]' : 'bg-white/20'
+                            }`}
+                            onClick={() => handleCardClick(i)}
                         ></button>
                     ))}
                 </div>

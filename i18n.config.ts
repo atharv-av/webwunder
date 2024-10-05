@@ -12,7 +12,7 @@ export const lang: { title: string; code: Locale }[] = [
     { title: 'German', code: 'de' },
 ]
 
-export const localePrefix = 'as-needed'
+export const localePrefix = 'never'
 
 export const pathnames = {
     '/': '/',
