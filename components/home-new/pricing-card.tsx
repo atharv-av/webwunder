@@ -8,6 +8,7 @@ import { gsap } from 'gsap'
 
 import { languageData } from '@/langauge'
 import axios from 'axios'
+import Link from 'next/link'
 
 export interface PricingCardProps {
     icon: string
@@ -136,22 +137,24 @@ const PricingCard: React.FC<PricingCardProps> = ({
             <CardFooter className="flex flex-col gap-2 space-y-2 text-white">
                 {isBooked ? (
                     <button
-                        className="w-full rounded-full bg-[#C2C2C2] py-4 font-inter text-base font-semibold text-black transition-all duration-200 hover:scale-95"
+                        className="w-full cursor-pointer rounded-full bg-[#C2C2C2] py-4 font-inter text-base font-semibold text-black transition-all duration-200 hover:scale-95"
                         onClick={onSignUp}
                     >
-                        {/* Sign Me Up! */}
-                        <div className="text-xl font-bold">
-                            {
-                                languageData?.paymentsCard?.[changeLanguage]
-                                    ?.booked
-                            }
-                        </div>
-                        <div className="">
-                            {
-                                languageData?.paymentsCard?.[changeLanguage]
-                                    ?.booked2
-                            }
-                        </div>
+                        <Link href={'mailto:info@webwunder.de'} target="_blank">
+                            {/* Sign Me Up! */}
+                            <div className="text-xl font-bold">
+                                {
+                                    languageData?.paymentsCard?.[changeLanguage]
+                                        ?.booked
+                                }
+                            </div>
+                            <div className="">
+                                {
+                                    languageData?.paymentsCard?.[changeLanguage]
+                                        ?.booked2
+                                }
+                            </div>
+                        </Link>
                     </button>
                 ) : (
                     <button
